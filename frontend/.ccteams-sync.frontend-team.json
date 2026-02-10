@@ -95,8 +95,8 @@
       "contentId": "I_kwDORNGFGc7p4uFJ",
       "issueNodeId": "I_kwDORNGFGc7p4uFJ",
       "issueNumber": 14,
-      "lastHash": "e4b8bd23a9828244d482279657cbc1d3e1929adb4fe82bbe9f25ff1c4ca05333",
-      "lastSyncedAt": "2026-02-10T23:10:51.464Z",
+      "lastHash": "6d115e8600d6822e9cad7a47fabdf675cebaf9ecc74e75506e2564e41c635fa9",
+      "lastSyncedAt": "2026-02-10T23:12:49.260Z",
       "lastOwner": "fe-reviewer"
     },
     {
@@ -210,7 +210,7 @@
       "lastOwner": "fe-admin"
     }
   ],
-  "lastSyncAt": "2026-02-10T23:12:26.099Z",
+  "lastSyncAt": "2026-02-10T23:13:09.588Z",
   "summaryIssues": {
     "frontend-team": {
       "issueNodeId": "I_kwDORNGFGc7p4tLT",
