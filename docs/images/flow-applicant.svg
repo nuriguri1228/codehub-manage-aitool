@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650" font-family="Arial, sans-serif">
+  <rect width="1200" height="650" fill="#FFFFFF" rx="8"/>
+  <text x="40" y="40" font-size="20" font-weight="bold" fill="#111827">신청자 (Applicant) User Flow</text>
+  <line x1="40" y1="55" x2="1160" y2="55" stroke="#E5E7EB"/>
+
+  <!-- Start -->
+  <circle cx="100" cy="100" r="20" fill="#1E40AF"/>
+  <text x="100" y="105" font-size="11" fill="#FFF" text-anchor="middle">시작</text>
+
+  <!-- Arrow -->
+  <line x1="120" y1="100" x2="155" y2="100" stroke="#6B7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#6B7280"/></marker></defs>
+
+  <!-- Login -->
+  <rect x="160" y="80" width="110" height="40" rx="8" fill="#DBEAFE" stroke="#1E40AF" stroke-width="1.5"/>
+  <text x="215" y="105" font-size="12" fill="#1E40AF" text-anchor="middle" font-weight="600">SSO 로그인</text>
+  <line x1="270" y1="100" x2="305" y2="100" stroke="#6B7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Dashboard -->
+  <rect x="310" y="80" width="120" height="40" rx="8" fill="#DBEAFE" stroke="#1E40AF" stroke-width="1.5"/>
+  <text x="370" y="105" font-size="12" fill="#1E40AF" text-anchor="middle" font-weight="600">대시보드</text>
+  <line x1="430" y1="100" x2="465" y2="100" stroke="#6B7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- New Application -->
+  <rect x="470" y="80" width="120" height="40" rx="8" fill="#1E40AF"/>
+  <text x="530" y="105" font-size="12" fill="#FFF" text-anchor="middle" font-weight="600">+ 신규 신청</text>
+
+  <!-- Wizard Steps -->
+  <line x1="530" y1="120" x2="530" y2="155" stroke="#6B7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Step boxes row 1 -->
+  <rect x="70" y="160" width="130" height="45" rx="6" fill="#F3F4F6" stroke="#E5E7EB"/>
+  <text x="135" y="178" font-size="10" fill="#6B7280" text-anchor="middle">Step 1</text>
+  <text x="135" y="193" font-size="11" fill="#111827" text-anchor="middle" font-weight="600">AI 도구 선택</text>
+
+  <line x1="200" y1="182" x2="220" y2="182" stroke="#6B7280" stroke-width="1" marker-end="url(#arrow)"/>
+  <rect x="225" y="160" width="130" height="45" rx="6" fill="#F3F4F6" stroke="#E5E7EB"/>
+  <text x="290" y="178" font-size="10" fill="#6B7280" text-anchor="middle">Step 2</text>
+  <text x="290" y="193" font-size="11" fill="#111827" text-anchor="middle" font-weight="600">환경 선택</text>
+
+  <line x1="355" y1="182" x2="375" y2="182" stroke="#6B7280" stroke-width="1" marker-end="url(#arrow)"/>
+  <rect x="380" y="160" width="130" height="45" rx="6" fill="#F3F4F6" stroke="#E5E7EB"/>
+  <text x="445" y="178" font-size="10" fill="#6B7280" text-anchor="middle">Step 3</text>
+  <text x="445" y="193" font-size="11" fill="#111827" text-anchor="middle" font-weight="600">인적정보 확인</text>
+
+  <line x1="510" y1="182" x2="530" y2="182" stroke="#6B7280" stroke-width="1" marker-end="url(#arrow)"/>
+  <rect x="535" y="160" width="130" height="45" rx="6" fill="#F3F4F6" stroke="#E5E7EB"/>
+  <text x="600" y="178" font-size="10" fill="#6B7280" text-anchor="middle">Step 4</text>
+  <text x="600" y="193" font-size="11" fill="#111827" text-anchor="middle" font-weight="600">프로젝트 정보</text>
+
+  <line x1="665" y1="182" x2="685" y2="182" stroke="#6B7280" stroke-width="1" marker-end="url(#arrow)"/>
+  <rect x="690" y="160" width="130" height="45" rx="6" fill="#F3F4F6" stroke="#E5E7EB"/>
+  <text x="755" y="178" font-size="10" fill="#6B7280" text-anchor="middle">Step 5</text>
+  <text x="755" y="193" font-size="11" fill="#111827" text-anchor="middle" font-weight="600">문서 첨부</text>
+
+  <line x1="820" y1="182" x2="840" y2="182" stroke="#6B7280" stroke-width="1" marker-end="url(#arrow)"/>
+  <rect x="845" y="160" width="130" height="45" rx="6" fill="#F3F4F6" stroke="#E5E7EB"/>
+  <text x="910" y="178" font-size="10" fill="#6B7280" text-anchor="middle">Step 6</text>
+  <text x="910" y="193" font-size="11" fill="#111827" text-anchor="middle" font-weight="600">보안 서약</text>
+
+  <line x1="975" y1="182" x2="995" y2="182" stroke="#6B7280" stroke-width="1" marker-end="url(#arrow)"/>
+  <rect x="1000" y="160" width="130" height="45" rx="6" fill="#EEF2FF" stroke="#1E40AF"/>
+  <text x="1065" y="178" font-size="10" fill="#1E40AF" text-anchor="middle">Step 7</text>
+  <text x="1065" y="193" font-size="11" fill="#1E40AF" text-anchor="middle" font-weight="600">최종 확인/제출</text>
+
+  <!-- Save Draft Branch -->
+  <rect x="470" y="225" width="120" height="35" rx="6" fill="#FEF3C7" stroke="#D97706"/>
+  <text x="530" y="247" font-size="11" fill="#92400E" text-anchor="middle">임시저장 가능</text>
+  <line x1="530" y1="205" x2="530" y2="225" stroke="#D97706" stroke-width="1" stroke-dasharray="4"/>
+
+  <!-- Submit -->
+  <line x1="1065" y1="205" x2="1065" y2="275" stroke="#6B7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="1000" y="280" width="130" height="40" rx="8" fill="#1E40AF"/>
+  <text x="1065" y="305" font-size="12" fill="#FFF" text-anchor="middle" font-weight="600">신청 제출</text>
+
+  <!-- Review Process -->
+  <line x1="1000" y1="300" x2="100" y2="300" stroke="#6B7280" stroke-width="1"/>
+  <line x1="100" y1="300" x2="100" y2="350" stroke="#6B7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Review stages -->
+  <rect x="50" y="355" width="140" height="40" rx="6" fill="#F3F4F6" stroke="#059669" stroke-width="1.5"/>
+  <text x="120" y="380" font-size="11" fill="#111827" text-anchor="middle" font-weight="600">검토 신청 접수</text>
+  <line x1="190" y1="375" x2="220" y2="375" stroke="#6B7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="225" y="355" width="140" height="40" rx="6" fill="#F3F4F6" stroke="#059669" stroke-width="1.5"/>
+  <text x="295" y="380" font-size="11" fill="#111827" text-anchor="middle" font-weight="600">1차 검토 (팀장)</text>
+  <line x1="365" y1="375" x2="395" y2="375" stroke="#6B7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="400" y="355" width="140" height="40" rx="6" fill="#F3F4F6" stroke="#059669" stroke-width="1.5"/>
+  <text x="470" y="380" font-size="11" fill="#111827" text-anchor="middle" font-weight="600">보안 검토</text>
+  <line x1="540" y1="375" x2="570" y2="375" stroke="#6B7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="575" y="355" width="140" height="40" rx="6" fill="#F3F4F6" stroke="#059669" stroke-width="1.5"/>
+  <text x="645" y="380" font-size="11" fill="#111827" text-anchor="middle" font-weight="600">환경 준비</text>
+  <line x1="715" y1="375" x2="745" y2="375" stroke="#6B7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="750" y="355" width="140" height="40" rx="6" fill="#F3F4F6" stroke="#059669" stroke-width="1.5"/>
+  <text x="820" y="380" font-size="11" fill="#111827" text-anchor="middle" font-weight="600">최종 승인</text>
+  <line x1="890" y1="375" x2="920" y2="375" stroke="#6B7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="925" y="355" width="140" height="40" rx="8" fill="#059669"/>
+  <text x="995" y="380" font-size="12" fill="#FFF" text-anchor="middle" font-weight="600">API Key 발급</text>
+
+  <!-- Feedback Loop -->
+  <rect x="400" y="430" width="350" height="45" rx="8" fill="#FFF7ED" stroke="#D97706" stroke-width="1.5"/>
+  <text x="575" y="450" font-size="11" fill="#92400E" text-anchor="middle" font-weight="600">피드백 수신 → 정보 수정 → 재제출</text>
+  <text x="575" y="465" font-size="10" fill="#B45309" text-anchor="middle">(각 검토 단계에서 발생 가능)</text>
+
+  <!-- Feedback arrows -->
+  <line x1="470" y1="395" x2="470" y2="430" stroke="#D97706" stroke-width="1" stroke-dasharray="4" marker-end="url(#arrow)"/>
+  <line x1="575" y1="430" x2="575" y2="395" stroke="#D97706" stroke-width="1" stroke-dasharray="4" marker-end="url(#arrow)"/>
+
+  <!-- Rejection path -->
+  <rect x="400" y="500" width="200" height="40" rx="8" fill="#FEE2E2" stroke="#DC2626"/>
+  <text x="500" y="525" font-size="11" fill="#DC2626" text-anchor="middle" font-weight="600">반려 → 사유 확인 → 재신청/취소</text>
+  <line x1="295" y1="395" x2="295" y2="520" stroke="#DC2626" stroke-width="1" stroke-dasharray="4"/>
+  <line x1="295" y1="520" x2="400" y2="520" stroke="#DC2626" stroke-width="1" stroke-dasharray="4" marker-end="url(#arrow)"/>
+
+  <!-- End - API Key Usage -->
+  <line x1="995" y1="395" x2="995" y2="560" stroke="#6B7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="900" y="565" width="190" height="50" rx="8" fill="#ECFDF5" stroke="#059669"/>
+  <text x="995" y="585" font-size="11" fill="#059669" text-anchor="middle" font-weight="600">API Key 관리</text>
+  <text x="995" y="600" font-size="10" fill="#6B7280" text-anchor="middle">조회 / 복사 / 리셋 / 비활성화</text>
+
+  <!-- Status Check -->
+  <rect x="650" y="565" width="190" height="50" rx="8" fill="#EEF2FF" stroke="#1E40AF"/>
+  <text x="745" y="585" font-size="11" fill="#1E40AF" text-anchor="middle" font-weight="600">진행 상태 확인</text>
+  <text x="745" y="600" font-size="10" fill="#6B7280" text-anchor="middle">타임라인으로 현재 단계 표시</text>
+  <line x1="645" y1="375" x2="645" y2="545" stroke="#1E40AF" stroke-width="1" stroke-dasharray="3"/>
+  <line x1="645" y1="545" x2="645" y2="545" stroke="#1E40AF" stroke-width="1"/>
+  <line x1="645" y1="545" x2="650" y2="575" stroke="#1E40AF" stroke-width="1" marker-end="url(#arrow)"/>
+
+  <!-- Legend -->
+  <rect x="40" y="580" width="12" height="12" rx="2" fill="#1E40AF"/>
+  <text x="58" y="591" font-size="10" fill="#6B7280">주요 액션</text>
+  <rect x="130" y="580" width="12" height="12" rx="2" fill="#F3F4F6" stroke="#E5E7EB"/>
+  <text x="148" y="591" font-size="10" fill="#6B7280">프로세스 단계</text>
+  <rect x="235" y="580" width="12" height="12" rx="2" fill="#059669"/>
+  <text x="253" y="591" font-size="10" fill="#6B7280">완료/성공</text>
+  <rect x="310" y="580" width="12" height="12" rx="2" fill="#FEF3C7" stroke="#D97706"/>
+  <text x="328" y="591" font-size="10" fill="#6B7280">피드백/대기</text>
+  <rect x="405" y="580" width="12" height="12" rx="2" fill="#FEE2E2" stroke="#DC2626"/>
+  <text x="423" y="591" font-size="10" fill="#6B7280">반려</text>
+</svg>

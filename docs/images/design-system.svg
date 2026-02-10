@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" font-family="Arial, sans-serif">
+  <!-- Background -->
+  <rect width="1200" height="700" fill="#FFFFFF" rx="8"/>
+  <text x="40" y="45" font-size="24" font-weight="bold" fill="#111827">Design System - Color Palette &amp; Typography</text>
+  <line x1="40" y1="60" x2="1160" y2="60" stroke="#E5E7EB" stroke-width="1"/>
+
+  <!-- Color Palette Section -->
+  <text x="40" y="95" font-size="18" font-weight="600" fill="#111827">Color Palette</text>
+
+  <!-- Primary Colors -->
+  <text x="40" y="125" font-size="12" fill="#6B7280" font-weight="600">PRIMARY</text>
+  <rect x="40" y="135" width="100" height="60" rx="8" fill="#1E40AF"/>
+  <text x="90" y="170" font-size="11" fill="#FFFFFF" text-anchor="middle">Blue 800</text>
+  <text x="90" y="185" font-size="10" fill="#DBEAFE" text-anchor="middle">#1E40AF</text>
+  <rect x="150" y="135" width="100" height="60" rx="8" fill="#DBEAFE" stroke="#E5E7EB"/>
+  <text x="200" y="170" font-size="11" fill="#1E40AF" text-anchor="middle">Blue 100</text>
+  <text x="200" y="185" font-size="10" fill="#6B7280" text-anchor="middle">#DBEAFE</text>
+  <rect x="260" y="135" width="100" height="60" rx="8" fill="#7C3AED"/>
+  <text x="310" y="170" font-size="11" fill="#FFFFFF" text-anchor="middle">Violet 600</text>
+  <text x="310" y="185" font-size="10" fill="#E9D5FF" text-anchor="middle">#7C3AED</text>
+
+  <!-- Semantic Colors -->
+  <text x="400" y="125" font-size="12" fill="#6B7280" font-weight="600">SEMANTIC</text>
+  <rect x="400" y="135" width="100" height="60" rx="8" fill="#059669"/>
+  <text x="450" y="170" font-size="11" fill="#FFFFFF" text-anchor="middle">Success</text>
+  <text x="450" y="185" font-size="10" fill="#D1FAE5" text-anchor="middle">#059669</text>
+  <rect x="510" y="135" width="100" height="60" rx="8" fill="#D97706"/>
+  <text x="560" y="170" font-size="11" fill="#FFFFFF" text-anchor="middle">Warning</text>
+  <text x="560" y="185" font-size="10" fill="#FEF3C7" text-anchor="middle">#D97706</text>
+  <rect x="620" y="135" width="100" height="60" rx="8" fill="#DC2626"/>
+  <text x="670" y="170" font-size="11" fill="#FFFFFF" text-anchor="middle">Error</text>
+  <text x="670" y="185" font-size="10" fill="#FEE2E2" text-anchor="middle">#DC2626</text>
+  <rect x="730" y="135" width="100" height="60" rx="8" fill="#2563EB"/>
+  <text x="780" y="170" font-size="11" fill="#FFFFFF" text-anchor="middle">Info</text>
+  <text x="780" y="185" font-size="10" fill="#DBEAFE" text-anchor="middle">#2563EB</text>
+
+  <!-- Gray Scale -->
+  <text x="870" y="125" font-size="12" fill="#6B7280" font-weight="600">GRAY SCALE</text>
+  <rect x="870" y="135" width="50" height="60" rx="4" fill="#F9FAFB" stroke="#E5E7EB"/>
+  <text x="895" y="185" font-size="8" fill="#6B7280" text-anchor="middle">50</text>
+  <rect x="925" y="135" width="50" height="60" rx="4" fill="#F3F4F6" stroke="#E5E7EB"/>
+  <text x="950" y="185" font-size="8" fill="#6B7280" text-anchor="middle">100</text>
+  <rect x="980" y="135" width="50" height="60" rx="4" fill="#E5E7EB"/>
+  <text x="1005" y="185" font-size="8" fill="#6B7280" text-anchor="middle">200</text>
+  <rect x="1035" y="135" width="50" height="60" rx="4" fill="#6B7280"/>
+  <text x="1060" y="185" font-size="8" fill="#FFFFFF" text-anchor="middle">500</text>
+  <rect x="1090" y="135" width="50" height="60" rx="4" fill="#111827"/>
+  <text x="1115" y="185" font-size="8" fill="#FFFFFF" text-anchor="middle">900</text>
+
+  <line x1="40" y1="215" x2="1160" y2="215" stroke="#E5E7EB" stroke-width="1"/>
+
+  <!-- Typography Section -->
+  <text x="40" y="250" font-size="18" font-weight="600" fill="#111827">Typography Scale</text>
+  <text x="40" y="275" font-size="12" fill="#6B7280">Font: Pretendard (KR) / Inter (EN) / JetBrains Mono (Code)</text>
+
+  <text x="40" y="320" font-size="36" font-weight="bold" fill="#111827">Display - 36px Bold</text>
+  <text x="600" y="320" font-size="12" fill="#6B7280">페이지 메인 타이틀</text>
+
+  <text x="40" y="360" font-size="30" font-weight="bold" fill="#111827">Heading 1 - 30px Bold</text>
+  <text x="600" y="360" font-size="12" fill="#6B7280">섹션 타이틀</text>
+
+  <text x="40" y="395" font-size="24" font-weight="600" fill="#111827">Heading 2 - 24px SemiBold</text>
+  <text x="600" y="395" font-size="12" fill="#6B7280">서브 섹션 타이틀</text>
+
+  <text x="40" y="425" font-size="20" font-weight="600" fill="#111827">Heading 3 - 20px SemiBold</text>
+  <text x="600" y="425" font-size="12" fill="#6B7280">카드 타이틀</text>
+
+  <text x="40" y="455" font-size="18" fill="#111827">Body Large - 18px Regular</text>
+  <text x="600" y="455" font-size="12" fill="#6B7280">강조 본문</text>
+
+  <text x="40" y="480" font-size="16" fill="#111827">Body - 16px Regular (기본 본문 텍스트)</text>
+  <text x="600" y="480" font-size="12" fill="#6B7280">기본 본문</text>
+
+  <text x="40" y="502" font-size="14" fill="#6B7280">Body Small - 14px Regular (보조 텍스트)</text>
+  <text x="600" y="502" font-size="12" fill="#6B7280">보조 텍스트, 테이블</text>
+
+  <text x="40" y="520" font-size="12" fill="#9CA3AF">Caption - 12px Regular (라벨, 캡션)</text>
+  <text x="600" y="520" font-size="12" fill="#6B7280">라벨, 캡션, 도움말</text>
+
+  <line x1="40" y1="545" x2="1160" y2="545" stroke="#E5E7EB" stroke-width="1"/>
+
+  <!-- Spacing & Border Radius -->
+  <text x="40" y="575" font-size="18" font-weight="600" fill="#111827">Spacing (4px Grid)</text>
+  <rect x="40" y="590" width="4" height="20" rx="1" fill="#1E40AF"/><text x="50" y="605" font-size="10" fill="#6B7280">4</text>
+  <rect x="80" y="590" width="8" height="20" rx="1" fill="#1E40AF"/><text x="94" y="605" font-size="10" fill="#6B7280">8</text>
+  <rect x="120" y="590" width="12" height="20" rx="1" fill="#1E40AF"/><text x="138" y="605" font-size="10" fill="#6B7280">12</text>
+  <rect x="165" y="590" width="16" height="20" rx="1" fill="#1E40AF"/><text x="187" y="605" font-size="10" fill="#6B7280">16</text>
+  <rect x="215" y="590" width="24" height="20" rx="1" fill="#1E40AF"/><text x="245" y="605" font-size="10" fill="#6B7280">24</text>
+  <rect x="275" y="590" width="32" height="20" rx="1" fill="#1E40AF"/><text x="313" y="605" font-size="10" fill="#6B7280">32</text>
+  <rect x="345" y="590" width="48" height="20" rx="1" fill="#1E40AF"/><text x="399" y="605" font-size="10" fill="#6B7280">48</text>
+  <rect x="425" y="590" width="64" height="20" rx="1" fill="#1E40AF"/><text x="495" y="605" font-size="10" fill="#6B7280">64</text>
+
+  <text x="600" y="575" font-size="18" font-weight="600" fill="#111827">Border Radius</text>
+  <rect x="600" y="590" width="50" height="40" rx="4" fill="#F3F4F6" stroke="#1E40AF"/><text x="625" y="640" font-size="10" fill="#6B7280" text-anchor="middle">sm 4px</text>
+  <rect x="670" y="590" width="50" height="40" rx="8" fill="#F3F4F6" stroke="#1E40AF"/><text x="695" y="640" font-size="10" fill="#6B7280" text-anchor="middle">md 8px</text>
+  <rect x="740" y="590" width="50" height="40" rx="12" fill="#F3F4F6" stroke="#1E40AF"/><text x="765" y="640" font-size="10" fill="#6B7280" text-anchor="middle">lg 12px</text>
+  <rect x="810" y="590" width="50" height="40" rx="16" fill="#F3F4F6" stroke="#1E40AF"/><text x="835" y="640" font-size="10" fill="#6B7280" text-anchor="middle">xl 16px</text>
+  <circle cx="905" cy="610" r="20" fill="#F3F4F6" stroke="#1E40AF"/><text x="905" y="640" font-size="10" fill="#6B7280" text-anchor="middle">full</text>
+
+  <!-- Shadow -->
+  <text x="960" y="575" font-size="18" font-weight="600" fill="#111827">Elevation</text>
+  <rect x="960" y="590" width="40" height="30" rx="6" fill="#FFFFFF" style="filter:drop-shadow(0 1px 2px rgba(0,0,0,0.05))"/><text x="980" y="635" font-size="9" fill="#6B7280" text-anchor="middle">sm</text>
+  <rect x="1015" y="590" width="40" height="30" rx="6" fill="#FFFFFF" style="filter:drop-shadow(0 4px 6px rgba(0,0,0,0.07))"/><text x="1035" y="635" font-size="9" fill="#6B7280" text-anchor="middle">md</text>
+  <rect x="1070" y="590" width="40" height="30" rx="6" fill="#FFFFFF" style="filter:drop-shadow(0 10px 15px rgba(0,0,0,0.1))"/><text x="1090" y="635" font-size="9" fill="#6B7280" text-anchor="middle">lg</text>
+  <rect x="1125" y="590" width="40" height="30" rx="6" fill="#FFFFFF" style="filter:drop-shadow(0 20px 25px rgba(0,0,0,0.15))"/><text x="1145" y="635" font-size="9" fill="#6B7280" text-anchor="middle">xl</text>
+</svg>

@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 650" font-family="Arial, sans-serif">
+  <rect width="1100" height="650" fill="#F3F4F6" rx="8"/>
+  <text x="40" y="20" font-size="11" fill="#6B7280">Wireframe: 관리자 대시보드</text>
+
+  <text x="60" y="55" font-size="20" fill="#111827" font-weight="bold">관리자 대시보드</text>
+  <text x="60" y="75" font-size="13" fill="#6B7280">전사 AI 도구 현황을 한눈에 확인하세요</text>
+
+  <!-- KPI Cards -->
+  <rect x="30" y="95" width="240" height="100" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="55" y="120" font-size="12" fill="#6B7280">총 활성 라이센스</text>
+  <text x="55" y="160" font-size="34" fill="#1E40AF" font-weight="bold">127</text>
+  <rect x="140" y="148" width="45" height="18" rx="9" fill="#ECFDF5"/>
+  <text x="162" y="161" font-size="9" fill="#059669" text-anchor="middle">+12%</text>
+  <text x="55" y="180" font-size="10" fill="#9CA3AF">전월 대비</text>
+
+  <rect x="285" y="95" width="240" height="100" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="310" y="120" font-size="12" fill="#6B7280">활성 사용자</text>
+  <text x="310" y="160" font-size="34" fill="#059669" font-weight="bold">98</text>
+  <rect x="380" y="148" width="45" height="18" rx="9" fill="#ECFDF5"/>
+  <text x="402" y="161" font-size="9" fill="#059669" text-anchor="middle">+8%</text>
+  <text x="310" y="180" font-size="10" fill="#9CA3AF">전월 대비</text>
+
+  <rect x="540" y="95" width="240" height="100" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="565" y="120" font-size="12" fill="#6B7280">이번 달 총 비용</text>
+  <text x="565" y="160" font-size="30" fill="#111827" font-weight="bold">$12,450</text>
+  <text x="565" y="180" font-size="10" fill="#D97706">예산 $15,000의 83%</text>
+  <rect x="565" y="183" width="190" height="4" rx="2" fill="#E5E7EB"/>
+  <rect x="565" y="183" width="157" height="4" rx="2" fill="#D97706"/>
+
+  <rect x="795" y="95" width="280" height="100" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="820" y="120" font-size="12" fill="#6B7280">평균 처리 시간 / SLA 달성율</text>
+  <text x="820" y="160" font-size="30" fill="#111827" font-weight="bold">1.8일</text>
+  <text x="940" y="160" font-size="24" fill="#059669" font-weight="bold">96.5%</text>
+  <text x="820" y="180" font-size="10" fill="#9CA3AF">목표: 2일 이내</text>
+
+  <!-- Charts Row -->
+  <!-- Donut Chart -->
+  <rect x="30" y="210" width="340" height="260" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="55" y="240" font-size="14" fill="#111827" font-weight="bold">도구별 라이센스 분포</text>
+  <circle cx="200" cy="360" r="80" fill="none" stroke="#1E40AF" stroke-width="35" stroke-dasharray="170 330"/>
+  <circle cx="200" cy="360" r="80" fill="none" stroke="#7C3AED" stroke-width="35" stroke-dasharray="100 400" stroke-dashoffset="-170"/>
+  <circle cx="200" cy="360" r="80" fill="none" stroke="#E5E7EB" stroke-width="35" stroke-dasharray="60 440" stroke-dashoffset="-270"/>
+  <text x="200" y="355" font-size="24" fill="#111827" text-anchor="middle" font-weight="bold">127</text>
+  <text x="200" y="375" font-size="11" fill="#6B7280" text-anchor="middle">총 라이센스</text>
+  <!-- Legend -->
+  <rect x="55" y="450" width="10" height="10" rx="2" fill="#1E40AF"/><text x="72" y="459" font-size="10" fill="#6B7280">Claude Code (68)</text>
+  <rect x="175" y="450" width="10" height="10" rx="2" fill="#7C3AED"/><text x="192" y="459" font-size="10" fill="#6B7280">Antigravity (42)</text>
+  <rect x="300" y="450" width="10" height="10" rx="2" fill="#E5E7EB"/><text x="317" y="459" font-size="10" fill="#6B7280">기타 (17)</text>
+
+  <!-- Line Chart -->
+  <rect x="390" y="210" width="685" height="260" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="415" y="240" font-size="14" fill="#111827" font-weight="bold">월별 사용 추이 (최근 6개월)</text>
+  <text x="1020" y="240" font-size="10" fill="#6B7280" text-anchor="end">단위: 천 토큰</text>
+  <!-- Chart axes -->
+  <line x1="440" y1="440" x2="1040" y2="440" stroke="#E5E7EB"/>
+  <line x1="440" y1="270" x2="440" y2="440" stroke="#E5E7EB"/>
+  <!-- Grid lines -->
+  <line x1="440" y1="355" x2="1040" y2="355" stroke="#F3F4F6" stroke-dasharray="4"/>
+  <line x1="440" y1="310" x2="1040" y2="310" stroke="#F3F4F6" stroke-dasharray="4"/>
+  <!-- Line - Claude Code -->
+  <polyline points="490,400 590,380 690,350 790,320 890,290 990,270" fill="none" stroke="#1E40AF" stroke-width="2.5"/>
+  <circle cx="490" cy="400" r="4" fill="#1E40AF"/><circle cx="590" cy="380" r="4" fill="#1E40AF"/>
+  <circle cx="690" cy="350" r="4" fill="#1E40AF"/><circle cx="790" cy="320" r="4" fill="#1E40AF"/>
+  <circle cx="890" cy="290" r="4" fill="#1E40AF"/><circle cx="990" cy="270" r="4" fill="#1E40AF"/>
+  <!-- Line - Antigravity -->
+  <polyline points="490,420 590,410 690,390 790,385 890,360 990,340" fill="none" stroke="#7C3AED" stroke-width="2.5"/>
+  <circle cx="490" cy="420" r="4" fill="#7C3AED"/><circle cx="990" cy="340" r="4" fill="#7C3AED"/>
+  <!-- X labels -->
+  <text x="490" y="458" font-size="10" fill="#6B7280" text-anchor="middle">9월</text>
+  <text x="590" y="458" font-size="10" fill="#6B7280" text-anchor="middle">10월</text>
+  <text x="690" y="458" font-size="10" fill="#6B7280" text-anchor="middle">11월</text>
+  <text x="790" y="458" font-size="10" fill="#6B7280" text-anchor="middle">12월</text>
+  <text x="890" y="458" font-size="10" fill="#6B7280" text-anchor="middle">1월</text>
+  <text x="990" y="458" font-size="10" fill="#6B7280" text-anchor="middle">2월</text>
+
+  <!-- Recent Activity -->
+  <rect x="30" y="485" width="1045" height="150" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="55" y="515" font-size="14" fill="#111827" font-weight="bold">최근 활동</text>
+  <text x="1025" y="515" font-size="12" fill="#1E40AF" text-anchor="end">전체보기 ></text>
+
+  <circle cx="65" cy="545" r="6" fill="#059669"/>
+  <text x="80" y="549" font-size="12" fill="#111827">김개발의 Claude Code 신청이 <tspan font-weight="600">최종 승인</tspan>되었습니다</text>
+  <text x="930" y="549" font-size="11" fill="#6B7280" text-anchor="end">10분 전</text>
+
+  <circle cx="65" cy="575" r="6" fill="#1E40AF"/>
+  <text x="80" y="579" font-size="12" fill="#111827">박프론트의 Antigravity API Key가 <tspan font-weight="600">발급</tspan>되었습니다</text>
+  <text x="930" y="579" font-size="11" fill="#6B7280" text-anchor="end">32분 전</text>
+
+  <circle cx="65" cy="605" r="6" fill="#DC2626"/>
+  <text x="80" y="609" font-size="12" fill="#111827">이상 사용 탐지: <tspan font-weight="600" fill="#DC2626">홍테스트</tspan>의 사용량이 일일 한도의 150%를 초과했습니다</text>
+  <text x="930" y="609" font-size="11" fill="#6B7280" text-anchor="end">1시간 전</text>
+</svg>
