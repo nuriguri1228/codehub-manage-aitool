@@ -63,9 +63,9 @@ export function MonthlyTrendChart({
                   border: '1px solid #e5e7eb',
                   fontSize: '13px',
                 }}
-                formatter={(value: number, name: string) => [
-                  `${value.toLocaleString()} ${unit}`,
-                  name,
+                formatter={(value?: number, name?: string) => [
+                  `${(value ?? 0).toLocaleString()} ${unit}`,
+                  name ?? '',
                 ]}
               />
               <Legend

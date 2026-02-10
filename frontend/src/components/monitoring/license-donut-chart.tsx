@@ -50,9 +50,9 @@ export function LicenseDonutChart({
                 ))}
               </Pie>
               <Tooltip
-                formatter={(value: number | undefined, name: string) => [
+                formatter={(value?: number, name?: string) => [
                   `${value ?? 0}개 (${Math.round(((value ?? 0) / total) * 100)}%)`,
-                  name,
+                  name ?? '',
                 ]}
                 contentStyle={{
                   borderRadius: '8px',
