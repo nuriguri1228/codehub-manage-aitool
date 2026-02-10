@@ -51,8 +51,8 @@
       "contentId": "I_kwDORNGFGc7pxa-2",
       "issueNodeId": "I_kwDORNGFGc7pxa-2",
       "issueNumber": 1,
-      "lastHash": "06c7e26f5c67b39d0ef604e5bf86ee1eb47ec2508d9ea11a4425a32b4af58294",
-      "lastSyncedAt": "2026-02-10T15:16:23.441Z",
+      "lastHash": "016da2e4d6d143d2654fa25e75276d61b7bfb8d47124a4b5d4954748e811960d",
+      "lastSyncedAt": "2026-02-10T15:21:33.265Z",
       "lastOwner": "project-planner"
     },
     {
@@ -89,7 +89,7 @@
       "lastOwner": "uiux-designer"
     }
   ],
-  "lastSyncAt": "2026-02-10T15:17:17.383Z",
+  "lastSyncAt": "2026-02-10T15:21:40.325Z",
   "summaryIssues": {
     "---": {
       "issueNodeId": "I_kwDORNGFGc7pxbFv",
