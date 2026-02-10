@@ -228,10 +228,10 @@ export default function UsageMonitoringPage() {
                     border: '1px solid #e5e7eb',
                     fontSize: '13px',
                   }}
-                  formatter={(value: number, name: string) => {
+                  formatter={(value?: number, name?: string) => {
                     if (name === 'tokens')
-                      return [`${value.toLocaleString()} 토큰`, '토큰 사용량'];
-                    return [`${value.toLocaleString()} 회`, 'API 호출'];
+                      return [`${(value ?? 0).toLocaleString()} 토큰`, '토큰 사용량'];
+                    return [`${(value ?? 0).toLocaleString()} 회`, 'API 호출'];
                   }}
                 />
                 <Area

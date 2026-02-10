@@ -33,8 +33,207 @@
     "In Progress": "47fc9ee4",
     "Done": "98236657"
   },
-  "ownerOptions": {},
+  "ownerOptions": {
+    "(unassigned)": "a17d12a5",
+    "uiux-dev": "06be62c5",
+    "fe-reviewer": "cd06db63",
+    "fe-admin": "1a6ca98c",
+    "fe-applicant": "a16ed96b"
+  },
   "labels": {},
-  "items": [],
-  "lastSyncAt": "2026-02-10T23:19:47.503Z"
+  "items": [
+    {
+      "taskId": "12",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOF8k",
+      "contentId": "I_kwDORNGFGc7p403K",
+      "issueNodeId": "I_kwDORNGFGc7p403K",
+      "issueNumber": 25,
+      "lastHash": "5c726363579e41e823964c484b51cb17b48492ffec98bf602a62e8fbfdc9321b",
+      "lastSyncedAt": "2026-02-10T23:20:00.511Z",
+      "lastOwner": "fe-admin"
+    },
+    {
+      "taskId": "1",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOF8Q",
+      "contentId": "I_kwDORNGFGc7p4028",
+      "issueNodeId": "I_kwDORNGFGc7p4028",
+      "issueNumber": 22,
+      "lastHash": "185b00a8506fffbd523fc14df275c95d967b213cf7615409a713e4f6f95df71e",
+      "lastSyncedAt": "2026-02-10T23:20:01.628Z",
+      "lastOwner": "uiux-dev"
+    },
+    {
+      "taskId": "11",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOF8U",
+      "contentId": "I_kwDORNGFGc7p403B",
+      "issueNodeId": "I_kwDORNGFGc7p403B",
+      "issueNumber": 23,
+      "lastHash": "5fc4e35cb1c01cc29fe660b1b3198902b46685a50b96a2f42d7c1d16fb6b3aa9",
+      "lastSyncedAt": "2026-02-10T23:20:01.885Z",
+      "lastOwner": "fe-admin"
+    },
+    {
+      "taskId": "10",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOF8o",
+      "contentId": "I_kwDORNGFGc7p403O",
+      "issueNodeId": "I_kwDORNGFGc7p403O",
+      "issueNumber": 26,
+      "lastHash": "e124db598bfae773a67aa304fa8b97070f2ae1d16e016f2d61c12984680e5714",
+      "lastSyncedAt": "2026-02-10T23:20:02.111Z",
+      "lastOwner": "fe-reviewer"
+    },
+    {
+      "taskId": "14",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOF-4",
+      "contentId": "I_kwDORNGFGc7p40-C",
+      "issueNodeId": "I_kwDORNGFGc7p40-C",
+      "issueNumber": 27,
+      "lastHash": "a88ca0435d1464064639875164ca0b982532ea29841e307adee8c15461018e76",
+      "lastSyncedAt": "2026-02-10T23:20:11.555Z",
+      "lastOwner": "fe-admin"
+    },
+    {
+      "taskId": "15",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOF_E",
+      "contentId": "I_kwDORNGFGc7p40-w",
+      "issueNodeId": "I_kwDORNGFGc7p40-w",
+      "issueNumber": 28,
+      "lastHash": "276b8eb33830c2422b3458fdb40c14713bd42293a3b85f6cae17f89369cf5b33",
+      "lastSyncedAt": "2026-02-10T23:20:12.839Z",
+      "lastOwner": "fe-applicant"
+    },
+    {
+      "taskId": "21",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOF_c",
+      "contentId": "I_kwDORNGFGc7p40_v",
+      "issueNodeId": "I_kwDORNGFGc7p40_v",
+      "issueNumber": 30,
+      "lastHash": "ffd211984257db471ce7b9d3de951d4d248cf946e47d6835ed631029e4559a87",
+      "lastSyncedAt": "2026-02-10T23:20:14.124Z"
+    },
+    {
+      "taskId": "2",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOF_Q",
+      "contentId": "I_kwDORNGFGc7p40-2",
+      "issueNodeId": "I_kwDORNGFGc7p40-2",
+      "issueNumber": 29,
+      "lastHash": "baa5b880a3adf1f73548ce881670c161880d43e172f43ebf01cd0c902ec43a54",
+      "lastSyncedAt": "2026-02-10T23:20:14.560Z",
+      "lastOwner": "uiux-dev"
+    },
+    {
+      "taskId": "22",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOGBU",
+      "contentId": "I_kwDORNGFGc7p41H4",
+      "issueNodeId": "I_kwDORNGFGc7p41H4",
+      "issueNumber": 31,
+      "lastHash": "0eefd5e6170928028388bcf5ddcec765a5f0bdec269bf085b772756ca67a1440",
+      "lastSyncedAt": "2026-02-10T23:20:22.504Z"
+    },
+    {
+      "taskId": "3",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOGBc",
+      "contentId": "I_kwDORNGFGc7p41Jy",
+      "issueNodeId": "I_kwDORNGFGc7p41Jy",
+      "issueNumber": 32,
+      "lastHash": "46167cd622fb4a0d3297526724da9caa74a95a9d3a523e0a1d3cad6924394305",
+      "lastSyncedAt": "2026-02-10T23:20:24.912Z",
+      "lastOwner": "uiux-dev"
+    },
+    {
+      "taskId": "5",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOGBs",
+      "contentId": "I_kwDORNGFGc7p41Ko",
+      "issueNodeId": "I_kwDORNGFGc7p41Ko",
+      "issueNumber": 34,
+      "lastHash": "3da6d23a77b23e40cb6416430a7f7572c73b67c817e066d9c7d7f7c6000af4f1",
+      "lastSyncedAt": "2026-02-10T23:20:25.670Z",
+      "lastOwner": "fe-applicant"
+    },
+    {
+      "taskId": "4",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOGBo",
+      "contentId": "I_kwDORNGFGc7p41KY",
+      "issueNodeId": "I_kwDORNGFGc7p41KY",
+      "issueNumber": 33,
+      "lastHash": "4859d9f1f96e5717141469b3fa9c507dccf564bc8c3c70e0982ace7534724fa3",
+      "lastSyncedAt": "2026-02-10T23:20:26.550Z",
+      "lastOwner": "fe-applicant"
+    },
+    {
+      "taskId": "13",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOF8g",
+      "contentId": "I_kwDORNGFGc7p403H",
+      "issueNodeId": "I_kwDORNGFGc7p403H",
+      "issueNumber": 24,
+      "lastHash": "d5d0d192df95a6eb070f23806987490df290d876f6bf2e32144e0ac3fefab1e0",
+      "lastSyncedAt": "2026-02-10T23:20:31.419Z",
+      "lastOwner": "fe-admin"
+    },
+    {
+      "taskId": "6",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOGDY",
+      "contentId": "I_kwDORNGFGc7p41RC",
+      "issueNodeId": "I_kwDORNGFGc7p41RC",
+      "issueNumber": 35,
+      "lastHash": "1c60b077899c1cabb7feee1e7fe0e778b0ac96b158d891829804c9dcccc36ba3",
+      "lastSyncedAt": "2026-02-10T23:20:34.445Z",
+      "lastOwner": "fe-applicant"
+    },
+    {
+      "taskId": "7",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOGD8",
+      "contentId": "I_kwDORNGFGc7p41S9",
+      "issueNodeId": "I_kwDORNGFGc7p41S9",
+      "issueNumber": 36,
+      "lastHash": "5520c87d47d09a610979ef1bd168c7b3b297e8aa812341d8408dde7ed7b3ac9f",
+      "lastSyncedAt": "2026-02-10T23:20:36.155Z",
+      "lastOwner": "fe-applicant"
+    },
+    {
+      "taskId": "8",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOGEA",
+      "contentId": "I_kwDORNGFGc7p41VT",
+      "issueNodeId": "I_kwDORNGFGc7p41VT",
+      "issueNumber": 37,
+      "lastHash": "7017e9f78f6c34f4d576eb0c87d505998c44256db0c34da0ff71d0b03211f8c2",
+      "lastSyncedAt": "2026-02-10T23:20:36.781Z",
+      "lastOwner": "fe-reviewer"
+    },
+    {
+      "taskId": "9",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOGEM",
+      "contentId": "I_kwDORNGFGc7p41V0",
+      "issueNodeId": "I_kwDORNGFGc7p41V0",
+      "issueNumber": 38,
+      "lastHash": "4554d3c5420bf86c322b92a2d1072d8b6c16e6f3d440d3ba77f3f32c113e043a",
+      "lastSyncedAt": "2026-02-10T23:20:37.456Z",
+      "lastOwner": "fe-reviewer"
+    }
+  ],
+  "lastSyncAt": "2026-02-10T23:25:01.516Z",
+  "summaryIssues": {
+    "frontend-team": {
+      "issueNodeId": "I_kwDORNGFGc7p43dA",
+      "issueNumber": 61,
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOGrA"
+    }
+  }
 }
