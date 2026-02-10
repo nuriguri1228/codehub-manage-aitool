@@ -109,7 +109,7 @@ export default function ApplicationsPage() {
       <div className="flex flex-col gap-3 sm:flex-row">
         <SearchBar
           value={search}
-          onChange={setSearch}
+          onSearch={setSearch}
           placeholder="신청번호, AI 도구명 검색..."
           className="sm:max-w-xs"
         />

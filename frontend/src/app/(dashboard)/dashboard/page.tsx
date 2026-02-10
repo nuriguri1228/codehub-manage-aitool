@@ -3,7 +3,7 @@
 import { useAuthStore } from '@/stores/auth-store';
 import ApplicantDashboard from '@/components/application/applicant-dashboard';
 import ReviewerDashboard from '@/components/review/reviewer-dashboard';
-import AdminDashboard from '@/components/monitoring/admin-dashboard';
+import { AdminDashboard } from '@/components/monitoring/admin-dashboard';
 
 export default function DashboardPage() {
   const { user } = useAuthStore();

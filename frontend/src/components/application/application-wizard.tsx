@@ -79,10 +79,10 @@ export default function ApplicationWizard() {
 
     if (result && !result.success) {
       const fieldErrors: Record<string, string> = {};
-      result.error.errors.forEach((err) => {
-        const key = err.path.join('.');
-        fieldErrors[key] = err.message;
-      });
+      for (const issue of result.error.issues) {
+        const key = (issue.path as (string | number)[]).join('.');
+        fieldErrors[key] = issue.message;
+      }
       setErrors(fieldErrors);
       return false;
     }

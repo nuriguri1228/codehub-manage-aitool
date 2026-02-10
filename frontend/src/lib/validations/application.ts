@@ -6,7 +6,7 @@ export const step1Schema = z.object({
 
 export const step2Schema = z.object({
   environment: z.enum(['VDI', 'NOTEBOOK', 'OTHER'], {
-    required_error: '사용 환경을 선택해주세요',
+    message: '사용 환경을 선택해주세요',
   }),
 });
 
@@ -37,7 +37,7 @@ export const step5Schema = z.object({
 
 export const step6Schema = z.object({
   securityAgreementSigned: z.literal(true, {
-    errorMap: () => ({ message: '보안 서약에 동의해주세요' }),
+    error: '보안 서약에 동의해주세요',
   }),
 });
 
