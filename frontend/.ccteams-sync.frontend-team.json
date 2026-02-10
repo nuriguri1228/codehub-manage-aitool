@@ -139,9 +139,39 @@
       "issueNumber": 16,
       "lastHash": "6121cda55080fdb52c069d16a0ac457d86090ab3e56ce001805ee4006d8a077a",
       "lastSyncedAt": "2026-02-10T23:09:45.058Z"
+    },
+    {
+      "taskId": "13",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO38fzglOERE",
+      "contentId": "I_kwDORNGFGc7p4uYU",
+      "issueNodeId": "I_kwDORNGFGc7p4uYU",
+      "issueNumber": 18,
+      "lastHash": "f34a33ce07ef4fe0b365a0cc2e3b36bfd93d8b23d4d911f460348877a4ebab7b",
+      "lastSyncedAt": "2026-02-10T23:10:04.562Z"
+    },
+    {
+      "taskId": "11",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO38fzglOEQ8",
+      "contentId": "I_kwDORNGFGc7p4uYS",
+      "issueNodeId": "I_kwDORNGFGc7p4uYS",
+      "issueNumber": 17,
+      "lastHash": "c08d21b68075bedf856833b553683e373e5602c9ef13dce981bfb4dd626014e6",
+      "lastSyncedAt": "2026-02-10T23:10:06.158Z"
+    },
+    {
+      "taskId": "12",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO38fzglOERI",
+      "contentId": "I_kwDORNGFGc7p4uYV",
+      "issueNodeId": "I_kwDORNGFGc7p4uYV",
+      "issueNumber": 19,
+      "lastHash": "748b355ec3d9ecb4243cd9f6d213b6acc95d5f35bbaebff26c5915b2714c9b7b",
+      "lastSyncedAt": "2026-02-10T23:10:06.351Z"
     }
   ],
-  "lastSyncAt": "2026-02-10T23:10:01.904Z",
+  "lastSyncAt": "2026-02-10T23:10:25.507Z",
   "summaryIssues": {
     "frontend-team": {
       "issueNodeId": "I_kwDORNGFGc7p4tLT",
