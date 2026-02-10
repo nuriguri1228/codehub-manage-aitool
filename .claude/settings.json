@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "TaskCreate|TaskUpdate",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "ccteams sync --quiet",
+            "async": true
+          }
+        ]
+      }
+    ]
+  }
+}

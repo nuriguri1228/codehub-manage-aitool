@@ -1,0 +1,40 @@
+{
+  "project": {
+    "id": "PVT_kwHODFNjSs4BO1tw",
+    "number": 21,
+    "url": "https://github.com/users/nuriguri1228/projects/21",
+    "title": "ccteams: ---",
+    "owner": "nuriguri1228"
+  },
+  "repository": {
+    "id": "R_kgDORNGFGQ",
+    "owner": "nuriguri1228",
+    "name": "codehub-manage-aitool"
+  },
+  "fields": {
+    "Team Name": "PVTF_lAHODFNjSs4BO1twzg9bGLQ",
+    "Agent (Owner)": "PVTSSF_lAHODFNjSs4BO1twzg9bGMA",
+    "Task ID": "PVTF_lAHODFNjSs4BO1twzg9bGMI",
+    "Blocked By": "PVTF_lAHODFNjSs4BO1twzg9bGMM",
+    "Active Form": "PVTF_lAHODFNjSs4BO1twzg9bGMQ",
+    "Status": "PVTSSF_lAHODFNjSs4BO1twzg9bGKw",
+    "Title": "PVTF_lAHODFNjSs4BO1twzg9bGKo",
+    "Assignees": "PVTF_lAHODFNjSs4BO1twzg9bGKs",
+    "Labels": "PVTF_lAHODFNjSs4BO1twzg9bGK0",
+    "Linked pull requests": "PVTF_lAHODFNjSs4BO1twzg9bGK4",
+    "Milestone": "PVTF_lAHODFNjSs4BO1twzg9bGK8",
+    "Repository": "PVTF_lAHODFNjSs4BO1twzg9bGLA",
+    "Reviewers": "PVTF_lAHODFNjSs4BO1twzg9bGLE",
+    "Parent issue": "PVTF_lAHODFNjSs4BO1twzg9bGLI",
+    "Sub-issues progress": "PVTF_lAHODFNjSs4BO1twzg9bGLM"
+  },
+  "statusOptions": {
+    "Todo": "f75ad846",
+    "In Progress": "47fc9ee4",
+    "Done": "98236657"
+  },
+  "ownerOptions": {},
+  "labels": {},
+  "items": [],
+  "lastSyncAt": "2026-02-10T15:14:40.308Z"
+}
