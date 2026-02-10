@@ -73,8 +73,8 @@
       "contentId": "I_kwDORNGFGc7pxb5h",
       "issueNodeId": "I_kwDORNGFGc7pxb5h",
       "issueNumber": 4,
-      "lastHash": "50c3b442dc5dea82dc5142d37154d01f448983237e3c3e31eb3a7fea3df476f2",
-      "lastSyncedAt": "2026-02-10T15:16:46.037Z",
+      "lastHash": "93cba225735587d9078db63ce7c95a0eff3fef12f03c884cf8b2b4657a4d9514",
+      "lastSyncedAt": "2026-02-10T15:28:56.017Z",
       "lastOwner": "system-architect"
     },
     {
@@ -89,7 +89,7 @@
       "lastOwner": "uiux-designer"
     }
   ],
-  "lastSyncAt": "2026-02-10T15:22:23.445Z",
+  "lastSyncAt": "2026-02-10T15:29:02.505Z",
   "summaryIssues": {
     "---": {
       "issueNodeId": "I_kwDORNGFGc7pxbFv",
