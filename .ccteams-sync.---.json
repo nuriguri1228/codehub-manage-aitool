@@ -34,9 +34,10 @@
     "Done": "98236657"
   },
   "ownerOptions": {
-    "(unassigned)": "52cd05c6",
-    "project-planner": "30a9e692",
-    "requirements-analyst": "dafbaf35"
+    "(unassigned)": "2fc48c21",
+    "project-planner": "86b9f2a0",
+    "requirements-analyst": "c5099fd2",
+    "system-architect": "83883c2a"
   },
   "labels": {
     "ccteams:---": "LA_kwDORNGFGc8AAAACXqoPcA"
@@ -71,8 +72,9 @@
       "contentId": "I_kwDORNGFGc7pxb5h",
       "issueNodeId": "I_kwDORNGFGc7pxb5h",
       "issueNumber": 4,
-      "lastHash": "a684f999047b6a7273fade2cf021ff7e5ce026878004a9db5977c95f3019d5ef",
-      "lastSyncedAt": "2026-02-10T15:16:00.211Z"
+      "lastHash": "50c3b442dc5dea82dc5142d37154d01f448983237e3c3e31eb3a7fea3df476f2",
+      "lastSyncedAt": "2026-02-10T15:16:46.037Z",
+      "lastOwner": "system-architect"
     },
     {
       "taskId": "4",
@@ -85,7 +87,7 @@
       "lastSyncedAt": "2026-02-10T15:16:17.584Z"
     }
   ],
-  "lastSyncAt": "2026-02-10T15:16:34.764Z",
+  "lastSyncAt": "2026-02-10T15:16:57.863Z",
   "summaryIssues": {
     "---": {
       "issueNodeId": "I_kwDORNGFGc7pxbFv",
