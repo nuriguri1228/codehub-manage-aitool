@@ -1,16 +1,23 @@
 'use client';
 
 import { useAuthStore } from '@/stores/auth-store';
+import ApplicantDashboard from '@/components/application/applicant-dashboard';
+import ReviewerDashboard from '@/components/review/reviewer-dashboard';
+import AdminDashboard from '@/components/monitoring/admin-dashboard';
 
 export default function DashboardPage() {
   const { user } = useAuthStore();
 
-  return (
-    <div>
-      <h1 className="text-2xl font-bold text-gray-900">대시보드</h1>
-      <p className="mt-2 text-sm text-gray-500">
-        환영합니다, {user?.name}님. ({user?.role})
-      </p>
-    </div>
-  );
+  switch (user?.role) {
+    case 'APPLICANT':
+      return <ApplicantDashboard />;
+    case 'TEAM_LEAD':
+    case 'SECURITY_REVIEWER':
+      return <ReviewerDashboard />;
+    case 'IT_ADMIN':
+    case 'SYSTEM_ADMIN':
+      return <AdminDashboard />;
+    default:
+      return <ApplicantDashboard />;
+  }
 }
