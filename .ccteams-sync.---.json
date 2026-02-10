@@ -34,10 +34,11 @@
     "Done": "98236657"
   },
   "ownerOptions": {
-    "(unassigned)": "2fc48c21",
-    "project-planner": "86b9f2a0",
-    "requirements-analyst": "c5099fd2",
-    "system-architect": "83883c2a"
+    "(unassigned)": "4efaaff0",
+    "project-planner": "743bb619",
+    "requirements-analyst": "099a9e38",
+    "system-architect": "22864686",
+    "uiux-designer": "f67cdb92"
   },
   "labels": {
     "ccteams:---": "LA_kwDORNGFGc8AAAACXqoPcA"
@@ -83,11 +84,12 @@
       "contentId": "I_kwDORNGFGc7pxc9c",
       "issueNodeId": "I_kwDORNGFGc7pxc9c",
       "issueNumber": 5,
-      "lastHash": "a834d2d257bdb291b6e4c67f6af3af36cf481a4ff374a7846d7b00222c54d8f9",
-      "lastSyncedAt": "2026-02-10T15:16:17.584Z"
+      "lastHash": "9f7050d0eae60808e5151c1080d4d9a4393a1fd55ff4f7b4a19cf217e2ce6f06",
+      "lastSyncedAt": "2026-02-10T15:17:07.176Z",
+      "lastOwner": "uiux-designer"
     }
   ],
-  "lastSyncAt": "2026-02-10T15:16:57.863Z",
+  "lastSyncAt": "2026-02-10T15:17:17.383Z",
   "summaryIssues": {
     "---": {
       "issueNodeId": "I_kwDORNGFGc7pxbFv",
