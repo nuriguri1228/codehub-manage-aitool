@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 450" font-family="Arial, sans-serif">
+  <rect width="1000" height="450" fill="#F3F4F6" rx="8"/>
+  <text x="40" y="20" font-size="11" fill="#6B7280">Wireframe: 검토 대기 목록 (필터/정렬)</text>
+
+  <text x="80" y="55" font-size="20" fill="#111827" font-weight="bold">검토 대기 목록</text>
+
+  <!-- Filter Bar -->
+  <rect x="50" y="70" width="900" height="50" rx="8" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="75" y="100" font-size="12" fill="#6B7280">검토 단계:</text>
+  <rect x="150" y="84" width="80" height="28" rx="6" fill="#FFF" stroke="#D1D5DB"/>
+  <text x="190" y="103" font-size="11" fill="#111827" text-anchor="middle">전체 &#9660;</text>
+
+  <text x="250" y="100" font-size="12" fill="#6B7280">AI 도구:</text>
+  <rect x="310" y="84" width="90" height="28" rx="6" fill="#FFF" stroke="#D1D5DB"/>
+  <text x="355" y="103" font-size="11" fill="#111827" text-anchor="middle">전체 &#9660;</text>
+
+  <text x="420" y="100" font-size="12" fill="#6B7280">부서:</text>
+  <rect x="460" y="84" width="90" height="28" rx="6" fill="#FFF" stroke="#D1D5DB"/>
+  <text x="505" y="103" font-size="11" fill="#111827" text-anchor="middle">전체 &#9660;</text>
+
+  <rect x="580" y="84" width="200" height="28" rx="6" fill="#FFF" stroke="#D1D5DB"/>
+  <text x="600" y="103" font-size="11" fill="#9CA3AF">&#128269; 신청자명, 사번 검색</text>
+
+  <text x="810" y="100" font-size="12" fill="#6B7280">정렬:</text>
+  <rect x="840" y="84" width="95" height="28" rx="6" fill="#FFF" stroke="#D1D5DB"/>
+  <text x="887" y="103" font-size="11" fill="#111827" text-anchor="middle">SLA순 &#9660;</text>
+
+  <!-- Active filters -->
+  <rect x="50" y="130" width="900" height="30" rx="4" fill="#F9FAFB"/>
+  <text x="75" y="150" font-size="11" fill="#6B7280">적용 필터:</text>
+  <rect x="150" y="136" width="100" height="20" rx="10" fill="#DBEAFE"/>
+  <text x="190" y="150" font-size="10" fill="#1E40AF" text-anchor="middle">1차 검토 &#10005;</text>
+  <text x="270" y="150" font-size="11" fill="#1E40AF">필터 초기화</text>
+
+  <!-- Table -->
+  <rect x="50" y="170" width="900" height="260" rx="8" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <rect x="50" y="170" width="900" height="35" rx="8" fill="#F9FAFB"/>
+  <text x="80" y="193" font-size="11" fill="#6B7280" font-weight="600">&#9744;</text>
+  <text x="110" y="193" font-size="11" fill="#6B7280" font-weight="600">신청번호 &#9650;</text>
+  <text x="220" y="193" font-size="11" fill="#6B7280" font-weight="600">신청자 (부서)</text>
+  <text x="380" y="193" font-size="11" fill="#6B7280" font-weight="600">AI 도구</text>
+  <text x="490" y="193" font-size="11" fill="#6B7280" font-weight="600">환경</text>
+  <text x="570" y="193" font-size="11" fill="#6B7280" font-weight="600">신청일</text>
+  <text x="660" y="193" font-size="11" fill="#6B7280" font-weight="600">현재 단계</text>
+  <text x="780" y="193" font-size="11" fill="#6B7280" font-weight="600">SLA 잔여</text>
+  <text x="880" y="193" font-size="11" fill="#6B7280" font-weight="600">액션</text>
+
+  <!-- Rows -->
+  <text x="80" y="228" font-size="11" fill="#111827">&#9744;</text>
+  <text x="110" y="228" font-size="12" fill="#111827">APP-0045</text>
+  <text x="220" y="228" font-size="12" fill="#111827">최데이터 (데이터팀)</text>
+  <text x="380" y="228" font-size="12" fill="#111827">Claude Code</text>
+  <text x="490" y="228" font-size="12" fill="#111827">VDI</text>
+  <text x="570" y="228" font-size="12" fill="#111827">02-09</text>
+  <rect x="648" y="216" width="70" height="20" rx="10" fill="#DBEAFE"/>
+  <text x="683" y="230" font-size="10" fill="#1E40AF" text-anchor="middle">1차 검토</text>
+  <rect x="768" y="216" width="45" height="20" rx="10" fill="#FEE2E2"/>
+  <text x="790" y="230" font-size="10" fill="#DC2626" text-anchor="middle">D-1</text>
+  <text x="880" y="228" font-size="12" fill="#1E40AF" text-decoration="underline">검토</text>
+
+  <line x1="65" y1="242" x2="935" y2="242" stroke="#F3F4F6"/>
+
+  <text x="80" y="265" font-size="11" fill="#111827">&#9744;</text>
+  <text x="110" y="265" font-size="12" fill="#111827">APP-0044</text>
+  <text x="220" y="265" font-size="12" fill="#111827">박프론트 (웹개발팀)</text>
+  <text x="380" y="265" font-size="12" fill="#111827">Antigravity</text>
+  <text x="490" y="265" font-size="12" fill="#111827">NB</text>
+  <text x="570" y="265" font-size="12" fill="#111827">02-10</text>
+  <rect x="648" y="253" width="70" height="20" rx="10" fill="#FEF3C7"/>
+  <text x="683" y="267" font-size="10" fill="#92400E" text-anchor="middle">재제출</text>
+  <rect x="768" y="253" width="45" height="20" rx="10" fill="#FEF3C7"/>
+  <text x="790" y="267" font-size="10" fill="#92400E" text-anchor="middle">D-3</text>
+  <text x="880" y="265" font-size="12" fill="#1E40AF" text-decoration="underline">검토</text>
+
+  <line x1="65" y1="280" x2="935" y2="280" stroke="#F3F4F6"/>
+
+  <text x="80" y="305" font-size="11" fill="#111827">&#9744;</text>
+  <text x="110" y="305" font-size="12" fill="#111827">APP-0043</text>
+  <text x="220" y="305" font-size="12" fill="#111827">김주니어 (플랫폼팀)</text>
+  <text x="380" y="305" font-size="12" fill="#111827">Claude Code</text>
+  <text x="490" y="305" font-size="12" fill="#111827">VDI</text>
+  <text x="570" y="305" font-size="12" fill="#111827">02-10</text>
+  <rect x="648" y="293" width="70" height="20" rx="10" fill="#DBEAFE"/>
+  <text x="683" y="307" font-size="10" fill="#1E40AF" text-anchor="middle">1차 검토</text>
+  <rect x="768" y="293" width="45" height="20" rx="10" fill="#ECFDF5"/>
+  <text x="790" y="307" font-size="10" fill="#059669" text-anchor="middle">D-5</text>
+  <text x="880" y="305" font-size="12" fill="#1E40AF" text-decoration="underline">검토</text>
+
+  <!-- Pagination -->
+  <text x="80" y="415" font-size="11" fill="#6B7280">총 12건</text>
+  <text x="500" y="415" font-size="11" fill="#6B7280" text-anchor="middle">&lt; 1 2 3 &gt;</text>
+  <text x="900" y="415" font-size="11" fill="#6B7280" text-anchor="end">10건 &#9660;</text>
+</svg>

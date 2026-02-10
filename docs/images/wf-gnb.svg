@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" font-family="Arial, sans-serif">
+  <rect width="1200" height="120" fill="#F9FAFB"/>
+  <text x="40" y="20" font-size="11" fill="#6B7280">Wireframe: GNB (Global Navigation Bar)</text>
+
+  <!-- GNB Bar -->
+  <rect x="20" y="35" width="1160" height="56" rx="8" fill="#FFFFFF" stroke="#E5E7EB" style="filter:drop-shadow(0 2px 4px rgba(0,0,0,0.06))"/>
+
+  <!-- Logo -->
+  <rect x="36" y="47" width="32" height="32" rx="6" fill="#1E40AF"/>
+  <text x="52" y="68" font-size="14" fill="#FFF" text-anchor="middle" font-weight="bold">C</text>
+  <text x="78" y="67" font-size="13" fill="#111827" font-weight="bold">CodeHub AI Tool Manager</text>
+
+  <!-- Menu Items -->
+  <text x="340" y="67" font-size="13" fill="#1E40AF" font-weight="600">대시보드</text>
+  <rect x="328" y="78" width="60" height="2" rx="1" fill="#1E40AF"/>
+  <text x="440" y="67" font-size="13" fill="#6B7280">신규 신청</text>
+  <text x="540" y="67" font-size="13" fill="#6B7280">내 신청</text>
+  <text x="620" y="67" font-size="13" fill="#6B7280">API Key</text>
+
+  <!-- Right side -->
+  <!-- Notification Bell -->
+  <circle cx="1050" cy="63" r="16" fill="#F3F4F6" stroke="#E5E7EB"/>
+  <text x="1050" y="68" font-size="14" text-anchor="middle">&#128276;</text>
+  <circle cx="1060" cy="53" r="8" fill="#DC2626"/>
+  <text x="1060" y="57" font-size="8" fill="#FFF" text-anchor="middle" font-weight="bold">3</text>
+
+  <!-- User Profile -->
+  <circle cx="1100" cy="63" r="16" fill="#DBEAFE" stroke="#1E40AF"/>
+  <text x="1100" y="68" font-size="11" fill="#1E40AF" text-anchor="middle" font-weight="bold">김</text>
+  <text x="1125" y="67" font-size="12" fill="#111827">김개발</text>
+  <text x="1165" y="67" font-size="10" fill="#6B7280">&#9660;</text>
+</svg>

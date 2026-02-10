@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" font-family="Arial, sans-serif">
+  <rect width="1000" height="620" fill="#F3F4F6" rx="8"/>
+  <text x="40" y="20" font-size="11" fill="#6B7280">Wireframe: Step 7 - 최종 확인 및 제출</text>
+  <rect x="50" y="35" width="900" height="560" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+
+  <!-- Step Indicator (7 active, all done) -->
+  <circle cx="200" cy="62" r="12" fill="#059669"/><text x="200" y="66" font-size="9" fill="#FFF" text-anchor="middle">&#10003;</text>
+  <line x1="212" y1="62" x2="600" y2="62" stroke="#059669" stroke-width="2"/>
+  <circle cx="613" cy="62" r="12" fill="#059669"/><text x="613" y="66" font-size="9" fill="#FFF" text-anchor="middle">&#10003;</text>
+  <line x1="625" y1="62" x2="750" y2="62" stroke="#1E40AF" stroke-width="2"/>
+  <circle cx="763" cy="62" r="12" fill="#1E40AF"/><text x="763" y="66" font-size="9" fill="#FFF" text-anchor="middle" font-weight="bold">7</text>
+  <text x="763" y="87" font-size="9" fill="#1E40AF" text-anchor="middle" font-weight="600">최종 확인</text>
+
+  <line x1="70" y1="97" x2="930" y2="97" stroke="#E5E7EB"/>
+
+  <text x="100" y="128" font-size="20" fill="#111827" font-weight="bold">신청 정보를 최종 확인하세요</text>
+  <text x="100" y="148" font-size="13" fill="#6B7280">모든 정보가 정확한지 확인한 후 제출해주세요. 제출 후 검토가 시작됩니다.</text>
+
+  <!-- Summary Card 1 - Tool & Environment -->
+  <rect x="100" y="165" width="800" height="70" rx="8" fill="#F9FAFB" stroke="#E5E7EB"/>
+  <text x="120" y="190" font-size="13" fill="#111827" font-weight="bold">AI 도구 및 환경</text>
+  <text x="120" y="218" font-size="12" fill="#374151">Claude Code | VDI 환경</text>
+  <text x="870" y="198" font-size="12" fill="#1E40AF" text-anchor="end" text-decoration="underline">수정</text>
+
+  <!-- Summary Card 2 - Personal Info -->
+  <rect x="100" y="245" width="800" height="70" rx="8" fill="#F9FAFB" stroke="#E5E7EB"/>
+  <text x="120" y="270" font-size="13" fill="#111827" font-weight="bold">인적정보</text>
+  <text x="120" y="298" font-size="12" fill="#374151">김개발 | 플랫폼개발팀 | 선임 개발자 | kim.dev@company.com</text>
+  <text x="870" y="278" font-size="12" fill="#1E40AF" text-anchor="end" text-decoration="underline">수정</text>
+
+  <!-- Summary Card 3 - Projects -->
+  <rect x="100" y="325" width="800" height="85" rx="8" fill="#F9FAFB" stroke="#E5E7EB"/>
+  <text x="120" y="350" font-size="13" fill="#111827" font-weight="bold">프로젝트 정보 (2건)</text>
+  <text x="120" y="375" font-size="12" fill="#374151">1. 결제 시스템 리뉴얼 (2026-01 ~ 2026-06)</text>
+  <text x="120" y="395" font-size="12" fill="#374151">2. 내부 API Gateway (2026-03 ~ 2026-09)</text>
+  <text x="870" y="358" font-size="12" fill="#1E40AF" text-anchor="end" text-decoration="underline">수정</text>
+
+  <!-- Summary Card 4 - Documents -->
+  <rect x="100" y="420" width="800" height="55" rx="8" fill="#F9FAFB" stroke="#E5E7EB"/>
+  <text x="120" y="445" font-size="13" fill="#111827" font-weight="bold">첨부 문서 (2개)</text>
+  <text x="120" y="465" font-size="12" fill="#374151">결제시스템_프로젝트제안서.pdf, 보안검토_사전체크리스트.xlsx</text>
+  <text x="870" y="453" font-size="12" fill="#1E40AF" text-anchor="end" text-decoration="underline">수정</text>
+
+  <!-- Summary Card 5 - Security Agreement -->
+  <rect x="100" y="485" width="800" height="45" rx="8" fill="#ECFDF5" stroke="#059669"/>
+  <text x="130" y="513" font-size="13" fill="#059669" font-weight="bold">&#10003; 보안 서약 완료</text>
+  <text x="320" y="513" font-size="12" fill="#6B7280">서명일: 2026-02-11</text>
+
+  <!-- Final Agreement -->
+  <rect x="100" y="545" width="18" height="18" rx="4" fill="#1E40AF"/>
+  <text x="109" y="558" font-size="10" fill="#FFF" text-anchor="middle">&#10003;</text>
+  <text x="128" y="558" font-size="12" fill="#111827">위 정보가 정확하며, 제출 후 검토가 시작됨을 동의합니다</text>
+
+  <!-- Bottom Actions -->
+  <line x1="70" y1="570" x2="930" y2="570" stroke="#E5E7EB"/>
+  <rect x="100" y="577" width="80" height="38" rx="8" fill="#F3F4F6" stroke="#E5E7EB"/>
+  <text x="140" y="601" font-size="12" fill="#6B7280" text-anchor="middle">&lt; 이전</text>
+  <rect x="700" y="577" width="100" height="38" rx="8" fill="#F3F4F6" stroke="#E5E7EB"/>
+  <text x="750" y="601" font-size="12" fill="#6B7280" text-anchor="middle">임시저장</text>
+  <rect x="815" y="577" width="130" height="38" rx="8" fill="#1E40AF"/>
+  <text x="880" y="601" font-size="14" fill="#FFF" text-anchor="middle" font-weight="bold">신청 제출</text>
+</svg>

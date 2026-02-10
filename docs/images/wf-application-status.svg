@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 550" font-family="Arial, sans-serif">
+  <rect width="1000" height="550" fill="#F3F4F6" rx="8"/>
+  <text x="40" y="20" font-size="11" fill="#6B7280">Wireframe: 신청 상세 - 진행 상태 타임라인</text>
+
+  <!-- Header -->
+  <rect x="50" y="35" width="900" height="50" rx="8" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="75" y="65" font-size="16" fill="#111827" font-weight="bold">신청 상세 | APP-2026-0042</text>
+  <rect x="780" y="48" width="80" height="26" rx="13" fill="#DBEAFE"/>
+  <text x="820" y="66" font-size="11" fill="#1E40AF" text-anchor="middle" font-weight="600">진행중</text>
+  <text x="880" y="66" font-size="12" fill="#6B7280">2026-02-10</text>
+
+  <!-- Two column layout -->
+  <!-- Left: Timeline -->
+  <rect x="50" y="95" width="350" height="440" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="80" y="125" font-size="14" fill="#111827" font-weight="bold">검토 진행 현황</text>
+
+  <!-- Timeline Steps -->
+  <!-- Step 1: Complete -->
+  <circle cx="95" cy="165" r="16" fill="#059669"/>
+  <text x="95" y="170" font-size="10" fill="#FFF" text-anchor="middle">&#10003;</text>
+  <text x="125" y="160" font-size="13" fill="#111827" font-weight="600">검토 신청 접수</text>
+  <text x="125" y="178" font-size="11" fill="#059669">완료 | 2026-02-10 09:30</text>
+  <line x1="95" y1="181" x2="95" y2="215" stroke="#059669" stroke-width="2"/>
+
+  <!-- Step 2: Complete -->
+  <circle cx="95" cy="230" r="16" fill="#059669"/>
+  <text x="95" y="235" font-size="10" fill="#FFF" text-anchor="middle">&#10003;</text>
+  <text x="125" y="225" font-size="13" fill="#111827" font-weight="600">1차 검토 (팀장)</text>
+  <text x="125" y="243" font-size="11" fill="#059669">승인 | 이팀장 | 2026-02-10 14:20</text>
+  <line x1="95" y1="246" x2="95" y2="280" stroke="#059669" stroke-width="2"/>
+
+  <!-- Step 3: Current -->
+  <circle cx="95" cy="295" r="16" fill="#1E40AF" stroke="#1E40AF" stroke-width="3"/>
+  <circle cx="95" cy="295" r="6" fill="#FFFFFF"/>
+  <text x="125" y="290" font-size="13" fill="#1E40AF" font-weight="bold">보안 검토</text>
+  <text x="125" y="308" font-size="11" fill="#1E40AF">진행중 | 박보안 | 예상: 02-12</text>
+  <line x1="95" y1="311" x2="95" y2="345" stroke="#E5E7EB" stroke-width="2"/>
+
+  <!-- Step 4: Waiting -->
+  <circle cx="95" cy="360" r="16" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+  <text x="95" y="365" font-size="10" fill="#9CA3AF" text-anchor="middle">4</text>
+  <text x="125" y="355" font-size="13" fill="#9CA3AF">환경 준비</text>
+  <text x="125" y="373" font-size="11" fill="#D1D5DB">대기 중</text>
+  <line x1="95" y1="376" x2="95" y2="410" stroke="#E5E7EB" stroke-width="2"/>
+
+  <!-- Step 5: Waiting -->
+  <circle cx="95" cy="425" r="16" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+  <text x="95" y="430" font-size="10" fill="#9CA3AF" text-anchor="middle">5</text>
+  <text x="125" y="420" font-size="13" fill="#9CA3AF">최종 승인</text>
+  <text x="125" y="438" font-size="11" fill="#D1D5DB">대기 중</text>
+  <line x1="95" y1="441" x2="95" y2="475" stroke="#E5E7EB" stroke-width="2"/>
+
+  <!-- Step 6: Waiting -->
+  <circle cx="95" cy="490" r="16" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+  <text x="95" y="495" font-size="10" fill="#9CA3AF" text-anchor="middle">6</text>
+  <text x="125" y="485" font-size="13" fill="#9CA3AF">API Key 발급</text>
+  <text x="125" y="503" font-size="11" fill="#D1D5DB">대기 중</text>
+
+  <!-- Right: Detail Panel -->
+  <rect x="420" y="95" width="530" height="440" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="450" y="125" font-size="14" fill="#111827" font-weight="bold">현재 단계 상세</text>
+
+  <!-- Current stage info -->
+  <rect x="440" y="140" width="490" height="35" rx="6" fill="#EEF2FF"/>
+  <text x="460" y="163" font-size="13" fill="#1E40AF" font-weight="600">&#9679; 보안 검토 진행 중</text>
+
+  <text x="460" y="200" font-size="12" fill="#6B7280">검토자</text>
+  <text x="600" y="200" font-size="12" fill="#111827">박보안 (정보보안팀)</text>
+  <text x="460" y="225" font-size="12" fill="#6B7280">시작일</text>
+  <text x="600" y="225" font-size="12" fill="#111827">2026-02-10 15:00</text>
+  <text x="460" y="250" font-size="12" fill="#6B7280">SLA 마감</text>
+  <text x="600" y="250" font-size="12" fill="#111827">2026-02-12 15:00 (D-2)</text>
+
+  <line x1="440" y1="270" x2="930" y2="270" stroke="#E5E7EB"/>
+
+  <!-- Application Summary -->
+  <text x="450" y="300" font-size="14" fill="#111827" font-weight="bold">신청 요약</text>
+  <text x="460" y="325" font-size="12" fill="#6B7280">AI 도구:</text>
+  <text x="560" y="325" font-size="12" fill="#111827">Claude Code</text>
+  <text x="460" y="348" font-size="12" fill="#6B7280">사용 환경:</text>
+  <text x="560" y="348" font-size="12" fill="#111827">VDI</text>
+  <text x="460" y="371" font-size="12" fill="#6B7280">프로젝트:</text>
+  <text x="560" y="371" font-size="12" fill="#111827">결제 시스템 리뉴얼 외 1건</text>
+  <text x="460" y="394" font-size="12" fill="#6B7280">첨부 문서:</text>
+  <text x="560" y="394" font-size="12" fill="#1E40AF" text-decoration="underline">2개 파일 보기</text>
+  <text x="460" y="417" font-size="12" fill="#6B7280">보안 서약:</text>
+  <text x="560" y="417" font-size="12" fill="#059669">&#10003; 서명 완료</text>
+
+  <line x1="440" y1="435" x2="930" y2="435" stroke="#E5E7EB"/>
+
+  <!-- Previous Review -->
+  <text x="450" y="460" font-size="14" fill="#111827" font-weight="bold">이전 검토 이력</text>
+  <rect x="440" y="470" width="490" height="50" rx="6" fill="#ECFDF5" stroke="#D1FAE5"/>
+  <text x="460" y="492" font-size="12" fill="#059669" font-weight="600">&#10003; 1차 검토 승인</text>
+  <text x="460" y="510" font-size="11" fill="#6B7280">이팀장 | "프로젝트 적합성 확인 완료" | 2026-02-10 14:20</text>
+</svg>

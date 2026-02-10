@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 480" font-family="Arial, sans-serif">
+  <rect width="1000" height="480" fill="#FFFFFF" rx="8"/>
+  <text x="40" y="40" font-size="20" font-weight="bold" fill="#111827">관리자 (Admin) User Flow</text>
+  <line x1="40" y1="55" x2="960" y2="55" stroke="#E5E7EB"/>
+  <defs><marker id="a" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#6B7280"/></marker></defs>
+
+  <!-- Start → Login → Dashboard -->
+  <circle cx="80" cy="110" r="18" fill="#1E40AF"/>
+  <text x="80" y="115" font-size="10" fill="#FFF" text-anchor="middle">시작</text>
+  <line x1="98" y1="110" x2="135" y2="110" stroke="#6B7280" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <rect x="140" y="90" width="100" height="40" rx="8" fill="#DBEAFE" stroke="#1E40AF"/>
+  <text x="190" y="115" font-size="11" fill="#1E40AF" text-anchor="middle" font-weight="600">SSO 로그인</text>
+  <line x1="240" y1="110" x2="280" y2="110" stroke="#6B7280" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- Central Dashboard -->
+  <rect x="285" y="82" width="180" height="56" rx="10" fill="#1E40AF"/>
+  <text x="375" y="107" font-size="14" fill="#FFF" text-anchor="middle" font-weight="bold">관리자 대시보드</text>
+  <text x="375" y="125" font-size="10" fill="#DBEAFE" text-anchor="middle">KPI / 차트 / 알림</text>
+
+  <!-- Branch lines from dashboard -->
+  <!-- Left: License -->
+  <line x1="375" y1="138" x2="130" y2="210" stroke="#6B7280" stroke-width="1.5" marker-end="url(#a)"/>
+  <!-- Center-Left: Monitoring -->
+  <line x1="375" y1="138" x2="330" y2="210" stroke="#6B7280" stroke-width="1.5" marker-end="url(#a)"/>
+  <!-- Center-Right: Tools -->
+  <line x1="375" y1="138" x2="530" y2="210" stroke="#6B7280" stroke-width="1.5" marker-end="url(#a)"/>
+  <!-- Right: Settings -->
+  <line x1="375" y1="138" x2="730" y2="210" stroke="#6B7280" stroke-width="1.5" marker-end="url(#a)"/>
+  <!-- Far Right: Report -->
+  <line x1="465" y1="110" x2="830" y2="110" stroke="#6B7280" stroke-width="1" stroke-dasharray="4"/>
+  <line x1="880" y1="110" x2="880" y2="210" stroke="#6B7280" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- License Management -->
+  <rect x="40" y="215" width="180" height="55" rx="8" fill="#ECFDF5" stroke="#059669" stroke-width="1.5"/>
+  <text x="130" y="238" font-size="12" fill="#059669" text-anchor="middle" font-weight="bold">라이센스 관리</text>
+  <text x="130" y="255" font-size="10" fill="#6B7280" text-anchor="middle">발급현황 / 갱신 / 해지</text>
+
+  <line x1="130" y1="270" x2="130" y2="310" stroke="#6B7280" stroke-width="1" marker-end="url(#a)"/>
+  <rect x="40" y="315" width="80" height="35" rx="6" fill="#F3F4F6" stroke="#E5E7EB"/>
+  <text x="80" y="337" font-size="10" fill="#111827" text-anchor="middle">도구별</text>
+  <rect x="130" y="315" width="80" height="35" rx="6" fill="#F3F4F6" stroke="#E5E7EB"/>
+  <text x="170" y="337" font-size="10" fill="#111827" text-anchor="middle">부서별</text>
+  <rect x="40" y="360" width="80" height="35" rx="6" fill="#F3F4F6" stroke="#E5E7EB"/>
+  <text x="80" y="382" font-size="10" fill="#111827" text-anchor="middle">환경별</text>
+  <rect x="130" y="360" width="80" height="35" rx="6" fill="#F3F4F6" stroke="#E5E7EB"/>
+  <text x="170" y="382" font-size="10" fill="#111827" text-anchor="middle">일괄관리</text>
+
+  <!-- Monitoring -->
+  <rect x="245" y="215" width="180" height="55" rx="8" fill="#EEF2FF" stroke="#2563EB" stroke-width="1.5"/>
+  <text x="335" y="238" font-size="12" fill="#2563EB" text-anchor="middle" font-weight="bold">사용현황 모니터링</text>
+  <text x="335" y="255" font-size="10" fill="#6B7280" text-anchor="middle">API호출 / 토큰 / 비용</text>
+
+  <line x1="335" y1="270" x2="335" y2="310" stroke="#6B7280" stroke-width="1" marker-end="url(#a)"/>
+  <rect x="245" y="315" width="80" height="35" rx="6" fill="#F3F4F6" stroke="#E5E7EB"/>
+  <text x="285" y="337" font-size="10" fill="#111827" text-anchor="middle">추이 차트</text>
+  <rect x="335" y="315" width="80" height="35" rx="6" fill="#F3F4F6" stroke="#E5E7EB"/>
+  <text x="375" y="337" font-size="10" fill="#111827" text-anchor="middle">Top 사용자</text>
+  <rect x="245" y="360" width="80" height="35" rx="6" fill="#FEE2E2" stroke="#DC2626"/>
+  <text x="285" y="382" font-size="10" fill="#DC2626" text-anchor="middle">이상탐지</text>
+  <rect x="335" y="360" width="80" height="35" rx="6" fill="#F3F4F6" stroke="#E5E7EB"/>
+  <text x="375" y="382" font-size="10" fill="#111827" text-anchor="middle">부서비교</text>
+
+  <!-- Tool Management -->
+  <rect x="445" y="215" width="180" height="55" rx="8" fill="#FFF7ED" stroke="#D97706" stroke-width="1.5"/>
+  <text x="535" y="238" font-size="12" fill="#92400E" text-anchor="middle" font-weight="bold">AI 도구 관리</text>
+  <text x="535" y="255" font-size="10" fill="#6B7280" text-anchor="middle">등록 / 수정 / 활성관리</text>
+
+  <line x1="535" y1="270" x2="535" y2="310" stroke="#6B7280" stroke-width="1" marker-end="url(#a)"/>
+  <rect x="455" y="315" width="75" height="35" rx="6" fill="#F3F4F6" stroke="#E5E7EB"/>
+  <text x="492" y="337" font-size="10" fill="#111827" text-anchor="middle">도구추가</text>
+  <rect x="540" y="315" width="75" height="35" rx="6" fill="#F3F4F6" stroke="#E5E7EB"/>
+  <text x="577" y="337" font-size="10" fill="#111827" text-anchor="middle">설정변경</text>
+  <rect x="455" y="360" width="75" height="35" rx="6" fill="#F3F4F6" stroke="#E5E7EB"/>
+  <text x="492" y="382" font-size="10" fill="#111827" text-anchor="middle">비용설정</text>
+  <rect x="540" y="360" width="75" height="35" rx="6" fill="#F3F4F6" stroke="#E5E7EB"/>
+  <text x="577" y="382" font-size="10" fill="#111827" text-anchor="middle">쿼터관리</text>
+
+  <!-- Settings -->
+  <rect x="645" y="215" width="180" height="55" rx="8" fill="#F3F4F6" stroke="#6B7280" stroke-width="1.5"/>
+  <text x="735" y="238" font-size="12" fill="#111827" text-anchor="middle" font-weight="bold">시스템 설정</text>
+  <text x="735" y="255" font-size="10" fill="#6B7280" text-anchor="middle">워크플로우 / 알림 / 사용자</text>
+
+  <line x1="735" y1="270" x2="735" y2="310" stroke="#6B7280" stroke-width="1" marker-end="url(#a)"/>
+  <rect x="650" y="315" width="80" height="35" rx="6" fill="#F3F4F6" stroke="#E5E7EB"/>
+  <text x="690" y="337" font-size="10" fill="#111827" text-anchor="middle">워크플로우</text>
+  <rect x="740" y="315" width="80" height="35" rx="6" fill="#F3F4F6" stroke="#E5E7EB"/>
+  <text x="780" y="337" font-size="10" fill="#111827" text-anchor="middle">알림설정</text>
+  <rect x="650" y="360" width="80" height="35" rx="6" fill="#F3F4F6" stroke="#E5E7EB"/>
+  <text x="690" y="382" font-size="10" fill="#111827" text-anchor="middle">사용자관리</text>
+  <rect x="740" y="360" width="80" height="35" rx="6" fill="#F3F4F6" stroke="#E5E7EB"/>
+  <text x="780" y="382" font-size="10" fill="#111827" text-anchor="middle">감사로그</text>
+
+  <!-- Report -->
+  <rect x="840" y="215" width="130" height="55" rx="8" fill="#FAF5FF" stroke="#7C3AED" stroke-width="1.5"/>
+  <text x="905" y="238" font-size="12" fill="#7C3AED" text-anchor="middle" font-weight="bold">리포트</text>
+  <text x="905" y="255" font-size="10" fill="#6B7280" text-anchor="middle">통계 / 내보내기</text>
+
+  <line x1="905" y1="270" x2="905" y2="310" stroke="#6B7280" stroke-width="1" marker-end="url(#a)"/>
+  <rect x="845" y="315" width="120" height="35" rx="6" fill="#F3F4F6" stroke="#E5E7EB"/>
+  <text x="905" y="337" font-size="10" fill="#111827" text-anchor="middle">CSV/Excel/PDF</text>
+
+  <!-- Legend -->
+  <rect x="40" y="430" width="12" height="12" rx="2" fill="#ECFDF5" stroke="#059669"/>
+  <text x="58" y="441" font-size="10" fill="#6B7280">라이센스</text>
+  <rect x="130" y="430" width="12" height="12" rx="2" fill="#EEF2FF" stroke="#2563EB"/>
+  <text x="148" y="441" font-size="10" fill="#6B7280">모니터링</text>
+  <rect x="220" y="430" width="12" height="12" rx="2" fill="#FFF7ED" stroke="#D97706"/>
+  <text x="238" y="441" font-size="10" fill="#6B7280">도구관리</text>
+  <rect x="310" y="430" width="12" height="12" rx="2" fill="#F3F4F6" stroke="#6B7280"/>
+  <text x="328" y="441" font-size="10" fill="#6B7280">설정</text>
+  <rect x="370" y="430" width="12" height="12" rx="2" fill="#FAF5FF" stroke="#7C3AED"/>
+  <text x="388" y="441" font-size="10" fill="#6B7280">리포트</text>
+</svg>

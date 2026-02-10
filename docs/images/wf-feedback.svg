@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" font-family="Arial, sans-serif">
+  <rect width="1000" height="500" fill="#F3F4F6" rx="8"/>
+  <text x="40" y="20" font-size="11" fill="#6B7280">Wireframe: 피드백 확인 및 수정/재제출</text>
+
+  <rect x="50" y="35" width="900" height="445" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+
+  <text x="80" y="68" font-size="18" fill="#111827" font-weight="bold">피드백 확인 | APP-2026-0038</text>
+  <rect x="780" y="50" width="100" height="28" rx="14" fill="#FEF3C7"/>
+  <text x="830" y="69" font-size="11" fill="#92400E" text-anchor="middle" font-weight="600">보완 요청</text>
+
+  <!-- Feedback Section -->
+  <rect x="80" y="90" width="840" height="140" rx="10" fill="#FFF7ED" stroke="#FED7AA" stroke-width="1.5"/>
+  <text x="105" y="118" font-size="14" fill="#92400E" font-weight="bold">&#9888; 보안 검토 피드백</text>
+  <text x="780" y="118" font-size="11" fill="#6B7280" text-anchor="end">2026-02-11 10:30</text>
+
+  <circle cx="110" cy="148" r="14" fill="#DBEAFE"/>
+  <text x="110" y="153" font-size="10" fill="#1E40AF" text-anchor="middle" font-weight="bold">박</text>
+  <text x="135" y="148" font-size="12" fill="#111827" font-weight="600">박보안</text>
+  <text x="180" y="148" font-size="11" fill="#6B7280">정보보안팀</text>
+
+  <text x="105" y="178" font-size="13" fill="#374151">프로젝트 '결제 시스템 리뉴얼'에서 다루는 결제 데이터의 보안 등급이</text>
+  <text x="105" y="198" font-size="13" fill="#374151">명시되지 않았습니다. 다음 정보를 보완해주세요:</text>
+  <text x="120" y="218" font-size="12" fill="#374151" font-weight="600">1. 결제 데이터 보안 등급 (일반/내부/기밀)</text>
+
+  <!-- Modification Section -->
+  <line x1="80" y1="245" x2="920" y2="245" stroke="#E5E7EB"/>
+  <text x="105" y="275" font-size="16" fill="#111827" font-weight="bold">정보 수정</text>
+  <text x="105" y="295" font-size="12" fill="#6B7280">피드백에 따라 아래 정보를 수정하고 재제출하세요</text>
+
+  <!-- Modified form with highlight -->
+  <rect x="80" y="310" width="840" height="80" rx="8" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5"/>
+  <text x="105" y="335" font-size="12" fill="#374151" font-weight="600">프로젝트 1: 결제 시스템 리뉴얼</text>
+  <text x="105" y="360" font-size="11" fill="#374151">데이터 보안 등급 *</text>
+  <rect x="250" y="347" width="200" height="30" rx="6" fill="#FFF" stroke="#D97706"/>
+  <text x="265" y="367" font-size="12" fill="#111827">내부</text>
+  <text x="440" y="367" font-size="10" fill="#6B7280">&#9660;</text>
+  <rect x="480" y="350" width="60" height="24" rx="4" fill="#FEF3C7"/>
+  <text x="510" y="367" font-size="10" fill="#92400E" text-anchor="middle">수정됨</text>
+
+  <!-- Additional Comment -->
+  <text x="105" y="415" font-size="12" fill="#374151" font-weight="600">추가 설명</text>
+  <rect x="105" y="425" width="815" height="30" rx="6" fill="#FFF" stroke="#D1D5DB"/>
+  <text x="120" y="445" font-size="11" fill="#111827">결제 데이터는 PCI-DSS 규정에 따라 '내부' 등급으로 관리됩니다.</text>
+
+  <!-- Action Buttons -->
+  <rect x="700" y="460" width="100" height="36" rx="8" fill="#F3F4F6" stroke="#E5E7EB"/>
+  <text x="750" y="483" font-size="12" fill="#6B7280" text-anchor="middle">취소</text>
+  <rect x="815" y="460" width="110" height="36" rx="8" fill="#1E40AF"/>
+  <text x="870" y="483" font-size="13" fill="#FFF" text-anchor="middle" font-weight="600">재제출</text>
+</svg>

@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" font-family="Arial, sans-serif">
+  <rect width="1000" height="500" fill="#F3F4F6" rx="8"/>
+  <text x="40" y="20" font-size="11" fill="#6B7280">Wireframe: 검토자 대시보드</text>
+
+  <text x="80" y="55" font-size="20" fill="#111827" font-weight="bold">검토 대시보드</text>
+  <text x="80" y="75" font-size="13" fill="#6B7280">안녕하세요, 이팀장님. 검토 현황을 확인하세요.</text>
+
+  <!-- Summary Cards -->
+  <rect x="50" y="95" width="210" height="90" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="75" y="120" font-size="12" fill="#6B7280">검토 대기</text>
+  <text x="75" y="155" font-size="32" fill="#DC2626" font-weight="bold">5</text>
+  <text x="115" y="155" font-size="12" fill="#6B7280">건</text>
+  <rect x="220" y="128" width="25" height="20" rx="4" fill="#FEE2E2"/>
+  <text x="232" y="143" font-size="9" fill="#DC2626" text-anchor="middle">+2</text>
+
+  <rect x="280" y="95" width="210" height="90" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="305" y="120" font-size="12" fill="#6B7280">피드백 대기 (재제출)</text>
+  <text x="305" y="155" font-size="32" fill="#D97706" font-weight="bold">2</text>
+  <text x="335" y="155" font-size="12" fill="#6B7280">건</text>
+
+  <rect x="510" y="95" width="210" height="90" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="535" y="120" font-size="12" fill="#6B7280">금일 처리</text>
+  <text x="535" y="155" font-size="32" fill="#059669" font-weight="bold">3</text>
+  <text x="565" y="155" font-size="12" fill="#6B7280">건</text>
+
+  <rect x="740" y="95" width="210" height="90" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="765" y="120" font-size="12" fill="#6B7280">평균 처리 시간</text>
+  <text x="765" y="155" font-size="28" fill="#1E40AF" font-weight="bold">4.2</text>
+  <text x="820" y="155" font-size="12" fill="#6B7280">시간</text>
+
+  <!-- Review Queue Table -->
+  <rect x="50" y="205" width="900" height="280" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="80" y="238" font-size="16" fill="#111827" font-weight="bold">검토 대기 목록</text>
+  <text x="900" y="238" font-size="12" fill="#1E40AF" text-anchor="end">전체보기 ></text>
+
+  <rect x="65" y="255" width="870" height="32" rx="4" fill="#F9FAFB"/>
+  <text x="85" y="276" font-size="11" fill="#6B7280" font-weight="600">신청번호</text>
+  <text x="220" y="276" font-size="11" fill="#6B7280" font-weight="600">신청자</text>
+  <text x="340" y="276" font-size="11" fill="#6B7280" font-weight="600">AI 도구</text>
+  <text x="460" y="276" font-size="11" fill="#6B7280" font-weight="600">신청일</text>
+  <text x="580" y="276" font-size="11" fill="#6B7280" font-weight="600">검토 단계</text>
+  <text x="720" y="276" font-size="11" fill="#6B7280" font-weight="600">SLA 잔여</text>
+  <text x="850" y="276" font-size="11" fill="#6B7280" font-weight="600">액션</text>
+
+  <!-- Row 1 - Urgent -->
+  <text x="85" y="310" font-size="12" fill="#111827">APP-0045</text>
+  <text x="220" y="310" font-size="12" fill="#111827">최데이터 (데이터팀)</text>
+  <text x="340" y="310" font-size="12" fill="#111827">Claude Code</text>
+  <text x="460" y="310" font-size="12" fill="#111827">02-09</text>
+  <text x="580" y="310" font-size="12" fill="#111827">1차 검토</text>
+  <rect x="710" y="297" width="55" height="20" rx="10" fill="#FEE2E2"/>
+  <text x="737" y="311" font-size="10" fill="#DC2626" text-anchor="middle">D-1</text>
+  <rect x="820" y="296" width="80" height="24" rx="6" fill="#1E40AF"/>
+  <text x="860" y="313" font-size="11" fill="#FFF" text-anchor="middle">검토하기</text>
+
+  <!-- Row 2 -->
+  <line x1="65" y1="325" x2="935" y2="325" stroke="#F3F4F6"/>
+  <text x="85" y="348" font-size="12" fill="#111827">APP-0044</text>
+  <text x="220" y="348" font-size="12" fill="#111827">박프론트 (웹개발팀)</text>
+  <text x="340" y="348" font-size="12" fill="#111827">Antigravity</text>
+  <text x="460" y="348" font-size="12" fill="#111827">02-10</text>
+  <text x="580" y="348" font-size="12" fill="#D97706">재제출</text>
+  <rect x="710" y="335" width="55" height="20" rx="10" fill="#FEF3C7"/>
+  <text x="737" y="349" font-size="10" fill="#92400E" text-anchor="middle">D-3</text>
+  <rect x="820" y="334" width="80" height="24" rx="6" fill="#1E40AF"/>
+  <text x="860" y="351" font-size="11" fill="#FFF" text-anchor="middle">검토하기</text>
+
+  <!-- Row 3 -->
+  <line x1="65" y1="363" x2="935" y2="363" stroke="#F3F4F6"/>
+  <text x="85" y="386" font-size="12" fill="#111827">APP-0043</text>
+  <text x="220" y="386" font-size="12" fill="#111827">김주니어 (플랫폼팀)</text>
+  <text x="340" y="386" font-size="12" fill="#111827">Claude Code</text>
+  <text x="460" y="386" font-size="12" fill="#111827">02-10</text>
+  <text x="580" y="386" font-size="12" fill="#111827">1차 검토</text>
+  <rect x="710" y="373" width="55" height="20" rx="10" fill="#ECFDF5"/>
+  <text x="737" y="387" font-size="10" fill="#059669" text-anchor="middle">D-5</text>
+  <rect x="820" y="372" width="80" height="24" rx="6" fill="#1E40AF"/>
+  <text x="860" y="389" font-size="11" fill="#FFF" text-anchor="middle">검토하기</text>
+
+  <!-- Pagination -->
+  <text x="500" y="470" font-size="11" fill="#6B7280" text-anchor="middle">&lt; 1 2 3 ... 5 &gt;</text>
+</svg>

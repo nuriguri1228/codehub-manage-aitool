@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 550" font-family="Arial, sans-serif">
+  <rect width="900" height="550" fill="#F3F4F6" rx="8"/>
+  <text x="40" y="25" font-size="11" fill="#6B7280">Wireframe: 로그인 페이지</text>
+
+  <!-- Center Card -->
+  <rect x="250" y="80" width="400" height="380" rx="16" fill="#FFFFFF" style="filter:drop-shadow(0 10px 25px rgba(0,0,0,0.1))"/>
+
+  <!-- Logo -->
+  <rect x="410" y="115" width="80" height="80" rx="16" fill="#1E40AF"/>
+  <text x="450" y="165" font-size="32" fill="#FFF" text-anchor="middle" font-weight="bold">C</text>
+
+  <!-- Title -->
+  <text x="450" y="225" font-size="22" fill="#111827" text-anchor="middle" font-weight="bold">CodeHub AI Tool Manager</text>
+  <text x="450" y="250" font-size="14" fill="#6B7280" text-anchor="middle">외부 AI 코딩 도구 통합 관리 플랫폼</text>
+
+  <!-- SSO Button -->
+  <rect x="300" y="290" width="300" height="50" rx="10" fill="#1E40AF" style="cursor:pointer"/>
+  <text x="450" y="320" font-size="15" fill="#FFFFFF" text-anchor="middle" font-weight="600">사내 통합인증(SSO)으로 로그인</text>
+
+  <!-- Divider -->
+  <line x1="300" y1="365" x2="600" y2="365" stroke="#E5E7EB"/>
+  <rect x="425" y="358" width="50" height="14" fill="#FFFFFF"/>
+  <text x="450" y="369" font-size="11" fill="#9CA3AF" text-anchor="middle">또는</text>
+
+  <!-- Info -->
+  <text x="450" y="400" font-size="12" fill="#6B7280" text-anchor="middle">사내 임직원만 이용 가능합니다</text>
+
+  <!-- Help Links -->
+  <text x="370" y="435" font-size="12" fill="#1E40AF" text-anchor="middle" text-decoration="underline">이용 안내</text>
+  <text x="450" y="435" font-size="12" fill="#9CA3AF" text-anchor="middle">|</text>
+  <text x="530" y="435" font-size="12" fill="#1E40AF" text-anchor="middle" text-decoration="underline">문의하기</text>
+
+  <!-- Footer -->
+  <text x="450" y="510" font-size="11" fill="#9CA3AF" text-anchor="middle">2026 CodeHub. All rights reserved.</text>
+</svg>
