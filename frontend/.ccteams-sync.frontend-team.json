@@ -62,8 +62,8 @@
       "contentId": "I_kwDORNGFGc7p4tYA",
       "issueNodeId": "I_kwDORNGFGc7p4tYA",
       "issueNumber": 8,
-      "lastHash": "9b95fcc28816fa4843e700b11c9292e14619115a6b3a2cb2477c97982c90a0af",
-      "lastSyncedAt": "2026-02-10T23:13:12.888Z",
+      "lastHash": "baa5b880a3adf1f73548ce881670c161880d43e172f43ebf01cd0c902ec43a54",
+      "lastSyncedAt": "2026-02-10T23:14:50.411Z",
       "lastOwner": "uiux-dev"
     },
     {
@@ -210,7 +210,7 @@
       "lastOwner": "fe-admin"
     }
   ],
-  "lastSyncAt": "2026-02-10T23:14:45.872Z",
+  "lastSyncAt": "2026-02-10T23:15:08.189Z",
   "summaryIssues": {
     "frontend-team": {
       "issueNodeId": "I_kwDORNGFGc7p4tLT",
