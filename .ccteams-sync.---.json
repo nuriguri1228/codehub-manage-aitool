@@ -34,7 +34,9 @@
     "Done": "98236657"
   },
   "ownerOptions": {
-    "(unassigned)": "db63219d"
+    "(unassigned)": "52cd05c6",
+    "project-planner": "30a9e692",
+    "requirements-analyst": "dafbaf35"
   },
   "labels": {
     "ccteams:---": "LA_kwDORNGFGc8AAAACXqoPcA"
@@ -47,8 +49,9 @@
       "contentId": "I_kwDORNGFGc7pxa-2",
       "issueNodeId": "I_kwDORNGFGc7pxa-2",
       "issueNumber": 1,
-      "lastHash": "6a70d078ff9907e9cf6855dff61182494269d28c73471d4593bfe1c6f24becee",
-      "lastSyncedAt": "2026-02-10T15:14:47.514Z"
+      "lastHash": "06c7e26f5c67b39d0ef604e5bf86ee1eb47ec2508d9ea11a4425a32b4af58294",
+      "lastSyncedAt": "2026-02-10T15:16:23.441Z",
+      "lastOwner": "project-planner"
     },
     {
       "taskId": "2",
@@ -57,8 +60,9 @@
       "contentId": "I_kwDORNGFGc7pxbX2",
       "issueNodeId": "I_kwDORNGFGc7pxbX2",
       "issueNumber": 3,
-      "lastHash": "7462e18de4b49ea175d10f417aac25182d54d985f773645b45c3ec772d167576",
-      "lastSyncedAt": "2026-02-10T15:15:07.546Z"
+      "lastHash": "2b8c791c9f358ab72c912e8774e636eecbb7711d09a0c9d7f4ae5507a7feb6da",
+      "lastSyncedAt": "2026-02-10T15:16:25.070Z",
+      "lastOwner": "requirements-analyst"
     },
     {
       "taskId": "3",
@@ -69,9 +73,19 @@
       "issueNumber": 4,
       "lastHash": "a684f999047b6a7273fade2cf021ff7e5ce026878004a9db5977c95f3019d5ef",
       "lastSyncedAt": "2026-02-10T15:16:00.211Z"
+    },
+    {
+      "taskId": "4",
+      "teamName": "---",
+      "githubItemId": "PVTI_lAHODFNjSs4BO1twzglMKBI",
+      "contentId": "I_kwDORNGFGc7pxc9c",
+      "issueNodeId": "I_kwDORNGFGc7pxc9c",
+      "issueNumber": 5,
+      "lastHash": "a834d2d257bdb291b6e4c67f6af3af36cf481a4ff374a7846d7b00222c54d8f9",
+      "lastSyncedAt": "2026-02-10T15:16:17.584Z"
     }
   ],
-  "lastSyncAt": "2026-02-10T15:16:09.934Z",
+  "lastSyncAt": "2026-02-10T15:16:34.764Z",
   "summaryIssues": {
     "---": {
       "issueNodeId": "I_kwDORNGFGc7pxbFv",
