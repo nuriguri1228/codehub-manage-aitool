@@ -51,8 +51,8 @@
       "contentId": "I_kwDORNGFGc7p4tHu",
       "issueNodeId": "I_kwDORNGFGc7p4tHu",
       "issueNumber": 6,
-      "lastHash": "0e892a060dc163cbafb9f99edf34497242228f747f43892ac1dbd9a7a1c280f3",
-      "lastSyncedAt": "2026-02-10T23:11:46.765Z",
+      "lastHash": "185b00a8506fffbd523fc14df275c95d967b213cf7615409a713e4f6f95df71e",
+      "lastSyncedAt": "2026-02-10T23:13:12.845Z",
       "lastOwner": "uiux-dev"
     },
     {
@@ -62,8 +62,8 @@
       "contentId": "I_kwDORNGFGc7p4tYA",
       "issueNodeId": "I_kwDORNGFGc7p4tYA",
       "issueNumber": 8,
-      "lastHash": "e0a2691d2ad010781297d47b6f604d6a4b780e064b986c75d63f68c7a82e2e88",
-      "lastSyncedAt": "2026-02-10T23:10:51.437Z",
+      "lastHash": "9b95fcc28816fa4843e700b11c9292e14619115a6b3a2cb2477c97982c90a0af",
+      "lastSyncedAt": "2026-02-10T23:13:12.888Z",
       "lastOwner": "uiux-dev"
     },
     {
@@ -210,7 +210,7 @@
       "lastOwner": "fe-admin"
     }
   ],
-  "lastSyncAt": "2026-02-10T23:13:09.588Z",
+  "lastSyncAt": "2026-02-10T23:13:30.788Z",
   "summaryIssues": {
     "frontend-team": {
       "issueNodeId": "I_kwDORNGFGc7p4tLT",
