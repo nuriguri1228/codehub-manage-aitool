@@ -34,7 +34,11 @@
     "Done": "98236657"
   },
   "ownerOptions": {
-    "(unassigned)": "de285740"
+    "(unassigned)": "96a08d96",
+    "uiux-dev": "b4ab4ecc",
+    "fe-reviewer": "9fe99ff0",
+    "fe-admin": "b70c3874",
+    "fe-applicant": "27d1237f"
   },
   "labels": {
     "ccteams:frontend-team": "LA_kwDORNGFGc8AAAACXtZhow"
@@ -47,8 +51,9 @@
       "contentId": "I_kwDORNGFGc7p4tHu",
       "issueNodeId": "I_kwDORNGFGc7p4tHu",
       "issueNumber": 6,
-      "lastHash": "68fa19654f60ad37d28d234abaa3809e2b61922cda7891547843059daf495f22",
-      "lastSyncedAt": "2026-02-10T23:08:27.686Z"
+      "lastHash": "7019d01258d9467a2df46741f5f2fa8b87b6379d6ab1816334f916e41718b567",
+      "lastSyncedAt": "2026-02-10T23:10:51.213Z",
+      "lastOwner": "uiux-dev"
     },
     {
       "taskId": "2",
@@ -57,8 +62,9 @@
       "contentId": "I_kwDORNGFGc7p4tYA",
       "issueNodeId": "I_kwDORNGFGc7p4tYA",
       "issueNumber": 8,
-      "lastHash": "ff9efae4a155669f3931180809d13b6af07e2bb0c17808e15e328f69b0277cbf",
-      "lastSyncedAt": "2026-02-10T23:08:51.137Z"
+      "lastHash": "e0a2691d2ad010781297d47b6f604d6a4b780e064b986c75d63f68c7a82e2e88",
+      "lastSyncedAt": "2026-02-10T23:10:51.437Z",
+      "lastOwner": "uiux-dev"
     },
     {
       "taskId": "4",
@@ -67,8 +73,9 @@
       "contentId": "I_kwDORNGFGc7p4tYC",
       "issueNodeId": "I_kwDORNGFGc7p4tYC",
       "issueNumber": 9,
-      "lastHash": "2ca796321ab098f24bc685068eb39207854339eec9f3259871236fe6af370ece",
-      "lastSyncedAt": "2026-02-10T23:08:51.270Z"
+      "lastHash": "9058fb5a5c5cceaf2d9327b06780ded89f62cb642bfe3b61bce82410ca759db3",
+      "lastSyncedAt": "2026-02-10T23:10:50.963Z",
+      "lastOwner": "fe-applicant"
     },
     {
       "taskId": "3",
@@ -77,8 +84,9 @@
       "contentId": "I_kwDORNGFGc7p4tYF",
       "issueNodeId": "I_kwDORNGFGc7p4tYF",
       "issueNumber": 10,
-      "lastHash": "92f380b09915f3ffc1790b632b8e03b73338cc0cc30fb6b073c4a6430f43d9c4",
-      "lastSyncedAt": "2026-02-10T23:09:20.731Z"
+      "lastHash": "e514f8532b4db996a347ab9977ff15e4e807e5b6061fb60693ba34ca063fe12f",
+      "lastSyncedAt": "2026-02-10T23:10:51.448Z",
+      "lastOwner": "uiux-dev"
     },
     {
       "taskId": "8",
@@ -87,8 +95,9 @@
       "contentId": "I_kwDORNGFGc7p4uFJ",
       "issueNodeId": "I_kwDORNGFGc7p4uFJ",
       "issueNumber": 14,
-      "lastHash": "a70a97dd8eebb168e901d8eb36070910042bb40be3003cbed6fe97f2fd0f340e",
-      "lastSyncedAt": "2026-02-10T23:09:42.796Z"
+      "lastHash": "e4b8bd23a9828244d482279657cbc1d3e1929adb4fe82bbe9f25ff1c4ca05333",
+      "lastSyncedAt": "2026-02-10T23:10:51.464Z",
+      "lastOwner": "fe-reviewer"
     },
     {
       "taskId": "6",
@@ -97,8 +106,9 @@
       "contentId": "I_kwDORNGFGc7p4uFF",
       "issueNodeId": "I_kwDORNGFGc7p4uFF",
       "issueNumber": 13,
-      "lastHash": "80a92679c3e761d42abb768a382d2fe02755a38657a743a962415d4969ecf667",
-      "lastSyncedAt": "2026-02-10T23:09:43.169Z"
+      "lastHash": "1c60b077899c1cabb7feee1e7fe0e778b0ac96b158d891829804c9dcccc36ba3",
+      "lastSyncedAt": "2026-02-10T23:10:53.163Z",
+      "lastOwner": "fe-applicant"
     },
     {
       "taskId": "5",
@@ -107,8 +117,9 @@
       "contentId": "I_kwDORNGFGc7p4uFM",
       "issueNodeId": "I_kwDORNGFGc7p4uFM",
       "issueNumber": 15,
-      "lastHash": "45e8e76b6830bce4bfde432cd844b73ea46aa56d4a41a8b5c94caf0a8a9e11b3",
-      "lastSyncedAt": "2026-02-10T23:09:43.243Z"
+      "lastHash": "3da6d23a77b23e40cb6416430a7f7572c73b67c817e066d9c7d7f7c6000af4f1",
+      "lastSyncedAt": "2026-02-10T23:10:53.630Z",
+      "lastOwner": "fe-applicant"
     },
     {
       "taskId": "7",
@@ -117,8 +128,9 @@
       "contentId": "I_kwDORNGFGc7p4uFE",
       "issueNodeId": "I_kwDORNGFGc7p4uFE",
       "issueNumber": 12,
-      "lastHash": "689698976b826e8d32c173fc17fe84532665dd7ed5aa08275c9c23665ee55799",
-      "lastSyncedAt": "2026-02-10T23:09:43.248Z"
+      "lastHash": "5520c87d47d09a610979ef1bd168c7b3b297e8aa812341d8408dde7ed7b3ac9f",
+      "lastSyncedAt": "2026-02-10T23:10:54.609Z",
+      "lastOwner": "fe-applicant"
     },
     {
       "taskId": "10",
@@ -127,8 +139,9 @@
       "contentId": "I_kwDORNGFGc7p4uE9",
       "issueNodeId": "I_kwDORNGFGc7p4uE9",
       "issueNumber": 11,
-      "lastHash": "4faa68883923468526745ccc6c2bf134dc4718f4d76e9bd8a919c327c02a06f6",
-      "lastSyncedAt": "2026-02-10T23:09:44.472Z"
+      "lastHash": "b5513b516001ca4619434e24ad3d7a2ea5618b0d051387fd1c2cd6f09d717afc",
+      "lastSyncedAt": "2026-02-10T23:10:53.824Z",
+      "lastOwner": "fe-reviewer"
     },
     {
       "taskId": "9",
@@ -137,8 +150,9 @@
       "contentId": "I_kwDORNGFGc7p4uGu",
       "issueNodeId": "I_kwDORNGFGc7p4uGu",
       "issueNumber": 16,
-      "lastHash": "6121cda55080fdb52c069d16a0ac457d86090ab3e56ce001805ee4006d8a077a",
-      "lastSyncedAt": "2026-02-10T23:09:45.058Z"
+      "lastHash": "f9df47a492d4f3fd96a725832e53c57c5f86dc4ca467d49eb3959075943f6e53",
+      "lastSyncedAt": "2026-02-10T23:10:54.246Z",
+      "lastOwner": "fe-reviewer"
     },
     {
       "taskId": "13",
@@ -147,8 +161,9 @@
       "contentId": "I_kwDORNGFGc7p4uYU",
       "issueNodeId": "I_kwDORNGFGc7p4uYU",
       "issueNumber": 18,
-      "lastHash": "f34a33ce07ef4fe0b365a0cc2e3b36bfd93d8b23d4d911f460348877a4ebab7b",
-      "lastSyncedAt": "2026-02-10T23:10:04.562Z"
+      "lastHash": "9b28ed2e4cf698e579c81298746b2c56f79e8d642bb2b2ae81aabcef9a5e290b",
+      "lastSyncedAt": "2026-02-10T23:10:55.885Z",
+      "lastOwner": "fe-admin"
     },
     {
       "taskId": "11",
@@ -157,8 +172,9 @@
       "contentId": "I_kwDORNGFGc7p4uYS",
       "issueNodeId": "I_kwDORNGFGc7p4uYS",
       "issueNumber": 17,
-      "lastHash": "c08d21b68075bedf856833b553683e373e5602c9ef13dce981bfb4dd626014e6",
-      "lastSyncedAt": "2026-02-10T23:10:06.158Z"
+      "lastHash": "90526bd3a29b63cba960fc78273c8a8c729af68d0839c8273d3bb5e13ee9ca3c",
+      "lastSyncedAt": "2026-02-10T23:10:56.302Z",
+      "lastOwner": "fe-admin"
     },
     {
       "taskId": "12",
@@ -167,8 +183,9 @@
       "contentId": "I_kwDORNGFGc7p4uYV",
       "issueNodeId": "I_kwDORNGFGc7p4uYV",
       "issueNumber": 19,
-      "lastHash": "748b355ec3d9ecb4243cd9f6d213b6acc95d5f35bbaebff26c5915b2714c9b7b",
-      "lastSyncedAt": "2026-02-10T23:10:06.351Z"
+      "lastHash": "ce4fd228817c8545ea5b2515630528fdd99b98dfef3543ce311db0541be0bb51",
+      "lastSyncedAt": "2026-02-10T23:10:56.607Z",
+      "lastOwner": "fe-admin"
     },
     {
       "taskId": "15",
@@ -177,8 +194,9 @@
       "contentId": "I_kwDORNGFGc7p4usu",
       "issueNodeId": "I_kwDORNGFGc7p4usu",
       "issueNumber": 21,
-      "lastHash": "0f0d9f62c51f38e93a610b93efb66c88f02cc6fe685d5082a971d3582872fb48",
-      "lastSyncedAt": "2026-02-10T23:10:28.733Z"
+      "lastHash": "c549c472d43ead109d615f02d7c6adb3972d3e34972ee75b1f2cc3ef97a0da6a",
+      "lastSyncedAt": "2026-02-10T23:10:56.705Z",
+      "lastOwner": "fe-applicant"
     },
     {
       "taskId": "14",
@@ -187,11 +205,12 @@
       "contentId": "I_kwDORNGFGc7p4usq",
       "issueNodeId": "I_kwDORNGFGc7p4usq",
       "issueNumber": 20,
-      "lastHash": "c4239da4ae58325f47406ff78b7e82917fd3631bbac153c89c5fe4cd4d0a7acb",
-      "lastSyncedAt": "2026-02-10T23:10:28.761Z"
+      "lastHash": "a88ca0435d1464064639875164ca0b982532ea29841e307adee8c15461018e76",
+      "lastSyncedAt": "2026-02-10T23:10:57.249Z",
+      "lastOwner": "fe-admin"
     }
   ],
-  "lastSyncAt": "2026-02-10T23:10:46.143Z",
+  "lastSyncAt": "2026-02-10T23:11:43.347Z",
   "summaryIssues": {
     "frontend-team": {
       "issueNodeId": "I_kwDORNGFGc7p4tLT",
