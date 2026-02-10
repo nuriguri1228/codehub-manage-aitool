@@ -33,8 +33,30 @@
     "In Progress": "47fc9ee4",
     "Done": "98236657"
   },
-  "ownerOptions": {},
-  "labels": {},
-  "items": [],
-  "lastSyncAt": "2026-02-10T15:14:40.308Z"
+  "ownerOptions": {
+    "(unassigned)": "db63219d"
+  },
+  "labels": {
+    "ccteams:---": "LA_kwDORNGFGc8AAAACXqoPcA"
+  },
+  "items": [
+    {
+      "taskId": "1",
+      "teamName": "---",
+      "githubItemId": "PVTI_lAHODFNjSs4BO1twzglMJmc",
+      "contentId": "I_kwDORNGFGc7pxa-2",
+      "issueNodeId": "I_kwDORNGFGc7pxa-2",
+      "issueNumber": 1,
+      "lastHash": "6a70d078ff9907e9cf6855dff61182494269d28c73471d4593bfe1c6f24becee",
+      "lastSyncedAt": "2026-02-10T15:14:47.514Z"
+    }
+  ],
+  "lastSyncAt": "2026-02-10T15:15:02.186Z",
+  "summaryIssues": {
+    "---": {
+      "issueNodeId": "I_kwDORNGFGc7pxbFv",
+      "issueNumber": 2,
+      "githubItemId": "PVTI_lAHODFNjSs4BO1twzglMJp0"
+    }
+  }
 }
