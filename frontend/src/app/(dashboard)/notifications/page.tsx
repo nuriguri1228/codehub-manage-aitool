@@ -9,13 +9,25 @@ import {
   CheckCircle,
   AlertTriangle,
   XCircle,
+  Filter,
 } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useNotificationStore, type Notification } from '@/stores/notification-store';
 import { mockNotificationApi } from '@/lib/mock-api';
 import { cn } from '@/lib/utils';
+
+type NotificationType = 'all' | 'success' | 'info' | 'warning' | 'error';
+
+const typeFilterLabels: { value: NotificationType; label: string }[] = [
+  { value: 'all', label: '전체 유형' },
+  { value: 'success', label: '승인/완료' },
+  { value: 'info', label: '접수/검토' },
+  { value: 'warning', label: '경고/SLA' },
+  { value: 'error', label: '반려/오류' },
+];
 
 function getNotificationIcon(type: Notification['type']) {
   switch (type) {

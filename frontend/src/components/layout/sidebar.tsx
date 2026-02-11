@@ -14,6 +14,7 @@ import {
   Settings,
   ChevronLeft,
   ChevronRight,
+  ScrollText,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -50,12 +51,19 @@ function getSidebarItems(role: UserRole): SidebarItem[] {
         { label: '검토 이력', href: '/reviews/history', icon: History },
       ];
     case 'IT_ADMIN':
+      return [
+        { label: '대시보드', href: '/dashboard', icon: LayoutDashboard },
+        { label: '라이센스 관리', href: '/admin/licenses', icon: Shield },
+        { label: '사용 현황', href: '/admin/monitoring', icon: BarChart3 },
+        { label: '도구 관리', href: '/admin/settings', icon: Settings },
+      ];
     case 'SYSTEM_ADMIN':
       return [
         { label: '대시보드', href: '/dashboard', icon: LayoutDashboard },
         { label: '라이센스 관리', href: '/admin/licenses', icon: Shield },
         { label: '사용 현황', href: '/admin/monitoring', icon: BarChart3 },
         { label: '도구 관리', href: '/admin/settings', icon: Settings },
+        { label: '감사 로그', href: '/admin/audit', icon: ScrollText },
       ];
     default:
       return [

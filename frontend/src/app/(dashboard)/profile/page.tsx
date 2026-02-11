@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import Link from 'next/link';
 import {
   User,
   Mail,
@@ -12,19 +13,73 @@ import {
   CheckCircle,
   Key,
   Save,
+  ArrowRight,
+  Shield,
 } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardAction } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
 import { StatusBadge, DataTable, type Column } from '@/components/common';
 import { useAuthStore } from '@/stores/auth-store';
 import { useApplications, useApplicationStats } from '@/hooks/use-application';
 import { useApiKeys } from '@/hooks/use-api-key';
 import { toast } from 'sonner';
-import type { Application } from '@/types';
+import { cn } from '@/lib/utils';
+import type { Application, ApiKey } from '@/types';
+
+function getLicenseStatusBadge(status: string) {
+  switch (status) {
+    case 'ACTIVE':
+      return <Badge variant="outline" className="border-emerald-200 bg-emerald-50 text-emerald-700">활성</Badge>;
+    case 'EXPIRED':
+      return <Badge variant="outline" className="border-gray-200 bg-gray-50 text-gray-500">만료</Badge>;
+    case 'REVOKED':
+      return <Badge variant="outline" className="border-red-200 bg-red-50 text-red-600">해지</Badge>;
+    default:
+      return <Badge variant="outline">{status}</Badge>;
+  }
+}
+
+function LicenseCard({ apiKey }: { apiKey: ApiKey }) {
+  const usagePercent = Math.round((apiKey.quotaUsed / apiKey.quotaLimit) * 100);
+  const expiresDate = new Date(apiKey.expiresAt).toLocaleDateString('ko-KR');
+
+  return (
+    <div className="flex items-center justify-between rounded-lg border p-4">
+      <div className="flex items-center gap-3">
+        <div className="rounded-lg bg-[#50CF94]/10 p-2">
+          <Shield className="h-5 w-5 text-[#3DAF7A]" />
+        </div>
+        <div>
+          <div className="flex items-center gap-2">
+            <p className="text-sm font-medium">{apiKey.aiToolName}</p>
+            {getLicenseStatusBadge(apiKey.status)}
+          </div>
+          <p className="text-xs text-muted-foreground">
+            {apiKey.environment} &middot; 만료: {expiresDate}
+          </p>
+        </div>
+      </div>
+      <div className="text-right">
+        <p className="text-sm font-medium">{usagePercent}%</p>
+        <div className="mt-1 h-1.5 w-20 rounded-full bg-gray-100">
+          <div
+            className={cn(
+              'h-full rounded-full',
+              usagePercent >= 80 ? 'bg-red-500' : usagePercent >= 50 ? 'bg-amber-500' : 'bg-[#50CF94]'
+            )}
+            style={{ width: `${Math.min(usagePercent, 100)}%` }}
+          />
+        </div>
+        <p className="text-xs text-muted-foreground">사용량</p>
+      </div>
+    </div>
+  );
+}
 
 const recentColumns: Column<Application>[] = [
   {
@@ -245,6 +300,14 @@ export default function ProfilePage() {
           <Card>
             <CardHeader>
               <CardTitle className="text-base">최근 신청 이력</CardTitle>
+              <CardAction>
+                <Button variant="link" asChild className="gap-1 px-0">
+                  <Link href="/applications">
+                    전체보기
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardAction>
             </CardHeader>
             <CardContent>
               {appsLoading ? (
@@ -261,6 +324,41 @@ export default function ProfilePage() {
                   onRowClick={(row) => router.push(`/applications/${row.id}`)}
                   emptyMessage="신청 내역이 없습니다."
                 />
+              )}
+            </CardContent>
+          </Card>
+
+          {/* License Cards */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-base">보유 라이센스</CardTitle>
+              <CardAction>
+                <Button variant="link" asChild className="gap-1 px-0">
+                  <Link href="/api-keys">
+                    관리
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardAction>
+            </CardHeader>
+            <CardContent>
+              {keysLoading ? (
+                <div className="space-y-3">
+                  {Array.from({ length: 2 }).map((_, i) => (
+                    <Skeleton key={i} className="h-16 w-full" />
+                  ))}
+                </div>
+              ) : apiKeys.length === 0 ? (
+                <div className="flex flex-col items-center justify-center py-8 text-center">
+                  <Key className="mb-2 h-8 w-8 text-gray-300" />
+                  <p className="text-sm text-muted-foreground">발급된 라이센스가 없습니다.</p>
+                </div>
+              ) : (
+                <div className="space-y-3">
+                  {apiKeys.map((key) => (
+                    <LicenseCard key={key.id} apiKey={key} />
+                  ))}
+                </div>
               )}
             </CardContent>
           </Card>
