@@ -81,7 +81,7 @@ function NotificationPanel() {
           <Button
             variant="ghost"
             size="sm"
-            className="text-xs text-blue-600 hover:text-blue-800"
+            className="text-xs text-[#50CF94] hover:text-[#3DAF7A]"
             onClick={markAllAsRead}
           >
             모두 읽음
@@ -137,7 +137,7 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-40 border-b bg-white shadow-sm">
+    <header className="sticky top-0 z-40 border-b bg-white/80 shadow-sm backdrop-blur-md">
       <div className="flex h-14 items-center px-4 lg:px-6">
         {/* Mobile menu toggle */}
         <Button
@@ -151,7 +151,7 @@ export function Header() {
 
         {/* Logo */}
         <Link href="/dashboard" className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-md bg-[#1E40AF]">
+          <div className="flex h-8 w-8 items-center justify-center rounded-md bg-[#50CF94]">
             <span className="text-sm font-bold text-white">C</span>
           </div>
           <span className="hidden text-sm font-bold text-gray-900 md:inline-block">
@@ -172,13 +172,13 @@ export function Header() {
                 className={cn(
                   'rounded-md px-3 py-2 text-sm font-medium transition-colors',
                   isActive
-                    ? 'text-[#1E40AF]'
+                    ? 'text-[#50CF94]'
                     : 'text-gray-500 hover:text-gray-900'
                 )}
               >
                 {item.label}
                 {isActive && (
-                  <div className="mx-auto mt-0.5 h-0.5 w-full rounded-full bg-[#1E40AF]" />
+                  <div className="mx-auto mt-0.5 h-0.5 w-full rounded-full bg-[#50CF94]" />
                 )}
               </Link>
             );

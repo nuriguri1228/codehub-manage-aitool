@@ -60,8 +60,8 @@
       "contentId": "I_kwDORNGFGc7p9kww",
       "issueNodeId": "I_kwDORNGFGc7p9kww",
       "issueNumber": 95,
-      "lastHash": "c08831cc6128e96e50fff9bb596de223c21ca4e44e444d3c8ea15e6c531927c7",
-      "lastSyncedAt": "2026-02-11T07:58:22.973Z",
+      "lastHash": "74f59085300c8c7d990ddff5e6d1b7d1236da8a241554265b8fe60ccb7e25cd3",
+      "lastSyncedAt": "2026-02-11T07:58:45.914Z",
       "lastOwner": "design-system"
     },
     {
@@ -71,8 +71,8 @@
       "contentId": "I_kwDORNGFGc7p9lBS",
       "issueNodeId": "I_kwDORNGFGc7p9lBS",
       "issueNumber": 97,
-      "lastHash": "a13e4ceb6ce1b49c30e516f8a5577b675d1c53768b88c68f57d5f9945b2d83e9",
-      "lastSyncedAt": "2026-02-11T07:58:23.208Z",
+      "lastHash": "9a77d9b3694be360e71f48c21aa45a9607e4bc7bbd3805d61112bd4280ea2361",
+      "lastSyncedAt": "2026-02-11T07:58:46.341Z",
       "lastOwner": "layout-nav"
     },
     {
@@ -82,8 +82,8 @@
       "contentId": "I_kwDORNGFGc7p9lBT",
       "issueNodeId": "I_kwDORNGFGc7p9lBT",
       "issueNumber": 98,
-      "lastHash": "dc64c4509360a2225ecb53ea127d4beb33258c6af91905c8976990e9f7318f50",
-      "lastSyncedAt": "2026-02-11T07:58:23.223Z",
+      "lastHash": "f9828dce17511b4a92502917e22148c1b924bf6a38e05f625590ba212a6daaef",
+      "lastSyncedAt": "2026-02-11T07:58:46.336Z",
       "lastOwner": "layout-nav"
     },
     {
@@ -93,8 +93,8 @@
       "contentId": "I_kwDORNGFGc7p9lBV",
       "issueNodeId": "I_kwDORNGFGc7p9lBV",
       "issueNumber": 99,
-      "lastHash": "056aa069fb34227a7c2aa099ae19e8117b1cd449a90c3a04a6668fe56fdfa9e8",
-      "lastSyncedAt": "2026-02-11T07:58:23.179Z",
+      "lastHash": "36c661d2f736898473f14f777d1dceaaa683d91563f0ab42972c3b255e5f8c4b",
+      "lastSyncedAt": "2026-02-11T07:58:46.094Z",
       "lastOwner": "layout-nav"
     },
     {
@@ -163,7 +163,7 @@
       "lastOwner": "page-components"
     }
   ],
-  "lastSyncAt": "2026-02-11T07:58:43.072Z",
+  "lastSyncAt": "2026-02-11T07:59:03.764Z",
   "summaryIssues": {
     "frontend-design": {
       "issueNodeId": "I_kwDORNGFGc7p9k0j",

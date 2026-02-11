@@ -27,13 +27,13 @@ export default function DashboardLayout({
   }
 
   return (
-    <div className="flex h-screen flex-col bg-[#F3F4F6]">
+    <div className="flex min-h-screen flex-col bg-gradient-to-br from-white via-[#F8FDF9] to-[#50CF94]/5">
       <Header />
-      <div className="flex flex-1 overflow-hidden">
+      <div className="flex flex-1">
         <Sidebar />
         <MobileSidebar />
-        <main className="flex-1 overflow-y-auto">
-          <div className="mx-auto max-w-7xl px-4 py-6 lg:px-6">
+        <main className="flex flex-1 flex-col overflow-y-auto">
+          <div className="mx-auto w-full max-w-7xl flex-1 px-4 py-6 lg:px-6">
             <Breadcrumb />
             {children}
           </div>
