@@ -34,7 +34,8 @@
     "Done": "98236657"
   },
   "ownerOptions": {
-    "(unassigned)": "278298a6"
+    "(unassigned)": "65149dde",
+    "arch-doc-agent": "3ccf24a1"
   },
   "labels": {
     "ccteams:docs-update": "LA_kwDORNGFGc8AAAACXw4MNA"
@@ -47,8 +48,9 @@
       "contentId": "I_kwDORNGFGc7qAgcY",
       "issueNodeId": "I_kwDORNGFGc7qAgcY",
       "issueNumber": 106,
-      "lastHash": "b06d17599f486218f86e3692ca692f3b42d142c78e73fc57f95c209b25ab5ce5",
-      "lastSyncedAt": "2026-02-11T11:17:43.375Z"
+      "lastHash": "ec022cb5e2d31597fef10408ff1490cbafaa811cc34c49d3c3a0620161b3d4ab",
+      "lastSyncedAt": "2026-02-11T11:18:27.851Z",
+      "lastOwner": "arch-doc-agent"
     },
     {
       "taskId": "4",
@@ -81,7 +83,7 @@
       "lastSyncedAt": "2026-02-11T11:18:05.352Z"
     }
   ],
-  "lastSyncAt": "2026-02-11T11:18:23.780Z",
+  "lastSyncAt": "2026-02-11T11:18:46.444Z",
   "summaryIssues": {
     "docs-update": {
       "issueNodeId": "I_kwDORNGFGc7qAggz",
