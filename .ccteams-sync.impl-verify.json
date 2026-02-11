@@ -34,9 +34,12 @@
     "Done": "98236657"
   },
   "ownerOptions": {
-    "(unassigned)": "095c8b1b",
-    "verifier-auth": "32bc9475",
-    "verifier-app": "609f59d2"
+    "(unassigned)": "504523a9",
+    "verifier-auth": "1d9e12eb",
+    "verifier-app": "c7f807a9",
+    "verifier-review": "171edac3",
+    "verifier-monitoring": "119522e5",
+    "verifier-admin": "f29c3a12"
   },
   "labels": {
     "ccteams:impl-verify": "LA_kwDORNGFGc8AAAACXy7zKA"
@@ -49,8 +52,9 @@
       "contentId": "I_kwDORNGFGc7qGDtc",
       "issueNodeId": "I_kwDORNGFGc7qGDtc",
       "issueNumber": 127,
-      "lastHash": "2cd70047333cf4d2506ea65315a63c9681144c10b07fbd669016f46243a32472",
-      "lastSyncedAt": "2026-02-11T16:25:00.801Z"
+      "lastHash": "8def48ea8ce8433f78c88a7781058298a5c5686486f6ef2fb5c4b4ca8ab7f799",
+      "lastSyncedAt": "2026-02-11T16:26:23.681Z",
+      "lastOwner": "verifier-monitoring"
     },
     {
       "taskId": "1",
@@ -81,8 +85,9 @@
       "contentId": "I_kwDORNGFGc7qGD7e",
       "issueNodeId": "I_kwDORNGFGc7qGD7e",
       "issueNumber": 130,
-      "lastHash": "d869f4cf30c93fd9a0112bf323fb9d18ca3a6f834e7c07b24757fde46ca8131a",
-      "lastSyncedAt": "2026-02-11T16:25:10.346Z"
+      "lastHash": "f16db2c6f85a4e4efdae4cf00d40070ce08b0056c6837b4b5904e71ba8d37ff3",
+      "lastSyncedAt": "2026-02-11T16:26:23.893Z",
+      "lastOwner": "verifier-review"
     },
     {
       "taskId": "5",
@@ -91,11 +96,12 @@
       "contentId": "I_kwDORNGFGc7qGEba",
       "issueNodeId": "I_kwDORNGFGc7qGEba",
       "issueNumber": 132,
-      "lastHash": "e548b894306f34131a2510454dc7a007ac4b7fdc0ed03ec4e0eb88f0096b8fcf",
-      "lastSyncedAt": "2026-02-11T16:25:34.804Z"
+      "lastHash": "a892a01ec70505f7f49896a3aae4d2f82c897cbb32aa4490fee7aadba1c9371e",
+      "lastSyncedAt": "2026-02-11T16:26:23.695Z",
+      "lastOwner": "verifier-admin"
     }
   ],
-  "lastSyncAt": "2026-02-11T16:26:17.702Z",
+  "lastSyncAt": "2026-02-11T16:26:42.521Z",
   "summaryIssues": {
     "impl-verify": {
       "issueNodeId": "I_kwDORNGFGc7qGEB6",
