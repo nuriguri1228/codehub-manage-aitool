@@ -127,6 +127,9 @@
       if (!dragging) return;
       dragging = false;
       content.style.cursor = "grab";
+      setTimeout(function () {
+        didDrag = false;
+      }, 0);
     }
     document.addEventListener("mousemove", onMove);
     document.addEventListener("mouseup", onUp);
