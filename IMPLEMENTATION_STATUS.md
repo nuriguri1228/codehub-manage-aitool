@@ -24,18 +24,18 @@
 | 사용자 프로필 | `(dashboard)/profile/page.tsx` | ✅ 완료 | 프로필 조회/수정, 활동 요약, 최근 신청 이력 |
 | 사용자 설정 | `(dashboard)/settings/page.tsx` | ✅ 완료 | 알림 채널/유형별 수신 설정 |
 
-### 검토자 (TEAM_LEAD / SECURITY_REVIEWER)
+### 검토자 (TEAM_LEAD / SECURITY_REVIEWER / IT_ADMIN)
 | 페이지 | 경로 | 상태 | 비고 |
 |--------|------|------|------|
-| 검토 대시보드 | `(dashboard)/dashboard/page.tsx` | ✅ 완료 | ReviewerDashboard 컴포넌트 |
+| 검토 대시보드 | `(dashboard)/dashboard/page.tsx` | ✅ 완료 | ReviewerDashboard 컴포넌트 (IT_ADMIN은 ENV_PREPARATION 단계 검토) |
 | 검토 목록 | `(dashboard)/reviews/page.tsx` | ✅ 완료 | 필터/SLA/페이지네이션 |
-| 검토 상세 | `(dashboard)/reviews/[id]/page.tsx` | ✅ 완료 | 2패널 레이아웃 |
+| 검토 상세 | `(dashboard)/reviews/[id]/page.tsx` | ✅ 완료 | 2패널 레이아웃, IT_ADMIN ENV_PREPARATION 전용 UI 분리 |
 | 검토 이력 | `(dashboard)/reviews/history/page.tsx` | ✅ 완료 | 완료된 검토 목록, 통계 카드, 필터/검색 |
 
 ### 관리자 (IT_ADMIN / SYSTEM_ADMIN)
 | 페이지 | 경로 | 상태 | 비고 |
 |--------|------|------|------|
-| 관리자 대시보드 | `(dashboard)/dashboard/page.tsx` | ✅ 완료 | AdminDashboard 컴포넌트 |
+| 관리자 대시보드 | `(dashboard)/dashboard/page.tsx` | ✅ 완료 | AdminDashboard 컴포넌트 (SYSTEM_ADMIN 전용) |
 | 라이센스 관리 | `(dashboard)/monitoring/licenses/page.tsx` | ✅ 완료 | 차트+테이블+CSV 내보내기 |
 | 사용 현황 모니터링 | `(dashboard)/monitoring/usage/page.tsx` | ✅ 완료 | KPI+차트+이상탐지 |
 | 비용 관리 | `(dashboard)/monitoring/costs/page.tsx` | ✅ 완료 | KPI+차트 |
@@ -123,6 +123,7 @@
 | 검토 반려 | FR-051 | ✅ 완료 | 반려 사유 필수 |
 | 보완 요청 (피드백) | FR-052 | ✅ 완료 | |
 | 체크리스트 기반 검토 | - | ✅ 완료 | ReviewChecklistItem[] |
+| IT_ADMIN 환경 준비 전용 UI | - | ✅ 완료 | EnvPrepPanel, 환경별 체크리스트, 이전 승인 결과 표시 |
 | 일괄 검토 처리 | FR-055 | ❌ 미구현 | |
 
 ### SLA 및 검토 이력
@@ -228,7 +229,17 @@
 | 검토 목록 | `/reviews` | ✅ | ✅ |
 | 검토 이력 | `/reviews/history` | ✅ | ✅ |
 
-### IT_ADMIN / SYSTEM_ADMIN
+### IT_ADMIN
+| 메뉴 | 사이드바 경로 | 페이지 존재 | 상태 |
+|------|-------------|-----------|------|
+| 대시보드 | `/dashboard` | ✅ | ✅ |
+| 검토 목록 | `/reviews` | ✅ | ✅ |
+| 검토 이력 | `/reviews/history` | ✅ | ✅ |
+| 라이센스 관리 | `/monitoring/licenses` | ✅ | ✅ |
+| 사용 현황 | `/monitoring/usage` | ✅ | ✅ |
+| 도구 관리 | `/admin/tools` | ✅ | ✅ |
+
+### SYSTEM_ADMIN
 | 메뉴 | 사이드바 경로 | 페이지 존재 | 상태 |
 |------|-------------|-----------|------|
 | 대시보드 | `/dashboard` | ✅ | ✅ |

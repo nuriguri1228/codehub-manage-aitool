@@ -155,6 +155,88 @@ const MOCK_REVIEW_DETAIL: ReviewDetail = {
   feedbacks: [],
 };
 
+const MOCK_ENV_PREP_DETAIL: ReviewDetail = {
+  application: {
+    id: 'app-009',
+    applicationNumber: 'APP-2024-0009',
+    applicantId: 'user-008',
+    applicantName: '유데이터',
+    applicantDepartment: '데이터팀',
+    applicantPosition: '선임',
+    aiToolIds: ['tool-003'],
+    aiToolNames: ['Cursor AI'],
+    environment: 'NOTEBOOK',
+    purpose: 'Python 기반 데이터 분석 스크립트 개발에 Cursor AI를 활용하겠습니다.',
+    status: 'ENV_PREPARATION',
+    projects: [
+      {
+        name: 'ML 파이프라인 구축',
+        description: '머신러닝 모델 학습 파이프라인 자동화',
+        startDate: '2024-11-01',
+        endDate: '2025-06-30',
+        role: 'ML 엔지니어',
+        pmName: '유데이터',
+      },
+    ],
+    attachments: [],
+    securityAgreement: {
+      id: 'sec-008',
+      agreedAt: '2024-11-05T14:00:00Z',
+      version: '1.0',
+    },
+    currentReviewStage: 'ENV_PREPARATION',
+    createdAt: '2024-11-05T09:00:00Z',
+    updatedAt: '2024-11-25T10:00:00Z',
+    submittedAt: '2024-11-05T14:05:00Z',
+  },
+  currentStage: {
+    id: 'rs-009-3',
+    applicationId: 'app-009',
+    stageName: 'ENV_PREPARATION',
+    stageOrder: 3,
+    reviewerId: 'user-005',
+    reviewerName: '정관리',
+    reviewerDepartment: 'IT운영팀',
+    checklist: [
+      { id: 'env-cl-1', label: '노트북 보안 설정 확인', checked: false },
+      { id: 'env-cl-2', label: '네트워크 접근 권한 설정', checked: false },
+      { id: 'env-cl-3', label: 'AI 도구 설치 및 설정', checked: false },
+      { id: 'env-cl-4', label: '개인장비 보안 정책 적용', checked: false },
+    ],
+    dueDate: fmt(addDays(today, 5)),
+    createdAt: '2024-11-15T14:00:00Z',
+  },
+  allStages: [
+    {
+      id: 'rs-009-1',
+      applicationId: 'app-009',
+      stageName: 'TEAM_REVIEW',
+      stageOrder: 1,
+      reviewerId: 'user-009',
+      reviewerName: '강팀장',
+      reviewerDepartment: '서비스개발팀',
+      result: 'APPROVED',
+      comment: '업무 적합성 확인. 승인합니다.',
+      reviewedAt: '2024-11-07T10:00:00Z',
+      createdAt: '2024-11-05T14:05:00Z',
+    },
+    {
+      id: 'rs-009-2',
+      applicationId: 'app-009',
+      stageName: 'SECURITY_REVIEW',
+      stageOrder: 2,
+      reviewerId: 'user-010',
+      reviewerName: '송보안',
+      reviewerDepartment: '보안팀',
+      result: 'APPROVED',
+      comment: '보안 요건 충족. 보안 서약 완료 확인.',
+      reviewedAt: '2024-11-15T14:00:00Z',
+      createdAt: '2024-11-07T10:00:00Z',
+    },
+  ],
+  feedbacks: [],
+};
+
 // -- Query keys --
 
 export const reviewKeys = {
@@ -244,6 +326,9 @@ export function useReviewDetail(id: string) {
     queryKey: reviewKeys.detail(id),
     queryFn: async () => {
       // TODO: Replace with actual API call
+      if (id === 'rs-009-3') {
+        return MOCK_ENV_PREP_DETAIL;
+      }
       return MOCK_REVIEW_DETAIL;
     },
     enabled: !!id,

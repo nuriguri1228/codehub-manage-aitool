@@ -805,6 +805,12 @@ export const mockReviewStages: ReviewStage[] = [
     reviewerId: 'user-005',
     reviewerName: '정관리',
     reviewerDepartment: 'IT운영팀',
+    checklist: [
+      { id: 'env-cl-1', label: 'VDI/노트북 계정 생성 완료', checked: false },
+      { id: 'env-cl-2', label: '네트워크 접근 권한 설정', checked: false },
+      { id: 'env-cl-3', label: 'AI 도구 설치 및 설정', checked: false },
+      { id: 'env-cl-4', label: '보안 정책 적용 완료', checked: false },
+    ],
     dueDate: '2024-11-30T23:59:59Z',
     createdAt: '2024-11-15T14:00:00Z',
   },
