@@ -22,6 +22,7 @@ export interface Project {
   role: string;
   pmName: string;
   pmEmail?: string;
+  attachments?: File[];
 }
 
 export interface Attachment {

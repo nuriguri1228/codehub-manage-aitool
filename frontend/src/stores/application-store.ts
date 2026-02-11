@@ -53,6 +53,8 @@ export const useApplicationStore = create<ApplicationStore>()(
         formData: {
           ...state.formData,
           attachments: [],
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          projects: state.formData.projects.map(({ attachments, ...rest }) => rest),
         },
         draftId: state.draftId,
       }),

@@ -25,6 +25,7 @@ const projectSchema = z.object({
   role: z.string().min(1, '역할을 입력해주세요'),
   pmName: z.string().min(1, 'PM 이름을 입력해주세요'),
   pmEmail: z.string().email('올바른 이메일을 입력해주세요').optional().or(z.literal('')),
+  attachments: z.array(z.any()).optional(),
 });
 
 export const step4Schema = z.object({

@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
+import { FileUpload } from '@/components/common';
 import type { Project } from '@/types';
 
 interface WizardStep4Props {
@@ -39,6 +40,13 @@ export function WizardStep4Project({ value, onChange, error }: WizardStep4Props)
   const updateProject = (index: number, field: keyof Project, val: string) => {
     const updated = projects.map((p, i) =>
       i === index ? { ...p, [field]: val } : p
+    );
+    onChange(updated);
+  };
+
+  const updateProjectFiles = (index: number, files: File[]) => {
+    const updated = projects.map((p, i) =>
+      i === index ? { ...p, attachments: files } : p
     );
     onChange(updated);
   };
@@ -158,6 +166,14 @@ export function WizardStep4Project({ value, onChange, error }: WizardStep4Props)
                     }
                   />
                 </div>
+              </div>
+
+              <div className="space-y-1.5">
+                <Label className="text-gray-500">프로젝트 관련 첨부파일 (선택)</Label>
+                <FileUpload
+                  value={project.attachments ?? []}
+                  onChange={(files) => updateProjectFiles(index, files)}
+                />
               </div>
             </CardContent>
           </Card>

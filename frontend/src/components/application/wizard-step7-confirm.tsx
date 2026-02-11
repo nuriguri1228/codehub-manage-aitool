@@ -101,6 +101,19 @@ export function WizardStep7Confirm({ formData }: WizardStep7Props) {
                 </InfoRow>
                 <InfoRow label="역할">{project.role}</InfoRow>
                 <InfoRow label="PM">{project.pmName}</InfoRow>
+                {project.attachments && project.attachments.length > 0 && (
+                  <div className="mt-2">
+                    <span className="text-sm font-medium text-gray-500">첨부파일</span>
+                    <ul className="mt-1 space-y-1">
+                      {project.attachments.map((file, j) => (
+                        <li key={j} className="flex items-center gap-2 text-sm text-gray-700">
+                          <FileText className="h-4 w-4 text-gray-400" />
+                          {file.name}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
             </div>
           ))}
@@ -109,11 +122,11 @@ export function WizardStep7Confirm({ formData }: WizardStep7Props) {
 
       <Card>
         <CardHeader className="pb-3">
-          <CardTitle className="text-base">첨부 문서</CardTitle>
+          <CardTitle className="text-base">추가 첨부파일</CardTitle>
         </CardHeader>
         <CardContent>
           {formData.attachments.length === 0 ? (
-            <p className="text-sm text-gray-500">첨부된 문서가 없습니다.</p>
+            <p className="text-sm text-gray-500">추가 첨부파일이 없습니다.</p>
           ) : (
             <ul className="space-y-1">
               {formData.attachments.map((file, i) => (
