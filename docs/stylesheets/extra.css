@@ -32,13 +32,13 @@
   margin-right: auto;
 }
 
-/* 다이어그램 확대 커서 힌트 */
-.mermaid {
-  cursor: zoom-in;
+/* 다이어그램 확대 커서 힌트 — JS가 data-zoom-bound를 설정한 요소에 적용 */
+[data-zoom-bound] {
+  cursor: zoom-in !important;
   transition: opacity 0.15s;
 }
 
-.mermaid:hover {
+[data-zoom-bound]:hover {
   opacity: 0.85;
 }
 
