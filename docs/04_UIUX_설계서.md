@@ -5,7 +5,7 @@
 | 항목 | 내용 |
 |------|------|
 | 문서명 | UI/UX 설계서 |
-| 버전 | 1.0 |
+| 버전 | 2.0 |
 | 작성일 | 2026-02-11 |
 | 프로젝트명 | CodeHub AI Tool Manager |
 
@@ -43,24 +43,59 @@
 
 #### 색상 팔레트 및 타이포그래피
 
-![디자인 시스템 - 색상 및 타이포그래피](./images/design-system.svg)
+디자인 시스템은 OKLCH 색상 공간 기반의 CSS 변수로 정의됩니다. Tailwind CSS v4와 shadcn/ui 컴포넌트를 사용합니다.
+
+```mermaid
+graph LR
+    subgraph "Primary Colors"
+        P1["Accent<br/>#50CF94<br/>oklch(0.771 0.152 163)"]
+        P2["Accent Dark<br/>#3DAF7A"]
+        P3["Accent Light<br/>#50CF94/10"]
+    end
+    subgraph "Semantic Colors"
+        S1["Success<br/>#059669"]
+        S2["Warning<br/>#D97706"]
+        S3["Error/Destructive<br/>#DC2626"]
+        S4["Info<br/>#2563EB"]
+    end
+    subgraph "Neutral Colors"
+        N1["Background<br/>oklch(1 0 0)"]
+        N2["Foreground<br/>oklch(0.195 0.02 163)"]
+        N3["Muted<br/>oklch(0.965 0.02 163)"]
+        N4["Border<br/>oklch(0.9 0.03 163)"]
+    end
+
+    style P1 fill:#50CF94,color:#fff
+    style P2 fill:#3DAF7A,color:#fff
+    style P3 fill:#e8f9f0,color:#333
+    style S1 fill:#059669,color:#fff
+    style S2 fill:#D97706,color:#fff
+    style S3 fill:#DC2626,color:#fff
+    style S4 fill:#2563EB,color:#fff
+    style N1 fill:#FFFFFF,color:#111827,stroke:#E5E7EB
+    style N2 fill:#111827,color:#fff
+    style N3 fill:#F3F4F6,color:#333
+    style N4 fill:#E5E7EB,color:#333
+```
 
 #### 색상 정의 상세
 
-| 용도 | 색상명 | HEX 코드 | 사용 처 |
-|------|--------|----------|---------|
-| Primary | Blue 800 | `#1E40AF` | 주요 버튼, 링크, 강조 요소 |
-| Primary Light | Blue 100 | `#DBEAFE` | 선택 상태 배경, 뱃지 배경 |
-| Secondary | Violet 600 | `#7C3AED` | 보조 버튼, 태그 |
-| Success | Emerald 600 | `#059669` | 승인, 완료 상태, 성공 알림 |
-| Warning | Amber 600 | `#D97706` | 주의 상태, 경고 알림 |
-| Error | Red 600 | `#DC2626` | 반려, 에러 상태, 필수 표시 |
-| Info | Blue 600 | `#2563EB` | 정보 알림, 도움말 |
-| Background | Gray 100 | `#F3F4F6` | 페이지 배경 |
-| Surface | White | `#FFFFFF` | 카드, 모달 배경 |
-| Text Primary | Gray 900 | `#111827` | 본문 텍스트 |
-| Text Secondary | Gray 500 | `#6B7280` | 보조 텍스트, 플레이스홀더 |
-| Border | Gray 200 | `#E5E7EB` | 구분선, 카드 보더 |
+> **참고**: 프로젝트는 Tailwind CSS v4 + OKLCH 기반 CSS 변수를 사용합니다. 아래 HEX 코드는 참조용이며, 실제 구현은 `globals.css`의 OKLCH 변수로 관리됩니다. 테마 Accent Color는 `#50CF94`입니다.
+
+| 용도 | 색상명 | 값 | CSS 변수 | 사용 처 |
+|------|--------|-----|----------|---------|
+| Primary (Accent) | Green | `#50CF94` | `--primary: oklch(0.771 0.152 163)` | 주요 버튼, 링크, 강조 요소, 사이드바 활성 항목 |
+| Primary Light | Accent/10 | `#50CF94/10` | `--accent: oklch(0.93 0.05 163)` | 선택 상태 배경, 사이드바 활성 배경 |
+| Secondary | Yellow-ish | - | `--secondary: oklch(0.999 0.012 105)` | 보조 버튼, 태그 |
+| Success | Emerald 600 | `#059669` | 직접 사용 | 승인, 완료 상태, 성공 알림 |
+| Warning | Amber 600 | `#D97706` | 직접 사용 | 주의 상태, 경고 알림 |
+| Error | Red 600 | `#DC2626` | `--destructive` | 반려, 에러 상태, 필수 표시 |
+| Info | Blue 600 | `#2563EB` | 직접 사용 | 정보 알림, 도움말 |
+| Background | White | `#FFFFFF` | `--background: oklch(1 0 0)` | 페이지 배경 |
+| Surface | White | `#FFFFFF` | `--card: oklch(1 0 0)` | 카드, 모달 배경 |
+| Text Primary | Gray 900 | `#111827` | `--foreground: oklch(0.195 0.02 163)` | 본문 텍스트 |
+| Text Secondary | Gray 500 | `#6B7280` | `--muted-foreground` | 보조 텍스트, 플레이스홀더 |
+| Border | Gray 200 | `#E5E7EB` | `--border: oklch(0.9 0.03 163)` | 구분선, 카드 보더 |
 
 #### 타이포그래피 체계
 
@@ -76,8 +111,8 @@
 | Caption | 12px | Regular (400) | 1.4 | 라벨, 캡션, 도움말 |
 
 - **한국어 폰트**: Pretendard (Google Fonts)
-- **영문/숫자 폰트**: Inter (Google Fonts)
-- **코드 폰트**: JetBrains Mono
+- **영문/숫자 폰트**: Geist Sans (`--font-geist-sans`)
+- **코드 폰트**: Geist Mono (`--font-geist-mono`)
 
 #### 간격 체계 (4px Grid)
 
@@ -103,13 +138,13 @@
 
 #### 보더 라운딩
 
-| 토큰 | 값 | 용도 |
-|------|-----|------|
-| rounded-sm | 4px | 뱃지, 태그 |
-| rounded-md | 8px | 버튼, 인풋 |
-| rounded-lg | 12px | 카드 |
-| rounded-xl | 16px | 모달, 대형 카드 |
-| rounded-full | 9999px | 아바타, 원형 버튼 |
+| 토큰 | 값 | CSS 변수 | 용도 |
+|------|-----|----------|------|
+| rounded-sm | `calc(var(--radius) - 4px)` | `--radius-sm` | 뱃지, 태그 |
+| rounded-md | `calc(var(--radius) - 2px)` | `--radius-md` | 버튼, 인풋 |
+| rounded-lg | `var(--radius)` (0.625rem) | `--radius-lg` | 카드 |
+| rounded-xl | `calc(var(--radius) + 4px)` | `--radius-xl` | 모달, 대형 카드 |
+| rounded-full | 9999px | - | 아바타, 원형 버튼 |
 
 ---
 
@@ -136,7 +171,7 @@
 - 반려 시 무엇을 수정해야 하는지 명확하지 않음
 
 **사용 시나리오:**
-> 김개발은 점심시간에 Claude Code 사용 신청을 시작합니다. VDI 환경에서 사용할 예정이며, 현재 수행 중인 '결제 시스템 리뉴얼'과 '내부 API 게이트웨이' 두 프로젝트 정보를 등록합니다. 프로젝트 제안서를 첨부하고 보안 서약에 서명한 뒤 제출합니다. 다음날 보안 검토에서 보완 요청이 와서 추가 설명을 작성하여 재제출하고, 이후 승인되어 API Key를 발급받습니다.
+> 김개발은 점심시간에 Claude Code와 Antigravity 두 가지 도구 사용 신청을 시작합니다. VDI 환경에서 사용할 예정이며, 현재 수행 중인 '결제 시스템 리뉴얼'과 '내부 API 게이트웨이' 두 프로젝트 정보를 등록합니다. 프로젝트 제안서를 첨부하고 보안 서약에 서명한 뒤 제출합니다. 다음날 보안 검토에서 보완 요청이 와서 추가 설명을 작성하여 재제출하고, 이후 승인되어 API Key를 발급받습니다.
 
 ### 2.2 페르소나 B: 이팀장 (검토자 - 개발팀 팀장)
 
@@ -215,29 +250,144 @@
 
 신청자의 전체 사용 흐름을 나타냅니다. 로그인부터 API Key 수령까지의 전 과정을 포함합니다.
 
-![신청자 사용자 플로우](./images/flow-applicant.svg)
+```mermaid
+flowchart TD
+    Start((시작)) --> Login[SSO 로그인]
+    Login --> Dashboard[신청자 대시보드]
+    Dashboard --> NewApp[+ 신규 신청]
+
+    NewApp --> Step1["Step 1: AI 도구 선택<br/>(다중 선택: aiToolIds[])"]
+    Step1 --> Step2["Step 2: 사용 환경 선택<br/>(VDI / NOTEBOOK / OTHER)"]
+    Step2 --> Step3["Step 3: 인적정보 확인<br/>(HR 연동 자동완성)"]
+    Step3 --> Step4["Step 4: 프로젝트 정보<br/>(복수 프로젝트 등록)"]
+    Step4 --> Step5["Step 5: 문서 첨부<br/>(선택 사항)"]
+    Step5 --> Step6["Step 6: 보안 서약<br/>(전자서명)"]
+    Step6 --> Step7["Step 7: 최종 확인 및 제출"]
+
+    Step1 -.->|임시저장 가능| Draft[(임시저장)]
+    Step2 -.->|임시저장 가능| Draft
+    Step3 -.->|임시저장 가능| Draft
+    Step4 -.->|임시저장 가능| Draft
+    Draft -.->|이어서 작성| Step1
+
+    Step7 --> Submit[신청 제출]
+    Submit --> TeamReview["TEAM_REVIEW<br/>1차 검토 - 팀장"]
+    TeamReview --> SecurityReview["SECURITY_REVIEW<br/>보안 검토"]
+    SecurityReview --> EnvPrep["ENV_PREPARATION<br/>환경 준비"]
+    EnvPrep --> FinalApproval["FINAL_APPROVAL<br/>최종 승인"]
+    FinalApproval --> KeyIssued["KEY_ISSUED<br/>API Key 발급"]
+
+    TeamReview -.->|피드백| Feedback["피드백 수신<br/>정보 수정 → 재제출"]
+    SecurityReview -.->|피드백| Feedback
+    Feedback -.->|재제출| TeamReview
+
+    TeamReview -.->|반려| Rejected["REJECTED<br/>반려 사유 확인"]
+    SecurityReview -.->|반려| Rejected
+    Rejected -.->|재신청| NewApp
+
+    KeyIssued --> ApiKeyMgmt["API Key 관리<br/>조회 / 복사 / 리셋 / 비활성화"]
+
+    Dashboard --> StatusCheck["진행 상태 확인<br/>타임라인으로 현재 단계 표시"]
+
+    style Start fill:#50CF94,color:#fff
+    style Submit fill:#50CF94,color:#fff
+    style KeyIssued fill:#059669,color:#fff
+    style Rejected fill:#DC2626,color:#fff
+    style Feedback fill:#FFF7ED,color:#92400E,stroke:#D97706
+    style Draft fill:#FEF3C7,color:#92400E,stroke:#D97706
+```
 
 **주요 분기점:**
-- 임시저장 후 나중에 이어서 작성 가능
+- 임시저장 후 나중에 이어서 작성 가능 (Zustand persist로 클라이언트 저장)
 - 각 검토 단계에서 피드백 수신 시 해당 정보 수정 후 재제출
 - 반려 시 사유 확인 후 재신청 또는 취소 선택
+- 다중 AI 도구 선택 가능 (`aiToolIds: string[]`)
 
 ### 3.2 검토자 플로우
 
-검토자(팀장, 보안팀)의 사용 흐름입니다.
+검토자(TEAM_LEAD, SECURITY_REVIEWER)의 사용 흐름입니다.
 
-![검토자 사용자 플로우](./images/flow-reviewer.svg)
+```mermaid
+flowchart TD
+    Start((시작)) --> Login[SSO 로그인]
+    Login --> Dashboard["검토 대시보드<br/>대기/진행/완료 현황"]
+    Dashboard --> List["검토 대기 목록<br/>필터: 단계별/도구별/부서별"]
+    List --> Detail["검토 상세<br/>신청정보 확인 + 체크리스트"]
+
+    Detail --> Decision{검토 결정}
+
+    Decision -->|승인| Approve["승인<br/>다음 검토 단계로 이동"]
+    Decision -->|피드백 요청| FeedbackReq["피드백 요청 (보완)<br/>보완 항목 체크 + 의견 작성"]
+    Decision -->|반려| Reject["반려<br/>반려 사유 필수 작성"]
+
+    FeedbackReq --> Waiting["신청자 수정/재제출 대기"]
+    Waiting -->|재제출 시 우선 표시| List
+
+    Approve --> Notify["신청자에게 알림 발송"]
+    FeedbackReq --> Notify
+    Reject --> Notify
+
+    style Start fill:#50CF94,color:#fff
+    style Approve fill:#059669,color:#fff
+    style FeedbackReq fill:#FFF7ED,color:#92400E,stroke:#D97706
+    style Reject fill:#DC2626,color:#fff
+    style Waiting fill:#FEF3C7,color:#92400E,stroke:#D97706
+    style Decision fill:#FFF7ED,color:#92400E,stroke:#D97706
+    style Notify fill:#EEF2FF,color:#2563EB,stroke:#2563EB
+```
 
 **주요 분기점:**
 - 검토 결과: 승인 / 피드백(보완 요청) / 반려 3가지 선택
 - 피드백 시 구체적 보완 사항 기재 필수
 - 재제출된 건은 우선 표시
+- SLA 상태: `NORMAL` / `WARNING` / `OVERDUE`
 
 ### 3.3 관리자 플로우
 
-시스템 관리자의 사용 흐름입니다.
+시스템 관리자(IT_ADMIN, SYSTEM_ADMIN)의 사용 흐름입니다.
 
-![관리자 사용자 플로우](./images/flow-admin.svg)
+```mermaid
+flowchart TD
+    Start((시작)) --> Login[SSO 로그인]
+    Login --> Dashboard["관리자 대시보드<br/>KPI / 차트 / 알림"]
+
+    Dashboard --> License["라이센스 관리<br/>발급현황 / 갱신 / 해지"]
+    Dashboard --> Monitor["사용현황 모니터링<br/>API호출 / 토큰 / 비용"]
+    Dashboard --> Tools["AI 도구 관리<br/>등록 / 수정 / 활성관리"]
+    Dashboard --> Settings["시스템 설정<br/>워크플로우 / 알림 / 사용자"]
+    Dashboard -.-> Report["리포트<br/>통계 / 내보내기"]
+
+    License --> L1[도구별 현황]
+    License --> L2[부서별 현황]
+    License --> L3[환경별 현황]
+    License --> L4[일괄관리]
+
+    Monitor --> M1[사용 추이 차트]
+    Monitor --> M2[Top 사용자 랭킹]
+    Monitor --> M3["이상 탐지 알림"]
+    Monitor --> M4[부서별 비교]
+
+    Tools --> T1[도구 추가]
+    Tools --> T2[설정 변경]
+    Tools --> T3[비용 설정]
+    Tools --> T4[쿼터 관리]
+
+    Settings --> S1[워크플로우]
+    Settings --> S2[알림 설정]
+    Settings --> S3[사용자 관리]
+    Settings --> S4[감사 로그]
+
+    Report --> Export[CSV / Excel / PDF]
+
+    style Start fill:#50CF94,color:#fff
+    style Dashboard fill:#50CF94,color:#fff
+    style License fill:#ECFDF5,color:#059669,stroke:#059669
+    style Monitor fill:#EEF2FF,color:#2563EB,stroke:#2563EB
+    style Tools fill:#FFF7ED,color:#92400E,stroke:#D97706
+    style Settings fill:#F3F4F6,color:#111827,stroke:#6B7280
+    style Report fill:#FAF5FF,color:#7C3AED,stroke:#7C3AED
+    style M3 fill:#FEE2E2,color:#DC2626,stroke:#DC2626
+```
 
 **주요 기능 영역:**
 - 대시보드: 전사 현황 한눈에 파악
@@ -249,22 +399,52 @@
 
 ## 4. 화면 구성 - 공통
 
-### 4.1 GNB (Global Navigation Bar)
+### 4.1 레이아웃 구조
 
-모든 페이지 상단에 고정되는 글로벌 네비게이션 바입니다.
+전체 레이아웃은 사이드바 + 메인 콘텐츠 영역으로 구성됩니다. 상단에 Header, 하단에 Footer가 고정됩니다. 사이드바는 역할 기반 네비게이션을 제공합니다.
 
-![GNB 와이어프레임](./images/wf-gnb.svg)
+```mermaid
+block-beta
+    columns 5
+    Header["Header (GNB): 로고 + 서비스명 | 알림 + 프로필 드롭다운"]:5
 
-**구성 요소:**
-- **좌측**: 로고 + 서비스명 ("CodeHub AI Tool Manager")
-- **중앙**: 역할별 주요 메뉴 (신청자: 대시보드/신규신청/내신청/API Key, 검토자: 대시보드/검토목록/검토이력, 관리자: 대시보드/라이센스/모니터링/설정)
+    Sidebar["Sidebar<br/>(역할별 메뉴)<br/>w-60 / w-16"]:1
+    Main["Main Content Area<br/>Breadcrumb → 페이지 콘텐츠"]:4
+
+    Footer["Footer (sticky bottom)"]:5
+```
+
+**사이드바 역할별 메뉴 구성** (구현: `components/layout/sidebar.tsx`):
+
+| 역할 | 메뉴 항목 |
+|------|-----------|
+| **APPLICANT** | 대시보드, 신규 신청, 내 신청, API Key 관리 |
+| **TEAM_LEAD** | 대시보드, 검토 목록, 검토 이력 |
+| **SECURITY_REVIEWER** | 대시보드, 검토 목록, 검토 이력 |
+| **IT_ADMIN** | 대시보드, 라이센스 관리, 사용 현황, 도구 관리 |
+| **SYSTEM_ADMIN** | 대시보드, 라이센스 관리, 사용 현황, 도구 관리 |
+
+**Header 구성 요소:**
+- **좌측**: 로고(#50CF94 배경 + "C") + 서비스명 ("CodeHub")
 - **우측**: 알림 아이콘(미읽음 뱃지) + 사용자 프로필 드롭다운(이름, 역할, 설정, 로그아웃)
 
 ### 4.2 로그인 페이지
 
-SSO 연동 로그인 페이지입니다.
+SSO 연동 로그인 페이지입니다. (구현: `app/(auth)/login/page.tsx`)
 
-![로그인 페이지 와이어프레임](./images/wf-login.svg)
+```mermaid
+block-beta
+    columns 3
+    space:1 LoginCard["로그인 카드"]:1 space:1
+
+    block:LoginCard:1
+        Logo["CodeHub 로고<br/>(#50CF94 배경)"]
+        Title["CodeHub AI Tool Manager"]
+        Desc["사내 AI 코딩도구 도입 신청 플랫폼"]
+        SSOBtn["SSO 로그인 버튼<br/>(사내 통합인증)"]
+        Help["도움말 링크<br/>(문의처, 이용 안내)"]
+    end
+```
 
 **구성 요소:**
 - 서비스 로고 및 서비스명
@@ -278,66 +458,160 @@ SSO 연동 로그인 페이지입니다.
 
 ### 5.1 신청자 대시보드
 
-로그인 후 신청자가 처음 보게 되는 메인 대시보드입니다.
+로그인 후 신청자(APPLICANT)가 처음 보게 되는 메인 대시보드입니다. (구현: `components/application/applicant-dashboard.tsx`)
 
-![신청자 대시보드 와이어프레임](./images/wf-applicant-dashboard.svg)
+```mermaid
+block-beta
+    columns 4
+    CardA["진행 중 신청"]:1 CardB["승인 완료"]:1 CardC["보유 API Key"]:1 ActionBtn["+ 신규 신청"]:1
+
+    RecentTable["최근 신청 내역 테이블<br/>신청일 | AI 도구 (다중) | 상태(뱃지) | 현재 단계 | 액션(상세보기)"]:4
+
+    LicenseCards["보유 라이센스 카드 리스트<br/>도구명 | 환경 | 만료일 | 사용량 프로그레스바"]:4
+```
 
 **구성 요소:**
 - **상단 요약 카드 (3개)**: 진행 중 신청 수 / 승인 완료 수 / 보유 API Key 수
 - **빠른 액션**: [+ 신규 신청] 버튼
-- **최근 신청 내역 테이블**: 신청일, AI 도구, 상태(뱃지), 현재 단계, 액션(상세보기)
+- **최근 신청 내역 테이블**: 신청일, AI 도구(다중 표시: `aiToolNames: string[]`), 상태(뱃지), 현재 단계, 액션(상세보기)
 - **보유 라이센스 카드 리스트**: 도구명, 환경, 만료일, 사용량 프로그레스바
 
 ### 5.2 신규 신청 위자드
 
-7단계 Step-by-Step 위자드로 구성됩니다. 상단에 스텝 인디케이터가 표시되며, 하단에 이전/다음/임시저장 버튼이 있습니다.
+7단계 Step-by-Step 위자드로 구성됩니다. (구현: `components/application/application-wizard.tsx`, `stores/application-store.ts`)
+
+상단에 스텝 인디케이터가 표시되며, 하단에 이전/다음/임시저장 버튼이 있습니다. 위자드 상태는 Zustand store에서 관리하며, `zustand/middleware` persist로 브라우저 저장됩니다.
+
+```mermaid
+flowchart LR
+    S1["1. AI 도구 선택"]
+    S2["2. 사용 환경"]
+    S3["3. 인적정보"]
+    S4["4. 프로젝트 정보"]
+    S5["5. 문서 첨부"]
+    S6["6. 보안 서약"]
+    S7["7. 최종 확인"]
+
+    S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7
+
+    style S1 fill:#F3F4F6,stroke:#E5E7EB
+    style S2 fill:#F3F4F6,stroke:#E5E7EB
+    style S3 fill:#F3F4F6,stroke:#E5E7EB
+    style S4 fill:#F3F4F6,stroke:#E5E7EB
+    style S5 fill:#F3F4F6,stroke:#E5E7EB
+    style S6 fill:#F3F4F6,stroke:#E5E7EB
+    style S7 fill:#50CF94,color:#fff
+```
 
 #### Step 1: AI 도구 선택
 
-![위자드 Step 1 - AI 도구 선택](./images/wf-wizard-step1.svg)
+구현: `components/application/wizard-step1-tool.tsx`
+
+```mermaid
+block-beta
+    columns 1
+    Indicator["스텝 인디케이터 (1/7 활성)"]
+    block:ToolCards:1
+        columns 2
+        Claude["Claude Code<br/>Anthropic<br/>코드 생성, 리뷰<br/>월 비용 정보<br/>[체크박스]"]
+        Antigravity["Antigravity<br/>국내 벤더<br/>코드 분석, 생성<br/>월 비용 정보<br/>[체크박스]"]
+    end
+    Note["다중 선택 가능 (aiToolIds: string[])"]
+```
 
 **구성 요소:**
 - 스텝 인디케이터 (1/7 활성)
-- AI 도구 카드 리스트 (카드당: 도구 아이콘, 이름, 벤더명, 주요 특징 태그, 월 비용 정보, 선택 라디오)
+- AI 도구 카드 리스트 (카드당: 도구 아이콘, 이름, 벤더명, 주요 특징 태그, 월 비용 정보)
+- **다중 선택 가능** (체크박스 기반, `aiToolIds: string[]`로 관리)
 - 기본 도구: Claude Code, Antigravity
-- 선택 시 카드 하이라이트 (파란색 보더)
+- 선택 시 카드 하이라이트 (Accent 보더 #50CF94)
 - 도구 상세 정보 펼침 (Accordion)
 
 #### Step 2: 사용 환경 선택
 
-![위자드 Step 2 - 사용 환경 선택](./images/wf-wizard-step2.svg)
+구현: `components/application/wizard-step2-env.tsx`
+
+```mermaid
+block-beta
+    columns 1
+    Indicator["스텝 인디케이터 (2/7 활성)"]
+    block:EnvCards:1
+        columns 3
+        VDI["VDI<br/>가상 데스크톱<br/>[라디오]"]
+        NB["NOTEBOOK<br/>개인 노트북<br/>[라디오]"]
+        Other["OTHER<br/>기타<br/>[라디오]"]
+    end
+    Note["환경 타입: 'VDI' | 'NOTEBOOK' | 'OTHER'"]
+```
 
 **구성 요소:**
 - 스텝 인디케이터 (2/7 활성)
-- 환경 카드 (체크박스, 복수 선택 가능): VDI (가상 데스크톱), Notebook (개인 노트북), 기타
+- 환경 카드 (라디오 버튼, `Environment` 타입): VDI (가상 데스크톱), NOTEBOOK (개인 노트북), OTHER (기타)
 - 각 환경별 요구사항 안내 텍스트
 - "기타" 선택 시 추가 설명 입력 필드 노출
 
 #### Step 3: 인적정보 확인
 
-![위자드 Step 3 - 인적정보 확인](./images/wf-wizard-step3.svg)
+구현: `components/application/wizard-step3-personal.tsx`
+
+```mermaid
+block-beta
+    columns 1
+    Indicator["스텝 인디케이터 (3/7 활성)"]
+    block:Form:1
+        columns 2
+        EmpNo["사번 (읽기전용)"]
+        Name["이름 (읽기전용)"]
+        Dept["부서 (읽기전용)"]
+        Position["직급 (읽기전용)"]
+        Email["이메일 (수정가능)"]
+        Phone["연락처 (수정가능)"]
+    end
+    Info["사내 HR 시스템에서 자동으로 가져온 정보입니다"]
+```
 
 **구성 요소:**
 - 스텝 인디케이터 (3/7 활성)
 - HR 연동 자동완성된 폼 필드: 사번(읽기전용), 이름(읽기전용), 부서(읽기전용), 직급(읽기전용), 이메일(수정가능), 연락처(수정가능)
-- 자동완성 안내 텍스트 ("사내 HR 시스템에서 자동으로 가져온 정보입니다")
+- 자동완성 안내 텍스트
 - 정보 수정 요청 링크 (HR 시스템으로 이동)
 
 #### Step 4: 프로젝트 정보 입력
 
-![위자드 Step 4 - 프로젝트 정보](./images/wf-wizard-step4.svg)
+구현: `components/application/wizard-step4-project.tsx`
+
+```mermaid
+block-beta
+    columns 1
+    Indicator["스텝 인디케이터 (4/7 활성)"]
+    block:ProjectCard:1
+        columns 1
+        P1["프로젝트 카드 #1<br/>프로젝트명 | 기간(DatePicker) | 설명 | 본인 역할 | PM명 [x 삭제]"]
+        P2["프로젝트 카드 #2<br/>프로젝트명 | 기간(DatePicker) | 설명 | 본인 역할 | PM명 [x 삭제]"]
+    end
+    AddBtn["[+ 프로젝트 추가] (동적 추가/삭제, 최소 1개 필수)"]
+```
 
 **구성 요소:**
 - 스텝 인디케이터 (4/7 활성)
-- 프로젝트 카드 리스트 (동적 추가/삭제)
-- 각 프로젝트 카드 필드: 프로젝트명, 기간(시작일~종료일 DatePicker), 프로젝트 설명, 본인 역할, PM명, 코드 저장소 URL
+- 프로젝트 카드 리스트 (동적 추가/삭제, `Project[]` 타입)
+- 각 프로젝트 카드 필드: 프로젝트명(`name`), 기간(`startDate`~`endDate` DatePicker), 프로젝트 설명(`description`), 본인 역할(`role`), PM명(`pmName`)
 - [+ 프로젝트 추가] 버튼
-- 프로젝트 카드 우상단 삭제(×) 버튼
+- 프로젝트 카드 우상단 삭제(x) 버튼
 - 최소 1개 프로젝트 필수 안내
 
 #### Step 5: 문서 첨부
 
-![위자드 Step 5 - 문서 첨부](./images/wf-wizard-step5.svg)
+구현: `components/application/wizard-step5-docs.tsx`
+
+```mermaid
+block-beta
+    columns 1
+    Indicator["스텝 인디케이터 (5/7 활성)"]
+    DropZone["드래그앤드롭 업로드 영역<br/>(점선 보더, 아이콘, 안내 텍스트)<br/>[파일 찾아보기]"]
+    FileList["업로드된 파일 리스트<br/>파일명 | 크기 | [삭제]"]
+    Info["지원: PDF, DOCX, XLSX, PPTX, ZIP (최대 50MB)<br/>선택 사항 - 첨부 시 검토가 빨라질 수 있습니다"]
+```
 
 **구성 요소:**
 - 스텝 인디케이터 (5/7 활성)
@@ -345,67 +619,143 @@ SSO 연동 로그인 페이지입니다.
 - 파일 찾아보기 버튼
 - 업로드된 파일 리스트 (파일명, 크기, 삭제 버튼)
 - 지원 파일 형식 안내 (PDF, DOCX, XLSX, PPTX, ZIP / 최대 50MB)
-- 선택 사항 안내 ("필수는 아니지만, 첨부 시 검토가 빨라질 수 있습니다")
+- 선택 사항 안내
 
 #### Step 6: 보안 서약
 
-![위자드 Step 6 - 보안 서약](./images/wf-wizard-step6.svg)
+구현: `components/application/wizard-step6-security.tsx`
+
+```mermaid
+block-beta
+    columns 1
+    Indicator["스텝 인디케이터 (6/7 활성)"]
+    AgreementText["보안 서약서 본문<br/>(스크롤 가능 영역, 번호 매긴 조항)"]
+    Checkbox["전체 동의 체크박스<br/>위 보안 서약의 모든 내용을 읽고 이해하였으며 이를 준수할 것을 서약합니다"]
+    SignPad["전자서명 패드 (Canvas)<br/>서명 그리기 | [초기화]"]
+```
 
 **구성 요소:**
 - 스텝 인디케이터 (6/7 활성)
 - 보안 서약서 본문 (스크롤 가능 영역, 번호 매긴 조항)
-- 전체 동의 체크박스 ("위 보안 서약의 모든 내용을 읽고 이해하였으며, 이를 준수할 것을 서약합니다")
+- 전체 동의 체크박스
 - 전자서명 패드 (Canvas 영역, 서명 그리기)
 - 서명 초기화 버튼
 - 서약 동의 및 서명 필수 안내
 
 #### Step 7: 최종 확인 및 제출
 
-![위자드 Step 7 - 최종 확인 및 제출](./images/wf-wizard-step7.svg)
+구현: `components/application/wizard-step7-confirm.tsx`
+
+```mermaid
+block-beta
+    columns 1
+    Indicator["스텝 인디케이터 (7/7 활성)"]
+
+    block:Summary:1
+        columns 2
+        ToolInfo["선택 도구 정보<br/>(다중 도구명, 환경) [수정]"]
+        PersonInfo["인적 정보 요약 [수정]"]
+        ProjectInfo["프로젝트 정보 요약<br/>(프로젝트 수) [수정]"]
+        AttachInfo["첨부 파일 목록 [수정]"]
+    end
+
+    SecurityOk["보안 서약 완료 확인"]
+    FinalCheck["최종 동의 체크박스: 위 정보가 정확하며, 제출 후 검토가 시작됩니다"]
+
+    block:Actions:1
+        columns 2
+        SaveDraft["[임시저장] 보조 버튼"]
+        SubmitBtn["[신청 제출] Primary 버튼"]
+    end
+```
 
 **구성 요소:**
 - 스텝 인디케이터 (7/7 활성)
 - 입력 정보 요약 카드들:
-  - 선택 도구 정보 (도구명, 환경) + [수정] 링크
+  - 선택 도구 정보 (다중 도구명: `aiToolNames[]`, 환경) + [수정] 링크
   - 인적 정보 요약 + [수정] 링크
   - 프로젝트 정보 요약 (프로젝트 수) + [수정] 링크
   - 첨부 파일 목록 + [수정] 링크
-  - 보안 서약 완료 확인 (✓)
-- 최종 동의 체크박스 ("위 정보가 정확하며, 제출 후 검토가 시작됩니다")
+  - 보안 서약 완료 확인
+- 최종 동의 체크박스
 - **[신청 제출]** 주요 버튼 (Primary)
 - [임시저장] 보조 버튼
 
 ### 5.3 신청 상세 / 진행 상태 페이지
 
-신청 건의 상세 정보와 검토 진행 단계를 타임라인으로 표시합니다.
+신청 건의 상세 정보와 검토 진행 단계를 타임라인으로 표시합니다. (구현: `app/(dashboard)/applications/[id]/page.tsx`)
 
-![신청 상세 - 진행 상태 타임라인](./images/wf-application-status.svg)
+```mermaid
+flowchart LR
+    subgraph Timeline["수직 타임라인 Stepper"]
+        direction TB
+        TS["SUBMITTED<br/>검토 신청 접수"]
+        TR["TEAM_REVIEW<br/>1차 검토 - 팀장"]
+        SR["SECURITY_REVIEW<br/>보안 검토"]
+        EP["ENV_PREPARATION<br/>환경 준비"]
+        FA["FINAL_APPROVAL<br/>최종 승인"]
+        KI["KEY_ISSUED<br/>API Key 발급"]
 
-**구성 요소:**
-- **좌측: 수직 타임라인 Stepper**
-  - 검토 신청 (완료 ✓ / 날짜)
-  - 1차 검토 - 팀장 (완료 ✓ / 날짜 / 검토자명)
-  - 보안 검토 (진행 중 ● / 예상 완료일)
-  - 환경 준비 (대기 ○)
-  - 최종 승인 (대기 ○)
-  - API Key 발급 (대기 ○)
-- **우측: 상세 정보 패널**
-  - 현재 단계 강조 표시
-  - 해당 단계 상세 정보 (검토자, 시작일, 피드백 내용)
-  - 피드백이 있는 경우 알림 뱃지
+        TS --> TR --> SR --> EP --> FA --> KI
+    end
+
+    subgraph Detail["상세 정보 패널"]
+        direction TB
+        Stage["현재 단계 강조 표시"]
+        Info["검토자 / 시작일 / 피드백 내용"]
+        Badge["피드백 알림 뱃지"]
+    end
+
+    style TS fill:#059669,color:#fff
+    style TR fill:#059669,color:#fff
+    style SR fill:#50CF94,color:#fff
+    style EP fill:#F3F4F6,stroke:#9CA3AF
+    style FA fill:#F3F4F6,stroke:#9CA3AF
+    style KI fill:#F3F4F6,stroke:#9CA3AF
+```
+
+**타임라인 상태 표시:**
+
+| 상태 | 표현 | 색상 |
+|------|------|------|
+| 완료 | 체크 아이콘 + 날짜 + 검토자명 | Success (#059669) |
+| 진행 중 | 점 아이콘 + 펄스 애니메이션 | Primary (#50CF94) |
+| 피드백 대기 | 경고 아이콘 | Warning (#D97706) |
+| 반려 | X 아이콘 | Error (#DC2626) |
+| 대기 | 빈 원 아이콘 | Gray (#9CA3AF) |
 
 ### 5.4 피드백 확인 및 수정/재제출 페이지
 
-검토자로부터 피드백을 받았을 때 수정하여 재제출하는 페이지입니다.
+검토자로부터 피드백을 받았을 때 수정하여 재제출하는 페이지입니다. (구현: `app/(dashboard)/applications/[id]/edit/page.tsx`)
 
-![피드백 확인 및 재제출](./images/wf-feedback.svg)
+```mermaid
+block-beta
+    columns 1
+
+    block:FeedbackArea:1
+        columns 1
+        FBHeader["피드백 제공자: 검토자명, 역할, 날짜"]
+        FBBadge["피드백 유형 뱃지 (보완 요청 / 수정 필요)"]
+        FBContent["피드백 상세 내용"]
+    end
+
+    block:EditArea:1
+        columns 1
+        EditForm["피드백 요청 항목의 기존 입력 폼 (수정 가능)"]
+        Highlight["변경 사항 하이라이트 표시"]
+        AdditionalNote["추가 설명 텍스트 영역"]
+        ResubmitBtn["[재제출] 버튼"]
+    end
+
+    style FeedbackArea fill:#FFF7ED,stroke:#D97706
+    style EditArea fill:#FFFFFF,stroke:#E5E7EB
+```
 
 **구성 요소:**
-- **피드백 영역** (상단, 노란색 배경 카드):
+- **피드백 영역** (상단, 경고색 배경 카드):
   - 피드백 제공자 (검토자명, 역할, 날짜)
   - 피드백 유형 뱃지 (보완 요청 / 수정 필요)
   - 피드백 상세 내용
-  - 첨부파일 (있는 경우)
 - **수정 영역** (하단):
   - 피드백에서 요청한 항목의 기존 입력 폼 (수정 가능 상태)
   - 변경 사항 하이라이트 표시
@@ -416,17 +766,35 @@ SSO 연동 로그인 페이지입니다.
 
 발급된 API Key를 조회하고 관리하는 페이지입니다.
 
-![API Key 관리 페이지](./images/wf-apikey-management.svg)
+```mermaid
+block-beta
+    columns 1
+
+    block:KeyCard:1
+        columns 1
+        Header["도구 아이콘 + 이름 | 상태 뱃지 (활성/비활성/만료)"]
+        KeyValue["Key: sk-xxxx...xxxx1234 (마스킹)"]
+        Dates["발급일 / 만료일"]
+        Usage["사용량 프로그레스바 (쿼터 대비)"]
+        Actions["[복사] [보기] [리셋] [비활성화]"]
+    end
+
+    SecurityNote["API Key는 민감 정보입니다. 안전하게 보관하세요."]
+    ExpiryAlert["만료 임박 알림 (D-7 이내)"]
+
+    style SecurityNote fill:#FEF3C7,stroke:#D97706
+    style ExpiryAlert fill:#FEE2E2,stroke:#DC2626
+```
 
 **구성 요소:**
 - API Key 카드 리스트:
-  - 도구 아이콘 + 이름
+  - 도구 아이콘 + 이름 (라이센스/API Key는 단일 도구: `aiToolId: string`, `aiToolName: string`)
   - Key 값 (마스킹 표시: `sk-xxxx...xxxx1234`)
-  - 상태 뱃지 (활성/비활성/만료)
+  - 상태 뱃지 (`LicenseStatus`: ACTIVE/EXPIRED/REVOKED/SUSPENDED)
   - 발급일 / 만료일
   - 사용량 프로그레스바 (쿼터 대비)
   - 액션 버튼: [복사] [보기(마스킹 해제)] [리셋] [비활성화]
-- Key 보안 안내 텍스트 ("API Key는 민감 정보입니다. 안전하게 보관하세요.")
+- Key 보안 안내 텍스트
 - 만료 임박 알림 (D-7 이내)
 
 ---
@@ -435,51 +803,105 @@ SSO 연동 로그인 페이지입니다.
 
 ### 6.1 검토자 대시보드
 
-검토자가 로그인 후 보는 대시보드입니다.
+검토자(TEAM_LEAD, SECURITY_REVIEWER)가 로그인 후 보는 대시보드입니다. (구현: `components/review/reviewer-dashboard.tsx`)
 
-![검토자 대시보드 와이어프레임](./images/wf-reviewer-dashboard.svg)
+```mermaid
+block-beta
+    columns 4
+    StatA["검토 대기<br/>(pending)"]:1
+    StatB["금일 처리<br/>(completedToday)"]:1
+    StatC["SLA 초과<br/>(overdue)"]:1
+    StatD["평균 처리일<br/>(avgProcessingDays)"]:1
+
+    PendingList["검토 대기 목록 (최근 5건)<br/>신청자명 | AI 도구(다중) | 신청일 | SLA 상태 뱃지 | [검토하기]"]:4
+
+    RecentHistory["최근 처리 내역<br/>처리일 | 신청자 | 결과(승인/반려/피드백) | 소요시간"]:2
+    SLAChart["SLA 현황<br/>기한 내 처리율 그래프"]:2
+```
 
 **구성 요소:**
-- **요약 카드 (4개)**: 검토 대기 / 피드백 대기(재제출 대기) / 금일 처리 / 평균 처리 시간
-- **검토 대기 목록 (최근 5건)**: 신청자명, 도구, 신청일, 긴급도 뱃지, [검토하기] 버튼
-- **최근 처리 내역**: 처리일, 신청자, 결과(승인/반려/피드백), 소요시간
+- **요약 카드 (4개)**: 검토 대기(`pending`) / 금일 처리(`completedToday`) / SLA 초과(`overdue`) / 평균 처리일(`avgProcessingDays`) - `ReviewStats` 타입
+- **검토 대기 목록 (최근 5건)**: 신청자명, AI 도구(다중: `aiToolNames[]`), 신청일, SLA 상태 뱃지, [검토하기] 버튼
+- **최근 처리 내역**: 처리일, 신청자, 결과(APPROVED/REJECTED/FEEDBACK_REQUESTED), 소요시간
 - **SLA 현황**: 기한 내 처리율 그래프
 
 ### 6.2 검토 대기 목록
 
-검토할 신청 목록을 필터링하고 조회하는 페이지입니다.
+검토할 신청 목록을 필터링하고 조회하는 페이지입니다. (구현: `app/(dashboard)/reviews/page.tsx`, `components/review/review-list-filters.tsx`)
 
-![검토 대기 목록 와이어프레임](./images/wf-reviewer-list.svg)
+```mermaid
+block-beta
+    columns 1
+
+    block:Filters:1
+        columns 4
+        StageFilter["검토 단계<br/>(TEAM_REVIEW /<br/>SECURITY_REVIEW)"]
+        ToolFilter["AI 도구<br/>(전체/Claude/Antigravity)"]
+        DeptFilter["부서 필터"]
+        DateFilter["신청일 기간"]
+    end
+
+    SearchBar["검색: 신청자명, 사번"]
+
+    block:Table:1
+        columns 1
+        TableHead["체크박스 | 신청번호 | 신청자(부서) | AI 도구(다중) | 환경 | 신청일 | 현재 단계 | SLA 상태 | 액션"]
+        TableBody["... 데이터 행 ..."]
+    end
+
+    Pagination["페이지네이션 (페이지 번호 + 페이지당 건수)"]
+```
 
 **구성 요소:**
-- **필터바**: 검토 단계(1차/보안/환경), AI 도구(전체/Claude Code/Antigravity), 부서, 신청일 기간
+- **필터바**: 검토 단계(`stageName`), AI 도구, 부서, 신청일 기간 - `FilterState` 타입
 - **검색바**: 신청자명, 사번 검색
-- **정렬**: 신청일순, 긴급도순, SLA 마감순
-- **테이블 컬럼**: 체크박스, 신청번호, 신청자(부서), AI 도구, 환경, 신청일, 현재 단계, SLA 잔여시간, 액션
-- **뱃지 색상**: 대기(회색), 진행중(파랑), 긴급(빨강), 재제출(주황)
-- **페이지네이션**: 페이지 번호 + 페이지당 건수 선택
+- **정렬**: 신청일순, SLA 마감순
+- **테이블 컬럼**: 체크박스, 신청번호, 신청자(부서), AI 도구(`aiToolNames[]`), 환경, 신청일, 현재 단계, SLA 상태(`slaStatus`), 액션
+- **SLA 뱃지 색상**: NORMAL(회색), WARNING(주황), OVERDUE(빨강)
+- **페이지네이션**: `PaginatedResponse<ReviewListItem>` 기반
 
 ### 6.3 검토 상세 페이지
 
-개별 신청 건을 상세 검토하고 피드백을 입력하는 페이지입니다.
+개별 신청 건을 상세 검토하고 피드백을 입력하는 페이지입니다. (구현: `app/(dashboard)/reviews/[id]/page.tsx`)
 
-![검토 상세 페이지 와이어프레임](./images/wf-reviewer-detail.svg)
+```mermaid
+block-beta
+    columns 2
+
+    block:LeftPanel["좌측: 신청 정보"]:1
+        columns 1
+        BasicInfo["신청 기본 정보<br/>신청번호 | 신청자 | 부서 | 신청일"]
+        ToolEnv["선택 도구(다중) 및 환경 정보"]
+        Projects["프로젝트 정보 (아코디언)<br/>Project[] 데이터"]
+        Docs["첨부 문서 (다운로드)"]
+        Security["보안 서약 확인<br/>(서명일, 서명 이미지)"]
+        History["이전 검토 이력 타임라인<br/>ReviewStage[] → allStages"]
+    end
+
+    block:RightPanel["우측: 검토 액션"]:1
+        columns 1
+        Comment["검토 의견 작성"]
+        Checklist["체크리스트<br/>ReviewChecklistItem[]"]
+        Actions["[승인] #059669<br/>[피드백 요청] #D97706<br/>[반려] #DC2626"]
+        Modal["검토 완료 확인 모달"]
+    end
+```
 
 **구성 요소:**
 - **좌측 패널 (신청 정보 요약):**
   - 신청 기본 정보 카드 (신청번호, 신청자, 부서, 신청일)
-  - 선택 도구 및 환경 정보
-  - 프로젝트 정보 (아코디언 - 다수 프로젝트)
-  - 첨부 문서 목록 (다운로드 가능)
-  - 보안 서약 확인 (서명일, 서명 이미지 미리보기)
-  - 이전 검토 이력 타임라인
+  - 선택 도구(다중: `aiToolNames[]`) 및 환경 정보
+  - 프로젝트 정보 (아코디언 - `Project[]`)
+  - 첨부 문서 목록 (`Attachment[]`, 다운로드 가능)
+  - 보안 서약 확인 (`SecurityAgreement`: 서명일, 서명 이미지 미리보기)
+  - 이전 검토 이력 타임라인 (`ReviewStage[]`)
 - **우측 패널 (검토 액션):**
   - 검토 의견 작성 텍스트 영역
-  - 체크리스트 (검토 항목별 확인)
+  - 체크리스트 (`ReviewChecklistItem[]`)
   - **액션 버튼 그룹**:
-    - [승인] (초록색 Primary 버튼)
-    - [피드백 요청] (주황색 버튼) - 보완 필요 항목 체크
-    - [반려] (빨간색 버튼) - 반려 사유 필수 입력
+    - [승인] (`APPROVED`, 초록색)
+    - [피드백 요청] (`FEEDBACK_REQUESTED`, 주황색)
+    - [반려] (`REJECTED`, 빨간색, 반려 사유 필수)
   - 검토 완료 확인 모달
 
 ---
@@ -488,43 +910,108 @@ SSO 연동 로그인 페이지입니다.
 
 ### 7.1 관리자 대시보드
 
-전사 AI 도구 현황을 한눈에 파악할 수 있는 대시보드입니다.
+전사 AI 도구 현황을 한눈에 파악할 수 있는 대시보드입니다. (구현: `components/monitoring/admin-dashboard.tsx`)
 
-![관리자 대시보드 와이어프레임](./images/wf-admin-dashboard.svg)
+```mermaid
+block-beta
+    columns 4
+    KPI1["총 활성 라이센스<br/>(전월 대비 증감)"]:1
+    KPI2["활성 사용자 수<br/>(전월 대비 증감)"]:1
+    KPI3["이번 달 총 비용<br/>(예산 대비 비율)"]:1
+    KPI4["평균 처리 시간<br/>(SLA 달성율)"]:1
+
+    DonutChart["도구별 라이센스 분포<br/>(도넛 차트)"]:2
+    LineChart["월별 사용 추이<br/>(라인 차트, 최근 6개월)"]:2
+
+    ActivityFeed["최근 활동 피드<br/>(신규 신청, 승인, 발급 등)"]:2
+    AlertPanel["알림/이슈 패널<br/>(만료 임박, 이상 사용, SLA 초과)"]:2
+```
 
 **구성 요소:**
-- **KPI 카드 (4개)**:
+- **KPI 카드 (4개)** (`components/monitoring/kpi-card.tsx`):
   - 총 활성 라이센스 수 (전월 대비 증감)
   - 활성 사용자 수 (전월 대비 증감)
   - 이번 달 총 비용 (예산 대비 비율)
   - 평균 처리 시간 (SLA 달성율)
 - **차트 영역 (2개)**:
   - 도구별 라이센스 분포 (도넛 차트)
-  - 월별 사용 추이 (라인 차트, 최근 6개월)
+  - 월별 사용 추이 (라인 차트, `components/monitoring/monthly-trend-chart.tsx`)
 - **최근 활동 피드** (신규 신청, 승인, 발급 등)
-- **알림/이슈 패널** (만료 임박, 이상 사용, SLA 초과)
+- **알림/이슈 패널** (`components/monitoring/anomaly-alerts.tsx`: 만료 임박, 이상 사용, SLA 초과)
 
 ### 7.2 라이센스 발급 현황
 
-라이센스 발급 및 관리 현황을 조회하는 페이지입니다.
+라이센스 발급 및 관리 현황을 조회하는 페이지입니다. (구현: `components/monitoring/license-table.tsx`)
 
-![라이센스 발급 현황 와이어프레임](./images/wf-admin-license.svg)
+```mermaid
+block-beta
+    columns 1
+
+    block:Filters:1
+        columns 5
+        Period["기간"]
+        Tool["AI 도구"]
+        Dept["부서"]
+        Env["환경"]
+        Status["상태<br/>(ACTIVE/EXPIRED/<br/>REVOKED/SUSPENDED)"]
+    end
+
+    block:Charts:1
+        columns 3
+        BarChart["도구별 발급 현황<br/>(바 차트)"]
+        PieChart["부서별 분포<br/>(파이 차트)"]
+        DonutChart["환경별 분포<br/>(도넛 차트)"]
+    end
+
+    block:Table:1
+        columns 1
+        TableContent["라이센스ID | 사용자 | 부서 | 도구(aiToolName) | 환경 | 상태 | 발급일 | 만료일 | 사용량 | 액션"]
+    end
+
+    block:Actions:1
+        columns 2
+        Batch["체크박스 선택 + 일괄 액션(갱신/해지)"]
+        Export["내보내기: CSV, Excel, PDF"]
+    end
+```
 
 **구성 요소:**
-- **필터 영역**: 기간, AI 도구, 부서, 환경, 상태(활성/비활성/만료)
+- **필터 영역**: 기간, AI 도구, 부서, 환경(`Environment`), 상태(`LicenseStatus`)
 - **시각화 영역**:
-  - 도구별 발급 현황 (바 차트)
+  - 도구별 발급 현황 (바 차트, `components/monitoring/department-bar-chart.tsx`)
   - 부서별 라이센스 분포 (파이 차트)
   - 환경별 분포 (도넛 차트)
-- **상세 테이블**: 라이센스ID, 사용자, 부서, 도구, 환경, 상태, 발급일, 만료일, 사용량, 액션(상세/해지)
+- **상세 테이블**: 라이센스ID, 사용자, 부서, 도구(`aiToolName` - 단일), 환경, 상태, 발급일, 만료일, 사용량, 액션
 - **일괄 관리**: 체크박스 선택 + 일괄 액션(갱신/해지)
 - **데이터 내보내기**: CSV, Excel, PDF 버튼
 
 ### 7.3 사용 현황 모니터링
 
-AI 도구의 실시간 사용 현황을 모니터링하는 페이지입니다.
+AI 도구의 실시간 사용 현황을 모니터링하는 페이지입니다. (구현: `app/(dashboard)/monitoring/costs/page.tsx`, `components/monitoring/usage-trend-chart.tsx`)
 
-![사용 현황 모니터링 와이어프레임](./images/wf-admin-monitoring.svg)
+```mermaid
+block-beta
+    columns 1
+
+    block:Controls:1
+        columns 2
+        PeriodFilter["기간: 오늘 / 7일 / 30일 / 사용자 지정"]
+        ToolTabs["도구 탭: 전체 / Claude Code / Antigravity"]
+    end
+
+    block:KPIs:1
+        columns 4
+        API["총 API 호출 수"]
+        Token["총 토큰 사용량"]
+        Cost["총 비용"]
+        Users["활성 사용자"]
+    end
+
+    TrendChart["사용량 추이 차트 (라인, 일별/주별/월별)"]:1
+    TopUsers["Top 사용자 랭킹 테이블 (상위 10명)"]:1
+    AnomalyList["이상 사용 탐지 알림 목록 (임계치 초과 건)"]:1
+    DeptCompare["부서별 사용 비교 (그룹 바 차트)"]:1
+```
 
 **구성 요소:**
 - **기간 필터**: 오늘 / 7일 / 30일 / 사용자 지정 기간
@@ -537,25 +1024,44 @@ AI 도구의 실시간 사용 현황을 모니터링하는 페이지입니다.
 
 ### 7.4 AI 도구 관리
 
-시스템에 등록된 AI 도구를 관리하는 페이지입니다.
+시스템에 등록된 AI 도구를 관리하는 페이지입니다. (구현: `app/(dashboard)/admin/tools/page.tsx`)
 
-![AI 도구 관리 와이어프레임](./images/wf-admin-tools.svg)
+```mermaid
+block-beta
+    columns 1
+
+    block:ToolCards:1
+        columns 2
+        Tool1["Claude Code<br/>Anthropic<br/>상태: 활성<br/>활성 라이센스: N개<br/>월 비용 요약<br/>[설정] [비활성화]"]
+        Tool2["Antigravity<br/>국내 벤더<br/>상태: 활성<br/>활성 라이센스: N개<br/>월 비용 요약<br/>[설정] [비활성화]"]
+    end
+
+    AddBtn["[+ 새 도구 추가]"]
+
+    block:AddModal:1
+        columns 1
+        ModalTitle["도구 추가/수정 모달"]
+        Fields["도구명 | 벤더 | 설명 | API Endpoint URL<br/>인증 방식 (API_KEY/OAUTH/TOKEN) | 토큰당 비용(tokenCost)<br/>기본 쿼터(defaultQuota) | 활성 여부(isActive) | 아이콘 업로드"]
+    end
+
+    style AddModal fill:#F3F4F6,stroke:#E5E7EB
+```
 
 **구성 요소:**
-- **도구 카드 리스트**:
-  - 도구 아이콘/로고
-  - 도구명, 벤더명
-  - 상태 뱃지 (활성/비활성)
+- **도구 카드 리스트** (`AiTool` 타입):
+  - 도구 아이콘/로고 (`iconUrl`)
+  - 도구명(`name`), 벤더명(`vendor`)
+  - 상태 뱃지 (`isActive`: 활성/비활성)
   - 활성 라이센스 수
   - 월 비용 요약
   - [설정] [비활성화] 버튼
 - **[+ 새 도구 추가]** 버튼
 - **도구 추가/수정 모달**:
   - 도구명, 벤더, 설명
-  - API Endpoint URL
-  - 인증 방식 (API Key / OAuth)
-  - 토큰당 비용
-  - 기본 쿼터 설정
+  - API Endpoint URL (`apiEndpoint`)
+  - 인증 방식 (`authMethod`: API_KEY / OAUTH / TOKEN)
+  - 토큰당 비용 (`tokenCost`)
+  - 기본 쿼터 설정 (`defaultQuota`)
   - 아이콘 업로드
 
 ---
@@ -567,30 +1073,68 @@ AI 도구의 실시간 사용 현황을 모니터링하는 페이지입니다.
 | 인터랙션 | 동작 |
 |---------|------|
 | 스텝 클릭 | 완료된 이전 스텝으로만 이동 가능, 미래 스텝은 비활성 |
-| [다음] 클릭 | 현재 스텝 유효성 검사 → 통과 시 다음 스텝, 실패 시 에러 표시 |
-| [이전] 클릭 | 입력 데이터 유지한 채 이전 스텝으로 이동 |
-| [임시저장] 클릭 | 현재까지 입력 데이터 서버에 저장, 토스트 알림("임시저장 완료") |
+| [다음] 클릭 | 현재 스텝 Zod 유효성 검사 → 통과 시 `nextStep()`, 실패 시 에러 표시 |
+| [이전] 클릭 | 입력 데이터 유지한 채 `prevStep()` |
+| [임시저장] 클릭 | 현재까지 입력 데이터 저장 (Zustand persist), 토스트 알림("임시저장 완료") |
 | 브라우저 뒤로가기 | 확인 모달("작성 중인 내용이 있습니다. 이 페이지를 떠나시겠습니까?") |
+
+**Zustand Store 연동** (`stores/application-store.ts`):
+- `currentStep`: 1~7 범위
+- `formData`: `WizardFormData` (aiToolIds[], environment, purpose, projects[], attachments[], securityAgreementSigned)
+- `draftId`: 임시저장 ID
+- `nextStep()` / `prevStep()`: 스텝 이동 (min/max 제한)
+- `reset()`: 초기화
 
 ### 8.2 검토 진행 타임라인 Stepper
 
+```mermaid
+flowchart LR
+    subgraph "ApplicationStatus 상태 흐름"
+        DRAFT --> SUBMITTED
+        SUBMITTED --> TEAM_REVIEW
+        TEAM_REVIEW --> SECURITY_REVIEW
+        SECURITY_REVIEW --> ENV_PREPARATION
+        ENV_PREPARATION --> FINAL_APPROVAL
+        FINAL_APPROVAL --> APPROVED
+        APPROVED --> KEY_ISSUED
+    end
+
+    TEAM_REVIEW -.->|FEEDBACK_REQUESTED| FEEDBACK_REQUESTED
+    SECURITY_REVIEW -.->|FEEDBACK_REQUESTED| FEEDBACK_REQUESTED
+    FEEDBACK_REQUESTED -.->|재제출| TEAM_REVIEW
+
+    TEAM_REVIEW -.->|REJECTED| REJECTED
+    SECURITY_REVIEW -.->|REJECTED| REJECTED
+
+    style DRAFT fill:#F3F4F6,stroke:#9CA3AF
+    style SUBMITTED fill:#F3F4F6,stroke:#9CA3AF
+    style TEAM_REVIEW fill:#50CF94,color:#fff
+    style SECURITY_REVIEW fill:#50CF94,color:#fff
+    style ENV_PREPARATION fill:#50CF94,color:#fff
+    style FINAL_APPROVAL fill:#50CF94,color:#fff
+    style APPROVED fill:#059669,color:#fff
+    style KEY_ISSUED fill:#059669,color:#fff
+    style FEEDBACK_REQUESTED fill:#FFF7ED,color:#92400E,stroke:#D97706
+    style REJECTED fill:#DC2626,color:#fff
+```
+
 | 상태 | 아이콘 | 색상 | 설명 |
 |------|--------|------|------|
-| 완료 | ✓ (체크) | Success (#059669) | 해당 단계 완료, 완료 날짜 표시 |
-| 진행 중 | ● (점) | Primary (#1E40AF) | 현재 진행 중인 단계, 펄스 애니메이션 |
-| 피드백 대기 | ⚠ (경고) | Warning (#D97706) | 피드백 수신, 재제출 대기 |
-| 반려 | ✗ (엑스) | Error (#DC2626) | 해당 단계에서 반려 |
-| 대기 | ○ (빈 원) | Gray (#9CA3AF) | 아직 도달하지 않은 단계 |
+| 완료 | 체크 | Success (#059669) | 해당 단계 완료, 완료 날짜 표시 |
+| 진행 중 | 점 | Primary (#50CF94) | 현재 진행 중인 단계, 펄스 애니메이션 |
+| 피드백 대기 | 경고 | Warning (#D97706) | 피드백 수신, 재제출 대기 |
+| 반려 | X | Error (#DC2626) | 해당 단계에서 반려 |
+| 대기 | 빈 원 | Gray (#9CA3AF) | 아직 도달하지 않은 단계 |
 
 ### 8.3 알림 (Toast & Badge)
 
 **토스트 알림:**
 | 유형 | 색상 | 아이콘 | 자동 닫힘 | 예시 |
 |------|------|--------|----------|------|
-| 성공 | #059669 배경 | ✓ | 3초 | "신청이 성공적으로 제출되었습니다" |
-| 에러 | #DC2626 배경 | ✗ | 수동 닫기 | "파일 업로드에 실패했습니다" |
-| 경고 | #D97706 배경 | ⚠ | 5초 | "API Key가 7일 후 만료됩니다" |
-| 정보 | #2563EB 배경 | ℹ | 3초 | "임시저장이 완료되었습니다" |
+| 성공 | #059669 배경 | 체크 | 3초 | "신청이 성공적으로 제출되었습니다" |
+| 에러 | #DC2626 배경 | X | 수동 닫기 | "파일 업로드에 실패했습니다" |
+| 경고 | #D97706 배경 | 경고 | 5초 | "API Key가 7일 후 만료됩니다" |
+| 정보 | #2563EB 배경 | 정보 | 3초 | "임시저장이 완료되었습니다" |
 
 **알림 뱃지:**
 - GNB 알림 아이콘에 미읽음 수 표시 (빨간 원, 최대 99+)
@@ -604,7 +1148,7 @@ AI 도구의 실시간 사용 현황을 모니터링하는 페이지입니다.
 | 정렬 | 컬럼 헤더 클릭 → 오름차순/내림차순 토글, 현재 정렬 방향 화살표 표시 |
 | 필터 | 필터바에서 조건 선택, 적용된 필터는 태그(Chip)로 표시, 개별/전체 해제 가능 |
 | 검색 | 실시간 검색 (디바운스 300ms), 검색어 하이라이트 |
-| 페이지네이션 | 페이지 번호 + 이전/다음 + 페이지당 건수 선택(10/20/50) |
+| 페이지네이션 | 페이지 번호 + 이전/다음 + 페이지당 건수 선택(10/20/50), `PaginatedResponse` 기반 |
 | 행 선택 | 체크박스 클릭으로 개별/전체 선택, 선택 시 일괄 액션 바 노출 |
 | 행 클릭 | 상세 페이지로 이동 (또는 사이드 패널 오픈) |
 
@@ -623,7 +1167,7 @@ AI 도구의 실시간 사용 현황을 모니터링하는 페이지입니다.
 | 상태 | 표현 |
 |------|------|
 | 페이지 로딩 | 스켈레톤 UI (카드, 테이블 형태의 회색 애니메이션 박스) |
-| 데이터 로딩 | 테이블/차트 영역에 스피너 오버레이 |
+| 데이터 로딩 | 테이블/차트 영역에 스피너 오버레이 (`components/common/loading-spinner.tsx`) |
 | 버튼 로딩 | 버튼 텍스트 → 스피너로 변경, 비활성화 |
 | 파일 업로드 | 프로그레스 바 (퍼센트 표시) |
 
@@ -642,11 +1186,13 @@ AI 도구의 실시간 사용 현황을 모니터링하는 페이지입니다.
 
 ### 9.1 브레이크포인트
 
+Tailwind CSS v4 기본 브레이크포인트를 사용합니다:
+
 | 이름 | 크기 | 대상 디바이스 | 비고 |
 |------|------|-------------|------|
 | sm | 640px | 모바일 | 최소 지원 |
 | md | 768px | 태블릿 세로 | - |
-| lg | 1024px | 태블릿 가로 | - |
+| lg | 1024px | 태블릿 가로 | 사이드바 표시 기준 |
 | **xl** | **1280px** | **데스크톱** | **기본 설계 기준** |
 | 2xl | 1536px | 대형 모니터 | 최대 너비 제한 |
 
@@ -656,8 +1202,8 @@ AI 도구의 실시간 사용 현황을 모니터링하는 페이지입니다.
 
 | 구성 요소 | 데스크톱 (≥1280px) | 태블릿 (768-1279px) | 모바일 (<768px) |
 |---------|-------------------|-------------------|----------------|
-| GNB | 전체 메뉴 표시 | 주요 메뉴 + 햄버거 | 로고 + 햄버거 |
-| 사이드바 | 고정 표시 (240px) | 접이식 (아이콘만) | 숨김 (드로어) |
+| Header | 전체 메뉴 표시 | 주요 메뉴 + 햄버거 | 로고 + 햄버거 |
+| Sidebar | 고정 표시 (w-60) | 접이식 (w-16, 아이콘만) | 숨김 (MobileSidebar 드로어) |
 | 대시보드 카드 | 4열 그리드 | 2열 그리드 | 1열 스택 |
 | 데이터 테이블 | 전체 컬럼 | 주요 컬럼 + 가로스크롤 | 카드형 리스트 |
 | 위자드 | 좌우 분할 (스텝바+폼) | 상하 분할 | 상하 분할 (간략) |
@@ -667,6 +1213,8 @@ AI 도구의 실시간 사용 현황을 모니터링하는 페이지입니다.
 ---
 
 ## 10. 재사용 컴포넌트 목록
+
+> 컴포넌트는 shadcn/ui (Radix + Tailwind) 기반으로 구현되며, `npx shadcn@latest add <component>`로 추가합니다. 커스텀 컴포넌트는 `components/{feature}/` 디렉토리에 위치합니다. className 병합은 `cn()` 유틸리티를 사용합니다.
 
 ### 10.1 기본 입력 컴포넌트
 
@@ -695,81 +1243,76 @@ AI 도구의 실시간 사용 현황을 모니터링하는 페이지입니다.
 
 ### 10.3 레이아웃 컴포넌트
 
-| 컴포넌트 | 변형 (Variants) | 주요 Props |
-|---------|----------------|-----------|
-| **Card** | default, outline, elevated, interactive | header, footer, padding |
-| **Modal** | dialog, confirm, form, fullscreen | title, size(sm/md/lg/xl), onClose, footer |
-| **Toast** | success, error, warning, info | message, duration, action, position |
-| **Sidebar** | fixed, collapsible | items[], collapsed, onToggle |
-| **Navbar** | default | logo, menuItems[], rightActions[] |
-| **Breadcrumb** | default | items[], separator |
-| **Tabs** | line, card | items[], activeKey, onChange |
-| **Accordion** | single, multiple | items[], defaultOpen |
+| 컴포넌트 | 변형 (Variants) | 주요 Props | 구현 파일 |
+|---------|----------------|-----------|-----------|
+| **Card** | default, outline, elevated, interactive | header, footer, padding | `components/ui/card.tsx` |
+| **Modal** | dialog, confirm, form, fullscreen | title, size(sm/md/lg/xl), onClose, footer | `components/ui/dialog.tsx` |
+| **Toast** | success, error, warning, info | message, duration, action, position | `components/ui/sonner.tsx` |
+| **Sidebar** | fixed, collapsible | items[], collapsed, onToggle | `components/layout/sidebar.tsx` |
+| **Header** | default | logo, menuItems[], rightActions[] | `components/layout/header.tsx` |
+| **Breadcrumb** | default | items[], separator | `components/layout/breadcrumb.tsx` |
+| **Footer** | default (sticky bottom) | - | `components/layout/footer.tsx` |
+| **Tabs** | line, card | items[], activeKey, onChange | `components/ui/tabs.tsx` |
+| **Accordion** | single, multiple | items[], defaultOpen | `components/ui/accordion.tsx` |
 
 ### 10.4 데이터 컴포넌트
 
-| 컴포넌트 | 변형 (Variants) | 주요 Props |
-|---------|----------------|-----------|
-| **Table** | default, striped, compact | columns[], data[], sortable, selectable |
-| **Pagination** | default, simple | total, pageSize, current, onChange |
-| **Filter** | inline, dropdown, panel | filters[], onApply, onReset |
-| **Stepper** | horizontal, vertical | steps[], current, status |
-| **Timeline** | default, alternate | items[], mode |
-| **Chart** | line, bar, pie, donut | data, options, responsive |
-| **StatCard** | default, trend | title, value, change, icon |
-| **EmptyState** | default, search, error | icon, title, description, action |
+| 컴포넌트 | 변형 (Variants) | 주요 Props | 구현 파일 |
+|---------|----------------|-----------|-----------|
+| **DataTable** | default, striped, compact | columns[], data[], sortable, selectable | `components/common/data-table.tsx` |
+| **Pagination** | default, simple | total, pageSize, current, onChange | `components/common/pagination.tsx` |
+| **Filter** | inline, dropdown, panel | filters[], onApply, onReset | `components/review/review-list-filters.tsx` |
+| **StepIndicator** | horizontal, vertical | steps[], current, status | `components/common/step-indicator.tsx` |
+| **Timeline** | default, alternate | items[], mode | `components/application/application-timeline.tsx` |
+| **KpiCard** | default, trend | title, value, change, icon | `components/monitoring/kpi-card.tsx` |
+| **EmptyState** | default, search, error | icon, title, description, action | - |
 
 ### 10.5 컴포넌트 상태 전이 규칙
 
 **Button 상태 전이:**
-```
-default → (마우스 진입) → hover → (마우스 누름) → active → (마우스 놓음) → hover
-default → (비활성) → disabled (모든 인터랙션 차단)
-default → (클릭+비동기) → loading → (완료) → default
+
+```mermaid
+stateDiagram-v2
+    [*] --> default
+    default --> hover : 마우스 진입
+    hover --> active : 마우스 누름
+    active --> hover : 마우스 놓음
+    hover --> default : 마우스 나감
+    default --> disabled : 비활성
+    disabled --> default : 활성화
+    default --> loading : 클릭+비동기
+    loading --> default : 완료
 ```
 
 **Input 상태 전이:**
-```
-default → (클릭/탭) → focus → (입력 중) → focus
-focus → (포커스 해제+유효) → default
-focus → (포커스 해제+유효성 실패) → error
-error → (클릭/탭) → focus → (수정) → focus → (포커스 해제+유효) → default
-```
 
-**Stepper 상태 전이:**
-```
-step[n]: pending → active → completed
-step[n]: active → feedback_requested → active → completed
-step[n]: active → rejected (종료)
+```mermaid
+stateDiagram-v2
+    [*] --> default
+    default --> focus : 클릭/탭
+    focus --> default : 포커스 해제 (유효)
+    focus --> error : 포커스 해제 (유효성 실패)
+    error --> focus : 클릭/탭
+    focus --> focus : 입력 중
 ```
 
----
+**ApplicationStatus 전이:**
 
-## 부록: 이미지 파일 목록
+```mermaid
+stateDiagram-v2
+    [*] --> DRAFT
+    DRAFT --> SUBMITTED : 신청 제출
+    SUBMITTED --> TEAM_REVIEW : 접수
+    TEAM_REVIEW --> SECURITY_REVIEW : 팀장 승인
+    SECURITY_REVIEW --> ENV_PREPARATION : 보안 승인
+    ENV_PREPARATION --> FINAL_APPROVAL : 환경 준비 완료
+    FINAL_APPROVAL --> APPROVED : 최종 승인
+    APPROVED --> KEY_ISSUED : API Key 발급
 
-| 파일명 | 설명 | 섹션 |
-|--------|------|------|
-| [design-system.svg](./images/design-system.svg) | 디자인 시스템 (색상, 타이포그래피) | 1장 |
-| [flow-applicant.svg](./images/flow-applicant.svg) | 신청자 사용자 플로우 | 3.1 |
-| [flow-reviewer.svg](./images/flow-reviewer.svg) | 검토자 사용자 플로우 | 3.2 |
-| [flow-admin.svg](./images/flow-admin.svg) | 관리자 사용자 플로우 | 3.3 |
-| [wf-gnb.svg](./images/wf-gnb.svg) | GNB (글로벌 네비게이션 바) | 4.1 |
-| [wf-login.svg](./images/wf-login.svg) | 로그인 페이지 | 4.2 |
-| [wf-applicant-dashboard.svg](./images/wf-applicant-dashboard.svg) | 신청자 대시보드 | 5.1 |
-| [wf-wizard-step1.svg](./images/wf-wizard-step1.svg) | 위자드 Step 1: AI 도구 선택 | 5.2 |
-| [wf-wizard-step2.svg](./images/wf-wizard-step2.svg) | 위자드 Step 2: 사용 환경 선택 | 5.2 |
-| [wf-wizard-step3.svg](./images/wf-wizard-step3.svg) | 위자드 Step 3: 인적정보 확인 | 5.2 |
-| [wf-wizard-step4.svg](./images/wf-wizard-step4.svg) | 위자드 Step 4: 프로젝트 정보 | 5.2 |
-| [wf-wizard-step5.svg](./images/wf-wizard-step5.svg) | 위자드 Step 5: 문서 첨부 | 5.2 |
-| [wf-wizard-step6.svg](./images/wf-wizard-step6.svg) | 위자드 Step 6: 보안 서약 | 5.2 |
-| [wf-wizard-step7.svg](./images/wf-wizard-step7.svg) | 위자드 Step 7: 최종 확인 | 5.2 |
-| [wf-application-status.svg](./images/wf-application-status.svg) | 신청 진행 상태 타임라인 | 5.3 |
-| [wf-feedback.svg](./images/wf-feedback.svg) | 피드백 확인 및 재제출 | 5.4 |
-| [wf-apikey-management.svg](./images/wf-apikey-management.svg) | API Key 관리 | 5.5 |
-| [wf-reviewer-dashboard.svg](./images/wf-reviewer-dashboard.svg) | 검토자 대시보드 | 6.1 |
-| [wf-reviewer-list.svg](./images/wf-reviewer-list.svg) | 검토 대기 목록 | 6.2 |
-| [wf-reviewer-detail.svg](./images/wf-reviewer-detail.svg) | 검토 상세 페이지 | 6.3 |
-| [wf-admin-dashboard.svg](./images/wf-admin-dashboard.svg) | 관리자 대시보드 | 7.1 |
-| [wf-admin-license.svg](./images/wf-admin-license.svg) | 라이센스 발급 현황 | 7.2 |
-| [wf-admin-monitoring.svg](./images/wf-admin-monitoring.svg) | 사용 현황 모니터링 | 7.3 |
-| [wf-admin-tools.svg](./images/wf-admin-tools.svg) | AI 도구 관리 | 7.4 |
+    TEAM_REVIEW --> FEEDBACK_REQUESTED : 보완 요청
+    SECURITY_REVIEW --> FEEDBACK_REQUESTED : 보완 요청
+    FEEDBACK_REQUESTED --> TEAM_REVIEW : 재제출
+
+    TEAM_REVIEW --> REJECTED : 반려
+    SECURITY_REVIEW --> REJECTED : 반려
+```
