@@ -7,10 +7,8 @@
   }
 
   function prepareMermaidElements() {
-    // fence_code_format이 생성하는 <pre class="mermaid"><code>...</code></pre>에서
-    // <code> 래퍼를 제거하고 textContent를 pre에 직접 설정
-    // textContent는 HTML 엔티티(&lt; &gt; &amp;)를 자동 디코딩하므로
-    // Mermaid가 올바른 --> 화살표와 <br/> 태그를 받을 수 있음
+    // fence_code_format: <pre class="mermaid"><code>...</code></pre>
+    // <code> 래퍼를 제거하고 textContent로 HTML 엔티티 디코딩
     document.querySelectorAll("pre.mermaid").forEach(function (pre) {
       var code = pre.querySelector("code");
       if (code) {
@@ -27,11 +25,8 @@
     if (elements.length === 0) return;
 
     mermaid.initialize({ startOnLoad: false, theme: getTheme() });
-    mermaid.run({ nodes: elements }).then(function () {
-      initZoom();
-    }).catch(function (err) {
+    mermaid.run({ nodes: elements }).catch(function (err) {
       console.warn("Mermaid render error:", err);
-      initZoom();
     });
   }
 
@@ -39,7 +34,6 @@
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", initMermaid);
   } else {
-    // script가 body 하단에 있으므로 DOM은 이미 준비됨
     initMermaid();
   }
 
@@ -61,14 +55,12 @@
     });
   }
 
-  // 테마 전환 감지 → Mermaid 다시 렌더링
+  // 테마 전환 감지 → Mermaid 재렌더링
   new MutationObserver(function (mutations) {
     for (var i = 0; i < mutations.length; i++) {
       if (mutations[i].attributeName === "data-md-color-scheme") {
-        // data-processed 제거하여 재렌더링 허용
-        document.querySelectorAll("pre.mermaid[data-processed]").forEach(function (el) {
+        document.querySelectorAll("[data-processed]").forEach(function (el) {
           el.removeAttribute("data-processed");
-          el.removeAttribute("data-zoom-bound");
         });
         initMermaid();
         break;
@@ -76,23 +68,26 @@
     }
   }).observe(document.body, { attributes: true });
 
-  /* ── 다이어그램 클릭 확대 ── */
-  function initZoom() {
-    document.querySelectorAll("pre.mermaid").forEach(function (el) {
-      if (!el.querySelector("svg") || el.dataset.zoomBound) return;
-      el.dataset.zoomBound = "true";
-      el.addEventListener("click", function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        openOverlay(el);
-      });
-    });
-  }
+  /* ── 다이어그램 클릭 확대 (이벤트 위임) ── */
+  // Mermaid가 렌더링 후 원본 요소를 교체할 수 있으므로
+  // 개별 요소가 아닌 document 레벨에서 클릭을 감지
+  document.addEventListener("click", function (e) {
+    // 이미 오버레이가 열려 있으면 무시
+    if (e.target.closest(".diagram-overlay")) return;
 
-  function openOverlay(sourceEl) {
-    var svg = sourceEl.querySelector("svg");
+    // 클릭한 곳에서 가장 가까운 SVG를 포함하는 mermaid 컨테이너 찾기
+    var svg = e.target.closest("svg");
     if (!svg) return;
 
+    var container = svg.closest(".mermaid") || svg.parentElement;
+    if (!container || !container.classList.contains("mermaid")) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+    openOverlay(svg);
+  });
+
+  function openOverlay(svg) {
     var overlay = document.createElement("div");
     overlay.className = "diagram-overlay";
 
