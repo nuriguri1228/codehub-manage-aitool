@@ -50,8 +50,9 @@
       "contentId": "I_kwDORNGFGc7p9kqM",
       "issueNodeId": "I_kwDORNGFGc7p9kqM",
       "issueNumber": 94,
-      "lastHash": "99c800d8e1db58cc103b20393a8e4f596c070d4c58bd6692ae2a99b473dffaaf",
-      "lastSyncedAt": "2026-02-11T07:58:02.123Z"
+      "lastHash": "811c7b18be4db443b44051bbfaf856ced77e2bfee73928335540311d327722f0",
+      "lastSyncedAt": "2026-02-11T07:59:26.780Z",
+      "lastOwner": "design-system"
     },
     {
       "taskId": "1",
@@ -60,8 +61,8 @@
       "contentId": "I_kwDORNGFGc7p9kww",
       "issueNodeId": "I_kwDORNGFGc7p9kww",
       "issueNumber": 95,
-      "lastHash": "74f59085300c8c7d990ddff5e6d1b7d1236da8a241554265b8fe60ccb7e25cd3",
-      "lastSyncedAt": "2026-02-11T07:58:45.914Z",
+      "lastHash": "ae367b2c4c3df68b396be393b9bbe63a27d36364900650be6a0f4f570aac8be5",
+      "lastSyncedAt": "2026-02-11T07:59:27.310Z",
       "lastOwner": "design-system"
     },
     {
@@ -137,8 +138,9 @@
       "contentId": "I_kwDORNGFGc7p9lDA",
       "issueNodeId": "I_kwDORNGFGc7p9lDA",
       "issueNumber": 103,
-      "lastHash": "1deb088f868843c892e22628b971ec568160218cc672287edf61e2f8ff088b77",
-      "lastSyncedAt": "2026-02-11T07:58:02.194Z"
+      "lastHash": "c4ed56e54067c66f9f0b4b2463007e7a7bb54f2a2a7c97e118a5747221bf56df",
+      "lastSyncedAt": "2026-02-11T07:59:26.721Z",
+      "lastOwner": "design-system"
     },
     {
       "taskId": "11",
@@ -163,7 +165,7 @@
       "lastOwner": "page-components"
     }
   ],
-  "lastSyncAt": "2026-02-11T07:59:24.109Z",
+  "lastSyncAt": "2026-02-11T07:59:47.722Z",
   "summaryIssues": {
     "frontend-design": {
       "issueNodeId": "I_kwDORNGFGc7p9k0j",
