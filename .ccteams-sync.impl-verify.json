@@ -34,7 +34,9 @@
     "Done": "98236657"
   },
   "ownerOptions": {
-    "(unassigned)": "c371880b"
+    "(unassigned)": "095c8b1b",
+    "verifier-auth": "32bc9475",
+    "verifier-app": "609f59d2"
   },
   "labels": {
     "ccteams:impl-verify": "LA_kwDORNGFGc8AAAACXy7zKA"
@@ -57,8 +59,9 @@
       "contentId": "I_kwDORNGFGc7qGD2v",
       "issueNodeId": "I_kwDORNGFGc7qGD2v",
       "issueNumber": 128,
-      "lastHash": "54da9e64d238e9efed3ef93354d3fe2a983cf9497f9b598371386f5e0033aa5f",
-      "lastSyncedAt": "2026-02-11T16:25:07.999Z"
+      "lastHash": "de2e701e5cb01cd11f52bb6d35c9e477e4029c9abd4a67d38031d1355fa00471",
+      "lastSyncedAt": "2026-02-11T16:25:58.574Z",
+      "lastOwner": "verifier-auth"
     },
     {
       "taskId": "2",
@@ -67,8 +70,9 @@
       "contentId": "I_kwDORNGFGc7qGD3q",
       "issueNodeId": "I_kwDORNGFGc7qGD3q",
       "issueNumber": 129,
-      "lastHash": "c556f25002620472c3c8f3c2f2aa7b9b0317d51d499d257912e84c5afda37562",
-      "lastSyncedAt": "2026-02-11T16:25:09.080Z"
+      "lastHash": "efc4dd33be6328ef50dec9b53d9eb7949cfc1c612ed3ef3e3fe586a77aa82f0c",
+      "lastSyncedAt": "2026-02-11T16:25:59.343Z",
+      "lastOwner": "verifier-app"
     },
     {
       "taskId": "3",
@@ -91,7 +95,7 @@
       "lastSyncedAt": "2026-02-11T16:25:34.804Z"
     }
   ],
-  "lastSyncAt": "2026-02-11T16:25:53.168Z",
+  "lastSyncAt": "2026-02-11T16:26:17.702Z",
   "summaryIssues": {
     "impl-verify": {
       "issueNodeId": "I_kwDORNGFGc7qGEB6",
