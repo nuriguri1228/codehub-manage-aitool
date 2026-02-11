@@ -108,3 +108,15 @@ export function useDeleteApplication() {
     },
   });
 }
+
+export function useCancelApplication() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: ({ id, reason }: { id: string; reason: string }) =>
+      mockApplicationApi.cancelApplication(id, reason),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: applicationKeys.all });
+    },
+  });
+}

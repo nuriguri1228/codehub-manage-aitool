@@ -302,6 +302,22 @@ export const mockApplicationApi = {
     mockApplications.splice(idx, 1);
     return { success: true, data: null };
   },
+
+  async cancelApplication(id: string, reason: string) {
+    await delay();
+    const idx = mockApplications.findIndex((a) => a.id === id);
+    if (idx === -1) throw new Error('신청서를 찾을 수 없습니다.');
+    if (mockApplications[idx].status !== 'SUBMITTED') {
+      throw new Error('제출 상태의 신청서만 취소할 수 있습니다.');
+    }
+    const now = new Date().toISOString();
+    mockApplications[idx] = {
+      ...mockApplications[idx],
+      status: 'REJECTED',
+      updatedAt: now,
+    };
+    return { success: true, data: mockApplications[idx] };
+  },
 };
 
 // ─── 검토 ─────────────────────────────────────────────────────────
