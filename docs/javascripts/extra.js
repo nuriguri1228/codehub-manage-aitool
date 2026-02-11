@@ -1,5 +1,12 @@
 /* Mermaid 초기화 + 다이어그램 클릭 확대 (스크롤 줌 지원) */
 (function () {
+  /* ── Mermaid 자동 실행 차단 (extra.js는 mermaid.min.js 다음에 로드됨) ── */
+  /* DOMContentLoaded 전에 startOnLoad: false를 설정하여               */
+  /* mermaid가 <code> 래퍼 제거 전에 자동 렌더링하는 것을 방지           */
+  if (typeof mermaid !== "undefined") {
+    mermaid.initialize({ startOnLoad: false });
+  }
+
   /* ── Mermaid 초기화 ── */
   function getTheme() {
     var scheme = document.body.getAttribute("data-md-color-scheme");
