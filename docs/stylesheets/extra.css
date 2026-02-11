@@ -1,0 +1,17 @@
+/* CodeHub 프로젝트 accent color (#50CF94) 기반 커스텀 테마 */
+
+:root {
+  --md-primary-fg-color: #2D8B5E;
+  --md-primary-fg-color--light: #50CF94;
+  --md-primary-fg-color--dark: #1E6B45;
+  --md-accent-fg-color: #50CF94;
+  --md-accent-fg-color--transparent: #50CF9420;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #3AA876;
+  --md-primary-fg-color--light: #50CF94;
+  --md-primary-fg-color--dark: #2D8B5E;
+  --md-accent-fg-color: #50CF94;
+  --md-accent-fg-color--transparent: #50CF9420;
+}
