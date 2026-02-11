@@ -47,8 +47,8 @@
       "contentId": "I_kwDORNGFGc7p9kqM",
       "issueNodeId": "I_kwDORNGFGc7p9kqM",
       "issueNumber": 94,
-      "lastHash": "7f3b2df3ca7bee03c666eb6863d0f27bcfd9ad0502e179b19a987dd6be3017e4",
-      "lastSyncedAt": "2026-02-11T07:57:05.365Z"
+      "lastHash": "99c800d8e1db58cc103b20393a8e4f596c070d4c58bd6692ae2a99b473dffaaf",
+      "lastSyncedAt": "2026-02-11T07:58:02.123Z"
     },
     {
       "taskId": "1",
@@ -57,8 +57,8 @@
       "contentId": "I_kwDORNGFGc7p9kww",
       "issueNodeId": "I_kwDORNGFGc7p9kww",
       "issueNumber": 95,
-      "lastHash": "52a17bb274c6979cab5b10eebeab2f047e6359bf9c8d497e3965e7d008b3a19d",
-      "lastSyncedAt": "2026-02-11T07:57:15.340Z"
+      "lastHash": "c4475abae93c07cd60388f48bc463ef2f486ef0f0b098cb4a970a3aa426b0a13",
+      "lastSyncedAt": "2026-02-11T07:58:02.368Z"
     },
     {
       "taskId": "4",
@@ -127,11 +127,31 @@
       "contentId": "I_kwDORNGFGc7p9lDA",
       "issueNodeId": "I_kwDORNGFGc7p9lDA",
       "issueNumber": 103,
-      "lastHash": "3f7c6bf478d6e50bc470dc300772a9e66f74f10bed73de9c8e8ef3b851760cf0",
-      "lastSyncedAt": "2026-02-11T07:57:39.092Z"
+      "lastHash": "1deb088f868843c892e22628b971ec568160218cc672287edf61e2f8ff088b77",
+      "lastSyncedAt": "2026-02-11T07:58:02.194Z"
+    },
+    {
+      "taskId": "11",
+      "teamName": "frontend-design",
+      "githubItemId": "PVTI_lAHODFNjSs4BO5v_zglPMEA",
+      "contentId": "I_kwDORNGFGc7p9lSa",
+      "issueNodeId": "I_kwDORNGFGc7p9lSa",
+      "issueNumber": 105,
+      "lastHash": "330c370ecb59e653b5a030e1400a402ac5c4a0f9562fef8984b182720e8ec399",
+      "lastSyncedAt": "2026-02-11T07:57:59.935Z"
+    },
+    {
+      "taskId": "10",
+      "teamName": "frontend-design",
+      "githubItemId": "PVTI_lAHODFNjSs4BO5v_zglPMD8",
+      "contentId": "I_kwDORNGFGc7p9lSZ",
+      "issueNodeId": "I_kwDORNGFGc7p9lSZ",
+      "issueNumber": 104,
+      "lastHash": "4739e7b045a05baf849171d741c078aa28071acb7afe28657e228ab1332fab17",
+      "lastSyncedAt": "2026-02-11T07:58:00.003Z"
     }
   ],
-  "lastSyncAt": "2026-02-11T07:57:56.171Z",
+  "lastSyncAt": "2026-02-11T07:58:19.451Z",
   "summaryIssues": {
     "frontend-design": {
       "issueNodeId": "I_kwDORNGFGc7p9k0j",
