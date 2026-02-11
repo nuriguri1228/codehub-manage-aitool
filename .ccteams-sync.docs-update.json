@@ -51,8 +51,8 @@
       "contentId": "I_kwDORNGFGc7qAgcY",
       "issueNodeId": "I_kwDORNGFGc7qAgcY",
       "issueNumber": 106,
-      "lastHash": "ec022cb5e2d31597fef10408ff1490cbafaa811cc34c49d3c3a0620161b3d4ab",
-      "lastSyncedAt": "2026-02-11T11:18:27.851Z",
+      "lastHash": "d5adc474442c40ff4614f9b03fb5aa74846b30bbc6f04f927bc7a93b9564ce35",
+      "lastSyncedAt": "2026-02-11T11:25:38.564Z",
       "lastOwner": "arch-doc-agent"
     },
     {
@@ -89,7 +89,7 @@
       "lastOwner": "plan-req-agent"
     }
   ],
-  "lastSyncAt": "2026-02-11T11:24:48.162Z",
+  "lastSyncAt": "2026-02-11T11:25:56.323Z",
   "summaryIssues": {
     "docs-update": {
       "issueNodeId": "I_kwDORNGFGc7qAggz",
