@@ -8,8 +8,8 @@ import { cn } from '@/lib/utils';
 import { Check } from 'lucide-react';
 
 interface WizardStep1Props {
-  value: string;
-  onChange: (toolId: string) => void;
+  value: string[];
+  onChange: (toolIds: string[]) => void;
   error?: string;
 }
 
@@ -20,6 +20,14 @@ export function WizardStep1Tool({ value, onChange, error }: WizardStep1Props) {
   });
 
   const tools = data?.data ?? [];
+
+  const handleToggle = (toolId: string) => {
+    if (value.includes(toolId)) {
+      onChange(value.filter((id) => id !== toolId));
+    } else {
+      onChange([...value, toolId]);
+    }
+  };
 
   if (isLoading) {
     return (
@@ -36,13 +44,13 @@ export function WizardStep1Tool({ value, onChange, error }: WizardStep1Props) {
       <div>
         <h3 className="text-lg font-semibold">AI 도구 선택</h3>
         <p className="text-sm text-muted-foreground">
-          사용하고자 하는 AI 도구를 선택하세요.
+          사용하고자 하는 AI 도구를 선택하세요. (복수 선택 가능, {value.length}개 선택됨)
         </p>
       </div>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {tools.map((tool) => {
-          const isSelected = value === tool.id;
+          const isSelected = value.includes(tool.id);
           return (
             <Card
               key={tool.id}
@@ -52,7 +60,7 @@ export function WizardStep1Tool({ value, onChange, error }: WizardStep1Props) {
                   ? 'border-[#50CF94] ring-2 ring-[#50CF94]/20'
                   : 'border-gray-200 hover:border-gray-300'
               )}
-              onClick={() => onChange(tool.id)}
+              onClick={() => handleToggle(tool.id)}
             >
               <CardContent className="relative p-4">
                 {isSelected && (

@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
 export const step1Schema = z.object({
-  aiToolId: z.string().min(1, 'AI 도구를 선택해주세요'),
+  aiToolIds: z.array(z.string()).min(1, 'AI 도구를 최소 1개 선택해주세요'),
 });
 
 export const step2Schema = z.object({
@@ -42,7 +42,7 @@ export const step6Schema = z.object({
 });
 
 export const fullApplicationSchema = z.object({
-  aiToolId: step1Schema.shape.aiToolId,
+  aiToolIds: step1Schema.shape.aiToolIds,
   environment: step2Schema.shape.environment,
   purpose: step3Schema.shape.purpose,
   projects: step4Schema.shape.projects,

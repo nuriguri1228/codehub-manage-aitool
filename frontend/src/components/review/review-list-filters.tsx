@@ -27,9 +27,9 @@ const STATUS_TABS = [
 const AI_TOOLS = [
   { value: 'all', label: '전체' },
   { value: 'Claude Code', label: 'Claude Code' },
-  { value: 'GitHub Copilot', label: 'GitHub Copilot' },
-  { value: 'Cursor', label: 'Cursor' },
   { value: 'Antigravity', label: 'Antigravity' },
+  { value: 'Cursor AI', label: 'Cursor AI' },
+  { value: 'Tabnine', label: 'Tabnine' },
 ];
 
 const DEPARTMENTS = [

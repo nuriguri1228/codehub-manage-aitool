@@ -32,7 +32,7 @@ const mockMonthlyCosts = [
 
 const mockToolCosts = [
   { name: 'Claude Code', value: 2800, color: '#1E40AF' },
-  { name: 'GitHub Copilot', value: 1500, color: '#22c55e' },
+  { name: 'Antigravity', value: 1500, color: '#22c55e' },
   { name: 'Cursor AI', value: 950, color: '#f59e0b' },
 ];
 
@@ -141,7 +141,7 @@ export default function CostsPage() {
                     formatter={(value?: number, name?: string) => {
                       const labels: Record<string, string> = {
                         claudeCode: 'Claude Code',
-                        copilot: 'GitHub Copilot',
+                        copilot: 'Antigravity',
                         cursorAI: 'Cursor AI',
                       };
                       return [`$${(value ?? 0).toLocaleString()}`, labels[name ?? ''] ?? name];
@@ -151,7 +151,7 @@ export default function CostsPage() {
                     formatter={(value: string) => {
                       const labels: Record<string, string> = {
                         claudeCode: 'Claude Code',
-                        copilot: 'GitHub Copilot',
+                        copilot: 'Antigravity',
                         cursorAI: 'Cursor AI',
                       };
                       return labels[value] ?? value;

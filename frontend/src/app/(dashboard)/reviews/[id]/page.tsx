@@ -136,7 +136,7 @@ export default function ReviewDetailPage({
                     {application.applicantPosition})
                   </span>
                   <span className="text-muted-foreground">AI 도구</span>
-                  <span>{application.aiToolName}</span>
+                  <span>{application.aiToolNames.join(', ')}</span>
                   <span className="text-muted-foreground">환경</span>
                   <span>{application.environment}</span>
                   <span className="text-muted-foreground">신청일</span>

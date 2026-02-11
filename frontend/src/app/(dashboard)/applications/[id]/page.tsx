@@ -87,7 +87,7 @@ export default function ApplicationDetailPage({
               <StatusBadge status={app.status} />
             </div>
             <p className="text-sm text-muted-foreground">
-              {app.aiToolName} | {envLabel}
+              {app.aiToolNames.join(', ')} | {envLabel}
             </p>
           </div>
         </div>
@@ -113,7 +113,7 @@ export default function ApplicationDetailPage({
               <InfoRow label="신청자">
                 {app.applicantName} ({app.applicantDepartment} / {app.applicantPosition})
               </InfoRow>
-              <InfoRow label="AI 도구">{app.aiToolName}</InfoRow>
+              <InfoRow label="AI 도구">{app.aiToolNames.join(', ')}</InfoRow>
               <InfoRow label="사용 환경">
                 <Badge variant="secondary">{envLabel}</Badge>
               </InfoRow>

@@ -28,7 +28,7 @@ const MOCK_REVIEW_LIST: ReviewListItem[] = [
     applicationNumber: 'APP-2026-0045',
     applicantName: '최데이터',
     applicantDepartment: '데이터팀',
-    aiToolName: 'Claude Code',
+    aiToolNames: ['Claude Code'],
     stageName: '1차 검토',
     dueDate: fmt(addDays(today, 1)),
     submittedAt: '2026-02-09',
@@ -40,7 +40,7 @@ const MOCK_REVIEW_LIST: ReviewListItem[] = [
     applicationNumber: 'APP-2026-0044',
     applicantName: '박프론트',
     applicantDepartment: '웹개발팀',
-    aiToolName: 'Antigravity',
+    aiToolNames: ['Antigravity'],
     stageName: '재제출',
     dueDate: fmt(addDays(today, 3)),
     submittedAt: '2026-02-10',
@@ -52,7 +52,7 @@ const MOCK_REVIEW_LIST: ReviewListItem[] = [
     applicationNumber: 'APP-2026-0043',
     applicantName: '김주니어',
     applicantDepartment: '플랫폼팀',
-    aiToolName: 'Claude Code',
+    aiToolNames: ['Claude Code'],
     stageName: '1차 검토',
     dueDate: fmt(addDays(today, 5)),
     submittedAt: '2026-02-10',
@@ -64,7 +64,7 @@ const MOCK_REVIEW_LIST: ReviewListItem[] = [
     applicationNumber: 'APP-2026-0042',
     applicantName: '이시니어',
     applicantDepartment: 'AI연구팀',
-    aiToolName: 'GitHub Copilot',
+    aiToolNames: ['Antigravity'],
     stageName: '보안 검토',
     dueDate: fmt(addDays(today, -1)),
     submittedAt: '2026-02-07',
@@ -76,7 +76,7 @@ const MOCK_REVIEW_LIST: ReviewListItem[] = [
     applicationNumber: 'APP-2026-0041',
     applicantName: '정풀스택',
     applicantDepartment: '백엔드팀',
-    aiToolName: 'Cursor',
+    aiToolNames: ['Cursor AI'],
     stageName: '1차 검토',
     dueDate: fmt(addDays(today, 0)),
     submittedAt: '2026-02-08',
@@ -99,8 +99,8 @@ const MOCK_REVIEW_DETAIL: ReviewDetail = {
     applicantName: '최데이터',
     applicantDepartment: '데이터팀',
     applicantPosition: '책임연구원',
-    aiToolId: 'tool-001',
-    aiToolName: 'Claude Code',
+    aiToolIds: ['tool-001'],
+    aiToolNames: ['Claude Code'],
     environment: 'VDI',
     purpose: '대용량 데이터 처리 파이프라인 개발 시 코드 어시스턴트 활용',
     status: 'TEAM_REVIEW',
@@ -206,7 +206,7 @@ export function useReviews(params: UseReviewsParams = {}) {
       }
 
       if (params.tool) {
-        filtered = filtered.filter((r) => r.aiToolName === params.tool);
+        filtered = filtered.filter((r) => r.aiToolNames.some((name) => name === params.tool));
       }
 
       if (params.department) {

@@ -127,7 +127,7 @@ export default function ApplicationEditPage({
             <StatusBadge status={app.status} />
           </div>
           <p className="text-sm text-muted-foreground">
-            {app.applicationNumber} | {app.aiToolName}
+            {app.applicationNumber} | {app.aiToolNames.join(', ')}
           </p>
         </div>
       </div>

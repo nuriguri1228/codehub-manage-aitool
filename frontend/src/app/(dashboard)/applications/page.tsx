@@ -27,9 +27,10 @@ const columns: Column<Application>[] = [
     className: 'font-medium',
   },
   {
-    key: 'aiToolName',
+    key: 'aiToolNames',
     header: 'AI 도구',
     sortable: true,
+    render: (row) => row.aiToolNames.join(', '),
   },
   {
     key: 'environment',

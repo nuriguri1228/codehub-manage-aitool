@@ -1,12 +1,14 @@
 'use client';
 
 import { useState } from 'react';
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import { toast } from 'sonner';
 import {
   Plus,
-  Settings2,
   Power,
   PowerOff,
   Pencil,
+  Trash2,
   Bot,
 } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
@@ -15,6 +17,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
+import { Skeleton } from '@/components/ui/skeleton';
 import {
   Dialog,
   DialogContent,
@@ -41,67 +44,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import { mockToolApi } from '@/lib/mock-api';
 import type { AiTool } from '@/types';
-
-// --- Inline Mock Data ---
-const initialTools: (AiTool & { usersCount: number; totalCost: number })[] = [
-  {
-    id: 'tool-001',
-    name: 'Claude Code',
-    vendor: 'Anthropic',
-    description: 'AI 기반 코드 어시스턴트로, 코드 작성/리뷰/디버깅/리팩토링을 지원합니다.',
-    iconUrl: '/icons/claude-code.svg',
-    apiEndpoint: 'https://api.anthropic.com/v1',
-    authMethod: 'API_KEY',
-    tokenCost: 0.015,
-    defaultQuota: 1000000,
-    isActive: true,
-    usersCount: 45,
-    totalCost: 4250,
-  },
-  {
-    id: 'tool-002',
-    name: 'GitHub Copilot',
-    vendor: 'GitHub / Microsoft',
-    description: 'IDE 통합 AI 코드 자동완성 도구로, 실시간 코드 제안을 제공합니다.',
-    iconUrl: '/icons/github-copilot.svg',
-    apiEndpoint: 'https://api.githubcopilot.com/v1',
-    authMethod: 'OAUTH',
-    tokenCost: 0.01,
-    defaultQuota: 2000000,
-    isActive: true,
-    usersCount: 32,
-    totalCost: 2180,
-  },
-  {
-    id: 'tool-003',
-    name: 'Cursor AI',
-    vendor: 'Anysphere',
-    description: 'AI 기반 코드 에디터로, 코드 생성 및 편집을 위한 통합 환경을 제공합니다.',
-    iconUrl: '/icons/cursor-ai.svg',
-    apiEndpoint: 'https://api.cursor.sh/v1',
-    authMethod: 'API_KEY',
-    tokenCost: 0.012,
-    defaultQuota: 1500000,
-    isActive: true,
-    usersCount: 18,
-    totalCost: 950,
-  },
-  {
-    id: 'tool-004',
-    name: 'Tabnine',
-    vendor: 'Tabnine',
-    description: 'AI 코드 어시스턴트로, 다양한 IDE에서 코드 자동완성을 지원합니다.',
-    iconUrl: '/icons/tabnine.svg',
-    apiEndpoint: 'https://api.tabnine.com/v1',
-    authMethod: 'TOKEN',
-    tokenCost: 0.008,
-    defaultQuota: 3000000,
-    isActive: false,
-    usersCount: 0,
-    totalCost: 0,
-  },
-];
 
 interface ToolFormState {
   name: string;
@@ -124,11 +68,44 @@ const emptyForm: ToolFormState = {
 };
 
 export default function ToolsManagementPage() {
-  const [tools, setTools] = useState(initialTools);
+  const queryClient = useQueryClient();
   const [dialogOpen, setDialogOpen] = useState(false);
   const [editingTool, setEditingTool] = useState<string | null>(null);
   const [form, setForm] = useState<ToolFormState>(emptyForm);
   const [toggleTarget, setToggleTarget] = useState<string | null>(null);
+  const [deleteTarget, setDeleteTarget] = useState<string | null>(null);
+
+  const { data, isLoading } = useQuery({
+    queryKey: ['aiTools'],
+    queryFn: () => mockToolApi.getTools(),
+  });
+
+  const tools = data?.data ?? [];
+
+  const createMutation = useMutation({
+    mutationFn: (data: Partial<AiTool>) => mockToolApi.createTool(data),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['aiTools'] });
+      toast.success('도구가 추가되었습니다.');
+    },
+  });
+
+  const updateMutation = useMutation({
+    mutationFn: ({ id, data }: { id: string; data: Partial<AiTool> }) =>
+      mockToolApi.updateTool(id, data),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['aiTools'] });
+      toast.success('도구가 수정되었습니다.');
+    },
+  });
+
+  const deleteMutation = useMutation({
+    mutationFn: (id: string) => mockToolApi.deleteTool(id),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['aiTools'] });
+      toast.success('도구가 삭제되었습니다.');
+    },
+  });
 
   const handleOpenAdd = () => {
     setEditingTool(null);
@@ -136,7 +113,7 @@ export default function ToolsManagementPage() {
     setDialogOpen(true);
   };
 
-  const handleOpenEdit = (tool: (typeof tools)[0]) => {
+  const handleOpenEdit = (tool: AiTool) => {
     setEditingTool(tool.id);
     setForm({
       name: tool.name,
@@ -150,56 +127,64 @@ export default function ToolsManagementPage() {
     setDialogOpen(true);
   };
 
-  const handleSave = () => {
+  const handleSave = async () => {
     if (!form.name || !form.vendor) return;
 
+    const toolData: Partial<AiTool> = {
+      name: form.name,
+      vendor: form.vendor,
+      description: form.description,
+      apiEndpoint: form.apiEndpoint,
+      authMethod: form.authMethod,
+      tokenCost: parseFloat(form.tokenCost) || 0,
+      defaultQuota: parseInt(form.defaultQuota) || 0,
+    };
+
     if (editingTool) {
-      setTools((prev) =>
-        prev.map((t) =>
-          t.id === editingTool
-            ? {
-                ...t,
-                name: form.name,
-                vendor: form.vendor,
-                description: form.description,
-                apiEndpoint: form.apiEndpoint,
-                authMethod: form.authMethod,
-                tokenCost: parseFloat(form.tokenCost) || 0,
-                defaultQuota: parseInt(form.defaultQuota) || 0,
-              }
-            : t
-        )
-      );
+      await updateMutation.mutateAsync({ id: editingTool, data: toolData });
     } else {
-      const newTool = {
-        id: `tool-${Date.now()}`,
-        name: form.name,
-        vendor: form.vendor,
-        description: form.description,
-        apiEndpoint: form.apiEndpoint,
-        authMethod: form.authMethod,
-        tokenCost: parseFloat(form.tokenCost) || 0,
-        defaultQuota: parseInt(form.defaultQuota) || 0,
-        isActive: true,
-        usersCount: 0,
-        totalCost: 0,
-      };
-      setTools((prev) => [...prev, newTool]);
+      await createMutation.mutateAsync({ ...toolData, isActive: true });
     }
     setDialogOpen(false);
   };
 
-  const handleToggleActive = () => {
+  const handleToggleActive = async () => {
     if (!toggleTarget) return;
-    setTools((prev) =>
-      prev.map((t) =>
-        t.id === toggleTarget ? { ...t, isActive: !t.isActive } : t
-      )
-    );
+    const tool = tools.find((t) => t.id === toggleTarget);
+    if (!tool) return;
+    await updateMutation.mutateAsync({
+      id: toggleTarget,
+      data: { isActive: !tool.isActive },
+    });
     setToggleTarget(null);
   };
 
+  const handleDelete = async () => {
+    if (!deleteTarget) return;
+    await deleteMutation.mutateAsync(deleteTarget);
+    setDeleteTarget(null);
+  };
+
   const targetTool = tools.find((t) => t.id === toggleTarget);
+  const deleteToolObj = tools.find((t) => t.id === deleteTarget);
+
+  if (isLoading) {
+    return (
+      <div className="space-y-6">
+        <div className="flex items-center justify-between">
+          <div>
+            <h1 className="text-2xl font-bold tracking-tight">AI 도구 관리</h1>
+            <p className="text-muted-foreground">등록된 AI 도구를 관리하고 새 도구를 추가하세요</p>
+          </div>
+        </div>
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
+          {Array.from({ length: 3 }).map((_, i) => (
+            <Skeleton key={i} className="h-64 w-full rounded-lg" />
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6">
@@ -374,11 +359,7 @@ export default function ToolsManagementPage() {
                 </p>
               )}
 
-              <div className="mt-4 grid grid-cols-3 gap-2 rounded-lg bg-muted/50 p-3">
-                <div className="text-center">
-                  <p className="text-lg font-bold">{tool.usersCount}</p>
-                  <p className="text-xs text-muted-foreground">사용자</p>
-                </div>
+              <div className="mt-4 grid grid-cols-2 gap-2 rounded-lg bg-muted/50 p-3">
                 <div className="text-center">
                   <p className="text-lg font-bold">
                     ${tool.tokenCost}
@@ -387,9 +368,9 @@ export default function ToolsManagementPage() {
                 </div>
                 <div className="text-center">
                   <p className="text-lg font-bold">
-                    ${tool.totalCost.toLocaleString()}
+                    {(tool.defaultQuota / 1000000).toFixed(1)}M
                   </p>
-                  <p className="text-xs text-muted-foreground">총 비용</p>
+                  <p className="text-xs text-muted-foreground">기본 쿼터</p>
                 </div>
               </div>
 
@@ -424,6 +405,14 @@ export default function ToolsManagementPage() {
                       활성화
                     </>
                   )}
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-red-200 text-red-600 hover:bg-red-50"
+                  onClick={() => setDeleteTarget(tool.id)}
+                >
+                  <Trash2 className="h-3.5 w-3.5" />
                 </Button>
               </div>
             </CardContent>
@@ -460,6 +449,32 @@ export default function ToolsManagementPage() {
               }
             >
               {targetTool?.isActive ? '비활성화' : '활성화'}
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+
+      {/* Delete Confirmation AlertDialog */}
+      <AlertDialog
+        open={!!deleteTarget}
+        onOpenChange={(open) => {
+          if (!open) setDeleteTarget(null);
+        }}
+      >
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>도구 삭제</AlertDialogTitle>
+            <AlertDialogDescription>
+              &quot;{deleteToolObj?.name}&quot;을(를) 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>취소</AlertDialogCancel>
+            <AlertDialogAction
+              onClick={handleDelete}
+              className="bg-red-600 hover:bg-red-700"
+            >
+              삭제
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>

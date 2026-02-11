@@ -47,8 +47,8 @@ export interface Application {
   applicantName: string;
   applicantDepartment: string;
   applicantPosition: string;
-  aiToolId: string;
-  aiToolName: string;
+  aiToolIds: string[];
+  aiToolNames: string[];
   environment: Environment;
   purpose: string;
   status: ApplicationStatus;
@@ -63,7 +63,7 @@ export interface Application {
 }
 
 export interface ApplicationFormData {
-  aiToolId: string;
+  aiToolIds: string[];
   environment: Environment;
   purpose: string;
   projects: Project[];
@@ -75,7 +75,7 @@ export interface ApplicationFormData {
 export interface ApplicationSummary {
   id: string;
   applicationNumber: string;
-  aiToolName: string;
+  aiToolNames: string[];
   environment: Environment;
   status: ApplicationStatus;
   createdAt: string;

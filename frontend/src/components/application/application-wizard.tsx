@@ -49,7 +49,7 @@ export default function ApplicationWizard() {
     try {
       switch (currentStep) {
         case 1:
-          result = step1Schema.safeParse({ aiToolId: formData.aiToolId });
+          result = step1Schema.safeParse({ aiToolIds: formData.aiToolIds });
           break;
         case 2:
           result = step2Schema.safeParse({ environment: formData.environment });
@@ -115,7 +115,7 @@ export default function ApplicationWizard() {
         toast.success('임시저장되었습니다.');
       } else {
         const result = await createApplication.mutateAsync({
-          aiToolId: formData.aiToolId,
+          aiToolIds: formData.aiToolIds,
           environment: (formData.environment || 'VDI') as Environment,
           purpose: formData.purpose,
           projects: formData.projects,
@@ -137,7 +137,7 @@ export default function ApplicationWizard() {
       let appId = draftId;
       if (!appId) {
         const result = await createApplication.mutateAsync({
-          aiToolId: formData.aiToolId,
+          aiToolIds: formData.aiToolIds,
           environment: formData.environment as Environment,
           purpose: formData.purpose,
           projects: formData.projects,
@@ -177,12 +177,12 @@ export default function ApplicationWizard() {
         <CardContent className="p-6">
           {currentStep === 1 && (
             <WizardStep1Tool
-              value={formData.aiToolId}
-              onChange={(id) => {
-                updateFormData({ aiToolId: id });
+              value={formData.aiToolIds}
+              onChange={(ids) => {
+                updateFormData({ aiToolIds: ids });
                 setErrors({});
               }}
-              error={errors['aiToolId']}
+              error={errors['aiToolIds']}
             />
           )}
           {currentStep === 2 && (

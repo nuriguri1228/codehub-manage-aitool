@@ -92,7 +92,7 @@ function ReviewListContent() {
                           ({item.applicantDepartment})
                         </span>
                       </TableCell>
-                      <TableCell>{item.aiToolName}</TableCell>
+                      <TableCell>{item.aiToolNames.join(', ')}</TableCell>
                       <TableCell>{item.submittedAt}</TableCell>
                       <TableCell>
                         <Badge

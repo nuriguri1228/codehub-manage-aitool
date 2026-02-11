@@ -3,7 +3,7 @@ import { persist } from 'zustand/middleware';
 import type { Environment, Project } from '@/types';
 
 interface WizardFormData {
-  aiToolId: string;
+  aiToolIds: string[];
   environment: Environment | '';
   purpose: string;
   projects: Project[];
@@ -24,7 +24,7 @@ interface ApplicationStore {
 }
 
 const initialFormData: WizardFormData = {
-  aiToolId: '',
+  aiToolIds: [],
   environment: '',
   purpose: '',
   projects: [],

@@ -70,8 +70,9 @@ const recentColumns: Column<Application>[] = [
     className: 'font-medium',
   },
   {
-    key: 'aiToolName',
+    key: 'aiToolNames',
     header: 'AI 도구',
+    render: (row) => row.aiToolNames.join(', '),
   },
   {
     key: 'environment',

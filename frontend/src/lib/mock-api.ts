@@ -151,6 +151,14 @@ export const mockToolApi = {
     mockAiTools[idx] = { ...mockAiTools[idx], ...data };
     return { success: true, data: mockAiTools[idx] };
   },
+
+  async deleteTool(id: string) {
+    await delay();
+    const idx = mockAiTools.findIndex((t) => t.id === id);
+    if (idx === -1) throw new Error('도구를 찾을 수 없습니다.');
+    mockAiTools.splice(idx, 1);
+    return { success: true, data: null };
+  },
 };
 
 // ─── 신청서 ───────────────────────────────────────────────────────
@@ -170,7 +178,7 @@ export const mockApplicationApi = {
       items = items.filter(
         (a) =>
           a.applicationNumber.toLowerCase().includes(q) ||
-          a.aiToolName.toLowerCase().includes(q) ||
+          a.aiToolNames.some((name) => name.toLowerCase().includes(q)) ||
           a.applicantName.toLowerCase().includes(q)
       );
     }
@@ -178,7 +186,7 @@ export const mockApplicationApi = {
       items = items.filter((a) => a.status === params.status);
     }
     if (params.tool) {
-      items = items.filter((a) => a.aiToolId === params.tool);
+      items = items.filter((a) => a.aiToolIds.includes(params.tool!));
     }
 
     if (params.sortBy) {
@@ -232,7 +240,11 @@ export const mockApplicationApi = {
 
   async createApplication(data: Partial<ApplicationFormData>) {
     await delay();
-    const tool = mockAiTools.find((t) => t.id === data.aiToolId);
+    const toolIds = data.aiToolIds ?? [];
+    const toolNames = toolIds.map((id) => {
+      const tool = mockAiTools.find((t) => t.id === id);
+      return tool?.name ?? '';
+    });
     const newApp: Application = {
       id: `app-${Date.now()}`,
       applicationNumber: `APP-2024-${String(mockApplications.length + 1).padStart(4, '0')}`,
@@ -240,8 +252,8 @@ export const mockApplicationApi = {
       applicantName: defaultCurrentUser.name,
       applicantDepartment: defaultCurrentUser.department,
       applicantPosition: defaultCurrentUser.position,
-      aiToolId: data.aiToolId ?? '',
-      aiToolName: tool?.name ?? '',
+      aiToolIds: toolIds,
+      aiToolNames: toolNames,
       environment: data.environment ?? 'VDI',
       purpose: data.purpose ?? '',
       status: 'DRAFT',
@@ -310,7 +322,7 @@ export const mockReviewApi = {
         (r) =>
           r.applicationNumber.toLowerCase().includes(q) ||
           r.applicantName.toLowerCase().includes(q) ||
-          r.aiToolName.toLowerCase().includes(q)
+          r.aiToolNames.some((name) => name.toLowerCase().includes(q))
       );
     }
     if (params.status) {

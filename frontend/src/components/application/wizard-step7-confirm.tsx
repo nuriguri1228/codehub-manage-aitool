@@ -11,7 +11,7 @@ import type { Project } from '@/types';
 
 interface WizardStep7Props {
   formData: {
-    aiToolId: string;
+    aiToolIds: string[];
     environment: string;
     purpose: string;
     projects: Project[];
@@ -36,7 +36,7 @@ export function WizardStep7Confirm({ formData }: WizardStep7Props) {
   });
 
   const tools = toolsResult?.data ?? [];
-  const selectedTool = tools.find((t) => t.id === formData.aiToolId);
+  const selectedTools = tools.filter((t) => formData.aiToolIds.includes(t.id));
   const envLabel =
     ENVIRONMENT_OPTIONS.find((e) => e.value === formData.environment)?.label ??
     formData.environment;
@@ -56,10 +56,15 @@ export function WizardStep7Confirm({ formData }: WizardStep7Props) {
         </CardHeader>
         <CardContent className="space-y-3">
           <InfoRow label="AI 도구">
-            {selectedTool?.name ?? '-'}{' '}
-            {selectedTool && (
-              <span className="text-gray-500">({selectedTool.vendor})</span>
-            )}
+            {selectedTools.length === 0
+              ? '-'
+              : selectedTools.map((t, i) => (
+                  <span key={t.id}>
+                    {i > 0 && ', '}
+                    {t.name}
+                    <span className="text-gray-500"> ({t.vendor})</span>
+                  </span>
+                ))}
           </InfoRow>
           <InfoRow label="사용 환경">
             <Badge variant="secondary">{envLabel}</Badge>
