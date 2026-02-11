@@ -105,8 +105,8 @@
       "contentId": "I_kwDORNGFGc7p9lBb",
       "issueNodeId": "I_kwDORNGFGc7p9lBb",
       "issueNumber": 101,
-      "lastHash": "d77a7b3008fbb7b9ee3497bbffdfcfb4584ba7d1221a7195abff90bb35301450",
-      "lastSyncedAt": "2026-02-11T07:59:07.095Z",
+      "lastHash": "8845303ce13d296df730bfc1bea624bc744984a39c2655cac29101b9665d55fd",
+      "lastSyncedAt": "2026-02-11T08:03:58.751Z",
       "lastOwner": "page-components"
     },
     {
@@ -165,7 +165,7 @@
       "lastOwner": "page-components"
     }
   ],
-  "lastSyncAt": "2026-02-11T08:00:10.949Z",
+  "lastSyncAt": "2026-02-11T08:04:16.980Z",
   "summaryIssues": {
     "frontend-design": {
       "issueNodeId": "I_kwDORNGFGc7p9k0j",
