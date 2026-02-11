@@ -54,10 +54,22 @@ export const useApplicationStore = create<ApplicationStore>()(
           ...state.formData,
           attachments: [],
           // eslint-disable-next-line @typescript-eslint/no-unused-vars
-          projects: state.formData.projects.map(({ attachments, ...rest }) => rest),
+          projects: (state.formData.projects ?? []).map(({ attachments, ...rest }) => rest),
         },
         draftId: state.draftId,
       }),
+      merge: (persisted, current) => {
+        const p = persisted as Partial<ApplicationStore>;
+        return {
+          ...current,
+          ...p,
+          formData: {
+            ...initialFormData,
+            ...p.formData,
+            attachments: [],
+          },
+        };
+      },
     }
   )
 );
