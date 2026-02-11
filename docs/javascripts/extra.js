@@ -101,9 +101,11 @@
     );
 
     /* 드래그 이동 */
+    var didDrag = false;
+    content.style.cursor = "grab";
     content.addEventListener("mousedown", function (e) {
-      if (scale <= 1) return;
       dragging = true;
+      didDrag = false;
       sx = e.clientX;
       sy = e.clientY;
       ltx = tx;
@@ -114,21 +116,24 @@
 
     function onMove(e) {
       if (!dragging) return;
-      tx = ltx + (e.clientX - sx);
-      ty = lty + (e.clientY - sy);
+      var dx = e.clientX - sx;
+      var dy = e.clientY - sy;
+      if (Math.abs(dx) > 3 || Math.abs(dy) > 3) didDrag = true;
+      tx = ltx + dx;
+      ty = lty + dy;
       apply();
     }
     function onUp() {
       if (!dragging) return;
       dragging = false;
-      content.style.cursor = scale > 1 ? "grab" : "";
+      content.style.cursor = "grab";
     }
     document.addEventListener("mousemove", onMove);
     document.addEventListener("mouseup", onUp);
 
-    /* 닫기: 바깥 클릭 */
+    /* 닫기: 바깥 클릭 (드래그가 아닌 경우에만) */
     overlay.addEventListener("click", function (e) {
-      if (e.target === overlay) close();
+      if (e.target === overlay && !didDrag) close();
     });
 
     /* 닫기: ESC */

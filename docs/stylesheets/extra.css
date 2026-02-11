@@ -78,7 +78,6 @@
   height: auto;
   min-width: 60vw;
   transform-origin: center center;
-  transition: transform 0.05s ease-out;
 }
 
 /* 닫기 안내 텍스트 */
