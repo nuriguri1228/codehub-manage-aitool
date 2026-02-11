@@ -54,16 +54,16 @@ function getSidebarItems(role: UserRole): SidebarItem[] {
     case 'IT_ADMIN':
       return [
         { label: '대시보드', href: '/dashboard', icon: LayoutDashboard },
-        { label: '라이센스 관리', href: '/admin/licenses', icon: Shield },
-        { label: '사용 현황', href: '/admin/monitoring', icon: BarChart3 },
-        { label: '도구 관리', href: '/admin/settings', icon: Settings },
+        { label: '라이센스 관리', href: '/monitoring/licenses', icon: Shield },
+        { label: '사용 현황', href: '/monitoring/usage', icon: BarChart3 },
+        { label: '도구 관리', href: '/admin/tools', icon: Settings },
       ];
     case 'SYSTEM_ADMIN':
       return [
         { label: '대시보드', href: '/dashboard', icon: LayoutDashboard },
-        { label: '라이센스 관리', href: '/admin/licenses', icon: Shield },
-        { label: '사용 현황', href: '/admin/monitoring', icon: BarChart3 },
-        { label: '도구 관리', href: '/admin/settings', icon: Settings },
+        { label: '라이센스 관리', href: '/monitoring/licenses', icon: Shield },
+        { label: '사용 현황', href: '/monitoring/usage', icon: BarChart3 },
+        { label: '도구 관리', href: '/admin/tools', icon: Settings },
         { label: '감사 로그', href: '/admin/audit', icon: ScrollText },
       ];
     default:

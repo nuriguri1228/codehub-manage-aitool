@@ -63,6 +63,10 @@ No test framework is configured yet.
 - 새 요구사항 추가 시: 해당 섹션에 행 추가 (❌ 미구현)
 - 최종 업데이트 날짜 갱신
 
+## Build Rules
+
+`npm run build` 실행 시 반드시 백그라운드(`run_in_background`)로 실행한다. 빌드 완료 후 결과를 확인하여 사용자에게 보고한다.
+
 ## Language
 
 UI text and comments are in Korean. Code identifiers, types, and git messages are in English.

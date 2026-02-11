@@ -60,9 +60,9 @@ function getNavItems(role: UserRole): NavItem[] {
     case 'SYSTEM_ADMIN':
       return [
         { label: '대시보드', href: '/dashboard' },
-        { label: '라이센스', href: '/admin/licenses' },
-        { label: '모니터링', href: '/admin/monitoring' },
-        { label: '설정', href: '/admin/settings' },
+        { label: '라이센스', href: '/monitoring/licenses' },
+        { label: '모니터링', href: '/monitoring/usage' },
+        { label: '설정', href: '/admin/tools' },
       ];
     default:
       return [{ label: '대시보드', href: '/dashboard' }];
