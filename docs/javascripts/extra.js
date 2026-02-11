@@ -30,7 +30,6 @@
     document.querySelectorAll("pre.mermaid code").forEach(function (code) {
       var pre = code.parentElement;
       if (pre && pre.tagName === "PRE") {
-        /* innerHTML을 사용해 HTML 엔티티를 보존 (mermaid가 자체적으로 entityDecode 수행) */
         pre.innerHTML = code.innerHTML;
       }
     });
@@ -46,18 +45,31 @@
       console.warn("[extra.js] mermaid.initialize error:", e);
     }
 
-    mermaid
-      .run({ nodes: elements })
-      .then(function () {
-        console.info("[extra.js] Mermaid render complete");
-        /* 줌 커서 힌트 설정 */
-        document.querySelectorAll("pre.mermaid[data-processed] svg").forEach(function (svg) {
-          svg.style.cursor = "zoom-in";
-        });
-      })
-      .catch(function (err) {
-        console.warn("[extra.js] Mermaid render error:", err);
-      });
+    /* requestAnimationFrame으로 DOM 페인트 후 렌더링                     */
+    /* → mermaid 내부 getBoundingClientRect 호출 시 요소가 레이아웃 완료됨 */
+    requestAnimationFrame(function () {
+      renderDiagrams(elements);
+    });
+  }
+
+  /* 다이어그램을 하나씩 순차 렌더링 — 하나의 실패가 나머지를 중단하지 않음 */
+  async function renderDiagrams(elements) {
+    var rendered = 0;
+    for (var i = 0; i < elements.length; i++) {
+      var el = elements[i];
+      if (el.getAttribute("data-processed")) continue;
+      try {
+        await mermaid.run({ nodes: [el] });
+        rendered++;
+      } catch (err) {
+        console.warn("[extra.js] Diagram " + i + " error:", err.message || err);
+      }
+    }
+    console.info("[extra.js] Rendered " + rendered + "/" + elements.length + " diagrams");
+    /* 줌 커서 힌트 설정 */
+    document.querySelectorAll("pre.mermaid[data-processed] svg").forEach(function (svg) {
+      svg.style.cursor = "zoom-in";
+    });
   }
 
   /* ── 4. 초기 로드 + navigation.instant 대응 ── */

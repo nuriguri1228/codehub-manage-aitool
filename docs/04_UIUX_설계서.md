@@ -1273,27 +1273,27 @@ Tailwind CSS v4 기본 브레이크포인트를 사용합니다:
 
 ```mermaid
 stateDiagram-v2
-    [*] --> default
-    default --> hover : 마우스 진입
-    hover --> active : 마우스 누름
-    active --> hover : 마우스 놓음
-    hover --> default : 마우스 나감
-    default --> disabled : 비활성
-    disabled --> default : 활성화
-    default --> loading : 클릭+비동기
-    loading --> default : 완료
+    [*] --> Default
+    Default --> Hover : 마우스 진입
+    Hover --> Active : 마우스 누름
+    Active --> Hover : 마우스 놓음
+    Hover --> Default : 마우스 나감
+    Default --> Disabled : 비활성
+    Disabled --> Default : 활성화
+    Default --> Loading : 클릭+비동기
+    Loading --> Default : 완료
 ```
 
 **Input 상태 전이:**
 
 ```mermaid
 stateDiagram-v2
-    [*] --> default
-    default --> focus : 클릭/탭
-    focus --> default : 포커스 해제 (유효)
-    focus --> error : 포커스 해제 (유효성 실패)
-    error --> focus : 클릭/탭
-    focus --> focus : 입력 중
+    [*] --> Default
+    Default --> Focus : 클릭/탭
+    Focus --> Default : 포커스 해제 (유효)
+    Focus --> Error : 포커스 해제 (유효성 실패)
+    Error --> Focus : 클릭/탭
+    Focus --> Focus : 입력 중
 ```
 
 **ApplicationStatus 전이:**
