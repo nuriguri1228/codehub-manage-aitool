@@ -116,8 +116,8 @@
       "contentId": "I_kwDORNGFGc7p9lC0",
       "issueNodeId": "I_kwDORNGFGc7p9lC0",
       "issueNumber": 102,
-      "lastHash": "9626e7a0efb1a3a6bea8bb0190aa261eb978ef54df260c7b117b4fdb276599bb",
-      "lastSyncedAt": "2026-02-11T07:59:06.500Z",
+      "lastHash": "9862e219eb4f173031400228baca3f61f2c29ad7cce0e09f000074dc0efb3eed",
+      "lastSyncedAt": "2026-02-11T08:04:20.260Z",
       "lastOwner": "page-components"
     },
     {
@@ -160,12 +160,12 @@
       "contentId": "I_kwDORNGFGc7p9lSZ",
       "issueNodeId": "I_kwDORNGFGc7p9lSZ",
       "issueNumber": 104,
-      "lastHash": "addd02bb3f2b52e8bfdffce39c60cbd1e2d81f758de94bd34f524fd608297d2e",
-      "lastSyncedAt": "2026-02-11T07:59:06.681Z",
+      "lastHash": "9d6b3140d2f9e1653df5e0531427765dd76cc8a87ff6f2cb582c70451ead079f",
+      "lastSyncedAt": "2026-02-11T08:04:19.498Z",
       "lastOwner": "page-components"
     }
   ],
-  "lastSyncAt": "2026-02-11T08:04:16.980Z",
+  "lastSyncAt": "2026-02-11T08:04:37.935Z",
   "summaryIssues": {
     "frontend-design": {
       "issueNodeId": "I_kwDORNGFGc7p9k0j",
