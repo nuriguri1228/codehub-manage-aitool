@@ -129,6 +129,40 @@ export default function LicensesPage() {
     return true;
   });
 
+  const STATUS_MAP: Record<string, string> = {
+    ACTIVE: '활성',
+    EXPIRED: '만료',
+    REVOKED: '해지',
+    SUSPENDED: '정지',
+  };
+
+  const csvHeaders = [
+    { key: 'licenseNumber', label: '라이센스 번호' },
+    { key: 'userName', label: '사용자' },
+    { key: 'userDepartment', label: '부서' },
+    { key: 'aiToolName', label: 'AI 도구' },
+    { key: 'environment', label: '환경' },
+    { key: 'statusLabel', label: '상태' },
+    { key: 'issuedAt', label: '발급일' },
+    { key: 'expiresAt', label: '만료일' },
+    { key: 'quotaUsed', label: '사용량' },
+    { key: 'quotaLimit', label: '한도' },
+    { key: 'usagePercent', label: '사용률(%)' },
+  ];
+
+  const handleExportCSV = () => {
+    const rows = filteredLicenses.map((lic) => ({
+      ...lic,
+      statusLabel: STATUS_MAP[lic.status] ?? lic.status,
+    }));
+    exportToCSV(rows as unknown as Record<string, unknown>[], '라이센스_현황', csvHeaders);
+    toast.success('CSV 파일이 다운로드되었습니다.');
+  };
+
+  const handleExportPDF = () => {
+    exportToPDF();
+  };
+
   return (
     <div className="space-y-6">
       {/* Page Header */}
@@ -183,15 +217,15 @@ export default function LicensesPage() {
             </Select>
           </div>
           <div className="ml-auto flex gap-2">
-            <Button variant="outline" size="sm">
+            <Button variant="outline" size="sm" onClick={handleExportCSV}>
               <Download className="mr-1 h-3.5 w-3.5" />
               CSV
             </Button>
-            <Button variant="outline" size="sm">
+            <Button variant="outline" size="sm" onClick={handleExportCSV}>
               <Download className="mr-1 h-3.5 w-3.5" />
               Excel
             </Button>
-            <Button variant="outline" size="sm">
+            <Button variant="outline" size="sm" onClick={handleExportPDF}>
               <Download className="mr-1 h-3.5 w-3.5" />
               PDF
             </Button>
