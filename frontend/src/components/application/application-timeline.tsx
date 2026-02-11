@@ -97,7 +97,7 @@ const statusIcons: Record<TimelineEvent['status'], React.ElementType> = {
 
 const statusColors: Record<TimelineEvent['status'], string> = {
   completed: 'text-emerald-600',
-  current: 'text-[#1E40AF]',
+  current: 'text-[#50CF94]',
   pending: 'text-gray-300',
   rejected: 'text-red-500',
   feedback: 'text-amber-500',
@@ -105,7 +105,7 @@ const statusColors: Record<TimelineEvent['status'], string> = {
 
 const lineColors: Record<TimelineEvent['status'], string> = {
   completed: 'bg-emerald-600',
-  current: 'bg-[#1E40AF]',
+  current: 'bg-[#50CF94]',
   pending: 'bg-gray-200',
   rejected: 'bg-red-500',
   feedback: 'bg-amber-500',

@@ -32,7 +32,7 @@ const mockStats: DashboardStats = {
 };
 
 const mockToolDistribution: ToolDistribution[] = [
-  { toolName: 'Claude Code', count: 68, color: '#1E40AF' },
+  { toolName: 'Claude Code', count: 68, color: '#50CF94' },
   { toolName: 'Antigravity', count: 42, color: '#7C3AED' },
   { toolName: '기타', count: 17, color: '#D97706' },
 ];
@@ -97,7 +97,7 @@ const activityConfig: Record<
   { color: string; icon: typeof CheckCircle2 }
 > = {
   approval: { color: 'bg-emerald-500', icon: CheckCircle2 },
-  issuance: { color: 'bg-blue-700', icon: Key },
+  issuance: { color: 'bg-[#50CF94]', icon: Key },
   anomaly: { color: 'bg-red-600', icon: AlertTriangle },
 };
 
@@ -124,7 +124,7 @@ export function AdminDashboard() {
           value={stats.totalLicenses.toLocaleString()}
           change={stats.licenseChange}
           icon={KeyRound}
-          iconColor="text-blue-600"
+          iconColor="text-[#50CF94]"
         />
         <KpiCard
           title="활성 사용자"
@@ -157,7 +157,7 @@ export function AdminDashboard() {
           data={monthlyTrend}
           title="월별 사용 추이 (최근 6개월)"
           lines={[
-            { key: 'claudeCode', name: 'Claude Code', color: '#1E40AF' },
+            { key: 'claudeCode', name: 'Claude Code', color: '#50CF94' },
             { key: 'antigravity', name: 'Antigravity', color: '#7C3AED' },
           ]}
         />
@@ -167,7 +167,7 @@ export function AdminDashboard() {
       <Card>
         <CardHeader className="flex flex-row items-center justify-between">
           <CardTitle className="text-base">최근 활동</CardTitle>
-          <button className="text-sm text-blue-700 hover:underline">
+          <button className="text-sm text-[#50CF94] hover:underline">
             전체보기 &gt;
           </button>
         </CardHeader>

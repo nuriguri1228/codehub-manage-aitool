@@ -76,9 +76,9 @@ export function DataTable<T>({
   function SortIcon({ field }: { field: string }) {
     if (sortBy !== field) return <ArrowUpDown className="h-3.5 w-3.5 text-gray-400" />;
     return sortOrder === 'asc' ? (
-      <ArrowUp className="h-3.5 w-3.5 text-[#1E40AF]" />
+      <ArrowUp className="h-3.5 w-3.5 text-[#50CF94]" />
     ) : (
-      <ArrowDown className="h-3.5 w-3.5 text-[#1E40AF]" />
+      <ArrowDown className="h-3.5 w-3.5 text-[#50CF94]" />
     );
   }
 
@@ -132,7 +132,7 @@ export function DataTable<T>({
                 key={key}
                 className={cn(
                   onRowClick && 'cursor-pointer hover:bg-gray-50',
-                  isSelected && 'bg-blue-50'
+                  isSelected && 'bg-[#50CF94]/10'
                 )}
                 onClick={() => onRowClick?.(row)}
               >

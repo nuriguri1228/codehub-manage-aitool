@@ -136,7 +136,7 @@ function ReviewQueueTable() {
                   className={
                     item.stageName === '재제출'
                       ? 'bg-amber-100 text-amber-700'
-                      : 'bg-blue-100 text-blue-700'
+                      : 'bg-[#50CF94]/15 text-[#2d8a5e]'
                   }
                 >
                   {item.stageName}
@@ -209,7 +209,7 @@ export default function ReviewerDashboard() {
             value={stats?.avgProcessingDays ?? 0}
             unit="시간"
             icon={Timer}
-            accent="text-blue-700"
+            accent="text-[#50CF94]"
           />
         </div>
       )}

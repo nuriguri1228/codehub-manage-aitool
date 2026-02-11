@@ -22,7 +22,7 @@ export function LoadingSpinner({
 }: LoadingSpinnerProps) {
   return (
     <div className={cn('flex items-center justify-center gap-2', className)}>
-      <Loader2 className={cn('animate-spin text-[#1E40AF]', sizeClasses[size])} />
+      <Loader2 className={cn('animate-spin text-[#50CF94]', sizeClasses[size])} />
       {text && <span className="text-sm text-gray-500">{text}</span>}
     </div>
   );

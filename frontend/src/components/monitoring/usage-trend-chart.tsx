@@ -35,8 +35,8 @@ export function UsageTrendChart({
             >
               <defs>
                 <linearGradient id="tokenGradient" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#1E40AF" stopOpacity={0.3} />
-                  <stop offset="95%" stopColor="#1E40AF" stopOpacity={0} />
+                  <stop offset="5%" stopColor="#50CF94" stopOpacity={0.3} />
+                  <stop offset="95%" stopColor="#50CF94" stopOpacity={0} />
                 </linearGradient>
               </defs>
               <CartesianGrid strokeDasharray="3 3" stroke="#f3f4f6" />
@@ -68,7 +68,7 @@ export function UsageTrendChart({
               <Area
                 type="monotone"
                 dataKey="tokens"
-                stroke="#1E40AF"
+                stroke="#50CF94"
                 strokeWidth={2.5}
                 fill="url(#tokenGradient)"
               />

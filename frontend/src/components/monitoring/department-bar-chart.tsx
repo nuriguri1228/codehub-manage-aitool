@@ -58,7 +58,7 @@ export function DepartmentBarChart({
                 }}
                 formatter={(value?: number) => [`${value ?? 0}개`, '라이센스']}
               />
-              <Bar dataKey="count" radius={[4, 4, 0, 0]} fill="#1E40AF" />
+              <Bar dataKey="count" radius={[4, 4, 0, 0]} fill="#50CF94" />
             </BarChart>
           </ResponsiveContainer>
         </div>

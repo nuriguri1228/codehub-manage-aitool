@@ -19,13 +19,13 @@ export const APPLICATION_STATUS_LABELS: Record<ApplicationStatus, string> = {
 
 export const APPLICATION_STATUS_COLORS: Record<ApplicationStatus, string> = {
   DRAFT: 'bg-gray-100 text-gray-700',
-  SUBMITTED: 'bg-blue-100 text-blue-700',
+  SUBMITTED: 'bg-[#50CF94]/15 text-[#3a9e70]',
   TEAM_REVIEW: 'bg-indigo-100 text-indigo-700',
   SECURITY_REVIEW: 'bg-purple-100 text-purple-700',
   ENV_PREPARATION: 'bg-yellow-100 text-yellow-700',
   FINAL_APPROVAL: 'bg-orange-100 text-orange-700',
-  APPROVED: 'bg-emerald-100 text-emerald-700',
-  KEY_ISSUED: 'bg-green-100 text-green-800',
+  APPROVED: 'bg-[#50CF94]/20 text-[#2d8a5e]',
+  KEY_ISSUED: 'bg-[#50CF94]/30 text-[#257a50]',
   REJECTED: 'bg-red-100 text-red-700',
   FEEDBACK_REQUESTED: 'bg-amber-100 text-amber-700',
 };

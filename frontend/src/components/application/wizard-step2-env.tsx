@@ -52,27 +52,27 @@ export function WizardStep2Env({ value, onChange, error }: WizardStep2Props) {
               className={cn(
                 'cursor-pointer transition-all hover:shadow-md',
                 isSelected
-                  ? 'border-[#1E40AF] ring-2 ring-[#1E40AF]/20'
+                  ? 'border-[#50CF94] ring-2 ring-[#50CF94]/20'
                   : 'border-gray-200 hover:border-gray-300'
               )}
               onClick={() => onChange(option.value)}
             >
               <CardContent className="relative flex flex-col items-center p-6 text-center">
                 {isSelected && (
-                  <div className="absolute right-3 top-3 flex h-6 w-6 items-center justify-center rounded-full bg-[#1E40AF]">
+                  <div className="absolute right-3 top-3 flex h-6 w-6 items-center justify-center rounded-full bg-[#50CF94]">
                     <Check className="h-4 w-4 text-white" />
                   </div>
                 )}
                 <div
                   className={cn(
                     'flex h-12 w-12 items-center justify-center rounded-lg',
-                    isSelected ? 'bg-[#1E40AF]/10' : 'bg-gray-100'
+                    isSelected ? 'bg-[#50CF94]/10' : 'bg-gray-100'
                   )}
                 >
                   <Icon
                     className={cn(
                       'h-6 w-6',
-                      isSelected ? 'text-[#1E40AF]' : 'text-gray-500'
+                      isSelected ? 'text-[#50CF94]' : 'text-gray-500'
                     )}
                   />
                 </div>

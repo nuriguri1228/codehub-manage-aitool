@@ -49,14 +49,14 @@ export function WizardStep1Tool({ value, onChange, error }: WizardStep1Props) {
               className={cn(
                 'cursor-pointer transition-all hover:shadow-md',
                 isSelected
-                  ? 'border-[#1E40AF] ring-2 ring-[#1E40AF]/20'
+                  ? 'border-[#50CF94] ring-2 ring-[#50CF94]/20'
                   : 'border-gray-200 hover:border-gray-300'
               )}
               onClick={() => onChange(tool.id)}
             >
               <CardContent className="relative p-4">
                 {isSelected && (
-                  <div className="absolute right-3 top-3 flex h-6 w-6 items-center justify-center rounded-full bg-[#1E40AF]">
+                  <div className="absolute right-3 top-3 flex h-6 w-6 items-center justify-center rounded-full bg-[#50CF94]">
                     <Check className="h-4 w-4 text-white" />
                   </div>
                 )}

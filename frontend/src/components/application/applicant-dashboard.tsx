@@ -153,7 +153,7 @@ export default function ApplicantDashboard() {
             title="전체 신청"
             value={stats?.total ?? 0}
             icon={FileText}
-            accent="text-blue-700"
+            accent="text-[#50CF94]"
           />
           <StatCard
             title="진행 중"

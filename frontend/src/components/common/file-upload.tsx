@@ -103,7 +103,7 @@ export function FileUpload({
         className={cn(
           'rounded-lg border-2 border-dashed p-8 text-center transition-colors',
           dragOver
-            ? 'border-[#1E40AF] bg-blue-50'
+            ? 'border-[#50CF94] bg-[#50CF94]/10'
             : 'border-gray-300 hover:border-gray-400'
         )}
         onDragOver={(e) => {
@@ -118,7 +118,7 @@ export function FileUpload({
           파일을 여기에 드래그하거나{' '}
           <button
             type="button"
-            className="font-medium text-[#1E40AF] hover:underline"
+            className="font-medium text-[#50CF94] hover:underline"
             onClick={() => inputRef.current?.click()}
           >
             파일 찾아보기

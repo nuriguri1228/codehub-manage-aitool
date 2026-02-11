@@ -48,7 +48,7 @@ export default function LoginPage() {
       <div className="p-8">
         {/* Logo */}
         <div className="flex flex-col items-center">
-          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#1E40AF]">
+          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#50CF94]">
             <span className="text-2xl font-bold text-white">C</span>
           </div>
           <h1 className="mt-4 text-xl font-bold text-gray-900">
@@ -61,7 +61,7 @@ export default function LoginPage() {
 
         {/* SSO Button */}
         <Button
-          className="mt-8 w-full bg-[#1E40AF] hover:bg-[#1E40AF]/90"
+          className="mt-8 w-full bg-[#50CF94] hover:bg-[#50CF94]/90"
           size="lg"
           onClick={handleLogin}
         >
@@ -88,7 +88,7 @@ export default function LoginPage() {
               className={cn(
                 'flex w-full items-center rounded-lg border px-4 py-3 text-left transition-colors',
                 selectedRole === role.value
-                  ? 'border-[#1E40AF] bg-blue-50'
+                  ? 'border-[#50CF94] bg-[#50CF94]/10'
                   : 'border-gray-200 hover:bg-gray-50'
               )}
               onClick={() => setSelectedRole(role.value)}
@@ -97,12 +97,12 @@ export default function LoginPage() {
                 className={cn(
                   'mr-3 flex h-4 w-4 items-center justify-center rounded-full border-2',
                   selectedRole === role.value
-                    ? 'border-[#1E40AF]'
+                    ? 'border-[#50CF94]'
                     : 'border-gray-300'
                 )}
               >
                 {selectedRole === role.value && (
-                  <div className="h-2 w-2 rounded-full bg-[#1E40AF]" />
+                  <div className="h-2 w-2 rounded-full bg-[#50CF94]" />
                 )}
               </div>
               <div>
@@ -122,11 +122,11 @@ export default function LoginPage() {
 
         {/* Help links */}
         <div className="mt-4 flex items-center justify-center gap-4 text-xs">
-          <a href="/help" className="text-[#1E40AF] hover:underline">
+          <a href="/help" className="text-[#50CF94] hover:underline">
             이용 안내
           </a>
           <span className="text-gray-300">|</span>
-          <a href="/contact" className="text-[#1E40AF] hover:underline">
+          <a href="/contact" className="text-[#50CF94] hover:underline">
             문의하기
           </a>
         </div>

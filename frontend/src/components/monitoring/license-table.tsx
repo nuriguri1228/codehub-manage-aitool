@@ -147,7 +147,7 @@ export function LicenseTable({
                 <TableCell>
                   <div className="flex gap-2">
                     <button
-                      className="text-xs text-blue-700 hover:underline"
+                      className="text-xs text-[#50CF94] hover:underline"
                       onClick={() => onDetail?.(license.id)}
                     >
                       상세

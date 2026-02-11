@@ -22,7 +22,7 @@ export function KpiCard({
   change,
   changeLabel = '전월 대비',
   icon: Icon,
-  iconColor = 'text-blue-600',
+  iconColor = 'text-[#50CF94]',
   secondaryValue,
   secondaryLabel,
   budgetBar,
@@ -66,7 +66,7 @@ export function KpiCard({
                       ? 'bg-red-500'
                       : budgetBar.used / budgetBar.total > 0.7
                         ? 'bg-amber-500'
-                        : 'bg-blue-600'
+                        : 'bg-[#50CF94]'
                   )}
                   style={{
                     width: `${Math.min((budgetBar.used / budgetBar.total) * 100, 100)}%`,

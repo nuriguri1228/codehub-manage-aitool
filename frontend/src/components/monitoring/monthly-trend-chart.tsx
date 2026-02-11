@@ -21,7 +21,7 @@ interface MonthlyTrendChartProps {
 }
 
 const CHART_COLORS = {
-  'Claude Code': '#1E40AF',
+  'Claude Code': '#50CF94',
   Antigravity: '#7C3AED',
   기타: '#D97706',
 };

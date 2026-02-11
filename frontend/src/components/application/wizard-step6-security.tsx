@@ -32,7 +32,7 @@ export function WizardStep6Security({ value, onChange, error }: WizardStep6Props
       <Card>
         <CardContent className="p-6">
           <div className="mb-4 flex items-center gap-2">
-            <ShieldCheck className="h-5 w-5 text-[#1E40AF]" />
+            <ShieldCheck className="h-5 w-5 text-[#50CF94]" />
             <span className="font-semibold text-gray-900">보안 서약서</span>
           </div>
 

@@ -44,13 +44,13 @@ export function StepIndicator({
                   className={cn(
                     'flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs font-semibold transition-colors',
                     isCompleted &&
-                      'bg-[#059669] text-white',
+                      'bg-[#50CF94] text-white',
                     isCurrent &&
-                      'border-2 border-[#1E40AF] bg-white text-[#1E40AF]',
+                      'border-2 border-[#50CF94] bg-white text-[#50CF94]',
                     !isCompleted &&
                       !isCurrent &&
                       'border-2 border-gray-300 bg-white text-gray-400',
-                    isClickable && 'cursor-pointer hover:bg-emerald-600'
+                    isClickable && 'cursor-pointer hover:bg-[#45b882]'
                   )}
                   onClick={() => isClickable && onStepClick(step.step)}
                 >
@@ -66,7 +66,7 @@ export function StepIndicator({
                   <div
                     className={cn(
                       'mx-2 h-0.5 flex-1',
-                      isCompleted ? 'bg-[#059669]' : 'bg-gray-200'
+                      isCompleted ? 'bg-[#50CF94]' : 'bg-gray-200'
                     )}
                   />
                 )}
@@ -77,7 +77,7 @@ export function StepIndicator({
                 <p
                   className={cn(
                     'text-xs font-medium',
-                    isCurrent ? 'text-[#1E40AF]' : 'text-gray-500'
+                    isCurrent ? 'text-[#50CF94]' : 'text-gray-500'
                   )}
                 >
                   {step.title}

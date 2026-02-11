@@ -186,12 +186,12 @@ export default function ReviewListFilters({ onFilterChange }: ReviewListFiltersP
             <Badge
               key={f.key}
               variant="secondary"
-              className="gap-1 bg-blue-100 text-blue-700"
+              className="gap-1 bg-[#50CF94]/15 text-[#2d8a5e]"
             >
               {f.label}
               <button
                 onClick={() => removeFilter(f.key)}
-                className="ml-0.5 rounded-full hover:bg-blue-200"
+                className="ml-0.5 rounded-full hover:bg-[#50CF94]/25"
               >
                 <X className="h-3 w-3" />
               </button>
@@ -201,7 +201,7 @@ export default function ReviewListFilters({ onFilterChange }: ReviewListFiltersP
             variant="link"
             size="sm"
             onClick={clearAllFilters}
-            className="h-auto p-0 text-blue-700"
+            className="h-auto p-0 text-[#50CF94]"
           >
             필터 초기화
           </Button>

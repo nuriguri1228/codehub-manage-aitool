@@ -85,7 +85,7 @@ export function Pagination({
             size="sm"
             className={cn(
               'min-w-8',
-              currentPage === page && 'bg-[#1E40AF] hover:bg-[#1E40AF]/90'
+              currentPage === page && 'bg-[#50CF94] hover:bg-[#50CF94]/90'
             )}
             onClick={() => onPageChange(page)}
           >
