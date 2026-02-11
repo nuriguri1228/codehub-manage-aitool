@@ -15,3 +15,81 @@
   --md-accent-fg-color: #50CF94;
   --md-accent-fg-color--transparent: #50CF9420;
 }
+
+/* 왼쪽 내비게이션 사이드바 숨기기 — 탭에서 이미 탐색 가능 */
+.md-sidebar--primary {
+  display: none;
+}
+
+/* 사이드바 제거 후 콘텐츠 영역 확장 */
+.md-main__inner {
+  max-width: 100%;
+}
+
+.md-content {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 다이어그램 확대 커서 힌트 */
+.mermaid {
+  cursor: zoom-in;
+  transition: opacity 0.15s;
+}
+
+.mermaid:hover {
+  opacity: 0.85;
+}
+
+/* 다이어그램 확대 오버레이 */
+.diagram-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.75);
+  cursor: zoom-out;
+  padding: 2rem;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.diagram-overlay.active {
+  opacity: 1;
+}
+
+.diagram-overlay .diagram-content {
+  background: var(--md-default-bg-color, #fff);
+  border-radius: 8px;
+  padding: 2rem;
+  max-width: 95vw;
+  max-height: 90vh;
+  overflow: auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transform: scale(0.95);
+  transition: transform 0.2s;
+}
+
+.diagram-overlay.active .diagram-content {
+  transform: scale(1);
+}
+
+.diagram-overlay .diagram-content svg {
+  max-width: none !important;
+  width: auto;
+  height: auto;
+  min-width: 60vw;
+}
+
+/* 닫기 안내 텍스트 */
+.diagram-overlay .close-hint {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  pointer-events: none;
+}
