@@ -1,26 +1,38 @@
 /* 다이어그램 클릭 확대 (스크롤 줌 + 드래그 이동) */
-/* Mermaid 렌더링은 MkDocs Material 번들이 자체 처리 — 여기서는 줌만 담당 */
+/* MkDocs Material은 mermaid SVG를 closed Shadow DOM 안에 렌더링한다.      */
+/* e.target.closest("svg")로는 접근할 수 없으므로 composedPath()를 사용한다. */
 (function () {
   "use strict";
 
+  /* Shadow DOM 내부의 SVG를 composedPath로 탐색 */
+  function findSvgInPath(e) {
+    var path = e.composedPath();
+    for (var i = 0; i < path.length; i++) {
+      if (path[i] instanceof SVGSVGElement) return path[i];
+    }
+    return null;
+  }
+
+  /* 클릭한 위치가 mermaid 컨테이너인지 확인 */
+  function isMermaidContainer(e) {
+    var el = e.target;
+    if (!el || !el.closest) return false;
+    return el.closest(".mermaid") || el.closest("[data-processed]");
+  }
+
   /* ── 다이어그램 클릭 확대 (이벤트 위임) ── */
   document.addEventListener("click", function (e) {
-    if (e.target.closest(".diagram-overlay")) return;
+    if (e.target.closest && e.target.closest(".diagram-overlay")) return;
 
-    var svg = e.target.closest("svg");
+    /* Shadow DOM 내부의 SVG를 composedPath로 찾기 */
+    var svg = findSvgInPath(e);
+
+    /* composedPath에서 못 찾으면 일반 DOM에서 시도 */
+    if (!svg) svg = e.target.closest && e.target.closest("svg");
     if (!svg) return;
 
-    /* mermaid가 렌더한 SVG인지 판별 */
-    var isDiagram =
-      svg.closest("pre.mermaid") ||
-      svg.closest("div.mermaid") ||
-      svg.closest(".mermaid") ||
-      svg.closest("[data-processed]") ||
-      (svg.id && /^mermaid/i.test(svg.id)) ||
-      svg.getAttribute("aria-roledescription") ||
-      (svg.querySelector(".clusters") && svg.querySelector(".edgePaths"));
-
-    if (!isDiagram) return;
+    /* mermaid 컨테이너 내부인지 확인 */
+    if (!isMermaidContainer(e)) return;
 
     e.preventDefault();
     e.stopPropagation();
