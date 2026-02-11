@@ -1,0 +1,40 @@
+{
+  "project": {
+    "id": "PVT_kwHODFNjSs4BO5v_",
+    "number": 24,
+    "url": "https://github.com/users/nuriguri1228/projects/24",
+    "title": "ccteams: frontend-design",
+    "owner": "nuriguri1228"
+  },
+  "repository": {
+    "id": "R_kgDORNGFGQ",
+    "owner": "nuriguri1228",
+    "name": "codehub-manage-aitool"
+  },
+  "fields": {
+    "Team Name": "PVTF_lAHODFNjSs4BO5v_zg9d9n4",
+    "Agent (Owner)": "PVTSSF_lAHODFNjSs4BO5v_zg9d9oo",
+    "Task ID": "PVTF_lAHODFNjSs4BO5v_zg9d9os",
+    "Blocked By": "PVTF_lAHODFNjSs4BO5v_zg9d9ow",
+    "Active Form": "PVTF_lAHODFNjSs4BO5v_zg9d9o0",
+    "Status": "PVTSSF_lAHODFNjSs4BO5v_zg9d9nY",
+    "Title": "PVTF_lAHODFNjSs4BO5v_zg9d9nQ",
+    "Assignees": "PVTF_lAHODFNjSs4BO5v_zg9d9nU",
+    "Labels": "PVTF_lAHODFNjSs4BO5v_zg9d9nc",
+    "Linked pull requests": "PVTF_lAHODFNjSs4BO5v_zg9d9ng",
+    "Milestone": "PVTF_lAHODFNjSs4BO5v_zg9d9nk",
+    "Repository": "PVTF_lAHODFNjSs4BO5v_zg9d9no",
+    "Reviewers": "PVTF_lAHODFNjSs4BO5v_zg9d9ns",
+    "Parent issue": "PVTF_lAHODFNjSs4BO5v_zg9d9nw",
+    "Sub-issues progress": "PVTF_lAHODFNjSs4BO5v_zg9d9n0"
+  },
+  "statusOptions": {
+    "Todo": "f75ad846",
+    "In Progress": "47fc9ee4",
+    "Done": "98236657"
+  },
+  "ownerOptions": {},
+  "labels": {},
+  "items": [],
+  "lastSyncAt": "2026-02-11T07:57:02.374Z"
+}
