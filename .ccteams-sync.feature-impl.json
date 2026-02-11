@@ -1,0 +1,40 @@
+{
+  "project": {
+    "id": "PVT_kwHODFNjSs4BO8Dq",
+    "number": 27,
+    "url": "https://github.com/users/nuriguri1228/projects/27",
+    "title": "ccteams: feature-impl",
+    "owner": "nuriguri1228"
+  },
+  "repository": {
+    "id": "R_kgDORNGFGQ",
+    "owner": "nuriguri1228",
+    "name": "codehub-manage-aitool"
+  },
+  "fields": {
+    "Team Name": "PVTF_lAHODFNjSs4BO8Dqzg9fm0c",
+    "Agent (Owner)": "PVTSSF_lAHODFNjSs4BO8Dqzg9fm0g",
+    "Task ID": "PVTF_lAHODFNjSs4BO8Dqzg9fm1M",
+    "Blocked By": "PVTF_lAHODFNjSs4BO8Dqzg9fm1Q",
+    "Active Form": "PVTF_lAHODFNjSs4BO8Dqzg9fm1o",
+    "Status": "PVTSSF_lAHODFNjSs4BO8Dqzg9fmzA",
+    "Title": "PVTF_lAHODFNjSs4BO8Dqzg9fmy4",
+    "Assignees": "PVTF_lAHODFNjSs4BO8Dqzg9fmy8",
+    "Labels": "PVTF_lAHODFNjSs4BO8Dqzg9fmzE",
+    "Linked pull requests": "PVTF_lAHODFNjSs4BO8Dqzg9fmzI",
+    "Milestone": "PVTF_lAHODFNjSs4BO8Dqzg9fmzM",
+    "Repository": "PVTF_lAHODFNjSs4BO8Dqzg9fmzQ",
+    "Reviewers": "PVTF_lAHODFNjSs4BO8Dqzg9fmzU",
+    "Parent issue": "PVTF_lAHODFNjSs4BO8Dqzg9fmzY",
+    "Sub-issues progress": "PVTF_lAHODFNjSs4BO8Dqzg9fmzc"
+  },
+  "statusOptions": {
+    "Todo": "f75ad846",
+    "In Progress": "47fc9ee4",
+    "Done": "98236657"
+  },
+  "ownerOptions": {},
+  "labels": {},
+  "items": [],
+  "lastSyncAt": "2026-02-11T15:28:14.151Z"
+}
