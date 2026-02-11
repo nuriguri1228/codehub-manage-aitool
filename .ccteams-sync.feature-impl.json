@@ -33,8 +33,30 @@
     "In Progress": "47fc9ee4",
     "Done": "98236657"
   },
-  "ownerOptions": {},
-  "labels": {},
-  "items": [],
-  "lastSyncAt": "2026-02-11T15:28:14.151Z"
+  "ownerOptions": {
+    "(unassigned)": "9cbe4916"
+  },
+  "labels": {
+    "ccteams:feature-impl": "LA_kwDORNGFGc8AAAACXyhZKA"
+  },
+  "items": [
+    {
+      "taskId": "1",
+      "teamName": "feature-impl",
+      "githubItemId": "PVTI_lAHODFNjSs4BO8DqzglQ_qU",
+      "contentId": "I_kwDORNGFGc7qFAhD",
+      "issueNodeId": "I_kwDORNGFGc7qFAhD",
+      "issueNumber": 111,
+      "lastHash": "68f00122e87cea2b985394bbf20f7772787435aa1e442e1ff92d749f56854fa9",
+      "lastSyncedAt": "2026-02-11T15:28:19.110Z"
+    }
+  ],
+  "lastSyncAt": "2026-02-11T15:28:39.538Z",
+  "summaryIssues": {
+    "feature-impl": {
+      "issueNodeId": "I_kwDORNGFGc7qFAt5",
+      "issueNumber": 112,
+      "githubItemId": "PVTI_lAHODFNjSs4BO8DqzglQ_r0"
+    }
+  }
 }
