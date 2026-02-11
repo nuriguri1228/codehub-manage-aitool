@@ -1,43 +1,66 @@
-/* Mermaid 다이어그램 클릭 확대 기능 */
+/* Mermaid 초기화 + 다이어그램 클릭 확대 */
 (function () {
+  /* ── Mermaid 초기화 ── */
+  function getTheme() {
+    var scheme = document.body.getAttribute("data-md-color-scheme");
+    return scheme === "slate" ? "dark" : "default";
+  }
+
+  function initMermaid() {
+    if (typeof mermaid === "undefined") return;
+    mermaid.initialize({ startOnLoad: false, theme: getTheme() });
+    mermaid.run({ querySelector: ".mermaid" }).then(function () {
+      initZoom();
+    });
+  }
+
+  // 초기 로드
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initMermaid);
+  } else {
+    initMermaid();
+  }
+
+  // navigation.instant: 페이지 전환 시 재실행
+  if (typeof document$ !== "undefined") {
+    document$.subscribe(function () {
+      initMermaid();
+    });
+  } else {
+    // document$ 미사용 폴백: popstate + MkDocs instant nav 감지
+    var lastUrl = location.href;
+    new MutationObserver(function () {
+      if (location.href !== lastUrl) {
+        lastUrl = location.href;
+        setTimeout(initMermaid, 100);
+      }
+    }).observe(document.querySelector("title") || document.head, {
+      childList: true,
+      subtree: true,
+    });
+  }
+
+  // 테마 전환 감지 → Mermaid 다시 렌더링
+  new MutationObserver(function (mutations) {
+    for (var i = 0; i < mutations.length; i++) {
+      if (mutations[i].attributeName === "data-md-color-scheme") {
+        initMermaid();
+        break;
+      }
+    }
+  }).observe(document.body, { attributes: true });
+
+  /* ── 다이어그램 클릭 확대 ── */
   function initZoom() {
-    // MkDocs Material이 Mermaid를 렌더링한 뒤 SVG가 삽입된 요소를 찾는다
-    // 가능한 구조: <pre class="mermaid">, <div class="mermaid">, 또는 SVG를 포함하는 code.language-mermaid
-    var diagrams = document.querySelectorAll(
-      "pre.mermaid, .mermaid svg, pre:has(> svg), code.language-mermaid"
-    );
-
-    // :has 미지원 브라우저 대비: SVG의 부모를 직접 탐색
-    var svgs = document.querySelectorAll("svg");
-    var targets = new Set();
-
-    svgs.forEach(function (svg) {
-      var parent = svg.closest("pre.mermaid, .mermaid, .highlight");
-      if (parent && parent.querySelector("svg")) {
-        targets.add(parent);
-      }
-    });
-
-    diagrams.forEach(function (el) {
-      if (el.querySelector && el.querySelector("svg")) {
-        targets.add(el);
-      }
-    });
-
-    if (targets.size === 0) return false;
-
-    targets.forEach(function (el) {
-      if (el.dataset.zoomBound) return;
+    document.querySelectorAll(".mermaid").forEach(function (el) {
+      if (!el.querySelector("svg") || el.dataset.zoomBound) return;
       el.dataset.zoomBound = "true";
-      el.style.cursor = "zoom-in";
       el.addEventListener("click", function (e) {
         e.preventDefault();
         e.stopPropagation();
         openOverlay(el);
       });
     });
-
-    return true;
   }
 
   function openOverlay(sourceEl) {
@@ -56,6 +79,7 @@
     var cloned = svg.cloneNode(true);
     cloned.removeAttribute("width");
     cloned.removeAttribute("height");
+    cloned.removeAttribute("style");
     cloned.style.width = "100%";
     cloned.style.height = "auto";
     content.appendChild(cloned);
@@ -93,26 +117,4 @@
       overlay.remove();
     }, 200);
   }
-
-  // Mermaid 렌더링은 비동기이므로 MutationObserver + 폴링으로 감지
-  var found = false;
-  var observer = new MutationObserver(function () {
-    if (!found) {
-      found = initZoom();
-    } else {
-      // 이미 초기화 후에도 새 다이어그램이 추가될 수 있음 (instant navigation)
-      initZoom();
-    }
-  });
-
-  observer.observe(document.body, { childList: true, subtree: true });
-
-  // 폴백: 폴링
-  var attempts = 0;
-  var timer = setInterval(function () {
-    attempts++;
-    if (initZoom() || attempts > 20) {
-      clearInterval(timer);
-    }
-  }, 500);
 })();
