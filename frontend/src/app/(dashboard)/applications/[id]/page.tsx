@@ -91,6 +91,36 @@ export default function ApplicationDetailPage({
   const canEdit =
     app.status === 'DRAFT' || app.status === 'FEEDBACK_REQUESTED';
 
+  const canCancel = app.status === 'SUBMITTED';
+
+  const canCopy =
+    app.status === 'APPROVED' ||
+    app.status === 'KEY_ISSUED' ||
+    app.status === 'REJECTED';
+
+  const handleCancel = async () => {
+    if (!cancelReason.trim()) return;
+    try {
+      await cancelApplication.mutateAsync({ id, reason: cancelReason });
+      toast.success('신청이 취소되었습니다.');
+      router.push('/applications');
+    } catch {
+      toast.error('신청 취소에 실패했습니다.');
+    }
+  };
+
+  const handleCopyAndReapply = () => {
+    resetWizard();
+    updateFormData({
+      aiToolIds: app.aiToolIds,
+      environment: app.environment,
+      purpose: app.purpose,
+      projects: app.projects.map(({ id: _id, ...rest }) => rest),
+    });
+    setStep(1);
+    router.push('/applications/new');
+  };
+
   return (
     <div className="space-y-6">
       {/* Header */}
@@ -113,14 +143,62 @@ export default function ApplicationDetailPage({
             </p>
           </div>
         </div>
-        {canEdit && (
-          <Button asChild>
-            <Link href={`/applications/${app.id}/edit`}>
-              <Edit className="mr-1.5 h-4 w-4" />
-              수정하기
-            </Link>
-          </Button>
-        )}
+        <div className="flex items-center gap-2">
+          {canCancel && (
+            <AlertDialog>
+              <AlertDialogTrigger asChild>
+                <Button variant="destructive">
+                  <XCircle className="mr-1.5 h-4 w-4" />
+                  신청 취소
+                </Button>
+              </AlertDialogTrigger>
+              <AlertDialogContent>
+                <AlertDialogHeader>
+                  <AlertDialogTitle>신청 취소</AlertDialogTitle>
+                  <AlertDialogDescription>
+                    이 신청서를 취소하시겠습니까? 취소 사유를 입력해주세요.
+                  </AlertDialogDescription>
+                </AlertDialogHeader>
+                <div className="space-y-2 py-2">
+                  <Label htmlFor="cancelReason">취소 사유 *</Label>
+                  <Textarea
+                    id="cancelReason"
+                    value={cancelReason}
+                    onChange={(e) => setCancelReason(e.target.value)}
+                    placeholder="취소 사유를 입력하세요"
+                    rows={3}
+                  />
+                </div>
+                <AlertDialogFooter>
+                  <AlertDialogCancel onClick={() => setCancelReason('')}>
+                    돌아가기
+                  </AlertDialogCancel>
+                  <AlertDialogAction
+                    onClick={handleCancel}
+                    disabled={!cancelReason.trim() || cancelApplication.isPending}
+                    className="bg-red-600 hover:bg-red-700"
+                  >
+                    {cancelApplication.isPending ? '취소 중...' : '신청 취소'}
+                  </AlertDialogAction>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
+          )}
+          {canCopy && (
+            <Button variant="outline" onClick={handleCopyAndReapply}>
+              <Copy className="mr-1.5 h-4 w-4" />
+              복사하여 재신청
+            </Button>
+          )}
+          {canEdit && (
+            <Button asChild>
+              <Link href={`/applications/${app.id}/edit`}>
+                <Edit className="mr-1.5 h-4 w-4" />
+                수정하기
+              </Link>
+            </Button>
+          )}
+        </div>
       </div>
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">

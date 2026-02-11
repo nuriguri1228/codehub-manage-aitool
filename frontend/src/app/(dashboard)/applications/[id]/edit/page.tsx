@@ -17,6 +17,7 @@ import {
   useUpdateApplication,
   useSubmitApplication,
 } from '@/hooks/use-application';
+import { useReviewDetail } from '@/hooks/use-review';
 import type { Project } from '@/types';
 
 export default function ApplicationEditPage({
@@ -29,6 +30,7 @@ export default function ApplicationEditPage({
   const { data, isLoading } = useApplication(id);
   const updateApplication = useUpdateApplication();
   const submitApplication = useSubmitApplication();
+  const { data: reviewDetail } = useReviewDetail(id);
 
   const app = data?.data;
 
@@ -133,11 +135,91 @@ export default function ApplicationEditPage({
       </div>
 
       {app.status === 'FEEDBACK_REQUESTED' && (
-        <Card className="border-amber-200 bg-amber-50">
-          <CardContent className="p-4">
-            <p className="text-sm font-medium text-amber-800">
+        <Card className="border-l-4 border-amber-500">
+          <CardHeader className="pb-2">
+            <CardTitle className="text-base text-amber-800">
+              보완 요청 피드백
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            <p className="text-sm text-amber-700">
               검토자로부터 피드백이 요청되었습니다. 내용을 수정하여 재제출해주세요.
             </p>
+            {reviewDetail && (
+              <>
+                {reviewDetail.allStages
+                  .filter((stage) => stage.result === 'FEEDBACK_REQUESTED')
+                  .map((stage) => (
+                    <div
+                      key={stage.id}
+                      className="space-y-2 rounded-lg border border-amber-200 bg-amber-50 p-3"
+                    >
+                      <div className="flex items-center justify-between text-sm">
+                        <span className="font-medium text-amber-900">
+                          {stage.reviewerName}
+                          {stage.reviewerDepartment && (
+                            <span className="ml-1 text-amber-600">
+                              ({stage.reviewerDepartment})
+                            </span>
+                          )}
+                        </span>
+                        {stage.reviewedAt && (
+                          <span className="text-xs text-amber-500">
+                            {new Date(stage.reviewedAt).toLocaleDateString('ko-KR')}
+                          </span>
+                        )}
+                      </div>
+                      {stage.comment && (
+                        <p className="whitespace-pre-wrap text-sm text-amber-800">
+                          {stage.comment}
+                        </p>
+                      )}
+                      {stage.checklist && stage.checklist.some((c) => !c.checked) && (
+                        <div className="space-y-1">
+                          <p className="text-xs font-medium text-amber-700">
+                            미충족 항목:
+                          </p>
+                          <ul className="space-y-0.5">
+                            {stage.checklist
+                              .filter((c) => !c.checked)
+                              .map((item) => (
+                                <li
+                                  key={item.id}
+                                  className="flex items-center gap-1.5 text-xs text-amber-700"
+                                >
+                                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-amber-500" />
+                                  {item.label}
+                                </li>
+                              ))}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                {reviewDetail.feedbacks.length > 0 && (
+                  <div className="space-y-2">
+                    {reviewDetail.feedbacks.map((fb) => (
+                      <div
+                        key={fb.id}
+                        className="rounded-lg border border-amber-200 bg-amber-50 p-3"
+                      >
+                        <div className="flex items-center justify-between text-sm">
+                          <span className="font-medium text-amber-900">
+                            {fb.reviewerName}
+                          </span>
+                          <span className="text-xs text-amber-500">
+                            {new Date(fb.createdAt).toLocaleDateString('ko-KR')}
+                          </span>
+                        </div>
+                        <p className="mt-1 whitespace-pre-wrap text-sm text-amber-800">
+                          {fb.content}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </>
+            )}
           </CardContent>
         </Card>
       )}

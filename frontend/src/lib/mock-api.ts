@@ -593,3 +593,47 @@ export const mockNotificationApi = {
     return { success: true, data: null };
   },
 };
+
+// ─── 감사 로그 ──────────────────────────────────────────────────
+
+export const mockAuditApi = {
+  async getAuditLogs(
+    params: PaginationParams & {
+      action?: AuditAction;
+      userId?: string;
+      startDate?: string;
+      endDate?: string;
+      search?: string;
+    }
+  ) {
+    await delay();
+    let items = [...mockAuditLogs];
+
+    if (params.action) {
+      items = items.filter((l) => l.action === params.action);
+    }
+    if (params.userId) {
+      items = items.filter((l) => l.userId === params.userId);
+    }
+    if (params.startDate) {
+      items = items.filter((l) => l.createdAt >= params.startDate!);
+    }
+    if (params.endDate) {
+      items = items.filter((l) => l.createdAt <= params.endDate!);
+    }
+    if (params.search) {
+      const q = params.search.toLowerCase();
+      items = items.filter(
+        (l) =>
+          l.userName.toLowerCase().includes(q) ||
+          l.targetId.toLowerCase().includes(q) ||
+          l.details.toLowerCase().includes(q)
+      );
+    }
+
+    // Sort by createdAt desc by default
+    items.sort((a, b) => b.createdAt.localeCompare(a.createdAt));
+
+    return { success: true, ...paginate(items, params) };
+  },
+};
