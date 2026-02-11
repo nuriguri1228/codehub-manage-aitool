@@ -1,45 +1,45 @@
 /* 다이어그램 클릭 확대 (스크롤 줌 + 드래그 이동) */
-/* MkDocs Material은 mermaid SVG를 closed Shadow DOM 안에 렌더링한다.      */
-/* e.target.closest("svg")로는 접근할 수 없으므로 composedPath()를 사용한다. */
+/* MkDocs Material은 mermaid SVG를 closed Shadow DOM 안에 렌더링한다.        */
+/* closed shadow root는 외부에서 접근 불가하므로, attachShadow를 가로채서     */
+/* shadow root 참조를 보관한 뒤 클릭 시 SVG를 꺼낸다.                        */
 (function () {
   "use strict";
 
-  /* Shadow DOM 내부의 SVG를 composedPath로 탐색 */
-  function findSvgInPath(e) {
-    var path = e.composedPath();
-    for (var i = 0; i < path.length; i++) {
-      if (path[i] instanceof SVGSVGElement) return path[i];
-    }
-    return null;
+  /* ── 1. attachShadow 가로채기 ── */
+  /* extra.js는 bundle.js 다음에 로드되지만, 실제 mermaid 렌더링은          */
+  /* document$ 구독 콜백에서 비동기로 실행되므로 이 시점에 패치하면 된다.     */
+  var shadowMap = new WeakMap();
+  var _attachShadow = Element.prototype.attachShadow;
+  Element.prototype.attachShadow = function (init) {
+    var root = _attachShadow.call(this, init);
+    shadowMap.set(this, root);
+    return root;
+  };
+
+  /* shadow host에서 SVG 가져오기 */
+  function getSvgFromHost(host) {
+    var root = shadowMap.get(host);
+    return root ? root.querySelector("svg") : null;
   }
 
-  /* 클릭한 위치가 mermaid 컨테이너인지 확인 */
-  function isMermaidContainer(e) {
-    var el = e.target;
-    if (!el || !el.closest) return false;
-    return el.closest(".mermaid") || el.closest("[data-processed]");
-  }
-
-  /* ── 다이어그램 클릭 확대 (이벤트 위임) ── */
+  /* ── 2. 다이어그램 클릭 확대 (이벤트 위임) ── */
   document.addEventListener("click", function (e) {
     if (e.target.closest && e.target.closest(".diagram-overlay")) return;
 
-    /* Shadow DOM 내부의 SVG를 composedPath로 찾기 */
-    var svg = findSvgInPath(e);
+    /* 클릭 대상이 .mermaid 컨테이너인지 확인 */
+    var host = e.target.closest ? e.target.closest(".mermaid") : null;
+    if (!host) return;
 
-    /* composedPath에서 못 찾으면 일반 DOM에서 시도 */
-    if (!svg) svg = e.target.closest && e.target.closest("svg");
+    /* shadow DOM 내부의 SVG 가져오기 */
+    var svg = getSvgFromHost(host);
     if (!svg) return;
-
-    /* mermaid 컨테이너 내부인지 확인 */
-    if (!isMermaidContainer(e)) return;
 
     e.preventDefault();
     e.stopPropagation();
     openOverlay(svg);
   });
 
-  /* ── 오버레이 (스크롤 줌 + 드래그 이동) ── */
+  /* ── 3. 오버레이 (스크롤 줌 + 드래그 이동) ── */
   function openOverlay(svg) {
     var overlay = document.createElement("div");
     overlay.className = "diagram-overlay";
