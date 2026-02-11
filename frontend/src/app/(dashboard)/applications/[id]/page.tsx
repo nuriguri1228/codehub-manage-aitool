@@ -1,20 +1,38 @@
 'use client';
 
-import { use } from 'react';
+import { use, useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { toast } from 'sonner';
 import {
   ArrowLeft,
   Edit,
   FileText,
   Download,
+  XCircle,
+  Copy,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Skeleton } from '@/components/ui/skeleton';
+import { Textarea } from '@/components/ui/textarea';
+import { Label } from '@/components/ui/label';
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from '@/components/ui/alert-dialog';
 import { StatusBadge } from '@/components/common';
-import { useApplication } from '@/hooks/use-application';
+import { useApplication, useCancelApplication } from '@/hooks/use-application';
+import { useApplicationStore } from '@/stores/application-store';
 import { ApplicationTimeline } from '@/components/application/application-timeline';
 import { ENVIRONMENT_OPTIONS } from '@/lib/constants';
 
@@ -33,7 +51,11 @@ export default function ApplicationDetailPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = use(params);
+  const router = useRouter();
   const { data, isLoading } = useApplication(id);
+  const cancelApplication = useCancelApplication();
+  const { updateFormData, setStep, reset: resetWizard } = useApplicationStore();
+  const [cancelReason, setCancelReason] = useState('');
   const app = data?.data;
 
   if (isLoading) {

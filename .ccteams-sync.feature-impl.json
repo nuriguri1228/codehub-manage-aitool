@@ -83,11 +83,42 @@
       "contentId": "I_kwDORNGFGc7qFDqy",
       "issueNodeId": "I_kwDORNGFGc7qFDqy",
       "issueNumber": 115,
-      "lastHash": "b58e1d0398b4d082d3a144cc1318969cfbcbf6e017e6a8e7ac2608085b745b4d",
-      "lastSyncedAt": "2026-02-11T15:30:43.376Z"
+      "lastHash": "c809c30301f33b142ff51211df95dc82efc9e11aeaa9442a92817f414420c172",
+      "lastSyncedAt": "2026-02-11T15:31:07.735Z",
+      "lastOwner": "app-enhancements"
+    },
+    {
+      "taskId": "10",
+      "teamName": "feature-impl",
+      "githubItemId": "PVTI_lAHODFNjSs4BO8DqzglRAYo",
+      "contentId": "I_kwDORNGFGc7qFEKR",
+      "issueNodeId": "I_kwDORNGFGc7qFEKR",
+      "issueNumber": 116,
+      "lastHash": "19b15e9ffdd2ee58a371837436d40ad654e6361571f59e78b73340d092b73b3c",
+      "lastSyncedAt": "2026-02-11T15:31:04.221Z"
+    },
+    {
+      "taskId": "8",
+      "teamName": "feature-impl",
+      "githubItemId": "PVTI_lAHODFNjSs4BO8DqzglRAYw",
+      "contentId": "I_kwDORNGFGc7qFEKY",
+      "issueNodeId": "I_kwDORNGFGc7qFEKY",
+      "issueNumber": 117,
+      "lastHash": "f133028e3a1e0dba5db0842b45902c6aa7d5732fc4af4c78e134130f824f2b1b",
+      "lastSyncedAt": "2026-02-11T15:31:04.616Z"
+    },
+    {
+      "taskId": "9",
+      "teamName": "feature-impl",
+      "githubItemId": "PVTI_lAHODFNjSs4BO8DqzglRAY4",
+      "contentId": "I_kwDORNGFGc7qFEKa",
+      "issueNodeId": "I_kwDORNGFGc7qFEKa",
+      "issueNumber": 118,
+      "lastHash": "793578033ed376df8a24e049cf59b0e789a23ea8c56ec3d5fe7615a3d69db4ca",
+      "lastSyncedAt": "2026-02-11T15:31:04.753Z"
     }
   ],
-  "lastSyncAt": "2026-02-11T15:31:01.533Z",
+  "lastSyncAt": "2026-02-11T15:31:27.373Z",
   "summaryIssues": {
     "feature-impl": {
       "issueNodeId": "I_kwDORNGFGc7qFAt5",

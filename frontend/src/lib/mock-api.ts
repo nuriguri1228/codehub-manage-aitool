@@ -21,6 +21,8 @@ import type {
   ReviewFormData,
   ReviewListItem,
   ReviewStats,
+  AuditLog,
+  AuditAction,
   User,
   PaginatedResponse,
   PaginationParams,
@@ -48,6 +50,7 @@ import {
   mockMonitoringStats,
   mockAnomalyAlerts,
   mockNotifications,
+  mockAuditLogs,
   getApplicationSummaries,
   defaultCurrentUser,
 } from './mock-data';
