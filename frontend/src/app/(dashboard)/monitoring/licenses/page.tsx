@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Download } from 'lucide-react';
+import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
 import {
   Select,
@@ -14,6 +15,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { DepartmentBarChart } from '@/components/monitoring/department-bar-chart';
 import { EnvironmentDonutChart } from '@/components/monitoring/environment-donut-chart';
 import { LicenseTable } from '@/components/monitoring/license-table';
+import { exportToCSV, exportToPDF } from '@/lib/export-utils';
 import type { License } from '@/types';
 
 // --- Mock Data ---

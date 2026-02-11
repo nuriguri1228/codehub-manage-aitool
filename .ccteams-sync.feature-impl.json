@@ -104,8 +104,8 @@
       "contentId": "I_kwDORNGFGc7qFEKY",
       "issueNodeId": "I_kwDORNGFGc7qFEKY",
       "issueNumber": 117,
-      "lastHash": "048e0a2779327655ae1123e2a133ff7d274f0440d4e7bfa4e62af3b7381fb476",
-      "lastSyncedAt": "2026-02-11T15:31:32.301Z",
+      "lastHash": "adecd476f35dcc7fa9f0868d2e26d49d2e81f0fc8a52302e65463caba93e3ca9",
+      "lastSyncedAt": "2026-02-11T15:33:18.399Z",
       "lastOwner": "app-enhancements"
     },
     {
@@ -115,11 +115,12 @@
       "contentId": "I_kwDORNGFGc7qFEKa",
       "issueNodeId": "I_kwDORNGFGc7qFEKa",
       "issueNumber": 118,
-      "lastHash": "793578033ed376df8a24e049cf59b0e789a23ea8c56ec3d5fe7615a3d69db4ca",
-      "lastSyncedAt": "2026-02-11T15:31:04.753Z"
+      "lastHash": "f941749f4df949c7ea80c4261f0e36b532400ee529838f2c1b8988352b9e7415",
+      "lastSyncedAt": "2026-02-11T15:33:18.047Z",
+      "lastOwner": "app-enhancements"
     }
   ],
-  "lastSyncAt": "2026-02-11T15:31:55.548Z",
+  "lastSyncAt": "2026-02-11T15:33:37.073Z",
   "summaryIssues": {
     "feature-impl": {
       "issueNodeId": "I_kwDORNGFGc7qFAt5",
