@@ -33,8 +33,30 @@
     "In Progress": "47fc9ee4",
     "Done": "98236657"
   },
-  "ownerOptions": {},
-  "labels": {},
-  "items": [],
-  "lastSyncAt": "2026-02-11T11:17:39.380Z"
+  "ownerOptions": {
+    "(unassigned)": "278298a6"
+  },
+  "labels": {
+    "ccteams:docs-update": "LA_kwDORNGFGc8AAAACXw4MNA"
+  },
+  "items": [
+    {
+      "taskId": "1",
+      "teamName": "docs-update",
+      "githubItemId": "PVTI_lAHODFNjSs4BO6uLzglP_kk",
+      "contentId": "I_kwDORNGFGc7qAgcY",
+      "issueNodeId": "I_kwDORNGFGc7qAgcY",
+      "issueNumber": 106,
+      "lastHash": "b06d17599f486218f86e3692ca692f3b42d142c78e73fc57f95c209b25ab5ce5",
+      "lastSyncedAt": "2026-02-11T11:17:43.375Z"
+    }
+  ],
+  "lastSyncAt": "2026-02-11T11:18:02.216Z",
+  "summaryIssues": {
+    "docs-update": {
+      "issueNodeId": "I_kwDORNGFGc7qAggz",
+      "issueNumber": 107,
+      "githubItemId": "PVTI_lAHODFNjSs4BO6uLzglP_l8"
+    }
+  }
 }
