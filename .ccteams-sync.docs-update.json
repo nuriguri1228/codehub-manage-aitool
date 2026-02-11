@@ -34,10 +34,11 @@
     "Done": "98236657"
   },
   "ownerOptions": {
-    "(unassigned)": "70ef3cd1",
-    "arch-doc-agent": "5b273a29",
-    "uiux-doc-agent": "ddf79191",
-    "plan-req-agent": "b0bd2b35"
+    "(unassigned)": "c8f5d91c",
+    "arch-doc-agent": "d9cd0ec7",
+    "uiux-doc-agent": "a2f925be",
+    "plan-req-agent": "a4c3563b",
+    "backend-doc-agent": "fbfe1f32"
   },
   "labels": {
     "ccteams:docs-update": "LA_kwDORNGFGc8AAAACXw4MNA"
@@ -61,8 +62,9 @@
       "contentId": "I_kwDORNGFGc7qAgzb",
       "issueNodeId": "I_kwDORNGFGc7qAgzb",
       "issueNumber": 110,
-      "lastHash": "87f10756bfe4a865ae926bcf08e2b3acffb6473acaeb81ab623623cd3726b246",
-      "lastSyncedAt": "2026-02-11T11:18:05.210Z"
+      "lastHash": "1b12c5be3090af7223c53ff28022bea7c91514f44f995b2fb409b37877ab7734",
+      "lastSyncedAt": "2026-02-11T11:19:16.351Z",
+      "lastOwner": "backend-doc-agent"
     },
     {
       "taskId": "2",
@@ -87,7 +89,7 @@
       "lastOwner": "plan-req-agent"
     }
   ],
-  "lastSyncAt": "2026-02-11T11:19:10.155Z",
+  "lastSyncAt": "2026-02-11T11:19:34.988Z",
   "summaryIssues": {
     "docs-update": {
       "issueNodeId": "I_kwDORNGFGc7qAggz",
