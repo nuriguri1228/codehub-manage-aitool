@@ -1,0 +1,284 @@
+{
+  "project": {
+    "id": "PVT_kwHODFNjSs4BO3-s",
+    "number": 23,
+    "url": "https://github.com/users/nuriguri1228/projects/23",
+    "title": "ccteams: frontend-team",
+    "owner": "nuriguri1228"
+  },
+  "repository": {
+    "id": "R_kgDORNGFGQ",
+    "owner": "nuriguri1228",
+    "name": "codehub-manage-aitool"
+  },
+  "fields": {
+    "Team Name": "PVTF_lAHODFNjSs4BO3-szg9cthk",
+    "Agent (Owner)": "PVTSSF_lAHODFNjSs4BO3-szg9ctho",
+    "Task ID": "PVTF_lAHODFNjSs4BO3-szg9cths",
+    "Blocked By": "PVTF_lAHODFNjSs4BO3-szg9cthw",
+    "Active Form": "PVTF_lAHODFNjSs4BO3-szg9cth0",
+    "Status": "PVTSSF_lAHODFNjSs4BO3-szg9cthE",
+    "Title": "PVTF_lAHODFNjSs4BO3-szg9ctg8",
+    "Assignees": "PVTF_lAHODFNjSs4BO3-szg9cthA",
+    "Labels": "PVTF_lAHODFNjSs4BO3-szg9cthI",
+    "Linked pull requests": "PVTF_lAHODFNjSs4BO3-szg9cthM",
+    "Milestone": "PVTF_lAHODFNjSs4BO3-szg9cthQ",
+    "Repository": "PVTF_lAHODFNjSs4BO3-szg9cthU",
+    "Reviewers": "PVTF_lAHODFNjSs4BO3-szg9cthY",
+    "Parent issue": "PVTF_lAHODFNjSs4BO3-szg9cthc",
+    "Sub-issues progress": "PVTF_lAHODFNjSs4BO3-szg9cthg"
+  },
+  "statusOptions": {
+    "Todo": "f75ad846",
+    "In Progress": "47fc9ee4",
+    "Done": "98236657"
+  },
+  "ownerOptions": {
+    "(unassigned)": "c7087d7c",
+    "uiux-dev": "48c113a3",
+    "fe-reviewer": "b2de64f6",
+    "fe-admin": "6dc69a11",
+    "fe-applicant": "f24de4fb",
+    "fe-applicant-2": "f6731ea0",
+    "fe-admin-2": "130c343f"
+  },
+  "labels": {},
+  "items": [
+    {
+      "taskId": "10",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOGSk",
+      "contentId": "I_kwDORNGFGc7p42Jy",
+      "issueNodeId": "I_kwDORNGFGc7p42Jy",
+      "issueNumber": 39,
+      "lastHash": "e124db598bfae773a67aa304fa8b97070f2ae1d16e016f2d61c12984680e5714",
+      "lastSyncedAt": "2026-02-10T23:21:55.317Z",
+      "lastOwner": "fe-reviewer"
+    },
+    {
+      "taskId": "11",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOGSs",
+      "contentId": "I_kwDORNGFGc7p42J7",
+      "issueNodeId": "I_kwDORNGFGc7p42J7",
+      "issueNumber": 40,
+      "lastHash": "5fc4e35cb1c01cc29fe660b1b3198902b46685a50b96a2f42d7c1d16fb6b3aa9",
+      "lastSyncedAt": "2026-02-10T23:21:55.368Z",
+      "lastOwner": "fe-admin"
+    },
+    {
+      "taskId": "13",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOGS0",
+      "contentId": "I_kwDORNGFGc7p42KG",
+      "issueNodeId": "I_kwDORNGFGc7p42KG",
+      "issueNumber": 42,
+      "lastHash": "d5d0d192df95a6eb070f23806987490df290d876f6bf2e32144e0ac3fefab1e0",
+      "lastSyncedAt": "2026-02-10T23:21:55.793Z",
+      "lastOwner": "fe-admin"
+    },
+    {
+      "taskId": "1",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOGSw",
+      "contentId": "I_kwDORNGFGc7p42J-",
+      "issueNodeId": "I_kwDORNGFGc7p42J-",
+      "issueNumber": 41,
+      "lastHash": "185b00a8506fffbd523fc14df275c95d967b213cf7615409a713e4f6f95df71e",
+      "lastSyncedAt": "2026-02-10T23:21:56.763Z",
+      "lastOwner": "uiux-dev"
+    },
+    {
+      "taskId": "14",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOGU8",
+      "contentId": "I_kwDORNGFGc7p42Q6",
+      "issueNodeId": "I_kwDORNGFGc7p42Q6",
+      "issueNumber": 44,
+      "lastHash": "a88ca0435d1464064639875164ca0b982532ea29841e307adee8c15461018e76",
+      "lastSyncedAt": "2026-02-10T23:22:06.876Z",
+      "lastOwner": "fe-admin"
+    },
+    {
+      "taskId": "2",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOGVM",
+      "contentId": "I_kwDORNGFGc7p42RO",
+      "issueNodeId": "I_kwDORNGFGc7p42RO",
+      "issueNumber": 46,
+      "lastHash": "baa5b880a3adf1f73548ce881670c161880d43e172f43ebf01cd0c902ec43a54",
+      "lastSyncedAt": "2026-02-10T23:22:07.097Z",
+      "lastOwner": "uiux-dev"
+    },
+    {
+      "taskId": "21",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOGVU",
+      "contentId": "I_kwDORNGFGc7p42Rw",
+      "issueNodeId": "I_kwDORNGFGc7p42Rw",
+      "issueNumber": 47,
+      "lastHash": "4f9f032e72db984451eb2959598d974fcd89dde2ab7ef14fa4084588bacb2629",
+      "lastSyncedAt": "2026-02-10T23:22:07.822Z",
+      "lastOwner": "fe-applicant-2"
+    },
+    {
+      "taskId": "15",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOGVA",
+      "contentId": "I_kwDORNGFGc7p42Q8",
+      "issueNodeId": "I_kwDORNGFGc7p42Q8",
+      "issueNumber": 45,
+      "lastHash": "276b8eb33830c2422b3458fdb40c14713bd42293a3b85f6cae17f89369cf5b33",
+      "lastSyncedAt": "2026-02-10T23:22:08.299Z",
+      "lastOwner": "fe-applicant"
+    },
+    {
+      "taskId": "23",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOGW8",
+      "contentId": "I_kwDORNGFGc7p42Yg",
+      "issueNodeId": "I_kwDORNGFGc7p42Yg",
+      "issueNumber": 49,
+      "lastHash": "86044c3bbce25547cbe92041a935169c9edac49888287bded5150906030b3c51",
+      "lastSyncedAt": "2026-02-10T23:22:18.254Z"
+    },
+    {
+      "taskId": "22",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOGW4",
+      "contentId": "I_kwDORNGFGc7p42Ya",
+      "issueNodeId": "I_kwDORNGFGc7p42Ya",
+      "issueNumber": 48,
+      "lastHash": "0eefd5e6170928028388bcf5ddcec765a5f0bdec269bf085b772756ca67a1440",
+      "lastSyncedAt": "2026-02-10T23:22:18.560Z"
+    },
+    {
+      "taskId": "24",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOGXI",
+      "contentId": "I_kwDORNGFGc7p42Y0",
+      "issueNodeId": "I_kwDORNGFGc7p42Y0",
+      "issueNumber": 50,
+      "lastHash": "eabd99e69e6ce75f98b931bdc254b7f24b0d97412aa28a8bd196e74d623a1bd9",
+      "lastSyncedAt": "2026-02-10T23:22:19.157Z"
+    },
+    {
+      "taskId": "26",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOGXU",
+      "contentId": "I_kwDORNGFGc7p42Zb",
+      "issueNodeId": "I_kwDORNGFGc7p42Zb",
+      "issueNumber": 51,
+      "lastHash": "df488f1255c72b536c4eaa75f99229f84103e82b785f40eba0e2547dcebd091d",
+      "lastSyncedAt": "2026-02-10T23:22:19.922Z",
+      "lastOwner": "fe-admin-2"
+    },
+    {
+      "taskId": "12",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOGTA",
+      "contentId": "I_kwDORNGFGc7p42Kn",
+      "issueNodeId": "I_kwDORNGFGc7p42Kn",
+      "issueNumber": 43,
+      "lastHash": "5c726363579e41e823964c484b51cb17b48492ffec98bf602a62e8fbfdc9321b",
+      "lastSyncedAt": "2026-02-10T23:22:27.345Z",
+      "lastOwner": "fe-admin"
+    },
+    {
+      "taskId": "27",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOGZE",
+      "contentId": "I_kwDORNGFGc7p42fk",
+      "issueNodeId": "I_kwDORNGFGc7p42fk",
+      "issueNumber": 52,
+      "lastHash": "581197d296053eae1dc9ebe6c318fb926bbd322f689f2935e665b9da7cd72679",
+      "lastSyncedAt": "2026-02-10T23:22:29.335Z",
+      "lastOwner": "fe-admin-2"
+    },
+    {
+      "taskId": "3",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOGZM",
+      "contentId": "I_kwDORNGFGc7p42fx",
+      "issueNodeId": "I_kwDORNGFGc7p42fx",
+      "issueNumber": 53,
+      "lastHash": "46167cd622fb4a0d3297526724da9caa74a95a9d3a523e0a1d3cad6924394305",
+      "lastSyncedAt": "2026-02-10T23:22:29.881Z",
+      "lastOwner": "uiux-dev"
+    },
+    {
+      "taskId": "4",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOGZU",
+      "contentId": "I_kwDORNGFGc7p42gE",
+      "issueNodeId": "I_kwDORNGFGc7p42gE",
+      "issueNumber": 54,
+      "lastHash": "4859d9f1f96e5717141469b3fa9c507dccf564bc8c3c70e0982ace7534724fa3",
+      "lastSyncedAt": "2026-02-10T23:22:30.505Z",
+      "lastOwner": "fe-applicant"
+    },
+    {
+      "taskId": "5",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOGZc",
+      "contentId": "I_kwDORNGFGc7p42g6",
+      "issueNodeId": "I_kwDORNGFGc7p42g6",
+      "issueNumber": 55,
+      "lastHash": "3da6d23a77b23e40cb6416430a7f7572c73b67c817e066d9c7d7f7c6000af4f1",
+      "lastSyncedAt": "2026-02-10T23:22:31.284Z",
+      "lastOwner": "fe-applicant"
+    },
+    {
+      "taskId": "6",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOGak",
+      "contentId": "I_kwDORNGFGc7p42lI",
+      "issueNodeId": "I_kwDORNGFGc7p42lI",
+      "issueNumber": 56,
+      "lastHash": "1c60b077899c1cabb7feee1e7fe0e778b0ac96b158d891829804c9dcccc36ba3",
+      "lastSyncedAt": "2026-02-10T23:22:38.563Z",
+      "lastOwner": "fe-applicant"
+    },
+    {
+      "taskId": "7",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOGa8",
+      "contentId": "I_kwDORNGFGc7p42mI",
+      "issueNodeId": "I_kwDORNGFGc7p42mI",
+      "issueNumber": 57,
+      "lastHash": "5520c87d47d09a610979ef1bd168c7b3b297e8aa812341d8408dde7ed7b3ac9f",
+      "lastSyncedAt": "2026-02-10T23:22:40.628Z",
+      "lastOwner": "fe-applicant"
+    },
+    {
+      "taskId": "8",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOGbA",
+      "contentId": "I_kwDORNGFGc7p42mU",
+      "issueNodeId": "I_kwDORNGFGc7p42mU",
+      "issueNumber": 58,
+      "lastHash": "7017e9f78f6c34f4d576eb0c87d505998c44256db0c34da0ff71d0b03211f8c2",
+      "lastSyncedAt": "2026-02-10T23:22:40.909Z",
+      "lastOwner": "fe-reviewer"
+    },
+    {
+      "taskId": "9",
+      "teamName": "frontend-team",
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOGbM",
+      "contentId": "I_kwDORNGFGc7p42my",
+      "issueNodeId": "I_kwDORNGFGc7p42my",
+      "issueNumber": 59,
+      "lastHash": "4554d3c5420bf86c322b92a2d1072d8b6c16e6f3d440d3ba77f3f32c113e043a",
+      "lastSyncedAt": "2026-02-10T23:22:42.299Z",
+      "lastOwner": "fe-reviewer"
+    }
+  ],
+  "lastSyncAt": "2026-02-10T23:27:16.521Z",
+  "summaryIssues": {
+    "frontend-team": {
+      "issueNodeId": "I_kwDORNGFGc7p45BH",
+      "issueNumber": 87,
+      "githubItemId": "PVTI_lAHODFNjSs4BO3-szglOHGE"
+    }
+  }
+}
