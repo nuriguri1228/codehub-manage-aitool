@@ -85,8 +85,8 @@
       "contentId": "I_kwDORNGFGc7qGD7e",
       "issueNodeId": "I_kwDORNGFGc7qGD7e",
       "issueNumber": 130,
-      "lastHash": "f16db2c6f85a4e4efdae4cf00d40070ce08b0056c6837b4b5904e71ba8d37ff3",
-      "lastSyncedAt": "2026-02-11T16:26:23.893Z",
+      "lastHash": "3959f488434e10fda7e56dd608e9544424e801582606a1fe994604a7aa14da30",
+      "lastSyncedAt": "2026-02-11T16:27:10.715Z",
       "lastOwner": "verifier-review"
     },
     {
@@ -101,7 +101,7 @@
       "lastOwner": "verifier-admin"
     }
   ],
-  "lastSyncAt": "2026-02-11T16:27:06.329Z",
+  "lastSyncAt": "2026-02-11T16:27:29.602Z",
   "summaryIssues": {
     "impl-verify": {
       "issueNodeId": "I_kwDORNGFGc7qGEB6",
