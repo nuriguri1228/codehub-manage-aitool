@@ -34,8 +34,10 @@
     "Done": "98236657"
   },
   "ownerOptions": {
-    "(unassigned)": "65149dde",
-    "arch-doc-agent": "3ccf24a1"
+    "(unassigned)": "70ef3cd1",
+    "arch-doc-agent": "5b273a29",
+    "uiux-doc-agent": "ddf79191",
+    "plan-req-agent": "b0bd2b35"
   },
   "labels": {
     "ccteams:docs-update": "LA_kwDORNGFGc8AAAACXw4MNA"
@@ -69,8 +71,9 @@
       "contentId": "I_kwDORNGFGc7qAgzT",
       "issueNodeId": "I_kwDORNGFGc7qAgzT",
       "issueNumber": 108,
-      "lastHash": "ef64c1a8a8ece240ff013d01f81412e4e919fddb6e854d400841958f62888997",
-      "lastSyncedAt": "2026-02-11T11:18:05.236Z"
+      "lastHash": "8c5788ab2142a0eb926e824b70166f1027b7b9cbb4f190f72380820b299381b2",
+      "lastSyncedAt": "2026-02-11T11:18:51.339Z",
+      "lastOwner": "uiux-doc-agent"
     },
     {
       "taskId": "3",
@@ -79,11 +82,12 @@
       "contentId": "I_kwDORNGFGc7qAgzU",
       "issueNodeId": "I_kwDORNGFGc7qAgzU",
       "issueNumber": 109,
-      "lastHash": "15b477e358913c895b6df4b3ddc106a68279f7611de5b70143cd616f87189f83",
-      "lastSyncedAt": "2026-02-11T11:18:05.352Z"
+      "lastHash": "652277389d0be15ffc38649c74f4f7316dcdd3378dd7e4775b50b8799ed254ee",
+      "lastSyncedAt": "2026-02-11T11:18:51.173Z",
+      "lastOwner": "plan-req-agent"
     }
   ],
-  "lastSyncAt": "2026-02-11T11:18:46.444Z",
+  "lastSyncAt": "2026-02-11T11:19:10.155Z",
   "summaryIssues": {
     "docs-update": {
       "issueNodeId": "I_kwDORNGFGc7qAggz",
