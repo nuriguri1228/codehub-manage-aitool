@@ -18,6 +18,7 @@ import type {
   ReviewFeedback,
   ReviewListItem,
   ReviewStats,
+  AuditLog,
 } from '@/types';
 import type { Notification } from '@/stores/notification-store';
 
