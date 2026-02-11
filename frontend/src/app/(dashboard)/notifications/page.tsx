@@ -65,6 +65,7 @@ export default function NotificationsPage() {
   } = useNotificationStore();
 
   const [filter, setFilter] = useState<'all' | 'unread' | 'read'>('all');
+  const [typeFilter, setTypeFilter] = useState<NotificationType>('all');
 
   useEffect(() => {
     mockNotificationApi.getNotifications().then((res) => {
@@ -75,8 +76,9 @@ export default function NotificationsPage() {
   }, [setNotifications]);
 
   const filteredNotifications = notifications.filter((n) => {
-    if (filter === 'unread') return !n.read;
-    if (filter === 'read') return n.read;
+    if (filter === 'unread' && n.read) return false;
+    if (filter === 'read' && !n.read) return false;
+    if (typeFilter !== 'all' && n.type !== typeFilter) return false;
     return true;
   });
 
@@ -113,19 +115,43 @@ export default function NotificationsPage() {
       </div>
 
       {/* Filter Tabs */}
-      <Tabs value={filter} onValueChange={(v) => setFilter(v as typeof filter)}>
-        <TabsList>
-          <TabsTrigger value="all">
-            전체 ({notifications.length})
-          </TabsTrigger>
-          <TabsTrigger value="unread">
-            안읽음 ({unreadCount})
-          </TabsTrigger>
-          <TabsTrigger value="read">
-            읽음 ({notifications.length - unreadCount})
-          </TabsTrigger>
-        </TabsList>
-      </Tabs>
+      <div className="space-y-3">
+        <Tabs value={filter} onValueChange={(v) => setFilter(v as typeof filter)}>
+          <TabsList>
+            <TabsTrigger value="all">
+              전체 ({notifications.length})
+            </TabsTrigger>
+            <TabsTrigger value="unread">
+              안읽음 ({unreadCount})
+            </TabsTrigger>
+            <TabsTrigger value="read">
+              읽음 ({notifications.length - unreadCount})
+            </TabsTrigger>
+          </TabsList>
+        </Tabs>
+
+        {/* Type Filter */}
+        <div className="flex items-center gap-2">
+          <Filter className="h-4 w-4 text-muted-foreground" />
+          <div className="flex flex-wrap gap-1.5">
+            {typeFilterLabels.map(({ value, label }) => (
+              <Badge
+                key={value}
+                variant={typeFilter === value ? 'default' : 'outline'}
+                className={cn(
+                  'cursor-pointer transition-colors',
+                  typeFilter === value
+                    ? 'bg-[#50CF94] text-white hover:bg-[#3DAF7A]'
+                    : 'hover:bg-gray-100'
+                )}
+                onClick={() => setTypeFilter(value)}
+              >
+                {label}
+              </Badge>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* Notification List */}
       {filteredNotifications.length === 0 ? (
