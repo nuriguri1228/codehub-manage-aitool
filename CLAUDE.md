@@ -54,6 +54,15 @@ No test framework is configured yet.
 
 `@/*` maps to `./src/*` (e.g., `import { Button } from '@/components/ui/button'`).
 
+## Implementation Status Tracking
+
+**필수 정책**: 모든 코딩 작업(기능 추가, 버그 수정, 리팩토링) 완료 후 반드시 `IMPLEMENTATION_STATUS.md` 파일을 업데이트해야 한다. 기획 문서(`docs/`)가 변경된 경우에도 새로운 요구사항을 반영하여 업데이트한다.
+
+- 새 페이지/기능 구현 시: 해당 항목의 상태를 ✅ 완료로 변경하고 비고 업데이트
+- 부분 구현 시: ⚠️ 부분으로 표시하고 미완성 내용 기재
+- 새 요구사항 추가 시: 해당 섹션에 행 추가 (❌ 미구현)
+- 최종 업데이트 날짜 갱신
+
 ## Language
 
 UI text and comments are in Korean. Code identifiers, types, and git messages are in English.

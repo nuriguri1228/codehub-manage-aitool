@@ -15,6 +15,7 @@ import {
   ChevronLeft,
   ChevronRight,
   ScrollText,
+  Code2,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -122,6 +123,36 @@ export function Sidebar() {
           return <div key={item.href}>{linkContent}</div>;
         })}
       </nav>
+
+      {/* Dev link */}
+      <div className="border-t p-2">
+        {(() => {
+          const isDevActive = pathname.startsWith('/dev');
+          const devLink = (
+            <Link
+              href="/dev/status"
+              className={cn(
+                'flex items-center gap-3 rounded-lg px-3 py-2 text-xs font-medium transition-colors',
+                isDevActive
+                  ? 'bg-[#50CF94]/10 text-[#3DAF7A]'
+                  : 'text-gray-400 hover:bg-gray-50 hover:text-gray-600'
+              )}
+            >
+              <Code2 className="h-4 w-4 shrink-0" />
+              {sidebarOpen && <span>구현 현황</span>}
+            </Link>
+          );
+          if (!sidebarOpen) {
+            return (
+              <Tooltip delayDuration={0}>
+                <TooltipTrigger asChild>{devLink}</TooltipTrigger>
+                <TooltipContent side="right">구현 현황</TooltipContent>
+              </Tooltip>
+            );
+          }
+          return devLink;
+        })()}
+      </div>
 
       {/* Collapse toggle */}
       <div className="border-t p-2">
