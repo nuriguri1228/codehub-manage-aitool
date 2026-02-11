@@ -40,7 +40,7 @@ export function Breadcrumb() {
         <li>
           <Link
             href="/dashboard"
-            className="flex items-center hover:text-gray-700"
+            className="flex items-center hover:text-[#50CF94]"
           >
             <Home className="h-4 w-4" />
           </Link>
@@ -54,7 +54,7 @@ export function Breadcrumb() {
               {crumb.isLast ? (
                 <span className="font-medium text-gray-900">{crumb.label}</span>
               ) : (
-                <Link href={crumb.href} className="hover:text-gray-700">
+                <Link href={crumb.href} className="hover:text-[#50CF94]">
                   {crumb.label}
                 </Link>
               )}

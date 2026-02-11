@@ -8,13 +8,13 @@ export function Footer() {
       <div className="flex flex-col items-center justify-between gap-2 text-xs text-gray-500 sm:flex-row">
         <p>&copy; {new Date().getFullYear()} CodeHub. All rights reserved.</p>
         <div className="flex items-center gap-4">
-          <Link href="/help" className="hover:text-gray-700">
+          <Link href="/help" className="hover:text-[#50CF94]">
             도움말
           </Link>
-          <Link href="/contact" className="hover:text-gray-700">
+          <Link href="/contact" className="hover:text-[#50CF94]">
             문의하기
           </Link>
-          <Link href="/terms" className="hover:text-gray-700">
+          <Link href="/terms" className="hover:text-[#50CF94]">
             이용약관
           </Link>
         </div>

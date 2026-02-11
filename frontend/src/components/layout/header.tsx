@@ -100,7 +100,7 @@ function NotificationPanel() {
                 key={notification.id}
                 className={cn(
                   'w-full px-4 py-3 text-left transition-colors hover:bg-gray-50',
-                  !notification.read && 'bg-blue-50'
+                  !notification.read && 'bg-[#50CF94]/10'
                 )}
                 onClick={() => markAsRead(notification.id)}
               >
@@ -216,7 +216,7 @@ export function Header() {
                   className="flex items-center gap-2"
                 >
                   <Avatar size="sm">
-                    <AvatarFallback className="bg-blue-100 text-xs text-[#1E40AF]">
+                    <AvatarFallback className="bg-[#50CF94]/15 text-xs text-[#3DAF7A]">
                       {user.name.charAt(0)}
                     </AvatarFallback>
                   </Avatar>

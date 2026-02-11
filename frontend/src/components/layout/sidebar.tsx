@@ -93,11 +93,11 @@ export function Sidebar() {
               className={cn(
                 'flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors',
                 isActive
-                  ? 'bg-blue-50 text-[#1E40AF]'
+                  ? 'bg-[#50CF94]/10 text-[#3DAF7A]'
                   : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
               )}
             >
-              <Icon className={cn('h-5 w-5 shrink-0', isActive && 'text-[#1E40AF]')} />
+              <Icon className={cn('h-5 w-5 shrink-0', isActive && 'text-[#3DAF7A]')} />
               {sidebarOpen && <span>{item.label}</span>}
             </Link>
           );
@@ -161,7 +161,7 @@ export function MobileSidebar() {
         )}
       >
         <div className="flex h-14 items-center border-b px-4">
-          <div className="flex h-8 w-8 items-center justify-center rounded-md bg-[#1E40AF]">
+          <div className="flex h-8 w-8 items-center justify-center rounded-md bg-[#50CF94]">
             <span className="text-sm font-bold text-white">C</span>
           </div>
           <span className="ml-2 text-sm font-bold text-gray-900">
@@ -184,7 +184,7 @@ export function MobileSidebar() {
                 className={cn(
                   'flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors',
                   isActive
-                    ? 'bg-blue-50 text-[#1E40AF]'
+                    ? 'bg-[#50CF94]/10 text-[#3DAF7A]'
                     : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                 )}
               >
