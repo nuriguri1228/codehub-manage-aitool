@@ -45,8 +45,8 @@
 | 페이지 | 경로 | 상태 | 비고 |
 |--------|------|------|------|
 | 관리자 대시보드 | `(dashboard)/dashboard/page.tsx` | ✅ 완료 | AdminDashboard 컴포넌트 |
-| 전체 신청 현황 | `(dashboard)/admin/applications/page.tsx` | ❌ 미구현 | 전체 신청자 프로세스 현황 (목록뷰 + 파이프라인뷰) (신규) |
-| 검토 목록 (FINAL_APPROVAL) | `(dashboard)/reviews/page.tsx` | ⚠️ 수정필요 | SYSTEM_ADMIN이 FINAL_APPROVAL 최종 컨펌 + KEY_ISSUED 발급 역할 추가 |
+| 전체 신청 현황 | `(dashboard)/admin/applications/page.tsx` | ✅ 완료 | 전체 신청자 프로세스 현황 (목록뷰 + 파이프라인뷰) |
+| 검토 목록 (FINAL_APPROVAL) | `(dashboard)/reviews/page.tsx` | ✅ 완료 | SYSTEM_ADMIN이 FINAL_APPROVAL 최종 컨펌 + KEY_ISSUED 발급 역할 |
 | 검토 이력 | `(dashboard)/reviews/history/page.tsx` | ✅ 완료 | 전체 검토 이력 |
 | 라이센스 관리 | `(dashboard)/monitoring/licenses/page.tsx` | ✅ 완료 | 차트+테이블+CSV 내보내기 |
 | 사용 현황 모니터링 | `(dashboard)/monitoring/usage/page.tsx` | ✅ 완료 | KPI+차트+이상탐지 |
@@ -293,18 +293,10 @@
 10. **라이센스 해지 (FR-074)** — 라이센스 해지 기능
 11. **라이센스 일괄 관리** — 체크박스 선택 + 일괄 갱신/해지
 12. **통계 리포트 생성 (FR-089)** — 별도 리포트 페이지 (정기 리포트 자동 생성)
-13. **환경 관리 페이지 (IT_ADMIN)** — VDI/Notebook 현황 + 통계 + 프로비저닝 이력 (신규)
-14. **전체 신청 현황 페이지 (SYSTEM_ADMIN)** — 모든 신청자 프로세스 현황 (목록뷰 + 파이프라인뷰) (신규)
-
-### 부분 구현 / 수정 필요 기능 (⚠️)
+### 부분 구현 기능 (⚠️)
 1. **SLA 초과 알림 (FR-057)** — 뱃지 표시만, 푸시 알림 미구현
 2. **라이센스 유효기간 관리 (FR-068)** — 조회만 가능, 관리 기능 없음
 3. **비용 리포트 생성 (FR-085)** — CSV 내보내기만, 정식 리포트 생성 없음
-4. **사이드바 메뉴 (IT_ADMIN)** — 라이센스/사용현황/도구관리 제거, 환경 관리 추가 필요
-5. **사이드바 메뉴 (SYSTEM_ADMIN)** — 전체 신청 현황/검토 목록·이력/비용 관리/사용자 관리/시스템 설정 추가 필요
-6. **대시보드 (IT_ADMIN)** — 환경 현황 중심 대시보드로 변경 필요 (현재 ReviewerDashboard 사용)
-7. **검토 워크플로우 (FINAL_APPROVAL)** — IT_ADMIN → SYSTEM_ADMIN으로 검토자 변경 필요
-8. **검토 목록 (SYSTEM_ADMIN)** — FINAL_APPROVAL 최종 컨펌 + KEY_ISSUED 발급 실행 역할 추가
 
 ### 향후 고려 사항
 - 백엔드 API 연동 (현재 Mock API)
