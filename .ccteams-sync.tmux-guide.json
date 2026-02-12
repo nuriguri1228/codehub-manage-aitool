@@ -1,0 +1,40 @@
+{
+  "project": {
+    "id": "PVT_kwHODFNjSs4BPBjz",
+    "number": 30,
+    "url": "https://github.com/users/nuriguri1228/projects/30",
+    "title": "ccteams: tmux-guide",
+    "owner": "nuriguri1228"
+  },
+  "repository": {
+    "id": "R_kgDORNGFGQ",
+    "owner": "nuriguri1228",
+    "name": "codehub-manage-aitool"
+  },
+  "fields": {
+    "Team Name": "PVTF_lAHODFNjSs4BPBjzzg9jhSs",
+    "Agent (Owner)": "PVTSSF_lAHODFNjSs4BPBjzzg9jhSw",
+    "Task ID": "PVTF_lAHODFNjSs4BPBjzzg9jhS0",
+    "Blocked By": "PVTF_lAHODFNjSs4BPBjzzg9jhUI",
+    "Active Form": "PVTF_lAHODFNjSs4BPBjzzg9jhUM",
+    "Status": "PVTSSF_lAHODFNjSs4BPBjzzg9jhRk",
+    "Title": "PVTF_lAHODFNjSs4BPBjzzg9jhRc",
+    "Assignees": "PVTF_lAHODFNjSs4BPBjzzg9jhRg",
+    "Labels": "PVTF_lAHODFNjSs4BPBjzzg9jhRo",
+    "Linked pull requests": "PVTF_lAHODFNjSs4BPBjzzg9jhRs",
+    "Milestone": "PVTF_lAHODFNjSs4BPBjzzg9jhRw",
+    "Repository": "PVTF_lAHODFNjSs4BPBjzzg9jhR0",
+    "Reviewers": "PVTF_lAHODFNjSs4BPBjzzg9jhR4",
+    "Parent issue": "PVTF_lAHODFNjSs4BPBjzzg9jhR8",
+    "Sub-issues progress": "PVTF_lAHODFNjSs4BPBjzzg9jhSA"
+  },
+  "statusOptions": {
+    "Todo": "f75ad846",
+    "In Progress": "47fc9ee4",
+    "Done": "98236657"
+  },
+  "ownerOptions": {},
+  "labels": {},
+  "items": [],
+  "lastSyncAt": "2026-02-12T13:21:51.573Z"
+}

@@ -61,16 +61,20 @@ function getSidebarItems(role: UserRole): SidebarItem[] {
         { label: '대시보드', href: '/dashboard', icon: LayoutDashboard },
         { label: '검토 목록', href: '/reviews', icon: ClipboardCheck },
         { label: '검토 이력', href: '/reviews/history', icon: History },
-        { label: '라이센스 관리', href: '/monitoring/licenses', icon: Shield },
-        { label: '사용 현황', href: '/monitoring/usage', icon: BarChart3 },
-        { label: '도구 관리', href: '/admin/tools', icon: Settings },
+        { label: '환경 관리', href: '/admin/environments', icon: Monitor },
       ];
     case 'SYSTEM_ADMIN':
       return [
         { label: '대시보드', href: '/dashboard', icon: LayoutDashboard },
+        { label: '전체 신청 현황', href: '/admin/applications', icon: ListChecks },
+        { label: '검토 목록', href: '/reviews', icon: ClipboardCheck },
+        { label: '검토 이력', href: '/reviews/history', icon: History },
         { label: '라이센스 관리', href: '/monitoring/licenses', icon: Shield },
         { label: '사용 현황', href: '/monitoring/usage', icon: BarChart3 },
-        { label: '도구 관리', href: '/admin/tools', icon: Settings },
+        { label: '비용 관리', href: '/monitoring/costs', icon: DollarSign },
+        { label: '도구 관리', href: '/admin/tools', icon: Wrench },
+        { label: '사용자 관리', href: '/admin/users', icon: Users },
+        { label: '시스템 설정', href: '/admin/settings', icon: Settings },
         { label: '감사 로그', href: '/admin/audit', icon: ScrollText },
       ];
     default:
