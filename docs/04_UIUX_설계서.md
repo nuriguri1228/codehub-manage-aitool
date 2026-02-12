@@ -344,7 +344,7 @@ flowchart TD
 
 ### 3.3 관리자 플로우
 
-시스템 관리자(`SYSTEM_ADMIN`)의 사용 흐름입니다. `IT_ADMIN`은 ENV_PREPARATION 검토 + 환경 관리(VDI/Notebook)만 담당합니다.
+시스템 관리자(`SYSTEM_ADMIN`)의 사용 흐름입니다. `IT_ADMIN`은 ENV_PREPARATION 검토 + 환경 관리(VDI/Notebook)만 담당합니다. `LICENSE_MANAGER`는 LICENSE_ISSUANCE 검토 + 라이센스/API Key 관리를 담당합니다.
 
 ```mermaid
 flowchart TD
@@ -422,7 +422,8 @@ block-beta
 | **TEAM_LEAD** | 대시보드, 검토 목록, 검토 이력 |
 | **SECURITY_REVIEWER** | 대시보드, 검토 목록, 검토 이력 |
 | **IT_ADMIN** | 대시보드, 검토 목록(ENV_PREPARATION), 검토 이력, 환경 관리(VDI/Notebook 현황+통계) |
-| **SYSTEM_ADMIN** | 대시보드, 전체 신청 현황, 검토 목록(FINAL_APPROVAL+발급), 검토 이력, 라이센스 관리, 사용 현황, 비용 관리, 도구 관리, 사용자 관리, 시스템 설정, 감사 로그 |
+| **LICENSE_MANAGER** | 대시보드, 검토 목록(LICENSE_ISSUANCE), 검토 이력, 라이센스 관리, API Key 관리 |
+| **SYSTEM_ADMIN** | 대시보드, 전체 신청 현황, 검토 이력, 라이센스 관리, 사용 현황, 비용 관리, 도구 관리, 사용자 관리, 시스템 설정, 감사 로그 |
 
 **Header 구성 요소:**
 - **좌측**: 로고(#50CF94 배경 + "C") + 서비스명 ("CodeHub")

@@ -30,7 +30,7 @@ export type ApplicationStatus =
   | 'TEAM_REVIEW'
   | 'SECURITY_REVIEW'
   | 'ENV_PREPARATION'
-  | 'FINAL_APPROVAL'
+  | 'LICENSE_ISSUANCE'
   | 'APPROVED'
   | 'KEY_ISSUED'
   | 'REJECTED'
@@ -40,7 +40,7 @@ export type ReviewResult = 'APPROVED' | 'REJECTED' | 'FEEDBACK_REQUESTED';
 
 export type LicenseStatus = 'ACTIVE' | 'EXPIRED' | 'REVOKED' | 'SUSPENDED';
 
-export type UserRole = 'APPLICANT' | 'TEAM_LEAD' | 'SECURITY_REVIEWER' | 'IT_ADMIN' | 'SYSTEM_ADMIN';
+export type UserRole = 'APPLICANT' | 'TEAM_LEAD' | 'SECURITY_REVIEWER' | 'IT_ADMIN' | 'LICENSE_MANAGER' | 'SYSTEM_ADMIN';
 
 export type Environment = 'VDI' | 'NOTEBOOK' | 'OTHER';
 

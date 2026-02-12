@@ -57,6 +57,18 @@ function getNavItems(role: UserRole): NavItem[] {
         { label: '검토 이력', href: '/reviews/history' },
       ];
     case 'IT_ADMIN':
+      return [
+        { label: '대시보드', href: '/dashboard' },
+        { label: '검토 목록', href: '/reviews' },
+        { label: '환경 관리', href: '/admin/environments' },
+      ];
+    case 'LICENSE_MANAGER':
+      return [
+        { label: '대시보드', href: '/dashboard' },
+        { label: '검토 목록', href: '/reviews' },
+        { label: '라이센스', href: '/monitoring/licenses' },
+        { label: 'API Key', href: '/api-keys' },
+      ];
     case 'SYSTEM_ADMIN':
       return [
         { label: '대시보드', href: '/dashboard' },

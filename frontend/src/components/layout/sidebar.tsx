@@ -63,11 +63,18 @@ function getSidebarItems(role: UserRole): SidebarItem[] {
         { label: '검토 이력', href: '/reviews/history', icon: History },
         { label: '환경 관리', href: '/admin/environments', icon: Monitor },
       ];
+    case 'LICENSE_MANAGER':
+      return [
+        { label: '대시보드', href: '/dashboard', icon: LayoutDashboard },
+        { label: '검토 목록', href: '/reviews', icon: ClipboardCheck },
+        { label: '검토 이력', href: '/reviews/history', icon: History },
+        { label: '라이센스 관리', href: '/monitoring/licenses', icon: Shield },
+        { label: 'API Key 관리', href: '/api-keys', icon: Key },
+      ];
     case 'SYSTEM_ADMIN':
       return [
         { label: '대시보드', href: '/dashboard', icon: LayoutDashboard },
         { label: '전체 신청 현황', href: '/admin/applications', icon: ListChecks },
-        { label: '검토 목록', href: '/reviews', icon: ClipboardCheck },
         { label: '검토 이력', href: '/reviews/history', icon: History },
         { label: '라이센스 관리', href: '/monitoring/licenses', icon: Shield },
         { label: '사용 현황', href: '/monitoring/usage', icon: BarChart3 },

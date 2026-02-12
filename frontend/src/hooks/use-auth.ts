@@ -53,6 +53,18 @@ const MOCK_USERS: Record<UserRole, User> = {
     createdAt: '2024-01-01T00:00:00Z',
     updatedAt: '2024-01-01T00:00:00Z',
   },
+  LICENSE_MANAGER: {
+    id: 'user-6',
+    employeeId: 'EMP006',
+    name: '조라이센스',
+    email: 'jo.lic@codehub.com',
+    department: 'IT인프라팀',
+    position: '라이센스 관리자',
+    role: 'LICENSE_MANAGER',
+    isActive: true,
+    createdAt: '2024-01-01T00:00:00Z',
+    updatedAt: '2024-01-01T00:00:00Z',
+  },
   SYSTEM_ADMIN: {
     id: 'user-5',
     employeeId: 'EMP005',
@@ -72,6 +84,7 @@ const ROLE_LABELS: Record<UserRole, string> = {
   TEAM_LEAD: '팀장 (검토자)',
   SECURITY_REVIEWER: '보안 검토자',
   IT_ADMIN: 'IT 관리자',
+  LICENSE_MANAGER: '라이센스 관리자',
   SYSTEM_ADMIN: '시스템 관리자',
 };
 

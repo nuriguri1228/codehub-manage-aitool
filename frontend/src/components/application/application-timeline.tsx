@@ -39,7 +39,7 @@ function getTimelineEvents(
     date: submittedAt,
   });
 
-  const statusOrder = ['TEAM_REVIEW', 'SECURITY_REVIEW', 'ENV_PREPARATION', 'FINAL_APPROVAL'];
+  const statusOrder = ['TEAM_REVIEW', 'SECURITY_REVIEW', 'ENV_PREPARATION', 'LICENSE_ISSUANCE'];
   const currentIdx = statusOrder.indexOf(applicationStatus);
 
   for (const reviewStage of REVIEW_STAGES) {

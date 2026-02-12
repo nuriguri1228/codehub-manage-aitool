@@ -59,7 +59,7 @@ const mockActivities: ActivityItem[] = [
     id: '1',
     type: 'approval',
     message: '김개발의 Claude Code 신청이',
-    highlight: '최종 승인',
+    highlight: '라이센스 발급 승인',
     time: '10분 전',
   },
   {

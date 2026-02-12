@@ -95,7 +95,7 @@ const MOCK_REVIEW_LIST: ReviewListItem[] = [
     submittedAt: '2026-02-08',
     slaStatus: 'NORMAL',
   },
-  // FINAL_APPROVAL (SYSTEM_ADMIN 최종 컨펌 대상)
+  // LICENSE_ISSUANCE (LICENSE_MANAGER 라이센스 발급 대상)
   {
     id: 'rev-007',
     applicationId: 'app-047',
@@ -103,7 +103,7 @@ const MOCK_REVIEW_LIST: ReviewListItem[] = [
     applicantName: '송백엔드',
     applicantDepartment: 'AI연구팀',
     aiToolNames: ['Antigravity'],
-    stageName: '최종 승인',
+    stageName: '라이센스 발급',
     dueDate: fmt(addDays(today, 1)),
     submittedAt: '2026-02-06',
     slaStatus: 'WARNING',
@@ -115,7 +115,7 @@ const MOCK_REVIEW_LIST: ReviewListItem[] = [
     applicantName: '윤데옵스',
     applicantDepartment: 'IT운영팀',
     aiToolNames: ['Claude Code'],
-    stageName: '최종 승인',
+    stageName: '라이센스 발급',
     dueDate: fmt(addDays(today, 2)),
     submittedAt: '2026-02-07',
     slaStatus: 'NORMAL',

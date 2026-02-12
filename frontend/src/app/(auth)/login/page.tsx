@@ -19,7 +19,12 @@ const ROLES: { value: UserRole; label: string; description: string }[] = [
     label: '보안 검토자',
     description: '보안팀 - 보안 검토',
   },
-  { value: 'IT_ADMIN', label: 'IT 관리자', description: '인프라팀 - 시스템 관리' },
+  { value: 'IT_ADMIN', label: 'IT 관리자', description: '인프라팀 - 환경 준비' },
+  {
+    value: 'LICENSE_MANAGER',
+    label: '라이센스 관리자',
+    description: '라이센스 발급 및 API Key 관리',
+  },
   {
     value: 'SYSTEM_ADMIN',
     label: '시스템 관리자',

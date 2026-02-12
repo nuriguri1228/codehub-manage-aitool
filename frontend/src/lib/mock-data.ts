@@ -145,6 +145,18 @@ export const mockUsers: User[] = [
     createdAt: '2024-01-05T09:00:00Z',
     updatedAt: '2024-12-01T09:00:00Z',
   },
+  {
+    id: 'user-011',
+    employeeId: 'EMP2024011',
+    name: '조라이센스',
+    email: 'jolic@company.com',
+    department: 'IT운영팀',
+    position: '책임',
+    role: 'LICENSE_MANAGER',
+    isActive: true,
+    createdAt: '2023-08-01T09:00:00Z',
+    updatedAt: '2024-12-01T09:00:00Z',
+  },
 ];
 
 // ─── AI 도구 데이터 ───────────────────────────────────────────────
@@ -242,7 +254,7 @@ export const mockApplications: Application[] = [
       agreedAt: '2024-09-15T10:30:00Z',
       version: '1.0',
     },
-    currentReviewStage: 'FINAL_APPROVAL',
+    currentReviewStage: 'LICENSE_ISSUANCE',
     createdAt: '2024-09-15T09:00:00Z',
     updatedAt: '2024-10-01T14:00:00Z',
     submittedAt: '2024-09-15T10:35:00Z',
@@ -416,7 +428,7 @@ export const mockApplications: Application[] = [
       agreedAt: '2024-08-10T09:30:00Z',
       version: '1.0',
     },
-    currentReviewStage: 'FINAL_APPROVAL',
+    currentReviewStage: 'LICENSE_ISSUANCE',
     createdAt: '2024-08-10T09:00:00Z',
     updatedAt: '2024-09-01T14:00:00Z',
     submittedAt: '2024-08-10T09:35:00Z',
@@ -537,7 +549,7 @@ export const mockApplications: Application[] = [
     aiToolNames: ['Claude Code'],
     environment: 'VDI',
     purpose: '코드 리뷰 자동화 및 테스트 코드 작성에 활용하고자 합니다.',
-    status: 'FINAL_APPROVAL',
+    status: 'LICENSE_ISSUANCE',
     projects: [
       {
         id: 'proj-009',
@@ -556,7 +568,7 @@ export const mockApplications: Application[] = [
       agreedAt: '2024-12-02T11:00:00Z',
       version: '1.0',
     },
-    currentReviewStage: 'FINAL_APPROVAL',
+    currentReviewStage: 'LICENSE_ISSUANCE',
     createdAt: '2024-12-02T09:00:00Z',
     updatedAt: '2024-12-10T09:00:00Z',
     submittedAt: '2024-12-02T11:05:00Z',
@@ -591,7 +603,7 @@ export const mockApplications: Application[] = [
       agreedAt: '2024-07-20T10:00:00Z',
       version: '1.0',
     },
-    currentReviewStage: 'FINAL_APPROVAL',
+    currentReviewStage: 'LICENSE_ISSUANCE',
     createdAt: '2024-07-20T09:00:00Z',
     updatedAt: '2024-08-15T14:00:00Z',
     submittedAt: '2024-07-20T10:05:00Z',
@@ -667,13 +679,13 @@ export const mockReviewStages: ReviewStage[] = [
   {
     id: 'rs-001-4',
     applicationId: 'app-001',
-    stageName: 'FINAL_APPROVAL',
+    stageName: 'LICENSE_ISSUANCE',
     stageOrder: 4,
-    reviewerId: 'user-006',
-    reviewerName: '한시스템',
+    reviewerId: 'user-011',
+    reviewerName: '조라이센스',
     reviewerDepartment: 'IT운영팀',
     result: 'APPROVED',
-    comment: '최종 승인 완료. API Key 발급을 진행합니다.',
+    comment: '라이센스 발급 완료. API Key 발급을 진행합니다.',
     reviewedAt: '2024-10-01T14:00:00Z',
     createdAt: '2024-09-28T11:00:00Z',
   },
@@ -815,7 +827,7 @@ export const mockReviewStages: ReviewStage[] = [
     createdAt: '2024-11-15T14:00:00Z',
   },
 
-  // app-010 (FINAL_APPROVAL)
+  // app-010 (LICENSE_ISSUANCE)
   {
     id: 'rs-010-1',
     applicationId: 'app-010',
@@ -858,10 +870,10 @@ export const mockReviewStages: ReviewStage[] = [
   {
     id: 'rs-010-4',
     applicationId: 'app-010',
-    stageName: 'FINAL_APPROVAL',
+    stageName: 'LICENSE_ISSUANCE',
     stageOrder: 4,
-    reviewerId: 'user-006',
-    reviewerName: '한시스템',
+    reviewerId: 'user-011',
+    reviewerName: '조라이센스',
     reviewerDepartment: 'IT운영팀',
     dueDate: '2024-12-12T23:59:59Z',
     createdAt: '2024-12-08T11:00:00Z',
@@ -933,7 +945,7 @@ export const mockReviewListItems: ReviewListItem[] = [
     applicantName: '김개발',
     applicantDepartment: '플랫폼개발팀',
     aiToolNames: ['Claude Code'],
-    stageName: 'FINAL_APPROVAL',
+    stageName: 'LICENSE_ISSUANCE',
     dueDate: '2024-12-12T23:59:59Z',
     submittedAt: '2024-12-02T11:05:00Z',
     slaStatus: 'NORMAL',
@@ -1240,7 +1252,7 @@ export const mockNotifications: Notification[] = [
   {
     id: 'notif-001',
     title: '신청서 검토 완료',
-    message: 'APP-2024-0001 신청서가 최종 승인되었습니다. API Key가 발급되었습니다.',
+    message: 'APP-2024-0001 신청서의 라이센스가 발급되었습니다. API Key가 발급되었습니다.',
     type: 'success',
     read: true,
     createdAt: '2024-10-01T14:00:00Z',

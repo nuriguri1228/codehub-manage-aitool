@@ -35,7 +35,7 @@ const PIPELINE_STAGES: { key: ApplicationStatus; label: string; color: string }[
   { key: 'TEAM_REVIEW', label: '팀장 검토', color: 'bg-indigo-500' },
   { key: 'SECURITY_REVIEW', label: '보안 검토', color: 'bg-purple-500' },
   { key: 'ENV_PREPARATION', label: '환경 준비', color: 'bg-yellow-500' },
-  { key: 'FINAL_APPROVAL', label: '최종 승인', color: 'bg-orange-500' },
+  { key: 'LICENSE_ISSUANCE', label: '라이센스 발급', color: 'bg-orange-500' },
   { key: 'APPROVED', label: '승인 완료', color: 'bg-[#50CF94]' },
   { key: 'KEY_ISSUED', label: '발급 완료', color: 'bg-[#3DAF7A]' },
 ];

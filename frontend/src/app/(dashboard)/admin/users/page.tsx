@@ -144,6 +144,18 @@ const mockUsers: User[] = [
     createdAt: '2024-01-05T09:00:00Z',
     updatedAt: '2024-12-01T09:00:00Z',
   },
+  {
+    id: 'user-011',
+    employeeId: 'EMP2024011',
+    name: '조라이센스',
+    email: 'jolic@company.com',
+    department: 'IT운영팀',
+    position: '책임',
+    role: 'LICENSE_MANAGER',
+    isActive: true,
+    createdAt: '2023-08-01T09:00:00Z',
+    updatedAt: '2024-12-01T09:00:00Z',
+  },
 ];
 
 const ROLE_CONFIG: Record<UserRole, { label: string; className: string }> = {
@@ -151,6 +163,7 @@ const ROLE_CONFIG: Record<UserRole, { label: string; className: string }> = {
   TEAM_LEAD: { label: '팀장', className: 'bg-emerald-50 text-emerald-700 border-emerald-200' },
   SECURITY_REVIEWER: { label: '보안 검토자', className: 'bg-purple-50 text-purple-700 border-purple-200' },
   IT_ADMIN: { label: 'IT 관리자', className: 'bg-orange-50 text-orange-700 border-orange-200' },
+  LICENSE_MANAGER: { label: '라이센스 관리자', className: 'bg-cyan-50 text-cyan-700 border-cyan-200' },
   SYSTEM_ADMIN: { label: '시스템 관리자', className: 'bg-red-50 text-red-700 border-red-200' },
 };
 

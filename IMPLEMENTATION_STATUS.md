@@ -41,12 +41,20 @@
 | 검토 이력 | `(dashboard)/reviews/history/page.tsx` | ✅ 완료 | 본인 검토 이력 |
 | 환경 관리 (VDI/Notebook) | `(dashboard)/admin/environments/page.tsx` | ✅ 완료 | VDI/Notebook 현황 + 통계 + 프로비저닝 이력 |
 
+### 라이센스 관리자 (LICENSE_MANAGER)
+| 페이지 | 경로 | 상태 | 비고 |
+|--------|------|------|------|
+| 대시보드 | `(dashboard)/dashboard/page.tsx` | ✅ 완료 | ReviewerDashboard 컴포넌트 |
+| 검토 목록 (LICENSE_ISSUANCE) | `(dashboard)/reviews/page.tsx` | ✅ 완료 | LICENSE_ISSUANCE 단계 라이센스 발급 |
+| 검토 이력 | `(dashboard)/reviews/history/page.tsx` | ✅ 완료 | 본인 검토 이력 |
+| 라이센스 관리 | `(dashboard)/monitoring/licenses/page.tsx` | ✅ 완료 | 차트+테이블+CSV 내보내기 |
+| API Key 관리 | `(dashboard)/api-keys/page.tsx` | ✅ 완료 | 재발급/비활성화/복사 |
+
 ### 시스템 관리자 (SYSTEM_ADMIN)
 | 페이지 | 경로 | 상태 | 비고 |
 |--------|------|------|------|
 | 관리자 대시보드 | `(dashboard)/dashboard/page.tsx` | ✅ 완료 | AdminDashboard 컴포넌트 |
 | 전체 신청 현황 | `(dashboard)/admin/applications/page.tsx` | ✅ 완료 | 전체 신청자 프로세스 현황 (목록뷰 + 파이프라인뷰) |
-| 검토 목록 (FINAL_APPROVAL) | `(dashboard)/reviews/page.tsx` | ✅ 완료 | SYSTEM_ADMIN이 FINAL_APPROVAL 최종 컨펌 + KEY_ISSUED 발급 역할 |
 | 검토 이력 | `(dashboard)/reviews/history/page.tsx` | ✅ 완료 | 전체 검토 이력 |
 | 라이센스 관리 | `(dashboard)/monitoring/licenses/page.tsx` | ✅ 완료 | 차트+테이블+CSV 내보내기 |
 | 사용 현황 모니터링 | `(dashboard)/monitoring/usage/page.tsx` | ✅ 완료 | KPI+차트+이상탐지 |
@@ -72,7 +80,7 @@
 ### 역할 기반 접근 제어 (RBAC)
 | 기능 | 요구사항 ID | 상태 | 비고 |
 |------|------------|------|------|
-| 역할 정의 및 관리 | FR-005 | ✅ 완료 | 5개 역할 정의, admin/users |
+| 역할 정의 및 관리 | FR-005 | ✅ 완료 | 6개 역할 정의 (LICENSE_MANAGER 추가), admin/users |
 | 역할별 메뉴/기능 접근 제어 | FR-006 | ✅ 완료 | sidebar.tsx |
 | 다중 역할 부여 | FR-007 | ❌ 미구현 | |
 | 역할 위임 | FR-008 | ❌ 미구현 | |
@@ -249,12 +257,20 @@
 | 검토 이력 | `/reviews/history` | ✅ | ✅ |
 | 환경 관리 | `/admin/environments` | ✅ | ✅ VDI/Notebook 현황 + 프로비저닝 이력 |
 
+### LICENSE_MANAGER (라이센스 관리자)
+| 메뉴 | 사이드바 경로 | 페이지 존재 | 상태 |
+|------|-------------|-----------|------|
+| 대시보드 | `/dashboard` | ✅ | ✅ ReviewerDashboard |
+| 검토 목록 | `/reviews` | ✅ | ✅ LICENSE_ISSUANCE 단계 |
+| 검토 이력 | `/reviews/history` | ✅ | ✅ |
+| 라이센스 관리 | `/monitoring/licenses` | ✅ | ✅ |
+| API Key 관리 | `/api-keys` | ✅ | ✅ |
+
 ### SYSTEM_ADMIN (시스템 관리자)
 | 메뉴 | 사이드바 경로 | 페이지 존재 | 상태 |
 |------|-------------|-----------|------|
 | 대시보드 | `/dashboard` | ✅ | ✅ |
 | 전체 신청 현황 | `/admin/applications` | ✅ | ✅ 목록뷰 + 파이프라인뷰 |
-| 검토 목록 | `/reviews` | ✅ | ✅ FINAL_APPROVAL 컨펌 + KEY_ISSUED 발급 |
 | 검토 이력 | `/reviews/history` | ✅ | ✅ |
 | 라이센스 관리 | `/monitoring/licenses` | ✅ | ✅ |
 | 사용 현황 | `/monitoring/usage` | ✅ | ✅ |

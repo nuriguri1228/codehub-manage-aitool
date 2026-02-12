@@ -10,7 +10,7 @@ export const APPLICATION_STATUS_LABELS: Record<ApplicationStatus, string> = {
   TEAM_REVIEW: '팀장 검토중',
   SECURITY_REVIEW: '보안 검토중',
   ENV_PREPARATION: '환경 준비중',
-  FINAL_APPROVAL: '최종 승인중',
+  LICENSE_ISSUANCE: '라이센스 발급중',
   APPROVED: '승인 완료',
   KEY_ISSUED: 'Key 발급완료',
   REJECTED: '반려',
@@ -23,7 +23,7 @@ export const APPLICATION_STATUS_COLORS: Record<ApplicationStatus, string> = {
   TEAM_REVIEW: 'bg-indigo-100 text-indigo-700',
   SECURITY_REVIEW: 'bg-purple-100 text-purple-700',
   ENV_PREPARATION: 'bg-yellow-100 text-yellow-700',
-  FINAL_APPROVAL: 'bg-orange-100 text-orange-700',
+  LICENSE_ISSUANCE: 'bg-orange-100 text-orange-700',
   APPROVED: 'bg-[#50CF94]/20 text-[#2d8a5e]',
   KEY_ISSUED: 'bg-[#50CF94]/30 text-[#257a50]',
   REJECTED: 'bg-red-100 text-red-700',
@@ -40,7 +40,7 @@ export const REVIEW_STAGES = [
   { key: 'TEAM_REVIEW', label: '팀장 검토', order: 1 },
   { key: 'SECURITY_REVIEW', label: '보안 검토', order: 2 },
   { key: 'ENV_PREPARATION', label: '환경 준비', order: 3 },
-  { key: 'FINAL_APPROVAL', label: '최종 승인', order: 4 },
+  { key: 'LICENSE_ISSUANCE', label: '라이센스 발급', order: 4 },
 ];
 
 export const WIZARD_STEPS = [

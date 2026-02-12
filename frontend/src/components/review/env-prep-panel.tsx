@@ -117,7 +117,7 @@ export default function EnvPrepPanel({ reviewStageId, environment, checklist: in
       case 'APPROVED':
         return {
           title: '환경 준비 완료 확인',
-          description: `${environment === 'VDI' ? 'VDI' : '노트북'} 환경 준비가 완료되었습니까? 최종 승인 단계로 넘어갑니다.`,
+          description: `${environment === 'VDI' ? 'VDI' : '노트북'} 환경 준비가 완료되었습니까? 라이센스 발급 단계로 넘어갑니다.`,
           actionLabel: '환경 준비 완료',
           variant: 'default' as const,
         };

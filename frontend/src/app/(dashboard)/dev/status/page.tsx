@@ -56,7 +56,7 @@ const statusData: FeatureGroup[] = [
       {
         name: '역할 기반 접근 제어 (RBAC)',
         items: [
-          { name: '역할 정의 및 관리', reqId: 'FR-005', frontend: 'done', backend: 'not-started', note: '5개 역할 정의' },
+          { name: '역할 정의 및 관리', reqId: 'FR-005', frontend: 'done', backend: 'not-started', note: '6개 역할 정의' },
           { name: '역할별 메뉴/기능 접근 제어', reqId: 'FR-006', frontend: 'done', backend: 'not-started', note: 'sidebar.tsx' },
           { name: '다중 역할 부여', reqId: 'FR-007', frontend: 'not-started', backend: 'not-started' },
           { name: '역할 위임', reqId: 'FR-008', frontend: 'not-started', backend: 'not-started' },

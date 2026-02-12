@@ -232,7 +232,7 @@ export const mockApplicationApi = {
       total: apps.length,
       draft: apps.filter((a) => a.status === 'DRAFT').length,
       inReview: apps.filter((a) =>
-        ['SUBMITTED', 'TEAM_REVIEW', 'SECURITY_REVIEW', 'ENV_PREPARATION', 'FINAL_APPROVAL'].includes(a.status)
+        ['SUBMITTED', 'TEAM_REVIEW', 'SECURITY_REVIEW', 'ENV_PREPARATION', 'LICENSE_ISSUANCE'].includes(a.status)
       ).length,
       approved: apps.filter((a) => a.status === 'APPROVED').length,
       rejected: apps.filter((a) => a.status === 'REJECTED').length,
@@ -400,8 +400,8 @@ export const mockReviewApi = {
         const nextStageMap: Record<string, ApplicationStatus> = {
           TEAM_REVIEW: 'SECURITY_REVIEW',
           SECURITY_REVIEW: 'ENV_PREPARATION',
-          ENV_PREPARATION: 'FINAL_APPROVAL',
-          FINAL_APPROVAL: 'APPROVED',
+          ENV_PREPARATION: 'LICENSE_ISSUANCE',
+          LICENSE_ISSUANCE: 'APPROVED',
         };
         newStatus = nextStageMap[stage.stageName] ?? newStatus;
       }

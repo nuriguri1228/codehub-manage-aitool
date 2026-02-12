@@ -17,6 +17,8 @@ export default function DashboardPage() {
       return <ReviewerDashboard />;
     case 'IT_ADMIN':
       return <ItAdminDashboard />;
+    case 'LICENSE_MANAGER':
+      return <ReviewerDashboard />;
     case 'SYSTEM_ADMIN':
       return <AdminDashboard />;
     default:
