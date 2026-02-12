@@ -2,6 +2,7 @@
 
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { mockReviewApi } from '@/lib/mock-api';
+import { useAuthStore } from '@/stores/auth-store';
 import type {
   ReviewListItem,
   ReviewDetail,
@@ -9,6 +10,7 @@ import type {
   ReviewFormData,
   ReviewResult,
   PaginatedResponse,
+  UserRole,
 } from '@/types';
 
 // -- Mock Data (inline until shared mock-data.ts is available) --
@@ -366,6 +368,15 @@ const MOCK_LICENSE_ISSUANCE_DETAIL: ReviewDetail = {
   feedbacks: [],
 };
 
+// -- Role → stageName mapping --
+// 각 검토 역할이 담당하는 단계명 (한글, mock 데이터 기준)
+const ROLE_STAGE_MAP: Partial<Record<UserRole, string[]>> = {
+  TEAM_LEAD: ['1차 검토', '재제출'],
+  SECURITY_REVIEWER: ['보안 검토'],
+  IT_ADMIN: ['환경 준비'],
+  LICENSE_MANAGER: ['라이센스 발급'],
+};
+
 // -- Query keys --
 
 export const reviewKeys = {
@@ -391,11 +402,21 @@ interface UseReviewsParams {
 }
 
 export function useReviews(params: UseReviewsParams = {}) {
+  const userRole = useAuthStore((s) => s.user?.role);
+
   return useQuery<PaginatedResponse<ReviewListItem>>({
-    queryKey: reviewKeys.list(params as Record<string, unknown>),
+    queryKey: reviewKeys.list({ ...params, role: userRole } as Record<string, unknown>),
     queryFn: async () => {
       // TODO: Replace with actual API call
       let filtered = [...MOCK_REVIEW_LIST];
+
+      // 역할별 담당 단계만 표시 (SYSTEM_ADMIN은 전체 조회 가능)
+      if (userRole && userRole !== 'SYSTEM_ADMIN') {
+        const allowedStages = ROLE_STAGE_MAP[userRole];
+        if (allowedStages) {
+          filtered = filtered.filter((r) => allowedStages.includes(r.stageName));
+        }
+      }
 
       if (params.status && params.status !== 'all') {
         if (params.status === 'pending') {
