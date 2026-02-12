@@ -110,28 +110,32 @@ export function ItAdminDashboard() {
         <KpiCard
           title="VDI 현황"
           value={`${stats.activeVdi}/${stats.totalVdi}`}
-          description="활성/전체"
-          icon={<Server className="h-5 w-5 text-blue-600" />}
-          trend={{ value: Math.round((stats.activeVdi / stats.totalVdi) * 100), label: '가동률' }}
+          icon={Server}
+          iconColor="text-blue-600"
+          change={Math.round((stats.activeVdi / stats.totalVdi) * 100)}
+          changeLabel="가동률"
         />
         <KpiCard
           title="Notebook 현황"
           value={`${stats.activeNotebook}/${stats.totalNotebook}`}
-          description="활성/전체"
-          icon={<Laptop className="h-5 w-5 text-purple-600" />}
-          trend={{ value: Math.round((stats.activeNotebook / stats.totalNotebook) * 100), label: '가동률' }}
+          icon={Laptop}
+          iconColor="text-purple-600"
+          change={Math.round((stats.activeNotebook / stats.totalNotebook) * 100)}
+          changeLabel="가동률"
         />
         <KpiCard
           title="프로비저닝 대기"
-          value={stats.pendingProvisions}
-          description="환경 준비 대기 건"
-          icon={<Clock className="h-5 w-5 text-amber-600" />}
+          value={String(stats.pendingProvisions)}
+          icon={Clock}
+          iconColor="text-amber-600"
+          changeLabel="환경 준비 대기 건"
         />
         <KpiCard
           title="오늘 완료"
-          value={stats.completedToday}
-          description="오늘 환경 준비 완료"
-          icon={<CheckCircle2 className="h-5 w-5 text-emerald-600" />}
+          value={String(stats.completedToday)}
+          icon={CheckCircle2}
+          iconColor="text-emerald-600"
+          changeLabel="오늘 환경 준비 완료"
         />
       </div>
 

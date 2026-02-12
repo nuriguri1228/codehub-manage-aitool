@@ -244,17 +244,17 @@
 ### IT_ADMIN (IT 인프라 관리자)
 | 메뉴 | 사이드바 경로 | 페이지 존재 | 상태 |
 |------|-------------|-----------|------|
-| 대시보드 | `/dashboard` | ✅ | ⚠️ 환경 중심 대시보드로 수정 필요 |
+| 대시보드 | `/dashboard` | ✅ | ✅ ItAdminDashboard (환경 중심) |
 | 검토 목록 | `/reviews` | ✅ | ✅ (ENV_PREPARATION 단계) |
 | 검토 이력 | `/reviews/history` | ✅ | ✅ |
-| 환경 관리 | `/admin/environments` | ❌ | ❌ 신규 구현 필요 |
+| 환경 관리 | `/admin/environments` | ✅ | ✅ VDI/Notebook 현황 + 프로비저닝 이력 |
 
 ### SYSTEM_ADMIN (시스템 관리자)
 | 메뉴 | 사이드바 경로 | 페이지 존재 | 상태 |
 |------|-------------|-----------|------|
 | 대시보드 | `/dashboard` | ✅ | ✅ |
-| 전체 신청 현황 | `/admin/applications` | ❌ | ❌ 신규 구현 필요 |
-| 검토 목록 | `/reviews` | ✅ | ⚠️ FINAL_APPROVAL 컨펌 + 발급 역할 추가 필요 |
+| 전체 신청 현황 | `/admin/applications` | ✅ | ✅ 목록뷰 + 파이프라인뷰 |
+| 검토 목록 | `/reviews` | ✅ | ✅ FINAL_APPROVAL 컨펌 + KEY_ISSUED 발급 |
 | 검토 이력 | `/reviews/history` | ✅ | ✅ |
 | 라이센스 관리 | `/monitoring/licenses` | ✅ | ✅ |
 | 사용 현황 | `/monitoring/usage` | ✅ | ✅ |

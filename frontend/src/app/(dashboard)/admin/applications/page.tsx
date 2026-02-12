@@ -50,7 +50,7 @@ export default function AdminApplicationsPage() {
     queryFn: () =>
       mockApplicationApi.getApplications({
         page,
-        pageSize: 15,
+        limit: 15,
         search: search || undefined,
         status: statusFilter !== 'all' ? (statusFilter as ApplicationStatus) : undefined,
       }),
@@ -65,12 +65,12 @@ export default function AdminApplicationsPage() {
   const { data: allData } = useQuery({
     queryKey: ['admin-applications-all'],
     queryFn: () =>
-      mockApplicationApi.getApplications({ page: 1, pageSize: 100 }),
+      mockApplicationApi.getApplications({ page: 1, limit: 100 }),
   });
 
   const stats = statsData?.data;
   const applications = data?.data ?? [];
-  const totalPages = data?.totalPages ?? 1;
+  const totalPages = data?.meta?.totalPages ?? 1;
   const allApplications = allData?.data ?? [];
 
   return (
@@ -161,7 +161,7 @@ export default function AdminApplicationsPage() {
                         <tr key={app.id} className="border-b last:border-0 hover:bg-gray-50">
                           <td className="px-4 py-3 font-medium">{app.applicationNumber}</td>
                           <td className="px-4 py-3">{app.applicantName}</td>
-                          <td className="px-4 py-3 text-gray-500">{app.department}</td>
+                          <td className="px-4 py-3 text-gray-500">{app.applicantDepartment}</td>
                           <td className="px-4 py-3">
                             <div className="flex flex-wrap gap-1">
                               {app.aiToolNames.map((name) => (
