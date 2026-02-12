@@ -16,6 +16,11 @@ import {
   ChevronRight,
   ScrollText,
   Code2,
+  Monitor,
+  Users,
+  DollarSign,
+  ListChecks,
+  Wrench,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
