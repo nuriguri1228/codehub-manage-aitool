@@ -23,7 +23,7 @@ const ROLES: { value: UserRole; label: string; description: string }[] = [
   {
     value: 'LICENSE_MANAGER',
     label: '라이센스 관리자',
-    description: '라이센스 발급 및 API Key 관리',
+    description: '라이센스 발급 전담',
   },
   {
     value: 'SYSTEM_ADMIN',

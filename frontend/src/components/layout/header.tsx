@@ -67,7 +67,6 @@ function getNavItems(role: UserRole): NavItem[] {
         { label: '대시보드', href: '/dashboard' },
         { label: '검토 목록', href: '/reviews' },
         { label: '라이센스', href: '/monitoring/licenses' },
-        { label: 'API Key', href: '/api-keys' },
       ];
     case 'SYSTEM_ADMIN':
       return [

@@ -46,12 +46,12 @@ No test framework is configured yet.
 | `TEAM_LEAD` | 1차 검토자/팀장 | 소속 팀원 신청 1차 검토 | `TEAM_REVIEW` |
 | `SECURITY_REVIEWER` | 보안 검토자 | 보안 관점 검토 | `SECURITY_REVIEW` |
 | `IT_ADMIN` | IT 인프라 관리자 | **물리 개발환경(VDI/Notebook)만 관리**, 환경 준비 검토 | `ENV_PREPARATION` |
-| `LICENSE_MANAGER` | 라이센스 관리자 | 라이센스 발급 및 API Key 관리 전담 | `LICENSE_ISSUANCE` |
+| `LICENSE_MANAGER` | 라이센스 관리자 | 라이센스 발급 전담 | `LICENSE_ISSUANCE` |
 | `SYSTEM_ADMIN` | 시스템 관리자 | **전체 신청 프로세스 현황 관리**, 모니터링·비용·도구·사용자·시스템 설정 전체 관리 | — (검토 없음) |
 
 Sidebar navigation is role-based in `components/layout/sidebar.tsx`:
 - `IT_ADMIN`: 대시보드(환경중심), 검토 목록(ENV_PREP), 검토 이력, 환경 관리
-- `LICENSE_MANAGER`: 대시보드, 검토 목록(LICENSE_ISSUANCE), 검토 이력, 라이센스 관리, API Key 관리
+- `LICENSE_MANAGER`: 대시보드, 검토 목록(LICENSE_ISSUANCE), 검토 이력, 라이센스 관리
 - `SYSTEM_ADMIN`: 대시보드(Admin), 전체 신청 현황, 검토 이력, 라이센스, 사용현황, 비용, 도구, 사용자, 시스템설정, 감사로그
 
 **Review Flow**: Application → `TEAM_REVIEW`(TEAM_LEAD) → `SECURITY_REVIEW`(SECURITY_REVIEWER) → `ENV_PREPARATION`(IT_ADMIN) → `LICENSE_ISSUANCE`(LICENSE_MANAGER) → `KEY_ISSUED`.

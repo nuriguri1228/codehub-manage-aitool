@@ -48,7 +48,6 @@
 | 검토 목록 (LICENSE_ISSUANCE) | `(dashboard)/reviews/page.tsx` | ✅ 완료 | LICENSE_ISSUANCE 단계 라이센스 발급 |
 | 검토 이력 | `(dashboard)/reviews/history/page.tsx` | ✅ 완료 | 본인 검토 이력 |
 | 라이센스 관리 | `(dashboard)/monitoring/licenses/page.tsx` | ✅ 완료 | 차트+테이블+CSV 내보내기 |
-| API Key 관리 | `(dashboard)/api-keys/page.tsx` | ✅ 완료 | 재발급/비활성화/복사 |
 
 ### 시스템 관리자 (SYSTEM_ADMIN)
 | 페이지 | 경로 | 상태 | 비고 |
@@ -264,7 +263,6 @@
 | 검토 목록 | `/reviews` | ✅ | ✅ LICENSE_ISSUANCE 단계 |
 | 검토 이력 | `/reviews/history` | ✅ | ✅ |
 | 라이센스 관리 | `/monitoring/licenses` | ✅ | ✅ |
-| API Key 관리 | `/api-keys` | ✅ | ✅ |
 
 ### SYSTEM_ADMIN (시스템 관리자)
 | 메뉴 | 사이드바 경로 | 페이지 존재 | 상태 |
