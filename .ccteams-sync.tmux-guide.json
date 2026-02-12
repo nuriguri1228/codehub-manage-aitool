@@ -33,8 +33,80 @@
     "In Progress": "47fc9ee4",
     "Done": "98236657"
   },
-  "ownerOptions": {},
-  "labels": {},
-  "items": [],
-  "lastSyncAt": "2026-02-12T13:21:51.573Z"
+  "ownerOptions": {
+    "(unassigned)": "697ad121",
+    "setup-engineer": "ec5540a3",
+    "part1-planner": "6cdea803",
+    "part2-planner": "417d508d",
+    "part1-writer": "b3eb766d",
+    "part2-writer": "4d4f19b9"
+  },
+  "labels": {
+    "ccteams:tmux-guide": "LA_kwDORNGFGc8AAAACX5XTuQ"
+  },
+  "items": [
+    {
+      "taskId": "1",
+      "teamName": "tmux-guide",
+      "githubItemId": "PVTI_lAHODFNjSs4BPBjzzglVcmk",
+      "contentId": "I_kwDORNGFGc7qW1dw",
+      "issueNodeId": "I_kwDORNGFGc7qW1dw",
+      "issueNumber": 134,
+      "lastHash": "3f2b00af65683f7a6d0aac5d9747373ab64b4794c5dca9b780e3a953f18d7a35",
+      "lastSyncedAt": "2026-02-12T13:21:58.258Z",
+      "lastOwner": "setup-engineer"
+    },
+    {
+      "taskId": "3",
+      "teamName": "tmux-guide",
+      "githubItemId": "PVTI_lAHODFNjSs4BPBjzzglVco8",
+      "contentId": "I_kwDORNGFGc7qW1rg",
+      "issueNodeId": "I_kwDORNGFGc7qW1rg",
+      "issueNumber": 135,
+      "lastHash": "7d03997b292d9728eb5923c928f042fccf552bfabca0996b18d822abe06423fb",
+      "lastSyncedAt": "2026-02-12T13:22:06.821Z",
+      "lastOwner": "part2-planner"
+    },
+    {
+      "taskId": "2",
+      "teamName": "tmux-guide",
+      "githubItemId": "PVTI_lAHODFNjSs4BPBjzzglVco0",
+      "contentId": "I_kwDORNGFGc7qW1rr",
+      "issueNodeId": "I_kwDORNGFGc7qW1rr",
+      "issueNumber": 136,
+      "lastHash": "50f60f5923427f4ad9b02d4f2dc234bc6120f54c747d43bfcea339c739227689",
+      "lastSyncedAt": "2026-02-12T13:22:06.827Z",
+      "lastOwner": "part1-planner"
+    },
+    {
+      "taskId": "4",
+      "teamName": "tmux-guide",
+      "githubItemId": "PVTI_lAHODFNjSs4BPBjzzglVcp4",
+      "contentId": "I_kwDORNGFGc7qW1vk",
+      "issueNodeId": "I_kwDORNGFGc7qW1vk",
+      "issueNumber": 138,
+      "lastHash": "4ab9f990ea9739b1d1d34f16d529a5cc9134d7ffa824ead17563dae87ea37e2a",
+      "lastSyncedAt": "2026-02-12T13:22:10.066Z",
+      "lastOwner": "part1-writer"
+    },
+    {
+      "taskId": "5",
+      "teamName": "tmux-guide",
+      "githubItemId": "PVTI_lAHODFNjSs4BPBjzzglVcp0",
+      "contentId": "I_kwDORNGFGc7qW1vi",
+      "issueNodeId": "I_kwDORNGFGc7qW1vi",
+      "issueNumber": 137,
+      "lastHash": "61319d27b5d7a4c1a270c1bb7263d1b372324318526a9d06e24b5dcb76b81692",
+      "lastSyncedAt": "2026-02-12T13:22:12.068Z",
+      "lastOwner": "part2-writer"
+    }
+  ],
+  "lastSyncAt": "2026-02-12T13:22:30.052Z",
+  "summaryIssues": {
+    "tmux-guide": {
+      "issueNodeId": "I_kwDORNGFGc7qW12g",
+      "issueNumber": 139,
+      "githubItemId": "PVTI_lAHODFNjSs4BPBjzzglVcrc"
+    }
+  }
 }
