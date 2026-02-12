@@ -350,7 +350,7 @@ export const mockApplications: Application[] = [
     aiToolNames: ['Claude Code'],
     environment: 'VDI',
     purpose: 'API 서버 개발 및 테스트 코드 작성에 Claude Code를 활용하여 코드 품질과 개발 생산성을 향상시키고자 합니다.',
-    status: 'SUBMITTED',
+    status: 'TEAM_REVIEW',
     projects: [
       {
         id: 'proj-004',
@@ -369,6 +369,7 @@ export const mockApplications: Application[] = [
       agreedAt: '2024-12-01T10:00:00Z',
       version: '1.0',
     },
+    currentReviewStage: 'TEAM_REVIEW',
     createdAt: '2024-12-01T09:00:00Z',
     updatedAt: '2024-12-01T10:05:00Z',
     submittedAt: '2024-12-01T10:05:00Z',
@@ -401,7 +402,7 @@ export const mockApplications: Application[] = [
     aiToolNames: ['Claude Code'],
     environment: 'NOTEBOOK',
     purpose: '데이터 파이프라인 개발 및 ETL 스크립트 작성에 AI 코딩 도구를 활용하여 업무 효율성을 높이겠습니다.',
-    status: 'APPROVED',
+    status: 'KEY_ISSUED',
     projects: [
       {
         id: 'proj-005',
@@ -481,6 +482,7 @@ export const mockApplications: Application[] = [
     environment: 'VDI',
     purpose: 'React/Next.js 기반 웹 애플리케이션 개발에 AI 코딩 어시스턴트를 활용합니다.',
     status: 'FEEDBACK_REQUESTED',
+    feedbackStage: 'TEAM_REVIEW',
     projects: [
       {
         id: 'proj-007',
@@ -626,6 +628,76 @@ export const mockApplications: Application[] = [
     createdAt: '2024-12-08T09:00:00Z',
     updatedAt: '2024-12-08T09:00:00Z',
   },
+  {
+    id: 'app-013',
+    applicationNumber: 'APP-2024-0013',
+    applicantId: 'user-001',
+    applicantName: '김개발',
+    applicantDepartment: '플랫폼개발팀',
+    applicantPosition: '선임',
+    aiToolIds: ['tool-001', 'tool-002'],
+    aiToolNames: ['Claude Code', 'Antigravity'],
+    environment: 'VDI',
+    purpose: 'Claude Code와 Antigravity를 병행 활용하여 코드 작성 및 코드 품질 분석을 동시에 진행하고자 합니다. 마이크로서비스 전환 프로젝트에서 두 도구를 함께 사용하면 개발 생산성과 코드 품질을 동시에 높일 수 있습니다.',
+    status: 'SECURITY_REVIEW',
+    projects: [
+      {
+        id: 'proj-011',
+        name: '결제 시스템 MSA 전환',
+        description: '결제 모듈을 마이크로서비스로 분리하고 이벤트 기반 아키텍처 적용',
+        startDate: '2025-01-01',
+        endDate: '2025-08-31',
+        role: '백엔드 개발자',
+        pmName: '박팀장',
+        pmEmail: 'parkteam@company.com',
+      },
+    ],
+    attachments: [],
+    securityAgreement: {
+      id: 'sec-011',
+      agreedAt: '2024-12-10T10:00:00Z',
+      version: '1.0',
+    },
+    currentReviewStage: 'SECURITY_REVIEW',
+    createdAt: '2024-12-10T09:00:00Z',
+    updatedAt: '2025-01-08T09:00:00Z',
+    submittedAt: '2024-12-10T10:05:00Z',
+  },
+  {
+    id: 'app-014',
+    applicationNumber: 'APP-2024-0014',
+    applicantId: 'user-008',
+    applicantName: '유데이터',
+    applicantDepartment: '데이터팀',
+    applicantPosition: '선임',
+    aiToolIds: ['tool-002', 'tool-003'],
+    aiToolNames: ['Antigravity', 'Cursor AI'],
+    environment: 'NOTEBOOK',
+    purpose: 'Antigravity로 코드 품질 분석, Cursor AI로 데이터 분석 스크립트 작성을 병행하여 ML 파이프라인 개발 생산성을 높이겠습니다.',
+    status: 'FEEDBACK_REQUESTED',
+    feedbackStage: 'SECURITY_REVIEW',
+    projects: [
+      {
+        id: 'proj-012',
+        name: 'MLOps 플랫폼 구축',
+        description: '모델 학습/배포 자동화 파이프라인 구축',
+        startDate: '2025-01-15',
+        endDate: '2025-09-30',
+        role: 'ML 엔지니어',
+        pmName: '유데이터',
+      },
+    ],
+    attachments: [],
+    securityAgreement: {
+      id: 'sec-012',
+      agreedAt: '2025-01-05T14:00:00Z',
+      version: '1.0',
+    },
+    currentReviewStage: 'SECURITY_REVIEW',
+    createdAt: '2025-01-05T09:00:00Z',
+    updatedAt: '2025-01-15T10:00:00Z',
+    submittedAt: '2025-01-05T14:05:00Z',
+  },
 ];
 
 // ─── 검토 단계 데이터 ─────────────────────────────────────────────
@@ -732,6 +804,78 @@ export const mockReviewStages: ReviewStage[] = [
     reviewerDepartment: '플랫폼개발팀',
     dueDate: '2024-11-18T23:59:59Z',
     createdAt: '2024-11-15T11:35:00Z',
+  },
+
+  // app-004 (TEAM_REVIEW) - 팀장 검토 대기
+  {
+    id: 'rs-004-1',
+    applicationId: 'app-004',
+    stageName: 'TEAM_REVIEW',
+    stageOrder: 1,
+    reviewerId: 'user-009',
+    reviewerName: '강팀장',
+    reviewerDepartment: '서비스개발팀',
+    dueDate: '2024-12-04T23:59:59Z',
+    createdAt: '2024-12-01T10:05:00Z',
+  },
+
+  // app-006 (KEY_ISSUED) - 모든 검토 완료
+  {
+    id: 'rs-006-1',
+    applicationId: 'app-006',
+    stageName: 'TEAM_REVIEW',
+    stageOrder: 1,
+    reviewerId: 'user-009',
+    reviewerName: '강팀장',
+    reviewerDepartment: '서비스개발팀',
+    result: 'APPROVED',
+    comment: '데이터 파이프라인 업무 활용 적합.',
+    reviewedAt: '2024-08-13T10:00:00Z',
+    createdAt: '2024-08-10T09:35:00Z',
+  },
+  {
+    id: 'rs-006-2',
+    applicationId: 'app-006',
+    stageName: 'SECURITY_REVIEW',
+    stageOrder: 2,
+    reviewerId: 'user-010',
+    reviewerName: '송보안',
+    reviewerDepartment: '보안팀',
+    result: 'APPROVED',
+    comment: '보안 요건 충족.',
+    checklist: [
+      { id: 'cl-006-1', label: '데이터 유출 방지 대책 확인', checked: true },
+      { id: 'cl-006-2', label: '접근 권한 관리 방안 확인', checked: true },
+      { id: 'cl-006-3', label: '보안 서약서 서명 확인', checked: true },
+    ],
+    reviewedAt: '2024-08-18T14:00:00Z',
+    createdAt: '2024-08-13T10:00:00Z',
+  },
+  {
+    id: 'rs-006-3',
+    applicationId: 'app-006',
+    stageName: 'ENV_PREPARATION',
+    stageOrder: 3,
+    reviewerId: 'user-005',
+    reviewerName: '정관리',
+    reviewerDepartment: 'IT운영팀',
+    result: 'APPROVED',
+    comment: '노트북 환경 설정 완료.',
+    reviewedAt: '2024-08-25T11:00:00Z',
+    createdAt: '2024-08-18T14:00:00Z',
+  },
+  {
+    id: 'rs-006-4',
+    applicationId: 'app-006',
+    stageName: 'LICENSE_ISSUANCE',
+    stageOrder: 4,
+    reviewerId: 'user-011',
+    reviewerName: '조라이센스',
+    reviewerDepartment: 'IT운영팀',
+    result: 'APPROVED',
+    comment: '라이센스 발급 완료.',
+    reviewedAt: '2024-09-01T14:00:00Z',
+    createdAt: '2024-08-25T11:00:00Z',
   },
 
   // app-007 (REJECTED) - 보안 검토에서 반려
@@ -878,6 +1022,147 @@ export const mockReviewStages: ReviewStage[] = [
     dueDate: '2024-12-12T23:59:59Z',
     createdAt: '2024-12-08T11:00:00Z',
   },
+
+  // app-011 (KEY_ISSUED) - 모든 검토 완료
+  {
+    id: 'rs-011-1',
+    applicationId: 'app-011',
+    stageName: 'TEAM_REVIEW',
+    stageOrder: 1,
+    reviewerId: 'user-003',
+    reviewerName: '박팀장',
+    reviewerDepartment: '플랫폼개발팀',
+    result: 'APPROVED',
+    comment: '대시보드 개발 승인.',
+    reviewedAt: '2024-07-23T10:00:00Z',
+    createdAt: '2024-07-20T10:05:00Z',
+  },
+  {
+    id: 'rs-011-2',
+    applicationId: 'app-011',
+    stageName: 'SECURITY_REVIEW',
+    stageOrder: 2,
+    reviewerId: 'user-010',
+    reviewerName: '송보안',
+    reviewerDepartment: '보안팀',
+    result: 'APPROVED',
+    comment: '보안 검토 완료.',
+    checklist: [
+      { id: 'cl-011-1', label: '데이터 유출 방지 대책 확인', checked: true },
+      { id: 'cl-011-2', label: '접근 권한 관리 방안 확인', checked: true },
+      { id: 'cl-011-3', label: '보안 서약서 서명 확인', checked: true },
+    ],
+    reviewedAt: '2024-07-28T14:00:00Z',
+    createdAt: '2024-07-23T10:00:00Z',
+  },
+  {
+    id: 'rs-011-3',
+    applicationId: 'app-011',
+    stageName: 'ENV_PREPARATION',
+    stageOrder: 3,
+    reviewerId: 'user-005',
+    reviewerName: '정관리',
+    reviewerDepartment: 'IT운영팀',
+    result: 'APPROVED',
+    comment: 'VDI 환경 준비 완료.',
+    reviewedAt: '2024-08-05T11:00:00Z',
+    createdAt: '2024-07-28T14:00:00Z',
+  },
+  {
+    id: 'rs-011-4',
+    applicationId: 'app-011',
+    stageName: 'LICENSE_ISSUANCE',
+    stageOrder: 4,
+    reviewerId: 'user-011',
+    reviewerName: '조라이센스',
+    reviewerDepartment: 'IT운영팀',
+    result: 'APPROVED',
+    comment: 'Antigravity 라이센스 발급 완료.',
+    reviewedAt: '2024-08-15T14:00:00Z',
+    createdAt: '2024-08-05T11:00:00Z',
+  },
+
+  // app-013 (SECURITY_REVIEW) - 보안 피드백 후 재제출, 보안 재검토 대기
+  {
+    id: 'rs-013-1',
+    applicationId: 'app-013',
+    stageName: 'TEAM_REVIEW',
+    stageOrder: 1,
+    reviewerId: 'user-003',
+    reviewerName: '박팀장',
+    reviewerDepartment: '플랫폼개발팀',
+    result: 'APPROVED',
+    comment: '두 도구 병행 활용 타당성 확인. 승인합니다.',
+    reviewedAt: '2024-12-13T10:00:00Z',
+    createdAt: '2024-12-10T10:05:00Z',
+  },
+  {
+    id: 'rs-013-2',
+    applicationId: 'app-013',
+    stageName: 'SECURITY_REVIEW',
+    stageOrder: 2,
+    reviewerId: 'user-004',
+    reviewerName: '최보안',
+    reviewerDepartment: '보안팀',
+    result: 'FEEDBACK_REQUESTED',
+    comment: '두 도구 동시 사용 시 데이터 흐름 간 보안 격리 방안이 불명확합니다. 도구 간 데이터 공유 범위와 접근 제어 방안을 구체적으로 보완해주세요.',
+    checklist: [
+      { id: 'cl-013-1', label: '데이터 유출 방지 대책 확인', checked: false },
+      { id: 'cl-013-2', label: '접근 권한 관리 방안 확인', checked: true },
+      { id: 'cl-013-3', label: '보안 서약서 서명 확인', checked: true },
+    ],
+    reviewedAt: '2024-12-20T14:00:00Z',
+    createdAt: '2024-12-13T10:00:00Z',
+  },
+  {
+    id: 'rs-013-3',
+    applicationId: 'app-013',
+    stageName: 'SECURITY_REVIEW',
+    stageOrder: 2,
+    reviewerId: 'user-004',
+    reviewerName: '최보안',
+    reviewerDepartment: '보안팀',
+    checklist: [
+      { id: 'cl-013r-1', label: '데이터 유출 방지 대책 확인', checked: false },
+      { id: 'cl-013r-2', label: '접근 권한 관리 방안 확인', checked: false },
+      { id: 'cl-013r-3', label: '보안 서약서 서명 확인', checked: false },
+    ],
+    dueDate: '2025-01-10T23:59:59Z',
+    createdAt: '2025-01-08T09:00:00Z',
+  },
+
+  // app-014 (FEEDBACK_REQUESTED) - 보안 검토에서 피드백 요청
+  {
+    id: 'rs-014-1',
+    applicationId: 'app-014',
+    stageName: 'TEAM_REVIEW',
+    stageOrder: 1,
+    reviewerId: 'user-009',
+    reviewerName: '강팀장',
+    reviewerDepartment: '서비스개발팀',
+    result: 'APPROVED',
+    comment: 'MLOps 구축에 도구 활용 적합.',
+    reviewedAt: '2025-01-08T10:00:00Z',
+    createdAt: '2025-01-05T14:05:00Z',
+  },
+  {
+    id: 'rs-014-2',
+    applicationId: 'app-014',
+    stageName: 'SECURITY_REVIEW',
+    stageOrder: 2,
+    reviewerId: 'user-010',
+    reviewerName: '송보안',
+    reviewerDepartment: '보안팀',
+    result: 'FEEDBACK_REQUESTED',
+    comment: '노트북 환경에서 두 도구 동시 사용 시 로컬 데이터 보안 방안이 부족합니다. 민감 데이터 처리 정책을 보완해주세요.',
+    checklist: [
+      { id: 'cl-014-1', label: '데이터 유출 방지 대책 확인', checked: false },
+      { id: 'cl-014-2', label: '접근 권한 관리 방안 확인', checked: true },
+      { id: 'cl-014-3', label: '보안 서약서 서명 확인', checked: true },
+    ],
+    reviewedAt: '2025-01-15T10:00:00Z',
+    createdAt: '2025-01-08T10:00:00Z',
+  },
 ];
 
 // ─── 검토 피드백 데이터 ───────────────────────────────────────────
@@ -897,6 +1182,20 @@ export const mockReviewFeedbacks: ReviewFeedback[] = [
     content: '데이터 유출 방지 대책이 구체적이지 않습니다. 코드 내 민감 정보 처리 방안, 외부 전송 차단 방안 등을 보완하여 재신청해주세요.',
     createdAt: '2024-09-15T16:00:00Z',
   },
+  {
+    id: 'fb-003',
+    reviewStageId: 'rs-013-2',
+    reviewerName: '최보안',
+    content: '두 도구 동시 사용 시 데이터 흐름 간 보안 격리 방안이 불명확합니다. 도구 간 데이터 공유 범위와 접근 제어 방안을 구체적으로 보완해주세요.',
+    createdAt: '2024-12-20T14:00:00Z',
+  },
+  {
+    id: 'fb-004',
+    reviewStageId: 'rs-014-2',
+    reviewerName: '송보안',
+    content: '노트북 환경에서 두 도구 동시 사용 시 로컬 데이터 보안 방안이 부족합니다. 민감 데이터 처리 정책을 보완해주세요.',
+    createdAt: '2025-01-15T10:00:00Z',
+  },
 ];
 
 // ─── 검토 목록 데이터 ─────────────────────────────────────────────
@@ -915,6 +1214,18 @@ export const mockReviewListItems: ReviewListItem[] = [
     slaStatus: 'NORMAL',
   },
   {
+    id: 'rs-004-1',
+    applicationId: 'app-004',
+    applicationNumber: 'APP-2024-0004',
+    applicantName: '오백엔드',
+    applicantDepartment: '서비스개발팀',
+    aiToolNames: ['Claude Code'],
+    stageName: 'TEAM_REVIEW',
+    dueDate: '2024-12-04T23:59:59Z',
+    submittedAt: '2024-12-01T10:05:00Z',
+    slaStatus: 'OVERDUE',
+  },
+  {
     id: 'rs-002-2',
     applicationId: 'app-002',
     applicationNumber: 'APP-2024-0002',
@@ -927,6 +1238,18 @@ export const mockReviewListItems: ReviewListItem[] = [
     slaStatus: 'OVERDUE',
   },
   {
+    id: 'rs-013-3',
+    applicationId: 'app-013',
+    applicationNumber: 'APP-2024-0013',
+    applicantName: '김개발',
+    applicantDepartment: '플랫폼개발팀',
+    aiToolNames: ['Claude Code', 'Antigravity'],
+    stageName: 'SECURITY_REVIEW',
+    dueDate: '2025-01-10T23:59:59Z',
+    submittedAt: '2024-12-10T10:05:00Z',
+    slaStatus: 'WARNING',
+  },
+  {
     id: 'rs-009-3',
     applicationId: 'app-009',
     applicationNumber: 'APP-2024-0009',
@@ -936,7 +1259,7 @@ export const mockReviewListItems: ReviewListItem[] = [
     stageName: 'ENV_PREPARATION',
     dueDate: '2024-11-30T23:59:59Z',
     submittedAt: '2024-11-05T14:05:00Z',
-    slaStatus: 'WARNING',
+    slaStatus: 'OVERDUE',
   },
   {
     id: 'rs-010-4',
@@ -955,10 +1278,10 @@ export const mockReviewListItems: ReviewListItem[] = [
 // ─── 검토 통계 ────────────────────────────────────────────────────
 
 export const mockReviewStats: ReviewStats = {
-  pending: 4,
+  pending: 6,
   completedToday: 1,
-  overdue: 1,
-  avgProcessingDays: 1.5,
+  overdue: 3,
+  avgProcessingDays: 2.1,
 };
 
 // ─── API Key 데이터 ───────────────────────────────────────────────
@@ -1157,20 +1480,20 @@ export const mockDashboardStats: DashboardStats = {
 // ─── 신청자 대시보드 통계 ──────────────────────────────────────────
 
 export const mockApplicationStats: ApplicationStats = {
-  total: 5,
-  draft: 1,
-  inReview: 2,
-  approved: 1,
-  rejected: 0,
-  keyIssued: 1,
+  total: 14,
+  draft: 2,
+  inReview: 6,
+  approved: 0,
+  rejected: 1,
+  keyIssued: 3,
 };
 
 // ─── 도구별 분포 ──────────────────────────────────────────────────
 
 export const mockToolDistribution: ToolDistribution[] = [
-  { toolName: 'Claude Code', count: 7, color: '#6366f1' },
-  { toolName: 'Antigravity', count: 3, color: '#22c55e' },
-  { toolName: 'Cursor AI', count: 3, color: '#f59e0b' },
+  { toolName: 'Claude Code', count: 8, color: '#6366f1' },
+  { toolName: 'Antigravity', count: 5, color: '#22c55e' },
+  { toolName: 'Cursor AI', count: 5, color: '#f59e0b' },
   { toolName: 'Tabnine', count: 0, color: '#ef4444' },
 ];
 
@@ -1302,6 +1625,33 @@ export const mockNotifications: Notification[] = [
     read: true,
     createdAt: '2024-09-15T16:00:00Z',
     link: '/applications/app-007',
+  },
+  {
+    id: 'notif-007',
+    title: '보안 검토 피드백 요청',
+    message: 'APP-2024-0013 신청서에 대해 보안팀이 피드백을 요청했습니다. 도구 간 보안 격리 방안 보완이 필요합니다.',
+    type: 'warning',
+    read: true,
+    createdAt: '2024-12-20T14:00:00Z',
+    link: '/applications/app-013',
+  },
+  {
+    id: 'notif-008',
+    title: '피드백 재제출 완료',
+    message: 'APP-2024-0013 신청서가 보안 검토 단계로 재제출되었습니다.',
+    type: 'info',
+    read: false,
+    createdAt: '2025-01-08T09:00:00Z',
+    link: '/applications/app-013',
+  },
+  {
+    id: 'notif-009',
+    title: '보안 검토 피드백 요청',
+    message: 'APP-2024-0014 신청서에 대해 보안팀이 피드백을 요청했습니다. 민감 데이터 처리 정책 보완이 필요합니다.',
+    type: 'warning',
+    read: false,
+    createdAt: '2025-01-15T10:00:00Z',
+    link: '/applications/app-014',
   },
 ];
 
