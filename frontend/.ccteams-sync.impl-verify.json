@@ -1,0 +1,40 @@
+{
+  "project": {
+    "id": "PVT_kwHODFNjSs4BPBoZ",
+    "number": 31,
+    "url": "https://github.com/users/nuriguri1228/projects/31",
+    "title": "ccteams: impl-verify",
+    "owner": "nuriguri1228"
+  },
+  "repository": {
+    "id": "R_kgDORNGFGQ",
+    "owner": "nuriguri1228",
+    "name": "codehub-manage-aitool"
+  },
+  "fields": {
+    "Team Name": "PVTF_lAHODFNjSs4BPBoZzg9jkmg",
+    "Agent (Owner)": "PVTSSF_lAHODFNjSs4BPBoZzg9jkmk",
+    "Task ID": "PVTF_lAHODFNjSs4BPBoZzg9jkmo",
+    "Blocked By": "PVTF_lAHODFNjSs4BPBoZzg9jknw",
+    "Active Form": "PVTF_lAHODFNjSs4BPBoZzg9jkoE",
+    "Status": "PVTSSF_lAHODFNjSs4BPBoZzg9jkmA",
+    "Title": "PVTF_lAHODFNjSs4BPBoZzg9jkl4",
+    "Assignees": "PVTF_lAHODFNjSs4BPBoZzg9jkl8",
+    "Labels": "PVTF_lAHODFNjSs4BPBoZzg9jkmE",
+    "Linked pull requests": "PVTF_lAHODFNjSs4BPBoZzg9jkmI",
+    "Milestone": "PVTF_lAHODFNjSs4BPBoZzg9jkmM",
+    "Repository": "PVTF_lAHODFNjSs4BPBoZzg9jkmQ",
+    "Reviewers": "PVTF_lAHODFNjSs4BPBoZzg9jkmU",
+    "Parent issue": "PVTF_lAHODFNjSs4BPBoZzg9jkmY",
+    "Sub-issues progress": "PVTF_lAHODFNjSs4BPBoZzg9jkmc"
+  },
+  "statusOptions": {
+    "Todo": "f75ad846",
+    "In Progress": "47fc9ee4",
+    "Done": "98236657"
+  },
+  "ownerOptions": {},
+  "labels": {},
+  "items": [],
+  "lastSyncAt": "2026-02-12T13:33:42.513Z"
+}
