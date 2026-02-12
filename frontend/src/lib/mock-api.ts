@@ -286,12 +286,26 @@ export const mockApplicationApi = {
     const idx = mockApplications.findIndex((a) => a.id === id);
     if (idx === -1) throw new Error('신청서를 찾을 수 없습니다.');
     const now = new Date().toISOString();
-    mockApplications[idx] = {
-      ...mockApplications[idx],
-      status: 'SUBMITTED',
-      submittedAt: now,
-      updatedAt: now,
-    };
+    const app = mockApplications[idx];
+    const feedbackStage = app.feedbackStage;
+
+    if (feedbackStage) {
+      // 피드백 재제출: 해당 단계로 복귀
+      mockApplications[idx] = {
+        ...app,
+        status: feedbackStage as ApplicationStatus,
+        feedbackStage: undefined,
+        updatedAt: now,
+      };
+    } else {
+      // 최초 제출
+      mockApplications[idx] = {
+        ...app,
+        status: 'SUBMITTED',
+        submittedAt: now,
+        updatedAt: now,
+      };
+    }
     return { success: true, data: mockApplications[idx] };
   },
 
@@ -396,6 +410,7 @@ export const mockReviewApi = {
         newStatus = 'REJECTED';
       } else if (data.result === 'FEEDBACK_REQUESTED') {
         newStatus = 'FEEDBACK_REQUESTED';
+        mockApplications[appIdx].feedbackStage = stage.stageName;
       } else if (data.result === 'APPROVED') {
         const nextStageMap: Record<string, ApplicationStatus> = {
           TEAM_REVIEW: 'SECURITY_REVIEW',

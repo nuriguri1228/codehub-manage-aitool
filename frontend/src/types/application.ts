@@ -57,6 +57,7 @@ export interface Application {
   attachments: Attachment[];
   securityAgreement?: SecurityAgreement;
   currentReviewStage?: string;
+  feedbackStage?: string; // 피드백 요청한 단계명 (예: 'SECURITY_REVIEW')
   createdAt: string;
   updatedAt: string;
   submittedAt?: string;

@@ -20,6 +20,13 @@ import {
 import { useReviewDetail } from '@/hooks/use-review';
 import type { Project } from '@/types';
 
+const STAGE_LABEL: Record<string, string> = {
+  TEAM_REVIEW: '1차 검토',
+  SECURITY_REVIEW: '보안 검토',
+  ENV_PREPARATION: '환경 준비',
+  LICENSE_ISSUANCE: '라이센스 발급',
+};
+
 export default function ApplicationEditPage({
   params,
 }: {
@@ -302,7 +309,11 @@ export default function ApplicationEditPage({
         {app.status === 'FEEDBACK_REQUESTED' && (
           <Button onClick={handleResubmit} disabled={isSubmitting}>
             <Send className="mr-1.5 h-4 w-4" />
-            {isSubmitting ? '재제출 중...' : '재제출하기'}
+            {isSubmitting
+              ? '재제출 중...'
+              : app.feedbackStage && STAGE_LABEL[app.feedbackStage]
+                ? `${STAGE_LABEL[app.feedbackStage]}(으)로 재제출`
+                : '재제출하기'}
           </Button>
         )}
       </div>
