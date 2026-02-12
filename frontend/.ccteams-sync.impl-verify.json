@@ -33,8 +33,88 @@
     "In Progress": "47fc9ee4",
     "Done": "98236657"
   },
-  "ownerOptions": {},
+  "ownerOptions": {
+    "(unassigned)": "aad25d7e",
+    "verifier-auth": "24a8539b",
+    "verifier-app": "3fcfa49d",
+    "verifier-review": "28a4b57f",
+    "verifier-monitoring": "06cd2a19",
+    "verifier-admin": "71e4a0b2"
+  },
   "labels": {},
-  "items": [],
-  "lastSyncAt": "2026-02-12T13:33:42.513Z"
+  "items": [
+    {
+      "taskId": "2",
+      "teamName": "impl-verify",
+      "githubItemId": "PVTI_lAHODFNjSs4BPBoZzglVf6c",
+      "contentId": "I_kwDORNGFGc7qXFBM",
+      "issueNodeId": "I_kwDORNGFGc7qXFBM",
+      "issueNumber": 141,
+      "lastHash": "3faf7f64f1fc8947ea92cebeb7e040a00c3c01a3872f374c618e99851264766f",
+      "lastSyncedAt": "2026-02-12T13:33:56.329Z",
+      "lastOwner": "verifier-app"
+    },
+    {
+      "taskId": "1",
+      "teamName": "impl-verify",
+      "githubItemId": "PVTI_lAHODFNjSs4BPBoZzglVf6w",
+      "contentId": "I_kwDORNGFGc7qXFBe",
+      "issueNodeId": "I_kwDORNGFGc7qXFBe",
+      "issueNumber": 143,
+      "lastHash": "8be9b042b2ff1ab7ebaeee14dfc0a0db2f81c68958ee014fb52be55d483fbf8a",
+      "lastSyncedAt": "2026-02-12T13:33:56.752Z",
+      "lastOwner": "verifier-auth"
+    },
+    {
+      "taskId": "3",
+      "teamName": "impl-verify",
+      "githubItemId": "PVTI_lAHODFNjSs4BPBoZzglVf68",
+      "contentId": "I_kwDORNGFGc7qXFBj",
+      "issueNodeId": "I_kwDORNGFGc7qXFBj",
+      "issueNumber": 144,
+      "lastHash": "3959f488434e10fda7e56dd608e9544424e801582606a1fe994604a7aa14da30",
+      "lastSyncedAt": "2026-02-12T13:33:57.181Z",
+      "lastOwner": "verifier-review"
+    },
+    {
+      "taskId": "4",
+      "teamName": "impl-verify",
+      "githubItemId": "PVTI_lAHODFNjSs4BPBoZzglVf7A",
+      "contentId": "I_kwDORNGFGc7qXFBc",
+      "issueNodeId": "I_kwDORNGFGc7qXFBc",
+      "issueNumber": 142,
+      "lastHash": "fc334655117d64d60378eeeec8c2b79fda01787459a29ec14d731d46ed19b9d3",
+      "lastSyncedAt": "2026-02-12T13:33:57.246Z",
+      "lastOwner": "verifier-monitoring"
+    },
+    {
+      "taskId": "11",
+      "teamName": "impl-verify",
+      "githubItemId": "PVTI_lAHODFNjSs4BPBoZzglVf60",
+      "contentId": "I_kwDORNGFGc7qXFBL",
+      "issueNodeId": "I_kwDORNGFGc7qXFBL",
+      "issueNumber": 140,
+      "lastHash": "13a37d169310ebf62b503b23dafc44479a0992aadf04e206a4df7e4ab6f62228",
+      "lastSyncedAt": "2026-02-12T13:33:58.986Z"
+    },
+    {
+      "taskId": "5",
+      "teamName": "impl-verify",
+      "githubItemId": "PVTI_lAHODFNjSs4BPBoZzglVf9s",
+      "contentId": "I_kwDORNGFGc7qXFQL",
+      "issueNodeId": "I_kwDORNGFGc7qXFQL",
+      "issueNumber": 145,
+      "lastHash": "b2f21df143abcb7d80efdcc1e0240f48f8be153ea0e12a5746ca3043161159b9",
+      "lastSyncedAt": "2026-02-12T13:34:07.974Z",
+      "lastOwner": "verifier-admin"
+    }
+  ],
+  "lastSyncAt": "2026-02-12T13:34:35.791Z",
+  "summaryIssues": {
+    "impl-verify": {
+      "issueNodeId": "I_kwDORNGFGc7qXFgf",
+      "issueNumber": 146,
+      "githubItemId": "PVTI_lAHODFNjSs4BPBoZzglVgBw"
+    }
+  }
 }
