@@ -401,14 +401,68 @@ export const mockReviewApi = {
           TEAM_REVIEW: 'SECURITY_REVIEW',
           SECURITY_REVIEW: 'ENV_PREPARATION',
           ENV_PREPARATION: 'LICENSE_ISSUANCE',
-          LICENSE_ISSUANCE: 'APPROVED',
+          LICENSE_ISSUANCE: 'KEY_ISSUED',
         };
         newStatus = nextStageMap[stage.stageName] ?? newStatus;
+
+        // LICENSE_ISSUANCE 승인 시 License + ApiKey 자동 생성
+        if (stage.stageName === 'LICENSE_ISSUANCE') {
+          const app = mockApplications[appIdx];
+          const quotaLimit = data.licenseConfig?.quotaLimit ?? 1000000;
+          const validityMonths = data.licenseConfig?.validityMonths ?? 12;
+          const expiresAt = new Date(Date.now() + validityMonths * 30 * 24 * 60 * 60 * 1000).toISOString();
+          const licenseSeq = String(mockLicenses.length + 1).padStart(4, '0');
+          const year = new Date().getFullYear();
+
+          // 각 AI 도구별로 License + ApiKey 생성
+          for (let i = 0; i < app.aiToolIds.length; i++) {
+            const toolId = app.aiToolIds[i];
+            const toolName = app.aiToolNames[i];
+            const tool = mockAiTools.find((t) => t.id === toolId);
+            const keyPrefix = tool?.authMethod === 'API_KEY' ? 'sk-ai' : 'tok';
+            const seqNum = String(mockLicenses.length + 1).padStart(4, '0');
+
+            const newLicense: License = {
+              id: `lic-${Date.now()}-${i}`,
+              licenseNumber: `LIC-${year}-${seqNum}`,
+              userId: app.applicantId,
+              userName: app.applicantName,
+              userDepartment: app.applicantDepartment,
+              aiToolId: toolId,
+              aiToolName: toolName,
+              environment: app.environment,
+              status: 'ACTIVE',
+              issuedAt: now,
+              expiresAt,
+              quotaLimit,
+              quotaUsed: 0,
+              usagePercent: 0,
+            };
+            mockLicenses.push(newLicense);
+
+            const newApiKey: ApiKey = {
+              id: `key-${Date.now()}-${i}`,
+              applicationId: app.id,
+              aiToolName: toolName,
+              keyPrefix,
+              maskedKey: `${keyPrefix}_****-****-****-${Math.random().toString().slice(2, 6)}`,
+              environment: app.environment,
+              status: 'ACTIVE',
+              issuedAt: now,
+              expiresAt,
+              usageCount: 0,
+              quotaLimit,
+              quotaUsed: 0,
+            };
+            mockApiKeys.push(newApiKey);
+          }
+        }
       }
       mockApplications[appIdx] = {
         ...mockApplications[appIdx],
         status: newStatus,
         updatedAt: now,
+        ...(newStatus === 'KEY_ISSUED' ? { completedAt: now } : {}),
       };
     }
 

@@ -1,6 +1,7 @@
 'use client';
 
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import { mockReviewApi } from '@/lib/mock-api';
 import type {
   ReviewListItem,
   ReviewDetail,
@@ -275,6 +276,96 @@ const MOCK_ENV_PREP_DETAIL: ReviewDetail = {
   feedbacks: [],
 };
 
+const MOCK_LICENSE_ISSUANCE_DETAIL: ReviewDetail = {
+  application: {
+    id: 'app-010',
+    applicationNumber: 'APP-2024-0010',
+    applicantId: 'user-001',
+    applicantName: '김개발',
+    applicantDepartment: '플랫폼개발팀',
+    applicantPosition: '선임',
+    aiToolIds: ['tool-001'],
+    aiToolNames: ['Claude Code'],
+    environment: 'VDI',
+    purpose: '코드 리뷰 자동화 및 테스트 코드 작성에 활용하고자 합니다.',
+    status: 'LICENSE_ISSUANCE',
+    projects: [
+      {
+        name: 'CI/CD 파이프라인 개선',
+        description: '빌드/배포 파이프라인 최적화 및 자동화 강화',
+        startDate: '2024-12-01',
+        endDate: '2025-05-31',
+        role: 'DevOps 엔지니어',
+        pmName: '박팀장',
+        pmEmail: 'parkteam@company.com',
+      },
+    ],
+    attachments: [],
+    securityAgreement: {
+      id: 'sec-009',
+      agreedAt: '2024-12-02T11:00:00Z',
+      version: '1.0',
+    },
+    currentReviewStage: 'LICENSE_ISSUANCE',
+    createdAt: '2024-12-02T09:00:00Z',
+    updatedAt: '2024-12-10T09:00:00Z',
+    submittedAt: '2024-12-02T11:05:00Z',
+  },
+  currentStage: {
+    id: 'rs-010-4',
+    applicationId: 'app-010',
+    stageName: 'LICENSE_ISSUANCE',
+    stageOrder: 4,
+    reviewerId: 'user-011',
+    reviewerName: '조라이센스',
+    reviewerDepartment: 'IT운영팀',
+    dueDate: fmt(addDays(today, 2)),
+    createdAt: '2024-12-08T11:00:00Z',
+  },
+  allStages: [
+    {
+      id: 'rs-010-1',
+      applicationId: 'app-010',
+      stageName: 'TEAM_REVIEW',
+      stageOrder: 1,
+      reviewerId: 'user-003',
+      reviewerName: '박팀장',
+      reviewerDepartment: '플랫폼개발팀',
+      result: 'APPROVED',
+      comment: '승인합니다.',
+      reviewedAt: '2024-12-04T09:00:00Z',
+      createdAt: '2024-12-02T11:05:00Z',
+    },
+    {
+      id: 'rs-010-2',
+      applicationId: 'app-010',
+      stageName: 'SECURITY_REVIEW',
+      stageOrder: 2,
+      reviewerId: 'user-004',
+      reviewerName: '최보안',
+      reviewerDepartment: '보안팀',
+      result: 'APPROVED',
+      comment: '보안 검토 완료.',
+      reviewedAt: '2024-12-06T14:00:00Z',
+      createdAt: '2024-12-04T09:00:00Z',
+    },
+    {
+      id: 'rs-010-3',
+      applicationId: 'app-010',
+      stageName: 'ENV_PREPARATION',
+      stageOrder: 3,
+      reviewerId: 'user-005',
+      reviewerName: '정관리',
+      reviewerDepartment: 'IT운영팀',
+      result: 'APPROVED',
+      comment: '환경 준비 완료.',
+      reviewedAt: '2024-12-08T11:00:00Z',
+      createdAt: '2024-12-06T14:00:00Z',
+    },
+  ],
+  feedbacks: [],
+};
+
 // -- Query keys --
 
 export const reviewKeys = {
@@ -367,6 +458,9 @@ export function useReviewDetail(id: string) {
       if (id === 'rs-009-3') {
         return MOCK_ENV_PREP_DETAIL;
       }
+      if (id === 'rs-010-4' || id === 'rev-007' || id === 'rev-008' || id === 'app-047' || id === 'app-048' || id === 'app-010') {
+        return MOCK_LICENSE_ISSUANCE_DETAIL;
+      }
       return MOCK_REVIEW_DETAIL;
     },
     enabled: !!id,
@@ -392,10 +486,7 @@ export function useSubmitReview() {
     { reviewStageId: string; data: ReviewFormData }
   >({
     mutationFn: async ({ reviewStageId, data }) => {
-      // TODO: Replace with actual API call
-      console.log('Submitting review:', reviewStageId, data);
-      await new Promise((resolve) => setTimeout(resolve, 500));
-      return { success: true };
+      return mockReviewApi.submitReview(reviewStageId, data);
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: reviewKeys.all });

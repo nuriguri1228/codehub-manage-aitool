@@ -5,8 +5,8 @@
 | 항목 | 내용 |
 |------|------|
 | 문서명 | UI/UX 설계서 |
-| 버전 | 2.0 |
-| 작성일 | 2026-02-11 |
+| 버전 | 2.1 |
+| 작성일 | 2026-02-13 |
 | 프로젝트명 | CodeHub AI Tool Manager |
 
 ---
@@ -274,8 +274,8 @@ flowchart TD
     Submit --> TeamReview["TEAM_REVIEW<br/>1차 검토 - 팀장"]
     TeamReview --> SecurityReview["SECURITY_REVIEW<br/>보안 검토"]
     SecurityReview --> EnvPrep["ENV_PREPARATION<br/>환경 준비"]
-    EnvPrep --> FinalApproval["FINAL_APPROVAL<br/>최종 승인"]
-    FinalApproval --> KeyIssued["KEY_ISSUED<br/>API Key 발급"]
+    EnvPrep --> LicenseIssuance["LICENSE_ISSUANCE<br/>라이센스 발급"]
+    LicenseIssuance --> KeyIssued["KEY_ISSUED<br/>API Key 발급"]
 
     TeamReview -.->|피드백| Feedback["피드백 수신<br/>정보 수정 → 재제출"]
     SecurityReview -.->|피드백| Feedback
@@ -694,10 +694,10 @@ flowchart LR
         TR["TEAM_REVIEW<br/>1차 검토 - 팀장"]
         SR["SECURITY_REVIEW<br/>보안 검토"]
         EP["ENV_PREPARATION<br/>환경 준비"]
-        FA["FINAL_APPROVAL<br/>최종 승인"]
+        LI["LICENSE_ISSUANCE<br/>라이센스 발급"]
         KI["KEY_ISSUED<br/>API Key 발급"]
 
-        TS --> TR --> SR --> EP --> FA --> KI
+        TS --> TR --> SR --> EP --> LI --> KI
     end
 
     subgraph Detail["상세 정보 패널"]
@@ -711,7 +711,7 @@ flowchart LR
     style TR fill:#059669,color:#fff
     style SR fill:#50CF94,color:#fff
     style EP fill:#F3F4F6,stroke:#9CA3AF
-    style FA fill:#F3F4F6,stroke:#9CA3AF
+    style LI fill:#F3F4F6,stroke:#9CA3AF
     style KI fill:#F3F4F6,stroke:#9CA3AF
 ```
 
@@ -1095,9 +1095,8 @@ flowchart LR
         SUBMITTED --> TEAM_REVIEW
         TEAM_REVIEW --> SECURITY_REVIEW
         SECURITY_REVIEW --> ENV_PREPARATION
-        ENV_PREPARATION --> FINAL_APPROVAL
-        FINAL_APPROVAL --> APPROVED
-        APPROVED --> KEY_ISSUED
+        ENV_PREPARATION --> LICENSE_ISSUANCE
+        LICENSE_ISSUANCE --> KEY_ISSUED
     end
 
     TEAM_REVIEW -.->|FEEDBACK_REQUESTED| FEEDBACK_REQUESTED
@@ -1112,8 +1111,7 @@ flowchart LR
     style TEAM_REVIEW fill:#50CF94,color:#fff
     style SECURITY_REVIEW fill:#50CF94,color:#fff
     style ENV_PREPARATION fill:#50CF94,color:#fff
-    style FINAL_APPROVAL fill:#50CF94,color:#fff
-    style APPROVED fill:#059669,color:#fff
+    style LICENSE_ISSUANCE fill:#50CF94,color:#fff
     style KEY_ISSUED fill:#059669,color:#fff
     style FEEDBACK_REQUESTED fill:#FFF7ED,color:#92400E,stroke:#D97706
     style REJECTED fill:#DC2626,color:#fff
@@ -1306,9 +1304,8 @@ stateDiagram-v2
     SUBMITTED --> TEAM_REVIEW : 접수
     TEAM_REVIEW --> SECURITY_REVIEW : 팀장 승인
     SECURITY_REVIEW --> ENV_PREPARATION : 보안 승인
-    ENV_PREPARATION --> FINAL_APPROVAL : 환경 준비 완료
-    FINAL_APPROVAL --> APPROVED : 최종 승인
-    APPROVED --> KEY_ISSUED : API Key 발급
+    ENV_PREPARATION --> LICENSE_ISSUANCE : 환경 준비 완료
+    LICENSE_ISSUANCE --> KEY_ISSUED : 라이센스 발급
 
     TEAM_REVIEW --> FEEDBACK_REQUESTED : 보완 요청
     SECURITY_REVIEW --> FEEDBACK_REQUESTED : 보완 요청

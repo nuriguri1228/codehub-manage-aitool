@@ -42,6 +42,10 @@ export interface ReviewFormData {
   result: ReviewResult;
   comment: string;
   checklist: ReviewChecklistItem[];
+  licenseConfig?: {
+    quotaLimit: number;
+    validityMonths: number;
+  };
 }
 
 export interface ReviewListItem {

@@ -20,6 +20,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { Separator } from '@/components/ui/separator';
 import ReviewPanel from '@/components/review/review-panel';
 import EnvPrepPanel from '@/components/review/env-prep-panel';
+import LicenseIssuancePanel from '@/components/review/license-issuance-panel';
 import ReviewTimeline from '@/components/review/review-timeline';
 import {
   useReviewDetail,
@@ -96,6 +97,7 @@ export default function ReviewDetailPage({
   const sla = calculateSlaStatus(currentStage.dueDate);
   const slaColor = getSlaColorClass(sla);
   const isEnvPrep = currentStage.stageName === 'ENV_PREPARATION';
+  const isLicenseIssuance = currentStage.stageName === 'LICENSE_ISSUANCE';
   const previousApprovals = allStages.filter(
     (s) => s.result === 'APPROVED' && s.stageOrder < currentStage.stageOrder
   );
@@ -130,11 +132,11 @@ export default function ReviewDetailPage({
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
         {/* Left Panel */}
         <div className="space-y-6">
-          {isEnvPrep ? (
+          {isEnvPrep || isLicenseIssuance ? (
             <Card>
               <CardHeader>
                 <div className="flex items-center justify-between">
-                  <CardTitle className="text-lg">환경 준비 정보</CardTitle>
+                  <CardTitle className="text-lg">{isLicenseIssuance ? '라이센스 발급 정보' : '환경 준비 정보'}</CardTitle>
                   <Badge
                     variant="outline"
                     className={
@@ -418,6 +420,12 @@ export default function ReviewDetailPage({
               reviewStageId={currentStage.id}
               environment={application.environment}
               checklist={currentStage.checklist || []}
+            />
+          ) : isLicenseIssuance ? (
+            <LicenseIssuancePanel
+              reviewStageId={currentStage.id}
+              application={application}
+              previousStages={previousApprovals}
             />
           ) : (
             <ReviewPanel
