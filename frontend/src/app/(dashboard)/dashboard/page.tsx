@@ -13,8 +13,8 @@ export default function DashboardPage() {
       return <ApplicantDashboard />;
     case 'TEAM_LEAD':
     case 'SECURITY_REVIEWER':
-      return <ReviewerDashboard />;
     case 'IT_ADMIN':
+      return <ReviewerDashboard />;
     case 'SYSTEM_ADMIN':
       return <AdminDashboard />;
     default:

@@ -38,9 +38,21 @@ No test framework is configured yet.
 
 **Application Wizard**: 7-step form stored in `application-store.ts`. Each step has a Zod schema in `lib/validations/application.ts`. Multi-select AI tools (`aiToolIds: string[]`, `aiToolNames: string[]`).
 
-**Roles**: APPLICANT, TEAM_LEAD, SECURITY_REVIEWER, IT_ADMIN, SYSTEM_ADMIN. Sidebar navigation is role-based in `components/layout/sidebar.tsx`.
+**Roles & Permissions** (역할별 권한 — 2026-02-12 확정):
 
-**Review Flow**: Application → TEAM_REVIEW → SECURITY_REVIEW → ENV_PREPARATION → FINAL_APPROVAL → KEY_ISSUED.
+| Role | 역할 | 핵심 책임 | 검토 단계 |
+|------|------|-----------|-----------|
+| `APPLICANT` | 신청자 | 신청서 작성, 본인 현황 조회 | — |
+| `TEAM_LEAD` | 1차 검토자/팀장 | 소속 팀원 신청 1차 검토 | `TEAM_REVIEW` |
+| `SECURITY_REVIEWER` | 보안 검토자 | 보안 관점 검토 | `SECURITY_REVIEW` |
+| `IT_ADMIN` | IT 인프라 관리자 | **물리 개발환경(VDI/Notebook)만 관리**, 환경 준비 검토 | `ENV_PREPARATION` |
+| `SYSTEM_ADMIN` | 시스템 관리자 | **전체 신청 프로세스 현황 관리**, 최종 컨펌 및 라이센스/API Key 발급, 모니터링·비용·도구·사용자·시스템 설정 전체 관리 | `FINAL_APPROVAL` + `KEY_ISSUED` 발급 |
+
+Sidebar navigation is role-based in `components/layout/sidebar.tsx`:
+- `IT_ADMIN`: 대시보드(환경중심), 검토 목록(ENV_PREP), 검토 이력, 환경 관리
+- `SYSTEM_ADMIN`: 대시보드(Admin), 전체 신청 현황, 검토 목록(FINAL_APPROVAL), 검토 이력, 라이센스, 사용현황, 비용, 도구, 사용자, 시스템설정, 감사로그
+
+**Review Flow**: Application → `TEAM_REVIEW`(TEAM_LEAD) → `SECURITY_REVIEW`(SECURITY_REVIEWER) → `ENV_PREPARATION`(IT_ADMIN) → `FINAL_APPROVAL`(SYSTEM_ADMIN) → `KEY_ISSUED`(SYSTEM_ADMIN 발급).
 
 **Styling**: Tailwind CSS v4 with OKLCH CSS variables in `globals.css`. Theme accent color is `#50CF94`. Use `cn()` from `lib/utils.ts` for className merging.
 

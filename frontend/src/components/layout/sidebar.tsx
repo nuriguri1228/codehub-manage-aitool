@@ -54,6 +54,8 @@ function getSidebarItems(role: UserRole): SidebarItem[] {
     case 'IT_ADMIN':
       return [
         { label: '대시보드', href: '/dashboard', icon: LayoutDashboard },
+        { label: '검토 목록', href: '/reviews', icon: ClipboardCheck },
+        { label: '검토 이력', href: '/reviews/history', icon: History },
         { label: '라이센스 관리', href: '/monitoring/licenses', icon: Shield },
         { label: '사용 현황', href: '/monitoring/usage', icon: BarChart3 },
         { label: '도구 관리', href: '/admin/tools', icon: Settings },
