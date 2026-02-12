@@ -35,11 +35,11 @@
 ### IT 인프라 관리자 (IT_ADMIN)
 | 페이지 | 경로 | 상태 | 비고 |
 |--------|------|------|------|
-| IT_ADMIN 대시보드 | `(dashboard)/dashboard/page.tsx` | ⚠️ 수정필요 | 현재 ReviewerDashboard 사용 → 환경 현황 중심 대시보드 필요 |
+| IT_ADMIN 대시보드 | `(dashboard)/dashboard/page.tsx` | ✅ 완료 | ItAdminDashboard 컴포넌트 (환경 현황 중심) |
 | 검토 목록 (ENV_PREPARATION) | `(dashboard)/reviews/page.tsx` | ✅ 완료 | ENV_PREPARATION 단계 전용 UI 있음 |
 | 검토 상세 | `(dashboard)/reviews/[id]/page.tsx` | ✅ 완료 | IT_ADMIN ENV_PREPARATION 전용 UI 분리 |
 | 검토 이력 | `(dashboard)/reviews/history/page.tsx` | ✅ 완료 | 본인 검토 이력 |
-| 환경 관리 (VDI/Notebook) | `(dashboard)/admin/environments/page.tsx` | ❌ 미구현 | VDI/Notebook 현황 + 통계 + 프로비저닝 이력 (신규) |
+| 환경 관리 (VDI/Notebook) | `(dashboard)/admin/environments/page.tsx` | ✅ 완료 | VDI/Notebook 현황 + 통계 + 프로비저닝 이력 |
 
 ### 시스템 관리자 (SYSTEM_ADMIN)
 | 페이지 | 경로 | 상태 | 비고 |
