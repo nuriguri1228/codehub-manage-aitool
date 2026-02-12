@@ -420,6 +420,7 @@ export default function ReviewDetailPage({
               reviewStageId={currentStage.id}
               environment={application.environment}
               checklist={currentStage.checklist || []}
+              previousStages={previousApprovals}
             />
           ) : isLicenseIssuance ? (
             <LicenseIssuancePanel
@@ -431,6 +432,7 @@ export default function ReviewDetailPage({
             <ReviewPanel
               reviewStageId={currentStage.id}
               checklist={currentStage.checklist || []}
+              previousStages={previousApprovals}
             />
           )}
         </div>

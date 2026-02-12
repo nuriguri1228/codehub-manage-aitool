@@ -20,7 +20,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from '@/components/ui/alert-dialog';
-import type { ReviewChecklistItem, ReviewResult, Environment } from '@/types';
+import type { ReviewChecklistItem, ReviewResult, ReviewStage, Environment } from '@/types';
 import { useSubmitReview } from '@/hooks/use-review';
 import { toast } from 'sonner';
 
@@ -28,6 +28,7 @@ interface EnvPrepPanelProps {
   reviewStageId: string;
   environment: Environment;
   checklist: ReviewChecklistItem[];
+  previousStages: ReviewStage[];
 }
 
 const VDI_CHECKLIST: ReviewChecklistItem[] = [
@@ -51,7 +52,7 @@ const reviewSchema = z.object({
 
 type FormValues = z.infer<typeof reviewSchema>;
 
-export default function EnvPrepPanel({ reviewStageId, environment, checklist: initialChecklist }: EnvPrepPanelProps) {
+export default function EnvPrepPanel({ reviewStageId, environment, checklist: initialChecklist, previousStages }: EnvPrepPanelProps) {
   const defaultChecklist = initialChecklist.length > 0
     ? initialChecklist
     : environment === 'VDI' ? VDI_CHECKLIST : NOTEBOOK_CHECKLIST;
@@ -156,6 +157,29 @@ export default function EnvPrepPanel({ reviewStageId, environment, checklist: in
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
+          {/* Previous Stage Approvals Summary */}
+          {previousStages.length > 0 && (
+            <div>
+              <h3 className="text-sm font-semibold mb-3">이전 검토 승인 요약</h3>
+              <div className="space-y-2">
+                {previousStages.map((stage) => (
+                  <div
+                    key={stage.id}
+                    className="flex items-center gap-2 rounded-lg border border-emerald-200 bg-emerald-50 px-3 py-2"
+                  >
+                    <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-600" />
+                    <span className="text-sm text-emerald-800">
+                      {stage.stageName} — {stage.reviewerName}
+                    </span>
+                    <span className="text-xs text-emerald-600 ml-auto">
+                      {stage.reviewedAt?.split('T')[0]}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Environment Badge */}
           <div>
             <Badge
