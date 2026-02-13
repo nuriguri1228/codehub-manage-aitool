@@ -237,7 +237,15 @@ export const mockApplications: Application[] = [
         role: '백엔드 개발자',
         pmName: '박팀장',
         pmEmail: 'parkteam@company.com',
+        members: [
+          { knoxId: 'EMP2024001', name: '김개발', department: '플랫폼개발팀', position: '선임' },
+          { knoxId: 'EMP2024002', name: '이프론트', department: '플랫폼개발팀', position: '책임' },
+        ],
       },
+    ],
+    totalMembers: [
+      { knoxId: 'EMP2024001', name: '김개발', department: '플랫폼개발팀', position: '선임' },
+      { knoxId: 'EMP2024002', name: '이프론트', department: '플랫폼개발팀', position: '책임' },
     ],
     attachments: [
       {
@@ -282,7 +290,13 @@ export const mockApplications: Application[] = [
         role: '프론트엔드 개발자',
         pmName: '박팀장',
         pmEmail: 'parkteam@company.com',
+        members: [
+          { knoxId: 'EMP2024001', name: '김개발', department: '플랫폼개발팀', position: '선임' },
+        ],
       },
+    ],
+    totalMembers: [
+      { knoxId: 'EMP2024001', name: '김개발', department: '플랫폼개발팀', position: '선임' },
     ],
     attachments: [],
     securityAgreement: {
@@ -317,7 +331,15 @@ export const mockApplications: Application[] = [
         role: '프론트엔드 리드',
         pmName: '박팀장',
         pmEmail: 'parkteam@company.com',
+        members: [
+          { knoxId: 'EMP2024002', name: '이프론트', department: '플랫폼개발팀', position: '책임' },
+          { knoxId: 'EMP2024001', name: '김개발', department: '플랫폼개발팀', position: '선임' },
+        ],
       },
+    ],
+    totalMembers: [
+      { knoxId: 'EMP2024002', name: '이프론트', department: '플랫폼개발팀', position: '책임' },
+      { knoxId: 'EMP2024001', name: '김개발', department: '플랫폼개발팀', position: '선임' },
     ],
     attachments: [
       {
@@ -361,7 +383,17 @@ export const mockApplications: Application[] = [
         role: '백엔드 개발자',
         pmName: '강팀장',
         pmEmail: 'kangteam@company.com',
+        members: [
+          { knoxId: 'EMP2024007', name: '오백엔드', department: '서비스개발팀', position: '선임' },
+          { knoxId: 'EMP2024001', name: '김개발', department: '플랫폼개발팀', position: '선임' },
+          { knoxId: 'EMP2024008', name: '유데이터', department: '데이터팀', position: '선임' },
+        ],
       },
+    ],
+    totalMembers: [
+      { knoxId: 'EMP2024007', name: '오백엔드', department: '서비스개발팀', position: '선임' },
+      { knoxId: 'EMP2024001', name: '김개발', department: '플랫폼개발팀', position: '선임' },
+      { knoxId: 'EMP2024008', name: '유데이터', department: '데이터팀', position: '선임' },
     ],
     attachments: [],
     securityAgreement: {
@@ -387,6 +419,7 @@ export const mockApplications: Application[] = [
     purpose: '',
     status: 'DRAFT',
     projects: [],
+    totalMembers: [],
     attachments: [],
     createdAt: '2024-12-05T09:00:00Z',
     updatedAt: '2024-12-05T09:00:00Z',
@@ -412,7 +445,13 @@ export const mockApplications: Application[] = [
         endDate: '2025-07-31',
         role: '데이터 엔지니어',
         pmName: '유데이터',
+        members: [
+          { knoxId: 'EMP2024008', name: '유데이터', department: '데이터팀', position: '선임' },
+        ],
       },
+    ],
+    totalMembers: [
+      { knoxId: 'EMP2024008', name: '유데이터', department: '데이터팀', position: '선임' },
     ],
     attachments: [
       {
@@ -457,7 +496,13 @@ export const mockApplications: Application[] = [
         role: '백엔드 개발자',
         pmName: '강팀장',
         pmEmail: 'kangteam@company.com',
+        members: [
+          { knoxId: 'EMP2024007', name: '오백엔드', department: '서비스개발팀', position: '선임' },
+        ],
       },
+    ],
+    totalMembers: [
+      { knoxId: 'EMP2024007', name: '오백엔드', department: '서비스개발팀', position: '선임' },
     ],
     attachments: [],
     securityAgreement: {
@@ -493,7 +538,13 @@ export const mockApplications: Application[] = [
         role: '프론트엔드 개발자',
         pmName: '박팀장',
         pmEmail: 'parkteam@company.com',
+        members: [
+          { knoxId: 'EMP2024002', name: '이프론트', department: '플랫폼개발팀', position: '책임' },
+        ],
       },
+    ],
+    totalMembers: [
+      { knoxId: 'EMP2024002', name: '이프론트', department: '플랫폼개발팀', position: '책임' },
     ],
     attachments: [],
     securityAgreement: {
@@ -527,7 +578,15 @@ export const mockApplications: Application[] = [
         endDate: '2025-06-30',
         role: 'ML 엔지니어',
         pmName: '유데이터',
+        members: [
+          { knoxId: 'EMP2024008', name: '유데이터', department: '데이터팀', position: '선임' },
+          { knoxId: 'EMP2024001', name: '김개발', department: '플랫폼개발팀', position: '선임' },
+        ],
       },
+    ],
+    totalMembers: [
+      { knoxId: 'EMP2024008', name: '유데이터', department: '데이터팀', position: '선임' },
+      { knoxId: 'EMP2024001', name: '김개발', department: '플랫폼개발팀', position: '선임' },
     ],
     attachments: [],
     securityAgreement: {
@@ -562,7 +621,17 @@ export const mockApplications: Application[] = [
         role: 'DevOps 엔지니어',
         pmName: '박팀장',
         pmEmail: 'parkteam@company.com',
+        members: [
+          { knoxId: 'EMP2024001', name: '김개발', department: '플랫폼개발팀', position: '선임' },
+          { knoxId: 'EMP2024002', name: '이프론트', department: '플랫폼개발팀', position: '책임' },
+          { knoxId: 'EMP2024007', name: '오백엔드', department: '서비스개발팀', position: '선임' },
+        ],
       },
+    ],
+    totalMembers: [
+      { knoxId: 'EMP2024001', name: '김개발', department: '플랫폼개발팀', position: '선임' },
+      { knoxId: 'EMP2024002', name: '이프론트', department: '플랫폼개발팀', position: '책임' },
+      { knoxId: 'EMP2024007', name: '오백엔드', department: '서비스개발팀', position: '선임' },
     ],
     attachments: [],
     securityAgreement: {
@@ -597,7 +666,13 @@ export const mockApplications: Application[] = [
         role: '프론트엔드 개발자',
         pmName: '박팀장',
         pmEmail: 'parkteam@company.com',
+        members: [
+          { knoxId: 'EMP2024002', name: '이프론트', department: '플랫폼개발팀', position: '책임' },
+        ],
       },
+    ],
+    totalMembers: [
+      { knoxId: 'EMP2024002', name: '이프론트', department: '플랫폼개발팀', position: '책임' },
     ],
     attachments: [],
     securityAgreement: {
@@ -624,6 +699,7 @@ export const mockApplications: Application[] = [
     purpose: 'MSA 전환 과정에서 Cursor AI를 활용해 서비스 코드를 빠르게 작성하고자 합니다.',
     status: 'DRAFT',
     projects: [],
+    totalMembers: [],
     attachments: [],
     createdAt: '2024-12-08T09:00:00Z',
     updatedAt: '2024-12-08T09:00:00Z',
@@ -650,7 +726,15 @@ export const mockApplications: Application[] = [
         role: '백엔드 개발자',
         pmName: '박팀장',
         pmEmail: 'parkteam@company.com',
+        members: [
+          { knoxId: 'EMP2024001', name: '김개발', department: '플랫폼개발팀', position: '선임' },
+          { knoxId: 'EMP2024007', name: '오백엔드', department: '서비스개발팀', position: '선임' },
+        ],
       },
+    ],
+    totalMembers: [
+      { knoxId: 'EMP2024001', name: '김개발', department: '플랫폼개발팀', position: '선임' },
+      { knoxId: 'EMP2024007', name: '오백엔드', department: '서비스개발팀', position: '선임' },
     ],
     attachments: [],
     securityAgreement: {
@@ -685,7 +769,15 @@ export const mockApplications: Application[] = [
         endDate: '2025-09-30',
         role: 'ML 엔지니어',
         pmName: '유데이터',
+        members: [
+          { knoxId: 'EMP2024008', name: '유데이터', department: '데이터팀', position: '선임' },
+          { knoxId: 'EMP2024001', name: '김개발', department: '플랫폼개발팀', position: '선임' },
+        ],
       },
+    ],
+    totalMembers: [
+      { knoxId: 'EMP2024008', name: '유데이터', department: '데이터팀', position: '선임' },
+      { knoxId: 'EMP2024001', name: '김개발', department: '플랫폼개발팀', position: '선임' },
     ],
     attachments: [],
     securityAgreement: {
@@ -1208,6 +1300,7 @@ export const mockReviewListItems: ReviewListItem[] = [
     applicantName: '이프론트',
     applicantDepartment: '플랫폼개발팀',
     aiToolNames: ['Cursor AI'],
+    totalMemberCount: 2,
     stageName: 'TEAM_REVIEW',
     dueDate: '2024-11-18T23:59:59Z',
     submittedAt: '2024-11-15T11:35:00Z',
@@ -1220,6 +1313,7 @@ export const mockReviewListItems: ReviewListItem[] = [
     applicantName: '오백엔드',
     applicantDepartment: '서비스개발팀',
     aiToolNames: ['Claude Code'],
+    totalMemberCount: 3,
     stageName: 'TEAM_REVIEW',
     dueDate: '2024-12-04T23:59:59Z',
     submittedAt: '2024-12-01T10:05:00Z',
@@ -1232,6 +1326,7 @@ export const mockReviewListItems: ReviewListItem[] = [
     applicantName: '김개발',
     applicantDepartment: '플랫폼개발팀',
     aiToolNames: ['Antigravity'],
+    totalMemberCount: 1,
     stageName: 'SECURITY_REVIEW',
     dueDate: '2024-11-13T23:59:59Z',
     submittedAt: '2024-11-01T14:05:00Z',
@@ -1244,6 +1339,7 @@ export const mockReviewListItems: ReviewListItem[] = [
     applicantName: '김개발',
     applicantDepartment: '플랫폼개발팀',
     aiToolNames: ['Claude Code', 'Antigravity'],
+    totalMemberCount: 2,
     stageName: 'SECURITY_REVIEW',
     dueDate: '2025-01-10T23:59:59Z',
     submittedAt: '2024-12-10T10:05:00Z',
@@ -1256,6 +1352,7 @@ export const mockReviewListItems: ReviewListItem[] = [
     applicantName: '유데이터',
     applicantDepartment: '데이터팀',
     aiToolNames: ['Cursor AI'],
+    totalMemberCount: 2,
     stageName: 'ENV_PREPARATION',
     dueDate: '2024-11-30T23:59:59Z',
     submittedAt: '2024-11-05T14:05:00Z',
@@ -1268,6 +1365,7 @@ export const mockReviewListItems: ReviewListItem[] = [
     applicantName: '김개발',
     applicantDepartment: '플랫폼개발팀',
     aiToolNames: ['Claude Code'],
+    totalMemberCount: 3,
     stageName: 'LICENSE_ISSUANCE',
     dueDate: '2024-12-12T23:59:59Z',
     submittedAt: '2024-12-02T11:05:00Z',

@@ -47,7 +47,7 @@ export const WIZARD_STEPS = [
   { step: 1, title: 'AI 도구 선택', description: '사용할 AI 도구를 선택하세요' },
   { step: 2, title: '사용 환경 선택', description: '사용 환경을 선택하세요' },
   { step: 3, title: '사용 목적', description: '사용 목적을 입력하세요' },
-  { step: 4, title: '프로젝트 정보', description: '관련 프로젝트 정보를 입력하세요' },
+  { step: 4, title: '프로젝트 정보', description: '관련 프로젝트 및 과제원 정보를 입력하세요' },
   { step: 5, title: '추가 첨부파일', description: '추가 문서를 첨부하세요' },
   { step: 6, title: '보안 서약', description: '보안 서약에 동의해주세요' },
   { step: 7, title: '최종 확인', description: '신청 내용을 확인하세요' },

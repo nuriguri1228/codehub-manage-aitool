@@ -109,6 +109,27 @@ export const mockAuthApi = {
   },
 };
 
+// ─── 사용자 검색 ──────────────────────────────────────────────────
+
+export const mockUserSearchApi = {
+  async searchUsers(query: string) {
+    await delay();
+    if (!query.trim()) return { success: true, data: [] };
+    const q = query.toLowerCase();
+    const results = mockUsers.filter(
+      (u) =>
+        u.employeeId.toLowerCase().includes(q) ||
+        u.name.toLowerCase().includes(q)
+    ).map((u) => ({
+      knoxId: u.employeeId,
+      name: u.name,
+      department: u.department,
+      position: u.position,
+    }));
+    return { success: true, data: results };
+  },
+};
+
 // ─── AI 도구 ──────────────────────────────────────────────────────
 
 export const mockToolApi = {
@@ -248,6 +269,14 @@ export const mockApplicationApi = {
       const tool = mockAiTools.find((t) => t.id === id);
       return tool?.name ?? '';
     });
+    const projects = data.projects ?? [];
+    // knoxId 기준 중복 제거한 전체 대상자
+    const allMembers = projects.flatMap((p) => p.members ?? []);
+    const memberMap = new Map<string, typeof allMembers[0]>();
+    for (const m of allMembers) {
+      if (!memberMap.has(m.knoxId)) memberMap.set(m.knoxId, m);
+    }
+    const totalMembers = Array.from(memberMap.values());
     const newApp: Application = {
       id: `app-${Date.now()}`,
       applicationNumber: `APP-2024-${String(mockApplications.length + 1).padStart(4, '0')}`,
@@ -260,7 +289,8 @@ export const mockApplicationApi = {
       environment: data.environment ?? 'VDI',
       purpose: data.purpose ?? '',
       status: 'DRAFT',
-      projects: data.projects ?? [],
+      projects,
+      totalMembers,
       attachments: [],
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),

@@ -12,6 +12,7 @@ import {
   Laptop,
   Monitor,
   ShieldCheck,
+  Users,
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -41,29 +42,52 @@ function ProjectAccordion({ projects }: { projects: Project[] }) {
 
   return (
     <div className="space-y-2">
-      {projects.map((proj, idx) => (
-        <div key={idx} className="rounded-lg border bg-muted/30">
-          <button
-            onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
-            className="flex w-full items-center justify-between px-4 py-3 text-left"
-          >
-            <span className="text-sm font-semibold">{proj.name}</span>
-            {openIndex === idx ? (
-              <ChevronUp className="h-4 w-4 text-muted-foreground" />
-            ) : (
-              <ChevronDown className="h-4 w-4 text-muted-foreground" />
+      {projects.map((proj, idx) => {
+        const members = proj.members ?? [];
+        return (
+          <div key={idx} className="rounded-lg border bg-muted/30">
+            <button
+              onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
+              className="flex w-full items-center justify-between px-4 py-3 text-left"
+            >
+              <div className="flex items-center gap-2">
+                <span className="text-sm font-semibold">{proj.name}</span>
+                {members.length > 0 && (
+                  <Badge variant="secondary" className="text-xs gap-1">
+                    <Users className="h-3 w-3" />
+                    {members.length}명
+                  </Badge>
+                )}
+              </div>
+              {openIndex === idx ? (
+                <ChevronUp className="h-4 w-4 text-muted-foreground" />
+              ) : (
+                <ChevronDown className="h-4 w-4 text-muted-foreground" />
+              )}
+            </button>
+            {openIndex === idx && (
+              <div className="border-t px-4 py-3 space-y-3">
+                <p className="text-sm text-muted-foreground">
+                  {proj.startDate} ~ {proj.endDate} | {proj.role} | PM: {proj.pmName}
+                </p>
+                <p className="text-sm text-muted-foreground">{proj.description}</p>
+                {members.length > 0 && (
+                  <div>
+                    <p className="text-xs font-medium text-muted-foreground mb-1.5">과제원</p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {members.map((m) => (
+                        <Badge key={m.knoxId} variant="outline" className="text-xs font-normal">
+                          {m.name} ({m.department})
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
             )}
-          </button>
-          {openIndex === idx && (
-            <div className="border-t px-4 py-3 space-y-1">
-              <p className="text-sm text-muted-foreground">
-                {proj.startDate} ~ {proj.endDate} | {proj.role} | PM: {proj.pmName}
-              </p>
-              <p className="text-sm text-muted-foreground">{proj.description}</p>
-            </div>
-          )}
-        </div>
-      ))}
+          </div>
+        );
+      })}
     </div>
   );
 }
@@ -165,6 +189,13 @@ export default function ReviewDetailPage({
                     </span>
                     <span className="text-muted-foreground">AI 도구</span>
                     <span>{application.aiToolNames.join(', ')}</span>
+                    <span className="text-muted-foreground">대상 인원</span>
+                    <span>
+                      <Badge variant="secondary" className="text-xs gap-1">
+                        <Users className="h-3 w-3" />
+                        {application.totalMembers?.length ?? 0}명
+                      </Badge>
+                    </span>
                     <span className="text-muted-foreground">신청일</span>
                     <span>{application.submittedAt || application.createdAt}</span>
                   </div>
@@ -321,6 +352,13 @@ export default function ReviewDetailPage({
                     <span>{application.aiToolNames.join(', ')}</span>
                     <span className="text-muted-foreground">환경</span>
                     <span>{application.environment}</span>
+                    <span className="text-muted-foreground">대상 인원</span>
+                    <span>
+                      <Badge variant="secondary" className="text-xs gap-1">
+                        <Users className="h-3 w-3" />
+                        {application.totalMembers?.length ?? 0}명
+                      </Badge>
+                    </span>
                     <span className="text-muted-foreground">신청일</span>
                     <span>{application.submittedAt || application.createdAt}</span>
                   </div>
@@ -421,6 +459,7 @@ export default function ReviewDetailPage({
               environment={application.environment}
               checklist={currentStage.checklist || []}
               previousStages={previousApprovals}
+              totalMembers={application.totalMembers}
             />
           ) : isLicenseIssuance ? (
             <LicenseIssuancePanel

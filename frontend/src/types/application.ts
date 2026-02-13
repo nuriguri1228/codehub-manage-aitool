@@ -13,6 +13,13 @@ export interface AiTool {
   isActive: boolean;
 }
 
+export interface ProjectMember {
+  knoxId: string;
+  name: string;
+  department: string;
+  position?: string;
+}
+
 export interface Project {
   id?: string;
   name: string;
@@ -23,6 +30,7 @@ export interface Project {
   pmName: string;
   pmEmail?: string;
   attachments?: File[];
+  members: ProjectMember[];
 }
 
 export interface Attachment {
@@ -54,6 +62,7 @@ export interface Application {
   purpose: string;
   status: ApplicationStatus;
   projects: Project[];
+  totalMembers: ProjectMember[];
   attachments: Attachment[];
   securityAgreement?: SecurityAgreement;
   currentReviewStage?: string;
@@ -69,6 +78,7 @@ export interface ApplicationFormData {
   environment: Environment;
   purpose: string;
   projects: Project[];
+  totalMembers: ProjectMember[];
   attachments: File[];
   securityAgreementSigned: boolean;
   signatureData?: string;

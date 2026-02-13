@@ -36,7 +36,7 @@ import {
   AlertDialogTitle,
 } from '@/components/ui/alert-dialog';
 import { Separator } from '@/components/ui/separator';
-import type { ReviewChecklistItem, ReviewResult, ReviewStage, Application } from '@/types';
+import type { ReviewChecklistItem, ReviewResult, ReviewStage, Application, ProjectMember } from '@/types';
 import { mockAiTools } from '@/lib/mock-data';
 import { useSubmitReview } from '@/hooks/use-review';
 import { toast } from 'sonner';
@@ -91,11 +91,14 @@ export default function LicenseIssuancePanel({
     );
   };
 
+  const totalMembers: ProjectMember[] = application.totalMembers ?? [];
+  const memberCount = Math.max(totalMembers.length, 1);
+
   // AI 도구별 비용 정보 계산
   const toolCostInfo = application.aiToolIds.map((toolId, idx) => {
     const tool = mockAiTools.find((t) => t.id === toolId);
     const tokenCost = tool?.tokenCost ?? 0;
-    const estimatedCost = tokenCost * quotaLimit;
+    const estimatedCost = tokenCost * quotaLimit * memberCount;
     return {
       name: application.aiToolNames[idx] || tool?.name || toolId,
       tokenCost,
@@ -213,6 +216,31 @@ export default function LicenseIssuancePanel({
             </div>
           )}
 
+          {/* Member List */}
+          {totalMembers.length > 0 && (
+            <>
+              <Separator />
+              <div>
+                <h3 className="text-sm font-semibold mb-3 flex items-center gap-2">
+                  라이센스 발급 대상자
+                  <Badge variant="secondary" className="text-xs">{totalMembers.length}명</Badge>
+                </h3>
+                <div className="space-y-1.5">
+                  {totalMembers.map((m) => (
+                    <div
+                      key={m.knoxId}
+                      className="flex items-center gap-2 rounded-md border bg-muted/20 px-3 py-2 text-sm"
+                    >
+                      <span className="font-medium">{m.name}</span>
+                      <span className="text-muted-foreground">({m.knoxId})</span>
+                      <span className="text-muted-foreground ml-auto">{m.department}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </>
+          )}
+
           <Separator />
 
           {/* Cost Information */}
@@ -236,6 +264,7 @@ export default function LicenseIssuancePanel({
                   <div className="text-xs text-muted-foreground">
                     기본 쿼터: {tool.defaultQuota.toLocaleString()} tokens |
                     예상 비용: ${tool.estimatedCost.toLocaleString(undefined, { maximumFractionDigits: 2 })}
+                    {memberCount > 1 && ` (${memberCount}명 × $${(tool.estimatedCost / memberCount).toLocaleString(undefined, { maximumFractionDigits: 2 })}/인)`}
                   </div>
                 </div>
               ))}

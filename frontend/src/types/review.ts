@@ -55,6 +55,7 @@ export interface ReviewListItem {
   applicantName: string;
   applicantDepartment: string;
   aiToolNames: string[];
+  totalMemberCount: number;
   stageName: string;
   dueDate?: string;
   submittedAt: string;

@@ -20,7 +20,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from '@/components/ui/alert-dialog';
-import type { ReviewChecklistItem, ReviewResult, ReviewStage, Environment } from '@/types';
+import type { ReviewChecklistItem, ReviewResult, ReviewStage, Environment, ProjectMember } from '@/types';
 import { useSubmitReview } from '@/hooks/use-review';
 import { toast } from 'sonner';
 
@@ -29,6 +29,7 @@ interface EnvPrepPanelProps {
   environment: Environment;
   checklist: ReviewChecklistItem[];
   previousStages: ReviewStage[];
+  totalMembers?: ProjectMember[];
 }
 
 const VDI_CHECKLIST: ReviewChecklistItem[] = [
@@ -52,14 +53,27 @@ const reviewSchema = z.object({
 
 type FormValues = z.infer<typeof reviewSchema>;
 
-export default function EnvPrepPanel({ reviewStageId, environment, checklist: initialChecklist, previousStages }: EnvPrepPanelProps) {
+export default function EnvPrepPanel({ reviewStageId, environment, checklist: initialChecklist, previousStages, totalMembers = [] }: EnvPrepPanelProps) {
   const defaultChecklist = initialChecklist.length > 0
     ? initialChecklist
     : environment === 'VDI' ? VDI_CHECKLIST : NOTEBOOK_CHECKLIST;
 
   const [checkItems, setCheckItems] = useState<ReviewChecklistItem[]>(defaultChecklist);
+  const [memberReady, setMemberReady] = useState<Record<string, boolean>>(
+    () => Object.fromEntries(totalMembers.map((m) => [m.knoxId, false]))
+  );
   const [confirmAction, setConfirmAction] = useState<ReviewResult | null>(null);
   const submitReview = useSubmitReview();
+
+  const toggleMemberReady = (knoxId: string) => {
+    setMemberReady((prev) => ({ ...prev, [knoxId]: !prev[knoxId] }));
+  };
+
+  const toggleAllMembers = () => {
+    const allChecked = totalMembers.every((m) => memberReady[m.knoxId]);
+    const updated = Object.fromEntries(totalMembers.map((m) => [m.knoxId, !allChecked]));
+    setMemberReady(updated);
+  };
 
   const { register, watch } = useForm<FormValues>({
     defaultValues: { comment: '', result: 'APPROVED' },
@@ -192,6 +206,44 @@ export default function EnvPrepPanel({ reviewStageId, environment, checklist: in
               {environment === 'VDI' ? 'VDI 환경' : '노트북 환경'}
             </Badge>
           </div>
+
+          {/* Member Checklist */}
+          {totalMembers.length > 0 && (
+            <div className="space-y-3">
+              <div className="flex items-center justify-between">
+                <h3 className="text-sm font-semibold text-foreground">
+                  환경 준비 대상자 ({totalMembers.length}명)
+                </h3>
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="sm"
+                  onClick={toggleAllMembers}
+                  className="text-xs h-7"
+                >
+                  {totalMembers.every((m) => memberReady[m.knoxId]) ? '전체 해제' : '전체 선택'}
+                </Button>
+              </div>
+              <div className="space-y-2">
+                {totalMembers.map((m) => (
+                  <div key={m.knoxId} className="flex items-center gap-3 rounded-md border bg-muted/20 px-3 py-2">
+                    <Checkbox
+                      id={`member-${m.knoxId}`}
+                      checked={memberReady[m.knoxId] ?? false}
+                      onCheckedChange={() => toggleMemberReady(m.knoxId)}
+                    />
+                    <Label htmlFor={`member-${m.knoxId}`} className="flex-1 text-sm font-normal cursor-pointer">
+                      <span className="font-medium">{m.name}</span>
+                      <span className="text-muted-foreground"> ({m.knoxId}) — {m.department}</span>
+                    </Label>
+                    {memberReady[m.knoxId] && (
+                      <Badge variant="outline" className="text-xs bg-emerald-50 text-emerald-700 border-emerald-200">준비 완료</Badge>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* Checklist */}
           <div className="space-y-3">

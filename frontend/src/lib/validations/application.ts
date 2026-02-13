@@ -17,6 +17,13 @@ export const step3Schema = z.object({
     .max(1000, '사용 목적은 1000자 이하로 입력해주세요'),
 });
 
+const projectMemberSchema = z.object({
+  knoxId: z.string().min(1, 'Knox ID를 입력해주세요'),
+  name: z.string().min(1, '이름을 입력해주세요'),
+  department: z.string().min(1, '부서를 입력해주세요'),
+  position: z.string().optional(),
+});
+
 const projectSchema = z.object({
   name: z.string().min(1, '프로젝트명을 입력해주세요'),
   description: z.string().min(1, '프로젝트 설명을 입력해주세요'),
@@ -26,6 +33,7 @@ const projectSchema = z.object({
   pmName: z.string().min(1, 'PM 이름을 입력해주세요'),
   pmEmail: z.string().email('올바른 이메일을 입력해주세요').optional().or(z.literal('')),
   attachments: z.array(z.any()).optional(),
+  members: z.array(projectMemberSchema).min(1, '과제원을 최소 1명 추가해주세요'),
 });
 
 export const step4Schema = z.object({

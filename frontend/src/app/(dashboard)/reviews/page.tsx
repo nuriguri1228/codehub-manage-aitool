@@ -73,6 +73,7 @@ function ReviewListContent() {
                   <TableHead>신청번호</TableHead>
                   <TableHead>신청자 (부서)</TableHead>
                   <TableHead>AI 도구</TableHead>
+                  <TableHead>대상 인원</TableHead>
                   <TableHead>신청일</TableHead>
                   <TableHead>현재 단계</TableHead>
                   <TableHead>SLA 잔여</TableHead>
@@ -93,6 +94,11 @@ function ReviewListContent() {
                         </span>
                       </TableCell>
                       <TableCell>{item.aiToolNames.join(', ')}</TableCell>
+                      <TableCell>
+                        <Badge variant="secondary" className="text-xs">
+                          {item.totalMemberCount}명
+                        </Badge>
+                      </TableCell>
                       <TableCell>{item.submittedAt}</TableCell>
                       <TableCell>
                         <Badge
